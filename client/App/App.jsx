@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom';
 
 import { Routes } from './Routes.jsx';
 
-import { AppHeader } from './../Components/AppHeader/AppHeader.jsx';
-import { AppFooter } from './../Components/AppFooter/AppFooter.jsx';
+import { Header } from './../Components/Header.jsx';
+import { Footer } from './../Components/Footer.jsx';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-// App component - represents the whole app
+
+
 export const App = ( props ) => (
 
   <div className="App">
 
-    <AppHeader />
+    <Header />
 
     <main className="app-main">
 
@@ -30,14 +31,11 @@ export const App = ( props ) => (
           })}
         </ReactCSSTransitionGroup>
         
-        
-
-
       </div>
 
     </main>
 
-    <AppFooter />
+    <Footer />
 
   </div>
 

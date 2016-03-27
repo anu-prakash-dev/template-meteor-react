@@ -1,91 +1,189 @@
 /* RESET */
-/* line 2, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 2, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
-/* line 7, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 7, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 a {
   color: inherit;
   text-decoration: none; }
 
-/* line 11, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 11, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 li {
   list-style-type: none; }
 
 /* FACTO */
-/* line 20, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 25, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 html, body, #App-wrapper {
   width: 100%;
   height: 100%;
   overflow: hidden; }
 
-/* line 26, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-.App, .app-main, .app-header, .app-footer {
+/* line 31, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+.App, .app-main, #Header, #Footer, nav {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
 
-/* line 37, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-.app-header,
-.app-main,
-.app-content,
-.app-footer {
+/* line 39, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+#Header, .app-main, .app-content, #Footer, nav {
   width: 100%; }
 
+/* line 43, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+.login-button {
+  width: 100%;
+  color: #ebebeb;
+  padding: 10px;
+  margin: 10px 0; }
+
+/* line 49, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+a#signup-link {
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  color: #ebebeb; }
+
+/* line 58, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+#login-buttons .login-link-and-dropdown-list {
+  position: relative;
+  text-align: right; }
+  /* line 67, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog {
+    position: absolute;
+    background: #315481;
+    z-index: 1;
+    top: 25px;
+    right: 0px;
+    width: 15em;
+    padding: 20px;
+    text-align: left; }
+    /* line 80, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog a.login-close-text {
+      min-width: 100em;
+      color: #b2b2b2;
+      position: relative;
+      width: 10em; }
+    /* line 87, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-close-text-clear {
+      margin-bottom: 1em; }
+    /* line 106, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form,
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-old-password-label-and-input,
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-label-and-input,
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-again-label-and-input {
+      width: 100%; }
+      /* line 109, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form input,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form label,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-old-password-label-and-input input,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-old-password-label-and-input label,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-label-and-input input,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-label-and-input label,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-again-label-and-input input, #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-again-label-and-input label {
+        width: 100%; }
+      /* line 112, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form label,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-old-password-label-and-input label,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-label-and-input label,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-again-label-and-input label {
+        font-size: 0.9em;
+        color: #ebebeb; }
+      /* line 116, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form input,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-old-password-label-and-input input,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-label-and-input input,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-again-label-and-input input {
+        background: #466da0;
+        color: #b2b2b2;
+        border: 0;
+        padding: 5px;
+        margin-top: 0.3em;
+        margin-bottom: 1em; }
+      /* line 124, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form input:-webkit-autofill,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-old-password-label-and-input input:-webkit-autofill,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-label-and-input input:-webkit-autofill,
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div#login-password-again-label-and-input input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #466da0 inset;
+        -webkit-text-fill-color: #b2b2b2 !important; }
+    /* line 135, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form {
+      width: 100%; }
+      /* line 137, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+      #login-buttons .login-link-and-dropdown-list #login-dropdown-list.accounts-dialog div.login-form.login-password-form div {
+        width: 100%; }
+
 /* GENERAL */
-/* line 45, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 197, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 body {
   font-family: sans-serif;
   font-size: 14px;
-  background-color: #315481; }
+  background: #315481; }
+
+/* UI */
+/* line 205, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+.button-nav {
+  color: #ebebeb;
+  transition: all 0.2s; }
+  /* line 209, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  .button-nav:active {
+    background: #223e62; }
 
 /* APP */
-/* line 56, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-body {
-  background-color: #315481; }
-  /* line 60, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-  body #App-wrapper .App {
+/* line 220, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+body #App-wrapper .App {
+  width: 100%;
+  height: 100%;
+  flex-direction: column; }
+  /* line 226, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  body #App-wrapper .App #Header, body #App-wrapper .App #Footer {
+    position: relative; }
+  /* line 233, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  body #App-wrapper .App #Header {
+    padding: 20px; }
+    /* line 236, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    body #App-wrapper .App #Header h1 {
+      width: 100%; }
+    /* line 239, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    body #App-wrapper .App #Header #login-buttons {
+      min-width: 5em; }
+  /* line 247, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  body #App-wrapper .App #Footer a {
     width: 100%;
-    height: 100%;
-    flex-direction: column;
-    background: green; }
-    /* line 66, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-    body #App-wrapper .App header, body #App-wrapper .App footer {
-      position: relative;
-      padding: 20px;
-      background: #8dacff; }
-    /* line 73, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-    body #App-wrapper .App .app-main {
-      flex: 1; }
-      /* line 76, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-      body #App-wrapper .App .app-main .app-content {
-        overflow: auto;
-        order: 2;
-        background-color: #FFFFFF; }
-    /* line 84, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-    body #App-wrapper .App h1 {
-      display: inline-block;
-      margin-bottom: 10px;
-      margin-right: 1em;
-      font-size: 1.2em; }
-    /* line 93, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-    body #App-wrapper .App .Page {
-      padding: 20px; }
-      /* line 98, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
-      body #App-wrapper .App .Page.PageHome li {
-        margin-top: 0.3em;
-        margin-bottom: 0.3em; }
+    padding: 20px;
+    text-align: center; }
+  /* line 256, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  body #App-wrapper .App .app-main {
+    flex: 1; }
+    /* line 259, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    body #App-wrapper .App .app-main .app-content {
+      overflow: auto;
+      order: 2;
+      background-color: #FFFFFF; }
+  /* line 267, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  body #App-wrapper .App h1 {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 1em;
+    font-size: 1.2em; }
+  /* line 276, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+  body #App-wrapper .App .Page {
+    padding: 20px; }
+    /* line 281, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+    body #App-wrapper .App .Page.PageHome li {
+      margin-top: 0.3em;
+      margin-bottom: 0.3em; }
 
 /* ANIMATIONS */
-/* line 126, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 309, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .app-content {
   position: relative; }
 
-/* line 129, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 312, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .Page {
   position: absolute;
   top: 0px;
@@ -93,20 +191,20 @@ body {
   width: 100%;
   background: white; }
 
-/* line 137, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 320, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-enter {
   opacity: 0.01; }
 
-/* line 141, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 324, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-enter.page-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in; }
 
-/* line 146, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 329, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-leave {
   opacity: 1; }
 
-/* line 150, /Users/maxblue/Documents/Dev/GitHub/template-react-meteor/client/_App/App.scss */
+/* line 333, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-leave.page-leave-active {
   opacity: 0.01;
   transition: opacity 150ms ease-in; }

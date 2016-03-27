@@ -14,6 +14,11 @@ li{
 
 
 
+$color_grey_light:  #ebebeb;
+$color_grey_medium:  #b2b2b2;
+
+$color_blue_medium1:  #466da0;
+$color_blue_medium2:  #315481;
 
 /* FACTO */
 
@@ -23,7 +28,7 @@ html, body, #App-wrapper{
     overflow: hidden;
 }
 
-.App, .app-main, .app-header, .app-footer {
+.App, .app-main, #Header, #Footer, nav {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -31,11 +36,158 @@ html, body, #App-wrapper{
   display: flex;
 }
 
-.app-header,
-.app-main,
-.app-content,
-.app-footer {
+#Header, .app-main, .app-content, #Footer, nav {
   width: 100%;
+}
+
+.login-button{
+  width: 100%;
+  color: $color_grey_light;
+  padding: 10px;
+  margin: 10px 0;
+}
+a#signup-link{
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  color: $color_grey_light;
+}
+#login-buttons{
+
+  // Link + DropDown
+  .login-link-and-dropdown-list{
+    position: relative;
+    text-align: right;
+    
+    // Link : 'sing in' or username
+    .login-link-text{
+    }
+    
+    // DropDown
+    #login-dropdown-list.accounts-dialog{
+      position:   absolute;
+      background: $color_blue_medium2;
+      z-index:    1;
+      top:        25px;
+      right:      0px;
+      
+      width:      15em;
+      padding:    20px;
+      text-align: left;
+      
+      
+      // Close text
+      a.login-close-text{
+        min-width: 100em;
+        color: $color_grey_medium;
+        position: relative;
+        width: 10em;
+
+      }
+      div.login-close-text-clear{
+        //width: 10em;
+        margin-bottom: 1em;
+      }
+      
+      
+      div#login-buttons-open-change-password{
+      }
+      div#login-buttons-logout{
+      }
+
+      
+
+      
+      
+      // Sign in div
+      div.login-form.login-password-form,
+      div#login-old-password-label-and-input,
+      div#login-password-label-and-input,
+      div#login-password-again-label-and-input{
+        width: 100%;
+
+          input, label{ 
+            width: 100%;
+          }
+          label{
+            font-size: 0.9em;
+            color: $color_grey_light;
+          }
+          input{
+            background: $color_blue_medium1;
+            color:  $color_grey_medium;
+            border: 0;
+            padding: 5px;
+            margin-top: 0.3em;
+            margin-bottom: 1em;
+          }
+          input:-webkit-autofill {
+              -webkit-box-shadow: 0 0 0px 1000px #466da0 inset;
+              -webkit-text-fill-color: $color_grey_medium !important;
+          }
+          
+
+      }
+      
+      
+      
+      // Sign in div
+      div.login-form.login-password-form{
+        width: 100%;
+        div{
+          width: 100%;
+
+          &#login-username-label-and-input{
+            label{
+            }
+            input{
+            }
+          }
+          &#login-password-label-and-input{
+          label{
+
+          }
+          input{
+          }
+        }
+          &#login-buttons-password{
+
+        }
+          &.additional-link-container{
+            a#signup-link{
+            }
+          }
+        }
+      }
+
+
+      // Change password div
+      div#login-old-password-label-and-input{
+          label{
+
+          }
+          input{
+
+          }
+      }
+      div#login-password-label-and-input{
+          label{
+
+          }
+          input{
+
+          }
+      }
+      div#login-password-again-label-and-input{
+        label{
+          
+        }
+        input{
+          
+        }
+    }
+    }
+  }
 }
 
 
@@ -45,31 +197,62 @@ html, body, #App-wrapper{
 body{
   font-family:      sans-serif;
   font-size:      14px;
-  background-color: #315481;
+  background: $color_blue_medium2;
 }
 
 
+/* UI */
+.button-nav{
+  color:  $color_grey_light;
+  
+  transition: all 0.2s;
+  &:active{
+    background: #223e62;
+  }
+}
 
 
 /* APP */
 
 body {
-  background-color: #315481;
 
   #App-wrapper{
     .App{
       width:  100%;
       height: 100%;
       flex-direction: column;
-      background: green;
 
-      header, footer {
+      
+      #Header, #Footer {
         position:   relative;
-        padding:    20px;
-        background: #8dacff;
+      }
+      #Header, nav {
+        //background: $color_blue_medium2;
       }
       
+      #Header {
+        padding:    20px;
+        
+        h1{
+          width:      100%;
+        }
+        #login-buttons{
+          min-width:  5em;
+        }
+      }
+      
+      #Footer{
+        nav{
+        }
+        a{
+          width:      100%;
+          padding:    20px;
+          text-align: center;
+        }
+      }
 
+      
+      
       .app-main {
         flex: 1;
 

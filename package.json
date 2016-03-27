@@ -1,0 +1,21 @@
+{
+  "name": "template-meteor-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "m135r2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "AnnotatedJS / MadeInMoon",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.5.1",
+    "history": "^2.0.0-rc2",
+    "react": "^15.0.0-rc.1",
+    "react-addons-css-transition-group": "^0.15.0-alpha.1",
+    "react-dom": "^15.0.0-rc.1",
+    "react-mixin": "^2.0.2",
+    "react-router": "^2.0.0-rc5"
+  }
+}

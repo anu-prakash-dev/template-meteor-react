@@ -5,6 +5,17 @@
 From originial repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app)
 
 
+## Run
+
+Install npm modules (just once)
+> $ npm install 
+
+Build 
+> $ meteor -p 3003
+
+See
+> http://localhost:3003/
+
 
 ## Original Features
 

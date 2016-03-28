@@ -5,16 +5,14 @@ export const PageHome = () => (
 
   <div className="Page PageHome">
     
-    <h1>Home</h1>
-    
-    <p>
-      Ready to go
-    </p>
-
-
-
-
-    
+    <div id="i1"></div>
+    <div id="i2"></div>
+    <div id="i3"></div>
+    <div id="i4"></div>
+    <div id="i5"></div>
+    <div id="i6"></div>
+    <div id="i7"></div>
+    <div id="i8"></div>
     
   </div>
 

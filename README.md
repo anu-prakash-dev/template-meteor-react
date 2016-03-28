@@ -2,6 +2,8 @@
 
 ## Meteor-React template App
 
+[Demo](http://template-meteor-react.meteorapp.com/home)
+
 From originial repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app)
 
 Thanks to [Mr Post](https://github.com/AnnotatedJS)!

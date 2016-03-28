@@ -184,37 +184,42 @@ body #App-wrapper .App {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }
-        /* line 288, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        @media screen and (min-width: 600px) {
+          /* line 281, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+          body #App-wrapper .App .Page.PageHome div {
+            width: 25%;
+            height: 50%; } }
+        /* line 294, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i1 {
           background-image: url("/medias/animals/autruche.jpg"); }
-        /* line 292, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 298, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i2 {
           background-image: url("/medias/animals/raton.jpg"); }
-        /* line 296, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 302, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i3 {
           background-image: url("/medias/animals/rhino.jpg"); }
-        /* line 300, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 306, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i4 {
           background-image: url("/medias/animals/pig.jpg"); }
-        /* line 304, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 310, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i5 {
           background-image: url("/medias/animals/fox.jpg"); }
-        /* line 308, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 314, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i6 {
           background-image: url("/medias/animals/wolf.jpg"); }
-        /* line 312, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 318, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i7 {
           background-image: url("/medias/animals/koala.jpg"); }
-        /* line 316, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+        /* line 322, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
         body #App-wrapper .App .Page.PageHome div#i8 {
           background-image: url("/medias/animals/autruche.jpg"); }
 
 /* ANIMATIONS */
-/* line 344, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+/* line 350, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .app-content {
   position: relative; }
 
-/* line 347, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+/* line 353, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .Page {
   position: absolute;
   top: 0px;
@@ -222,20 +227,20 @@ body #App-wrapper .App {
   width: 100%;
   background: white; }
 
-/* line 355, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+/* line 361, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-enter {
   opacity: 0.01; }
 
-/* line 359, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+/* line 365, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-enter.page-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in; }
 
-/* line 364, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+/* line 370, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-leave {
   opacity: 1; }
 
-/* line 368, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
+/* line 374, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/App/App.scss */
 .page-leave.page-leave-active {
   opacity: 0.01;
   transition: opacity 150ms ease-in; }

@@ -54,10 +54,10 @@ export class TaskTextFormEdit extends React.Component {
               onChange={this.onTextChange.bind(this)}
             />
 
-            <button type="button" onClick={this.btnCancel.bind(this)}>Cancel</button>
-            <button type="button" onClick={this.btnClear.bind(this)}>Clear</button>
-            <button type="button" onClick={this.btnReset.bind(this)}>Reset</button>
-            <button type="button" onClick={this.processSubmit.bind(this)}>Submit</button>
+            <button type="button" onClick={this.btnCancel.bind(this)}>    Cancel</button>
+            <button type="button" onClick={this.btnClear.bind(this)}>     Clear </button>
+            <button type="button" onClick={this.btnReset.bind(this)}>     Reset </button>
+            <button type="submit" onClick={this.processSubmit.bind(this)}>Submit</button>
 
           </form>
 

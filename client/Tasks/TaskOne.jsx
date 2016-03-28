@@ -27,24 +27,21 @@ export class TaskOne extends React.Component {
 
       return (
 
-        <li key={ p.key } className={p.taskClassName} >
+        <li key={ p.myKey } className={p.taskClassName} >
 
-          <TaskDelete
-            task={ p.task }
-            deleteThisTask={p.deleteThisTask.bind(this)}
-          />
-
-          { p.showPrivateButton ?
+          { p.showPrivateButton && !p.editTask  ?
             <TaskPrivate
               task={ p.task }
               togglePrivate={p.togglePrivate.bind(this)}
             /> : ""
           }
 
-          <TaskCheck
-            task={ p.task }
-            toggleChecked={p.toggleChecked.bind(this)}
-          />
+          { !p.editTask ?
+            <TaskCheck
+              task={ p.task }
+              toggleChecked={p.toggleChecked.bind(this)}
+            />:""
+          }
 
           <TaskText
             task={ p.task }
@@ -57,6 +54,13 @@ export class TaskOne extends React.Component {
             endTextEditSave={p.endTextEditSave.bind(this)}
             endTextEditClear={p.endTextEditClear.bind(this)}
           />
+          
+          { !p.editTask ?
+            <TaskDelete
+              task={ p.task }
+              deleteThisTask={p.deleteThisTask.bind(this)}
+            />:""
+          }
 
         </li>
 

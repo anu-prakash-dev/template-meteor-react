@@ -1,9 +1,6 @@
-
-
 import React from 'react';
 
 
-// This component presents a form to add a new task
 export class TaskNew extends React.Component {
 
   constructor(props) {
@@ -21,8 +18,9 @@ export class TaskNew extends React.Component {
 
       return (
 
-        <div>
-          <h3>Add new Task</h3>
+        <div className="task-new">
+          
+          <h2>Add new Task</h2>
 
           <form className="new-task" onSubmit={p.handleSubmit.bind(this)} >
 
@@ -33,6 +31,8 @@ export class TaskNew extends React.Component {
               onChange={p.onTextChange.bind(this)}
             />
 
+            <button className="add">+</button>
+            
           </form>
 
         </div>

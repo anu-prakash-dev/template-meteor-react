@@ -33,7 +33,7 @@ export class TaskText extends React.Component {
               task={p.task}
               edit={p.edit}
               editText={p.edit.text}
-              frmClassName="new-task"
+              frmClassName="edit-task"
               processTextTyping={p.processTextTyping.bind(this)}
               processTextClear={p.processTextClear.bind(this)}
               processTextReset={p.processTextReset.bind(this)}

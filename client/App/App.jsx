@@ -11,7 +11,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export const App = ( props ) => (
-
+  
   <div className="App">
 
     <Header />
@@ -20,12 +20,14 @@ export const App = ( props ) => (
 
       <div className="app-content">
 
+        {/* Where pages animate*/}
         <ReactCSSTransitionGroup
           component="div"
           transitionName="page"
           transitionEnterTimeout={0}
           transitionLeaveTimeout={0}
         >
+          {/*props.children : page receive from Routes.jsx*/}
           {React.cloneElement(props.children, {
             key: Math.random()
           })}

@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "file": "PageAdmin.css",
+  "sources": [
+    "PageAdmin.scss",
+    "../theme/colors.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "ACAA,cAAc;;ADMb,IAAI,CAAC,IAAI,CAAC,YAAY,CAAC,IAAI,CAAC,SAAS,CAAC,YAAY,CAAC,KAAK,AAAA,UAAU,CAAxD;EACT,OAAO,EAAK,IAAI,CAAC,IAAI;EACrB,UAAU,ECHU,OAAO,GDCjB",
+  "names": []
+}

@@ -1,0 +1,31 @@
+/* PAGES ANIMATIONS */
+/* line 9, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/animations/animations.scss */
+html body #App-wrapper .App .app-main .app-content {
+  position: relative; }
+
+/* line 13, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/animations/animations.scss */
+html body #App-wrapper .App .app-main .Page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
+
+/* line 21, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/animations/animations.scss */
+html body #App-wrapper .App .app-main .page-enter {
+  opacity: 0.01; }
+
+/* line 25, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/animations/animations.scss */
+html body #App-wrapper .App .app-main .page-enter.page-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in; }
+
+/* line 30, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/animations/animations.scss */
+html body #App-wrapper .App .app-main .page-leave {
+  opacity: 1; }
+
+/* line 34, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/animations/animations.scss */
+html body #App-wrapper .App .app-main .page-leave.page-leave-active {
+  opacity: 0;
+  transition: opacity 250ms ease-in; }
+
+/*# sourceMappingURL=animations.css.map */

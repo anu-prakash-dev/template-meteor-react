@@ -1,4 +1,3 @@
-
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import reactMixin from 'react-mixin';
@@ -140,7 +139,7 @@ export default class PageTasks extends React.Component {
 
       <div className="Page PageTasks">
 
-        <h1>Tasks</h1>
+        <h1> Tasks </h1>
 
         { d.currentUser ?
           <TaskNew

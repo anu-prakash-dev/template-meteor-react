@@ -1,7 +1,4 @@
-
-
 import React from 'react';
-import { TasksHeader } from './TasksHeader.jsx';
 import { TasksFilter } from './TasksFilter.jsx';
 import { TaskOne } from './TaskOne.jsx';
 
@@ -44,6 +41,7 @@ export class TasksList extends React.Component {
 
       return <TaskOne
         key={task._id}
+        myKey={task._id}
         task={task}
         edit={p.edit}
         editTask={editTask}
@@ -74,12 +72,10 @@ export class TasksList extends React.Component {
 
       return (
 
-        <div>
+        <div className="task-list">
 
-          <TasksHeader
-            incompleteCount={p.incompleteCount}
-          />
-
+          <h2> Todo List {p.incompleteCount} </h2>
+          
           <TasksFilter
             toggleHideCompleted={p.toggleHideCompleted.bind(this)}
           />

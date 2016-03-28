@@ -10,7 +10,7 @@ export class TaskTextPlain extends React.Component {
         super(props);
     }
 
-  onDoubleClick() {
+  onClick() {
     var p = this.props
     p.beginTextEdit(p.task._id, p.task.text)
   }
@@ -28,7 +28,7 @@ export class TaskTextPlain extends React.Component {
 
           <span className="text">
             <strong>{p.task.username}</strong>:
-            <span onDoubleClick={this.onDoubleClick.bind(this)}>
+            <span onClick={this.onClick.bind(this)}>
               {p.task.text}
             </span>
           </span>

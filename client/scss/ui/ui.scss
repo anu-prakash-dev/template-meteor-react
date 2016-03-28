@@ -1,0 +1,179 @@
+@import '../../scss/theme/colors.scss';
+
+/* Buttons */
+
+.button-nav{
+  color:  $color_grey_light;
+  transition: all 0.2s;
+  
+  &:active{
+    background: #223e62;
+  }
+  
+}
+
+
+/* Header SIGN IN */
+
+header{
+  
+.login-button{
+  width: 100%;
+  color: $color_grey_light;
+  padding: 10px;
+  margin: 10px 0;
+}
+a#signup-link{
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  color: $color_grey_light;
+}
+  
+#login-buttons{
+
+//          login-link-and-dropdown-list
+//login-link-and-dropdown-list login-form-sign-in
+  // Link + DropDown
+  .login-link-and-dropdown-list{
+    position: relative;
+    text-align: right;
+
+    .login-link-text{
+      color: $color_orange;
+    }
+        
+    // Link : 'sing in' or username
+    &.login-form-sign-in{
+      .login-link-text{
+        color: $color_blue_medium1;
+      }
+    }
+    // DropDown
+    #login-dropdown-list.accounts-dialog{
+      position:   absolute;
+      background: $color_blue_medium2;
+      z-index:    1;
+      top:        25px;
+      right:      0px;
+      
+      width:      15em;
+      padding:    20px;
+      text-align: left;
+      
+      
+      // Close text
+      a.login-close-text{
+        min-width: 100em;
+        color: $color_grey_medium;
+        position: relative;
+        width: 10em;
+
+      }
+      div.login-close-text-clear{
+        //width: 10em;
+        margin-bottom: 1em;
+      }
+      
+      
+      div#login-buttons-open-change-password{
+      }
+      div#login-buttons-logout{
+      }
+
+      
+
+      
+      
+      // Sign in div
+      div.login-form.login-password-form,
+      div#login-old-password-label-and-input,
+      div#login-password-label-and-input,
+      div#login-password-again-label-and-input{
+        width: 100%;
+
+          input, label{ 
+            width: 100%;
+          }
+          label{
+            font-size: 0.9em;
+            color: $color_grey_light;
+          }
+          input{
+            background: $color_blue_medium1;
+            color:  $color_grey_medium;
+            border: 0;
+            padding: 5px;
+            margin-top: 0.3em;
+            margin-bottom: 1em;
+          }
+          input:-webkit-autofill {
+              -webkit-box-shadow: 0 0 0px 1000px #466da0 inset;
+              -webkit-text-fill-color: $color_grey_medium !important;
+          }
+          
+
+      }
+      
+      
+      
+      // Sign in div
+      div.login-form.login-password-form{
+        width: 100%;
+        div{
+          width: 100%;
+
+          &#login-username-label-and-input{
+            label{
+            }
+            input{
+            }
+          }
+          &#login-password-label-and-input{
+          label{
+
+          }
+          input{
+          }
+        }
+          &#login-buttons-password{
+
+        }
+          &.additional-link-container{
+            a#signup-link{
+            }
+          }
+        }
+      }
+
+
+      // Change password div
+      div#login-old-password-label-and-input{
+          label{
+
+          }
+          input{
+
+          }
+      }
+      div#login-password-label-and-input{
+          label{
+
+          }
+          input{
+
+          }
+      }
+      div#login-password-again-label-and-input{
+        label{
+          
+        }
+        input{
+          
+        }
+    }
+    }
+  }
+}
+
+}

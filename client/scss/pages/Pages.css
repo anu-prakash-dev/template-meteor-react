@@ -1,0 +1,22 @@
+/*  Colors  */
+/* line 8, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/Pages.scss */
+html body #App-wrapper .App .app-main .app-content .Page h1 {
+  color: #315481;
+  font-size: 26px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 1em; }
+
+/* line 15, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/Pages.scss */
+html body #App-wrapper .App .app-main .app-content .Page h2 {
+  font-size: 18px; }
+
+/* line 18, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/Pages.scss */
+html body #App-wrapper .App .app-main .app-content .Page p {
+  color: #ebebeb; }
+
+/* line 21, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/Pages.scss */
+html body #App-wrapper .App .app-main .app-content .Page label {
+  color: #b2b2b2; }
+
+/*# sourceMappingURL=Pages.css.map */

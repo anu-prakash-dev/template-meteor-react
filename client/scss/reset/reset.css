@@ -1,0 +1,35 @@
+/* RESET */
+/* line 5, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* line 11, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+a {
+  color: inherit;
+  text-decoration: none; }
+
+/* line 16, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+li {
+  list-style-type: none; }
+
+/* line 20, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+button {
+  border: none;
+  outline: 0;
+  background-color: inherit; }
+
+/* line 26, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+input {
+  background: transparent;
+  border: none; }
+  /* line 29, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+  input:focus {
+    outline: 0; }
+
+/* line 34, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+button, input[type="checkbox"] {
+  cursor: pointer; }
+
+/*# sourceMappingURL=reset.css.map */

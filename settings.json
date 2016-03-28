@@ -1,7 +1,7 @@
 {
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb://madeinmoon:Dracofeu9@ds025449.mlab.com:25449/template-meteor-react"
+      "MONGO_URL": "mongodb://user:useruseruser@ds025449.mlab.com:25449/template-meteor-react"
     }
   }
 }

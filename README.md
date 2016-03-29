@@ -29,9 +29,10 @@ Play
 
 ### New Features
 
+* meteor 1.3!
+* react 0.14.7
 * Folder & pages reorganization
 * scss
-* [meteor update --release 1.3-rc.4](https://github.com/meteor/meteor/issues/6266#issuecomment-198997482)
 * Page Transitions [react-addons-css-transition-group 0.15.0-alpha.1](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
 
 

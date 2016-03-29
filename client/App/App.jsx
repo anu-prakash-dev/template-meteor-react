@@ -44,8 +44,9 @@ export const App = ( props ) => (
 );
 
 //==========================================================================
-Meteor.startup(function () {
 
+
+Meteor.startup(function () {
   // Use Meteor.startup to render the component after the page is ready
 
   ReactDOM.render(<Routes />, document.getElementById("App-wrapper"));

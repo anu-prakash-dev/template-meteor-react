@@ -4,11 +4,10 @@
 
 [Demo](http://template-meteor-react.meteorapp.com/home)
 
-From originial repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app)
-
-Thanks to [Mr Post](https://github.com/AnnotatedJS)!
+From originial repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app) (Thanks to [Mr Post])(https://github.com/AnnotatedJS)!
 
 -------------------------
+
 
 ### Usage
 
@@ -29,12 +28,23 @@ Play
 
 ### New Features
 
-* meteor 1.3!
-* react 0.14.7
-* Folder & pages reorganization
-* scss
-* Page Transitions [react-addons-css-transition-group 0.15.0-alpha.1](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
+* meteor 1.3! & react 0.14.7
+* Folder & pages & scss reorganization
+* Page Transitions [react-addons-css-transition-group](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
 
+
+-------------------------
+
+
+### Next Steps
+
+* Server side rendering (wainting for [react-router-ssr support meteor1.3](https://github.com/thereactivestack/meteor-react-router-ssr/issues/45)), which will offer SEO possibilities
+* Looking for [react-helmet](https://github.com/nfl/react-helmet) for SEO too.
+* Doc in the [wiki](https://github.com/MadeInMoon/template-meteor-react/wiki)
+* and more..
+
+
+-------------------------
 
 
 ### [Original](https://github.com/AnnotatedJS/meteor-react-start-app) Features

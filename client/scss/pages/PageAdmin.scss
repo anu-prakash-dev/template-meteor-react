@@ -9,6 +9,15 @@ html body #App-wrapper .App .app-main .app-content .Page{
   background: $color_blue_medium1;
   h1{}
   p{}
+  
+  .wrapper-buttons{
+    margin-top: 20px;
+    a.button-material-ui{
+      >div{ // button material-ui
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
   

@@ -3,5 +3,11 @@
 html body #App-wrapper .App .app-main .app-content .Page.PageAdmin {
   padding: 20px 30px;
   background: #466da0; }
+  /* line 13, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageAdmin.scss */
+  html body #App-wrapper .App .app-main .app-content .Page.PageAdmin .wrapper-buttons {
+    margin-top: 20px; }
+    /* line 16, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageAdmin.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageAdmin .wrapper-buttons a.button-material-ui > div {
+      margin-right: 20px; }
 
 /*# sourceMappingURL=PageAdmin.css.map */

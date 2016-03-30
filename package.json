@@ -12,6 +12,7 @@
   "dependencies": {
     "babel": "^6.5.1",
     "history": "^2.0.0-rc2",
+    "material-ui": "^0.14.4",
     "react": "^0.14.7",
     "react-addons-css-transition-group": "^0.15.0-alpha.1",
     "react-addons-pure-render-mixin": "^0.14.7",

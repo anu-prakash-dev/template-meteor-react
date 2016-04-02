@@ -13,7 +13,7 @@ export const NavBar = () => (
 
     <Link className="button-nav" to="/admin">Admin</Link>
 
-    <a className="button-nav" href="https://github.com/MadeInMoon/template-meteor-react" target="_blank"> Repo </a>
+    <a className="button-nav" href="https://github.com/MadeInMoon/template-meteor-react" target="_blank"> Code </a>
     
   </nav>
 

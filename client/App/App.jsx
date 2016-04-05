@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { browserHistory } from 'react-router';
+import reactMixin from 'react-mixin';
+
 
 import { Routes } from './Routes.jsx';
-import { Header } from './../Components/Header.jsx';
-import { Footer } from './../Components/Footer.jsx';
+import { Header } from './../components/Header.jsx';
+import { Footer } from './../components/Footer.jsx';
 
 import Snackbar from 'material-ui/lib/snackbar';
-import {Colors} from '../App/Theme';
+import {Colors} from '../app/Theme';
 
 
 
@@ -18,6 +21,9 @@ class App extends React.Component {
     this.openSnackBar         = this.openSnackBar.bind(this);
     this.closeSnackBar        = this.closeSnackBar.bind(this);
     this.handleActionTouchTap = this.handleActionTouchTap.bind(this);
+    
+    this.getMeteorData = this.getMeteorData.bind(this);
+    
     this.state = {
       snackBarAutoHideDuration: 4000,
       message: 'Event added to your calendar',
@@ -26,7 +32,6 @@ class App extends React.Component {
   }
 
   openSnackBar(){
-    console.log('open')
     this.setState({
       snackBar: true,
     });
@@ -43,6 +48,16 @@ class App extends React.Component {
     alert('Event removed from your calendar.');
   }
 
+    
+ // mixins: [ReactMeteorData, ReactRouter.History]
+  
+  getMeteorData() {
+    return {
+      isAuthenticated: Meteor.userId() !== null
+    };
+  }
+    
+
   render(){
     return(
       <div className="App">
@@ -53,19 +68,19 @@ class App extends React.Component {
 
           <div className="app-content">
 
-            {/* Where pages animate*/}
-            <ReactCSSTransitionGroup
-              component="div"
-              transitionName="page"
-              transitionEnterTimeout={0}
-              transitionLeaveTimeout={0}
-            >
-              {/*props.children : page receive from Routes.jsx*/}
-              {React.cloneElement(this.props.children, {
-                key: this.props.children.props.route.mykey,
-                openSnackBar: this.openSnackBar
-              })}
-            </ReactCSSTransitionGroup>
+              {/* Where pages animate*/}
+              <ReactCSSTransitionGroup
+                component="div"
+                transitionName="page"
+                transitionEnterTimeout={0}
+                transitionLeaveTimeout={0}
+              >
+                {/*props.children : page receive from Routes.jsx*/}
+                {React.cloneElement(this.props.children, {
+                  key: this.props.children.props.route.mykey,
+                  openSnackBar: this.openSnackBar
+                })}
+              </ReactCSSTransitionGroup>
 
           </div>
 
@@ -90,6 +105,11 @@ class App extends React.Component {
   }
 
 };
+
+//reactMixin(App.prototype, ReactMeteorData, Router.history);
+reactMixin(App.prototype, ReactMeteorData);
+
+
 export default App;
 //==========================================================================
 

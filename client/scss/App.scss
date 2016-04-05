@@ -84,7 +84,15 @@ body {
 
       
 
-      
+      #Login{
+        margin-top: 2em;
+        padding: 2em;
+        background: $color_blue_medium2;
+        input{
+          padding: 0.5em;
+          margin: 0.2em;
+        }
+      }
 
     }
   }

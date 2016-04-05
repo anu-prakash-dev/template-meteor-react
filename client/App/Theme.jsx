@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 export const Colors = {
   greyLight:    "#ebebeb",
   greyMedium:   "#b2b2b2",

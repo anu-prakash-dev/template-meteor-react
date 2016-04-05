@@ -10,7 +10,7 @@ import { TaskNew } from './../Tasks/TaskNew.jsx';
 Meteor.subscribe("tasks");
 
 
-export default class PageTasks extends React.Component {
+class PageTasks extends React.Component {
 
   constructor(props) {
     super(props);
@@ -175,3 +175,5 @@ export default class PageTasks extends React.Component {
 
 
 reactMixin(PageTasks.prototype, ReactMeteorData);
+
+export default PageTasks;

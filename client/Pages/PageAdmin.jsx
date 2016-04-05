@@ -1,19 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router';
-
 
 import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
-import IconButton   from 'material-ui/lib/icon-button';
 
-import {Colors} from '../App/Theme';
+import {Colors} from '../app/Theme';
 
+import Login          from '../components/accounts/Login';
+import ButtonFlat     from '../components/ui/ButtonFlat'
+import LinkButtonFlat from '../components/ui/LinkButtonFlat'
+ 
+ 
 
 class PageAdmin extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {};
+  }
+  
+  componentWillMount() {
   }
   
   render() {
@@ -27,17 +32,25 @@ class PageAdmin extends React.Component {
 
         <div className="wrapper-buttons">
 
-          <Link className="button-material-ui" to="/home">
-            <RaisedButton label="Home" secondary={true} backgroundColor={Colors.blueMedium1}/>
-          </Link>
-
-          <RaisedButton 
+          <LinkButtonFlat 
+            link="/home" 
+            label="Home" 
+            backgroundColor={Colors.blueMedium1}
+          />
+          
+          <ButtonFlat 
             label="SnackBar" 
-            secondary={true} 
             backgroundColor={Colors.blueMedium1}
             onClick={this.props.openSnackBar}
           />
 
+          
+          <Login />
+
+          
+          
+
+          
         </div>
 
       </div>

@@ -59,5 +59,14 @@ body {
         order: 2;
         background-color: #FFFFFF;
         background: #466da0; }
+    /* line 87, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    body #App-wrapper .App #Login {
+      margin-top: 2em;
+      padding: 2em;
+      background: #315481; }
+      /* line 91, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+      body #App-wrapper .App #Login input {
+        padding: 0.5em;
+        margin: 0.2em; }
 
 /*# sourceMappingURL=App.css.map */

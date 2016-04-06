@@ -7,6 +7,8 @@ export const NavBar = () => (
 
   <nav>
 
+    <Link className="button-nav" to="/account">Account</Link>
+    
     <Link className="button-nav" to="/home">Home</Link>
 
     <Link className="button-nav" to="/tasks">Tasks</Link>

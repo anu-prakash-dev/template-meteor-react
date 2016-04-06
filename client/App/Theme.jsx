@@ -1,8 +1,9 @@
 export const Colors = {
   greyLight:    "#ebebeb",
-  greyMedium:   "#b2b2b2",
+  greyMedium:   "#acacac",
   blueMedium1:  "#466da0",
   blueMedium2:  "#315481",
-  orange:        "#f26e63",
+  active:       "#f26e63",
+  blueDark:     "#0f2036",
   blueDarkTansparent:  "rgba(19, 29, 42, 0.91)",
 }

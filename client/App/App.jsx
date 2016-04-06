@@ -11,6 +11,7 @@ import { Footer } from './../components/Footer.jsx';
 
 import Snackbar from 'material-ui/lib/snackbar';
 import {Colors} from '../app/Theme';
+import ThemeMui from '../app/ThemeMui';
 
 
 
@@ -30,7 +31,8 @@ class App extends React.Component {
       snackBar: false,
     };
   }
-
+  
+    
   openSnackBar(){
     this.setState({
       snackBar: true,

@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "file": "PageAccount.css",
+  "sources": [
+    "PageAccount.scss",
+    "../theme/colors.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "ACAA,cAAc;;ADMb,IAAI,CAAC,IAAI,CAAC,YAAY,CAAC,IAAI,CAAC,SAAS,CAAC,YAAY,CAAC,KAAK,AAAA,YAAY,CAAxD;EACX,OAAO,EAAK,IAAI,CAAC,IAAI;EACrB,UAAU,ECHU,OAAO,GDCf",
+  "names": []
+}

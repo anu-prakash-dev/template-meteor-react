@@ -22,7 +22,18 @@ html, body, #App-wrapper{
   width: 100%;
 }
 
-
+.flex-row{
+  display: flex;
+}
+.align-center{
+  text-align: center;
+}
+.align-right{
+  text-align: right;
+}
+.flex{
+  display: flex;
+}
 
 /* APP */
 
@@ -78,19 +89,6 @@ body {
           order: 2;
           background-color: #FFFFFF;
           background: $color_blue_medium1;
-        }
-      }
-
-
-      
-
-      #Login{
-        margin-top: 2em;
-        padding: 2em;
-        background: $color_blue_medium2;
-        input{
-          padding: 0.5em;
-          margin: 0.2em;
         }
       }
 

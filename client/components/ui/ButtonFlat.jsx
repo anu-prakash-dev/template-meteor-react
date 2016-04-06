@@ -15,6 +15,7 @@ class ButtonFlat extends React.Component {
         secondary={true} 
         backgroundColor={this.props.backgroundColor}
         onClick={this.props.onClick}
+        style={this.props.style}
       />
     )
   }

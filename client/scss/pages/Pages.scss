@@ -1,9 +1,7 @@
 @import '../../scss/theme/colors.scss';
 
 html body #App-wrapper .App .app-main .app-content .Page{
-  
-  
-
+overflow: auto;
 
   h1{
     color: $color_blue_medium2;
@@ -20,11 +18,6 @@ html body #App-wrapper .App .app-main .app-content .Page{
   }
   label{
     color: $color_grey_medium;
-  }
-  
-  
-  
-  h1 {
   }
   
 }

@@ -7,7 +7,7 @@ import CreateAccount  from '../account/CreateAccount';
 import ChangePassword from '../account/ChangePassword';
 
 // Shared methods
-import {controlEmail, controlPassword} from '../../utilities/Utilities';
+import {controlUsername, controlEmail, controlPassword} from '../../utilities/Utilities';
  
 
 
@@ -43,9 +43,10 @@ class Account extends React.Component {
           }
             
           { Meteor.user() ?
-            <ChangePassword/>
+            <ChangePassword controlPassword = {controlPassword} />
             :
             <CreateAccount
+              controlUsername = {controlUsername}
               controlEmail    = {controlEmail}
               controlPassword = {controlPassword}
             />

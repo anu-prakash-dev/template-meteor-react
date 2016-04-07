@@ -33,8 +33,9 @@ class CreateAccount extends React.Component{
     };
   }
   
+  // Create Account
+  
   createAccount(){
-
     this.controlInputs( (username, email, password)=>{
       // if control is ok
       
@@ -61,23 +62,15 @@ class CreateAccount extends React.Component{
         }
       );
     });
-
-
   }   
 
-  // Login Callbacks
-  
   onSuccess(){
-    // console.log('Login success ')
-//    browserHistory.push('/home');
-//    setTimeout(()=>{
-//      this.props.openSnackBar('Welcome home dear '+this.getMeteorData().user.username);
-//    },400);
+    console.log('Login success ');
   }
     
   onError(error){
-
-    // console.log('Login Error : ' + error.reason + ', ' + error.error);
+    
+    console.log('Login Error : ' + error.reason + ', ' + error.error);
     
     if(error.reason === 'Username already exists.'){ 
       this.setErrorText('username', error.reason);
@@ -88,6 +81,7 @@ class CreateAccount extends React.Component{
     
   }
   
+  // Inputs
      
   controlInputs(callback){
     
@@ -97,33 +91,33 @@ class CreateAccount extends React.Component{
     passwordConfirm = this.state.passwordConfirm;
     
     // TODO : control username validity (caracters)
-    if(username.length<2){
-      console.log('username.length<2');
-      this.setErrorText('username', "2 caracters minimum ");
+    if( !this.props.controlUsername(username) ){
+      console.log('username not valide');
+      this.setErrorText('username', "Invalid format (a-z, 0-9, with at least two caracters, and between two and 14 caracters )");
       return;
     }    
-    if(!this.props.controlEmail(email)){
-      console.log('email invalid');
-      this.setErrorText('email', "invalide format");
+    if( !this.props.controlEmail(email) ){
+      console.log('email not valide');
+      this.setErrorText('email', "Invalide format");
       return;
     }
     // TODO : control password validity (caracters)
-    if(password.length<6){
+    if( password.length<6 ){
       console.log("password.length<6");
       this.setErrorText('password', "6 caracters minimum ");
       return;
     }
-    if(!this.props.controlPassword(password)){
-      console.log("password invalid");
-      this.setErrorText('password', "invalid format (a-z, 0-9, with at least one digit and one uppercase letter) ");
+    if( !this.props.controlPassword(password) ){
+      console.log("password not valide");
+      this.setErrorText('password', "Invalid format (a-z, 0-9, with at least one digit and one uppercase letter) ");
       return;
     }
-    if(passwordConfirm.length<6){
+    if( passwordConfirm.length<6 ){
       console.log("passwordConfirm.length<6");
       this.setErrorText('passwordConfirm', "6 caracters minimum ");
       return;
     }
-    if(password !== passwordConfirm){;
+    if (password !== passwordConfirm ){;
       console.log("password !== passwordConfirm");
       this.setErrorText('password',        "Passwords don't match");
       this.setErrorText('passwordConfirm', "Passwords don't match");
@@ -134,7 +128,6 @@ class CreateAccount extends React.Component{
     
   }
   
-  // Inputs
   
   handleChange(event){
 
@@ -233,8 +226,8 @@ class CreateAccount extends React.Component{
               onClick={this.createAccount}
               backgroundColor={Colors.blueMedium1}
               style = {{}}
-            />  
-
+            />
+            
           </div>
           
           

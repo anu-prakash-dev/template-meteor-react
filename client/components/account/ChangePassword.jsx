@@ -50,49 +50,49 @@ class ChangePassword extends React.Component{
   render() {
     return (
       <form id="ChangePassword">
+        <div className="content">
 
-        <InputFloatingLabel
-          name          = "currentPassword"
-          type          = "password"
-          floatingLabel = "Current Password "
-          value         = {this.state.currentPassword}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-        />
+          <InputFloatingLabel
+            name          = "currentPassword"
+            type          = "password"
+            floatingLabel = "Current Password "
+            value         = {this.state.currentPassword}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+          />
+
+          <InputFloatingLabel
+            name          = "newPassword"
+            type          = "password"
+            floatingLabel = "New Password "
+            value         = {this.state.newPassword}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+          />
+
+          <InputFloatingLabel
+            name          = "newPasswordConfirm"
+            type          = "password"
+            floatingLabel = "New Password (confirm)"
+            value         = {this.state.newPasswordConfirm}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+          />
+
+          <br/>
+          <br/>
+
+          <div className="row align-right">
+            <ButtonFLat 
+              label= "Change"
+              onClick={this.login}
+              backgroundColor={Colors.blueMedium1}
+              style = {{}}
+            />  
+
+          </div>
         
-        <InputFloatingLabel
-          name          = "newPassword"
-          type          = "password"
-          floatingLabel = "New Password "
-          value         = {this.state.newPassword}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-        />
-        
-        <InputFloatingLabel
-          name          = "newPasswordConfirm"
-          type          = "password"
-          floatingLabel = "New Password (confirm)"
-          value         = {this.state.newPasswordConfirm}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-        />
-        
-        <br/>
-        <br/>
-        
-        <div className="row align-right">
-          <ButtonFLat 
-            label= "Change"
-            onClick={this.login}
-            backgroundColor={Colors.blueMedium1}
-            style = {{}}
-          />  
-          
         </div>
-        
-
-        
       </form>
     )
   }

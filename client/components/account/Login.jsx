@@ -3,9 +3,11 @@ import reactMixin from 'react-mixin';
 import {browserHistory} from 'react-router';
 
 import {Colors} from '../../app/Theme';
-import ButtonFLat from '../../components/ui/ButtonFlat'
-import InputFloatingLabel from '../../components/ui/InputFloatingLabel'
-import CircularProgress   from 'material-ui/lib/circular-progress';
+import ButtonFLat           from '../../components/ui/ButtonFlat'
+import LoaderLinear         from '../../components/ui/LoaderLinear'
+import LoaderCircular       from '../../components/ui/LoaderCircular'
+import LoaderBounce         from '../../components/ui/LoaderBounce'
+import InputFloatingLabel   from '../../components/ui/InputFloatingLabel'
 
 
 class Login extends React.Component{
@@ -24,14 +26,14 @@ class Login extends React.Component{
       usernameErrorText: '', 
       passwordErrorText: '', 
       outsideErrorText: '', // TODO : maybe not needed anymore
-      timeout: 3500, 
+      timeout: 3500
     };
   }
   
   getMeteorData() {
     return { 
       user: Meteor.user(),
-      isLoginIn: Meteor.loggingIn()
+      loggingIn: Meteor.loggingIn(),
     }
   }
       
@@ -60,7 +62,7 @@ class Login extends React.Component{
           this.onLoginSuccess()
       }
     );
-  }      
+  }   
   
   // Inputs
   
@@ -131,57 +133,68 @@ class Login extends React.Component{
   render() {
     return (
       <form id="Login">
+        <div className="content">
 
-        <InputFloatingLabel
-          name          = "username"
-          type          = "text"
-          floatingLabel = "Username"
-          placeholder   = "type your username.."
-          value         = {this.state.username}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-          errorText     = {this.state.usernameErrorText}
-          onFocus       = {this.resetErrorText.bind(this, 'username')}
-        />
-        
-        <InputFloatingLabel
-          name          = "password"
-          type          = "password"
-          floatingLabel = "Password"
-          placeholder   = "type your password.."
-          value         = {this.state.password}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-          errorText     = {this.state.passwordErrorText}
-          onFocus       = {this.resetErrorText.bind(this, 'password')}
-        />
-        
-        <br/>
-        <br/>
-        
-        <div className="flex">
-          <ButtonFLat 
-            label   = "Login"
-            onClick = {this.login}
-            backgroundColor={Colors.blueMedium1}
-            style = {{}}
-          />  
-          
-          {this.state.outsideErrorText!='' ?
-            <p>{this.state.outsideErrorText}</p>
-            :
-            ""
-          }
-          
-          {Meteor.loggingIn()?
-            <CircularProgress style={{marginTop: '-8px'}} color={Colors.active} size={0.45} />
-            :""
-          }
-          
+          <InputFloatingLabel
+            name          = "username"
+            type          = "text"
+            floatingLabel = "Username"
+            placeholder   = "type your username.."
+            value         = {this.state.username}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            errorText     = {this.state.usernameErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'username')}
+          />
+
+          <InputFloatingLabel
+            name          = "password"
+            type          = "password"
+            floatingLabel = "Password"
+            placeholder   = "type your password.."
+            value         = {this.state.password}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            errorText     = {this.state.passwordErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'password')}
+          />
+
+          <br/>
+          <br/>
+
+          <div className="flex">
+            <ButtonFLat 
+              label   = "Login"
+              onClick = {this.login}
+              backgroundColor={Colors.blueMedium1}
+              style = {{}}
+            />  
+
+            {this.state.outsideErrorText!='' ?
+              <p>{this.state.outsideErrorText}</p>
+              :
+              ""
+            }
+            
+            {/*
+            {this.state.isLoggingIn ?
+              <LoaderCircular 
+                style={{marginTop: '-8px'}} 
+                color={Colors.active} />
+              :""
+            }
+            */}
+
+            {/*<LoaderBounce color={Colors.blueMedium1} style={{marginLeft: '20px'}}/>*/}
+            
+          </div>
         </div>
-        
-
-        
+        { this.data.loggingIn ?
+            <LoaderLinear 
+                backgroundColor={Colors.blueDark} 
+                color={Colors.blueMedium1}/>
+            : ''
+        }
       </form>
     )
   }
@@ -190,6 +203,5 @@ class Login extends React.Component{
 };
 
 
-// reactMixin(Login.prototype, ReactMeteorData);
-
+reactMixin(Login.prototype, ReactMeteorData);
 export default Login;

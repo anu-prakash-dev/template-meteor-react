@@ -20,14 +20,16 @@ class Logout extends React.Component{
   render() {
     return (
       <form id="Logout" className="align-center">
+          <div className="content">
         
-          <ButtonFLat 
-            label= "Logout"
-            onClick={this.logout}
-            backgroundColor={Colors.blueMedium1}
-            style = {{width: "50%", marginRight: '10px'}}
-          />  
+            <ButtonFLat 
+              label= "Logout"
+              onClick={this.logout}
+              backgroundColor={Colors.blueMedium1}
+              style = {{width: "50%", marginRight: '10px'}}
+            />  
         
+          </div>
       </form>
     )
   }

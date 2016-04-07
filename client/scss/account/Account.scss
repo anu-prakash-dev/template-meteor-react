@@ -10,31 +10,59 @@
     
     
     form{
-      max-width: 20em;
+      position: relative;
+      width:      100%;
+      max-width:  20em;
       //min-width: 20em;
       margin: 1em 1em;
-      padding: 1em 2em 2em 2em;
       background: $color_blue_medium_transparent;
+      
+      .content{
+        width:      100%;
+        padding: 1em 2em 2em 2em;
 
-      input{
-        // disable yellow input background when autocompletion
-        &:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0px 1000px $color_blue_medium2 inset;
-            -webkit-text-fill-color: $color_grey_light !important;
+        input{
+          // disable yellow input background when autocompletion
+          &:-webkit-autofill {
+              -webkit-box-shadow: 0 0 0px 1000px $color_blue_dark inset;
+              -webkit-text-fill-color: $color_grey_light !important;
+          }
         }
-      }
 
+
+        &#Login{
+        }
+        &#Logout{
+          display: block;
+          max-height: 2em;
+          padding: 2em;
+        }
+        &#CreateAccount{}
+        &#ChangePassword{
+          max-width: 30em !important;
+        }
+        
+      }
  
-      &#Login{
-      }
-      &#Logout{
-        padding: 2em;
-      }
-      &#CreateAccount{}
-      &#ChangePassword{
-        max-width: 30em !important;
-      }
- 
+        
     }
+    
+    .loaderLinear{
+      position:   absolute !important; 
+      bottom:     0 !important;
+      max-width:  100% !important;
+      width:      100% !important;
+      opacity:    0.5;
+    }    
+    .loaderBounce{
+      transform: scale(0.6);
+      position: absolute;
+      bottom:0;
+      right:0;
+    }
+    
+    
   }
 }
+
+

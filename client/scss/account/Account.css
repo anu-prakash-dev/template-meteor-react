@@ -8,19 +8,39 @@
   flex-wrap: wrap; }
   /* line 12, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   #Account section form {
+    position: relative;
+    width: 100%;
     max-width: 20em;
     margin: 1em 1em;
-    padding: 1em 2em 2em 2em;
     background: rgba(22, 32, 47, 0.61); }
-    /* line 21, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-    #Account section form input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0px 1000px #315481 inset;
-      -webkit-text-fill-color: #ebebeb !important; }
-    /* line 30, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-    #Account section form#Logout {
-      padding: 2em; }
-    /* line 34, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-    #Account section form#ChangePassword {
-      max-width: 30em !important; }
+    /* line 20, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    #Account section form .content {
+      width: 100%;
+      padding: 1em 2em 2em 2em; }
+      /* line 26, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      #Account section form .content input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #131d2a inset;
+        -webkit-text-fill-color: #ebebeb !important; }
+      /* line 35, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      #Account section form .content#Logout {
+        display: block;
+        max-height: 2em;
+        padding: 2em; }
+      /* line 41, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      #Account section form .content#ChangePassword {
+        max-width: 30em !important; }
+  /* line 50, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+  #Account section .loaderLinear {
+    position: absolute !important;
+    bottom: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    opacity: 0.5; }
+  /* line 57, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+  #Account section .loaderBounce {
+    transform: scale(0.6);
+    position: absolute;
+    bottom: 0;
+    right: 0; }
 
 /*# sourceMappingURL=Account.css.map */

@@ -4,5 +4,8 @@
 body {
   font-family: sans-serif;
   font-size: 14px; }
+  /* line 14, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/theme/fonts.scss */
+  body nav {
+    font-size: 12px; }
 
 /*# sourceMappingURL=fonts.css.map */

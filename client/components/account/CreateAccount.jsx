@@ -11,110 +11,238 @@ class CreateAccount extends React.Component{
   constructor(props) {
     super(props);
     //this.logout = this.logout.bind(this);
-    this.handleChange  = this.handleChange.bind(this);
-    this.createAccount = this.createAccount.bind(this);
+    this.handleChange   = this.handleChange.bind(this);
+    this.controlInputs  = this.controlInputs.bind(this);
+    this.setErrorText   = this.setErrorText.bind(this);
+    this.resetErrorText = this.resetErrorText.bind(this);
+    this.createAccount  = this.createAccount.bind(this);
+    this.onSuccess      = this.onSuccess.bind(this);
+    this.onError        = this.onError.bind(this);
     //this.getMeteorData = this.getMeteorData.bind(this);
     this.state = {
-      username: '',
-      password: '',
-      passwordConfirm: '',
-      usernameErrorText: '',
-      passwordErrorText: '',
+      username:         '',
+      email:         '',
+      password:         '',
+      passwordConfirm:  '',
+      usernameErrorText:        '',
+      emailErrorText:        '',
+      passwordErrorText:        '',
       passwordConfirmErrorText: '',
       outsideErrorText: '', // TODO : maybe not needed anymore
       timeout: 3500, 
     };
   }
   
-//  getMeteorData() {
-//    return {
-//      user: Meteor.user(),
-//      isLoginIn: Meteor.loggingIn()
-//    }
-//  }
+  createAccount(){
 
+    this.controlInputs( (username, email, password)=>{
+      // if control is ok
+      
+      const options={
+        username: username,
+        email:    email,
+        password: password,
+        profile: {
+          name:   '',
+          gender: '',
+          age:    '',
+          city:   '',
+          country:''
+        },
+      }
+      
+      Accounts.createUser(
+        options, 
+        (error) => {
+          if(error)
+            this.onError(error)
+          else
+            this.onSuccess()
+        }
+      );
+    });
+
+
+  }   
+
+  // Login Callbacks
+  
+  onSuccess(){
+    // console.log('Login success ')
+//    browserHistory.push('/home');
+//    setTimeout(()=>{
+//      this.props.openSnackBar('Welcome home dear '+this.getMeteorData().user.username);
+//    },400);
+  }
+    
+  onError(error){
+
+    // console.log('Login Error : ' + error.reason + ', ' + error.error);
+    
+    if(error.reason === 'Username already exists.'){ 
+      this.setErrorText('username', error.reason);
+    }
+    if(error.reason === 'Email already exists.'){ 
+      this.setErrorText('email', error.reason);
+    }
+    
+  }
+  
+     
+  controlInputs(callback){
+    
+    username = this.state.username;
+    email    = this.state.email;
+    password = this.state.password;
+    passwordConfirm = this.state.passwordConfirm;
+    
+    // TODO : control username validity (caracters)
+    if(username.length<2){
+      console.log('username.length<2');
+      this.setErrorText('username', "2 caracters minimum ");
+      return;
+    }    
+    if(!this.props.controlEmail(email)){
+      console.log('email invalid');
+      this.setErrorText('email', "invalide format");
+      return;
+    }
+    // TODO : control password validity (caracters)
+    if(password.length<6){
+      console.log("password.length<6");
+      this.setErrorText('password', "6 caracters minimum ");
+      return;
+    }
+    if(!this.props.controlPassword(password)){
+      console.log("password invalid");
+      this.setErrorText('password', "invalid format (a-z, 0-9, with at least one digit and one uppercase letter) ");
+      return;
+    }
+    if(passwordConfirm.length<6){
+      console.log("passwordConfirm.length<6");
+      this.setErrorText('passwordConfirm', "6 caracters minimum ");
+      return;
+    }
+    if(password !== passwordConfirm){;
+      console.log("password !== passwordConfirm");
+      this.setErrorText('password',        "Passwords don't match");
+      this.setErrorText('passwordConfirm', "Passwords don't match");
+      return;
+    }
+    
+    callback(username, email, password);
+    
+  }
+  
+  // Inputs
   
   handleChange(event){
+
     var inputName = event.target.name;
     var value     = event.target.value;
     
     var nextState  = {};
     nextState[inputName] = value;
+    nextState[inputName+'errorText'] = '';
     
     this.setState(nextState);
-  }
-  createAccount(){
-    username = this.state.username;
-    password = this.state.password;
-    passwordConfirm = this.state.passwordConfirm;
-    
-    if(username.length<2){
-      console.log("username.length<2");
-    }
-    if(password.length<6){
-      console.log("password.length<6");
-    }
-    if(password !== passwordConfirm){;
-      console.log("password !== passwordConfirm");
-    }
-    
+  }  
   
+  setErrorText(inputName, text){
+    var nextState = {};
+    nextState[inputName+'ErrorText'] = text;
+    this.setState(nextState);
+    
+    this.resetErrorText(inputName, this.state.timeout);
   }
-  
+    
+  resetErrorText(inputName, delay){
+    var nextState = {};
+    
+    if(delay){
+      setTimeout(()=>{
+        nextState[inputName+'ErrorText'] = '';
+        this.setState(nextState)
+      }, delay);
+    }
+    else{
+      nextState[inputName+'ErrorText'] = '';
+      this.setState(nextState);
+    }
+  }
+   
   render() {
     return (
       <form id="CreateAccount">
+        <div className="content">
 
-        <InputFloatingLabel
-          name          = "username"
-          type          = "text"
-          floatingLabel = "Username"
-          placeholder   = "type your username.."
-          value         = {this.state.username}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-        />
-        
-        <InputFloatingLabel
-          name          = "password"
-          type          = "password"
-          floatingLabel = "Password"
-          placeholder   = "type your password.."
-          value         = {this.state.password}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-        />
-        
-        <InputFloatingLabel
-          name          = "passwordConfirm"
-          type          = "password"
-          floatingLabel = "Confirm Password"
-          placeholder   = "again.."
-          value         = {this.state.passwordConfirm}
-          onChange      = {this.handleChange}
-          style         = {{width: "100%", marginTop: "-10px"}}
-        />
-        
-        <br/>
-        <br/>
-        
-        <div className="row align-right">
-          <ButtonFLat 
-            label= "Create Account"
-            onClick={this.createAccount}
-            backgroundColor={Colors.blueMedium1}
-            style = {{}}
-          />  
+          <InputFloatingLabel
+            name          = "username"
+            type          = "text"
+            floatingLabel = "Username"
+            placeholder   = "type your username.."
+            value         = {this.state.username}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            errorText     = {this.state.usernameErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'username')}
+          />
+
+          <InputFloatingLabel
+            name          = "email"
+            type          = "email"
+            floatingLabel = "Email"
+            placeholder   = "type your email.."
+            value         = {this.state.email}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            errorText     = {this.state.emailErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'email')}
+          />
+          
+          <InputFloatingLabel
+            name          = "password"
+            type          = "password"
+            floatingLabel = "Password"
+            placeholder   = "type your password.."
+            value         = {this.state.password}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            errorText     = {this.state.passwordErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'password')}
+          />
+
+          <InputFloatingLabel
+            name          = "passwordConfirm"
+            type          = "password"
+            floatingLabel = "Confirm Password"
+            placeholder   = "again.."
+            value         = {this.state.passwordConfirm}
+            onChange      = {this.handleChange}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            errorText     = {this.state.passwordConfirmErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'passwordConfirm')}
+          />
+
+          <br/>
+          <br/>
+
+          <div className="row align-right">
+            <ButtonFLat 
+              label= "Create Account"
+              onClick={this.createAccount}
+              backgroundColor={Colors.blueMedium1}
+              style = {{}}
+            />  
+
+          </div>
+          
           
         </div>
-        
-
-        
       </form>
     )
   }
   
-
 };
 
 

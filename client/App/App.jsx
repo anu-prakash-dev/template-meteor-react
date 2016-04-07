@@ -31,10 +31,8 @@ class App extends React.Component {
     };
   }
   
-    
   openSnackBar(text){
-    if(typeof text != 'string'){text="Youpi!"}
-    console.log(text)
+    if(typeof text != 'string'){text="Nothing special.."}
     this.setState({
       snackBarMessage: text,
       snackBar:        true,
@@ -52,15 +50,12 @@ class App extends React.Component {
     alert('Event removed from your calendar.');
   }
 
-  
-  
   getMeteorData() {
     return {
       isAuthenticated: Meteor.userId() !== null
     };
   }
     
-
   render(){
     return(
       <div className="App">
@@ -111,15 +106,13 @@ class App extends React.Component {
 
 //reactMixin(App.prototype, ReactMeteorData, Router.history);
 reactMixin(App.prototype, ReactMeteorData);
-
-
 export default App;
+
+
 //==========================================================================
 
 
 Meteor.startup(function () {
   // Use Meteor.startup to render the component after the page is ready
-
   ReactDOM.render(<Routes />, document.getElementById("App-wrapper"));
-
 });

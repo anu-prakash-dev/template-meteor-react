@@ -9,8 +9,7 @@ html body #App-wrapper .App .app-main .app-content .Page .task-li, html body #Ap
 
 /* line 15, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
 html body #App-wrapper .App .app-main .app-content .Page.PageTasks {
-  padding: 20px 30px;
-  background: #466da0; }
+  padding: 20px 30px; }
   /* line 19, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
   html body #App-wrapper .App .app-main .app-content .Page.PageTasks h2 {
     color: #f26e63;
@@ -86,38 +85,37 @@ html body #App-wrapper .App .app-main .app-content .Page.PageTasks {
       /* line 118, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
       html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-checked, html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-private {
         color: #ebebeb;
-        background: #466da0;
         transition: all 0.25s; }
       /* line 124, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
       html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-checked {
         color: #315481; }
-        /* line 127, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
+        /* line 126, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
         html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-checked .text {
           text-decoration: line-through; }
-      /* line 133, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
+      /* line 132, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
       html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-private button.toggle-private {
         color: #f26e63; }
-      /* line 139, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
+      /* line 138, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
       html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task {
         width: 100%;
         text-align: center;
         padding: 0em 0.5em 0 1em;
         margin-top: -0.85em; }
-        /* line 144, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
+        /* line 143, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
         html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task input {
           width: 100%;
           margin-top: 0em;
           margin-bottom: 0em;
           font-size: 1em;
           text-align: center; }
-        /* line 151, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
+        /* line 150, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
         html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task button {
           background: #315481;
           color: #466da0;
           padding: 0.3em 0.9em;
           margin-right: 0.3em;
           margin-top: 0.5em; }
-          /* line 157, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
+          /* line 156, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageTasks.scss */
           html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task button[type="submit"] {
             background: #f26e63;
             color: #315481; }

@@ -14,7 +14,7 @@
       //min-width: 20em;
       margin: 1em 1em;
       padding: 1em 2em 2em 2em;
-      background: $color_blue_medium2;
+      background: $color_blue_medium_transparent;
 
       input{
         // disable yellow input background when autocompletion
@@ -24,7 +24,7 @@
         }
       }
 
-
+ 
       &#Login{
       }
       &#Logout{
@@ -34,7 +34,7 @@
       &#ChangePassword{
         max-width: 30em !important;
       }
-
+ 
     }
   }
 }

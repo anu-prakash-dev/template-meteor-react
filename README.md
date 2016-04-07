@@ -28,7 +28,7 @@ Play
 
 ### New Features
 
-* meteor 1.3! & react 0.14.7
+* meteor 1.3.1 & react 0.14.7
 * Folder & pages & scss reorganization
 * Page Transitions [react-addons-css-transition-group](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
 * [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, snackbar, and more comming)

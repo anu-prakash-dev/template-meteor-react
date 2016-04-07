@@ -17,8 +17,8 @@ class PageAccount extends React.Component {
         <h1>Account</h1>
         <p> Login, CreateAccount, Logout</p>
 
-        <Account/>
-
+        <Account openSnackBar={this.props.openSnackBar}/>
+ 
       </div>
     );
   }

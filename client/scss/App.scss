@@ -38,7 +38,7 @@ html, body, #App-wrapper{
 /* APP */
 
 body {
-  background: $color_blue_medium2;
+  //background: $color_blue_medium2;
 
   #App-wrapper{
     
@@ -53,7 +53,7 @@ body {
       }
       
       #Header, nav {
-        background: $color_blue_medium2;
+        background: #202633;
       }
       
       #Header {
@@ -87,8 +87,8 @@ body {
         .app-content {
           overflow: auto;
           order: 2;
-          background-color: #FFFFFF;
-          background: $color_blue_medium1;
+          //background-color: #FFFFFF;
+          //background: $color_blue_medium1;
         }
       }
 

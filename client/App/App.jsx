@@ -11,7 +11,6 @@ import { Footer } from './../components/Footer.jsx';
 
 import Snackbar from 'material-ui/lib/snackbar';
 import {Colors} from '../app/Theme';
-import ThemeMui from '../app/ThemeMui';
 
 
 
@@ -21,21 +20,24 @@ class App extends React.Component {
     super(props);
     this.openSnackBar         = this.openSnackBar.bind(this);
     this.closeSnackBar        = this.closeSnackBar.bind(this);
-    this.handleActionTouchTap = this.handleActionTouchTap.bind(this);
+    this.handleSnackBarClick  = this.handleSnackBarClick.bind(this);
     
     this.getMeteorData = this.getMeteorData.bind(this);
     
     this.state = {
       snackBarAutoHideDuration: 4000,
-      message: 'Event added to your calendar',
+      snackBarMessage: '',
       snackBar: false,
     };
   }
   
     
-  openSnackBar(){
+  openSnackBar(text){
+    if(typeof text != 'string'){text="Youpi!"}
+    console.log(text)
     this.setState({
-      snackBar: true,
+      snackBarMessage: text,
+      snackBar:        true,
     });
   }
   
@@ -44,14 +46,13 @@ class App extends React.Component {
       snackBar: false,
     });
   }
-  
-  handleActionTouchTap() {
+    
+  handleSnackBarClick() {
     this.closeSnackBar();
     alert('Event removed from your calendar.');
   }
 
-    
- // mixins: [ReactMeteorData, ReactRouter.History]
+  
   
   getMeteorData() {
     return {
@@ -92,10 +93,10 @@ class App extends React.Component {
         
         <Snackbar
           open    = {this.state.snackBar}
-          message = "Event added to your calendar!"
-          action  = "Cancel"
+          message = {this.state.snackBarMessage}
+          //action  = "Cancel"
           autoHideDuration= {this.state.snackBarAutoHideDuration}
-          onActionTouchTap= {this.handleActionTouchTap}
+          onActionTouchTap= {this.handleSnackBarClick}
           onRequestClose  = {this.closeSnackBar}
           bodyStyle       = {{backgroundColor: Colors.blueDarkTansparent}}
           style           = {{textColor: Colors.orange}}

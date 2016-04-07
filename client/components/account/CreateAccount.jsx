@@ -12,11 +12,17 @@ class CreateAccount extends React.Component{
     super(props);
     //this.logout = this.logout.bind(this);
     this.handleChange  = this.handleChange.bind(this);
+    this.createAccount = this.createAccount.bind(this);
     //this.getMeteorData = this.getMeteorData.bind(this);
     this.state = {
       username: '',
       password: '',
       passwordConfirm: '',
+      usernameErrorText: '',
+      passwordErrorText: '',
+      passwordConfirmErrorText: '',
+      outsideErrorText: '', // TODO : maybe not needed anymore
+      timeout: 3500, 
     };
   }
   
@@ -36,6 +42,23 @@ class CreateAccount extends React.Component{
     nextState[inputName] = value;
     
     this.setState(nextState);
+  }
+  createAccount(){
+    username = this.state.username;
+    password = this.state.password;
+    passwordConfirm = this.state.passwordConfirm;
+    
+    if(username.length<2){
+      console.log("username.length<2");
+    }
+    if(password.length<6){
+      console.log("password.length<6");
+    }
+    if(password !== passwordConfirm){;
+      console.log("password !== passwordConfirm");
+    }
+    
+  
   }
   
   render() {
@@ -78,7 +101,7 @@ class CreateAccount extends React.Component{
         <div className="row align-right">
           <ButtonFLat 
             label= "Create Account"
-            onClick={this.login}
+            onClick={this.createAccount}
             backgroundColor={Colors.blueMedium1}
             style = {{}}
           />  

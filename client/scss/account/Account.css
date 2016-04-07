@@ -11,7 +11,7 @@
     max-width: 20em;
     margin: 1em 1em;
     padding: 1em 2em 2em 2em;
-    background: #315481; }
+    background: rgba(22, 32, 47, 0.61); }
     /* line 21, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
     #Account section form input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px #315481 inset;

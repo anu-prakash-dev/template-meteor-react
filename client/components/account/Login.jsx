@@ -1,5 +1,6 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
+import {browserHistory} from 'react-router';
 
 import {Colors} from '../../app/Theme';
 import ButtonFLat from '../../components/ui/ButtonFlat'
@@ -12,7 +13,8 @@ class Login extends React.Component{
   constructor(props) {
     super(props);
     this.login  = this.login.bind(this);
-    this.handleError   = this.handleError.bind(this);
+    this.onLoginError   = this.onLoginError.bind(this);
+    this.onLoginSuccess = this.onLoginSuccess.bind(this);
     this.setErrorText  = this.setErrorText.bind(this);
     this.resetErrorText= this.resetErrorText.bind(this);
     this.handleChange  = this.handleChange.bind(this);
@@ -52,17 +54,15 @@ class Login extends React.Component{
       username, 
       password, 
       (error) => {
-        // if ok : no arg in the callback. If error, error as an arg
-        if(error){
-          this.handleError(error);
-        }
-        else{
-          console.log('Login success : ')
-          console.log( Meteor.user() )
-        }
+        if(error)
+          this.onLoginError(error)
+        else
+          this.onLoginSuccess()
       }
     );
   }      
+  
+  // Inputs
   
   handleChange(event){
 
@@ -76,7 +76,40 @@ class Login extends React.Component{
     this.setState(nextState);
   }  
   
-  handleError(error){
+  setErrorText(inputName, text){
+    var nextState = {};
+    nextState[inputName+'ErrorText'] = text;
+    this.setState(nextState);
+    
+    this.resetErrorText(inputName, this.state.timeout);
+  }
+    
+  resetErrorText(inputName, delay){
+    var nextState = {};
+    
+    if(delay){
+      setTimeout(()=>{
+        nextState[inputName+'ErrorText'] = '';
+        this.setState(nextState)
+      }, delay);
+    }
+    else{
+      nextState[inputName+'ErrorText'] = '';
+      this.setState(nextState);
+    }
+  }
+    
+  // Login Callbacks
+  
+  onLoginSuccess(){
+    console.log('Login success : ')
+    browserHistory.push('/home');
+    setTimeout(()=>{
+      this.props.openSnackBar('Welcome home dear '+this.getMeteorData().user.username);
+    },400);
+  }
+    
+  onLoginError(error){
 
     console.log('Login Error : ' + error.reason + ', ' + error.error);
     
@@ -93,29 +126,7 @@ class Login extends React.Component{
     
   }
   
-  setErrorText(inputName, text){
-    var nextState = {};
-    nextState[inputName+'ErrorText'] = text;
-    this.setState(nextState);
-    
-    this.resetErrorText(inputName, this.state.timeout);
-  }
-    
-  resetErrorText(inputName, delay){
-    console.log('ok');
-    var nextState = {};
-    
-    if(delay){
-      setTimeout(()=>{
-        nextState[inputName+'ErrorText'] = '';
-        this.setState(nextState)
-      }, delay);
-    }
-    else{
-      nextState[inputName+'ErrorText'] = '';
-      this.setState(nextState);
-    }
-  }
+  //
   
   render() {
     return (

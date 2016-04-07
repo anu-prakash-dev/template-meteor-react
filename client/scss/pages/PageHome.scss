@@ -8,28 +8,6 @@ html body #App-wrapper .App .app-main .app-content .Page{
   padding: 0;
 
   div{
-    display:        inline-block;
-    vertical-align: top;
-    width:    50%;
-    height:   50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-    background-position: center;
-
-    @media screen and(min-width: 600px){
-      width:  25%;
-      height: 50%; 
-    }
-
-    &#i1{ background-image: url("/medias/animals/autruche.jpg");  }
-    &#i2{ background-image: url("/medias/animals/raton.jpg");     }
-    &#i3{ background-image: url("/medias/animals/rhino.jpg");     }
-    &#i4{ background-image: url("/medias/animals/pig.jpg");       }
-    &#i5{ background-image: url("/medias/animals/fox.jpg");       }
-    &#i6{ background-image: url("/medias/animals/wolf.jpg");      }
-    &#i7{ background-image: url("/medias/animals/koala.jpg");     }
-    &#i8{ background-image: url("/medias/animals/autruche.jpg");  }
-
   }
 
 }

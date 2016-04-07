@@ -2,43 +2,5 @@
 /* line 7, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
 html body #App-wrapper .App .app-main .app-content .Page.PageHome {
   padding: 0; }
-  /* line 10, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageHome div {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-    height: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; }
-    @media screen and (min-width: 600px) {
-      /* line 10, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageHome div {
-        width: 25%;
-        height: 50%; } }
-    /* line 24, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i1 {
-      background-image: url("/medias/animals/autruche.jpg"); }
-    /* line 25, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i2 {
-      background-image: url("/medias/animals/raton.jpg"); }
-    /* line 26, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i3 {
-      background-image: url("/medias/animals/rhino.jpg"); }
-    /* line 27, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i4 {
-      background-image: url("/medias/animals/pig.jpg"); }
-    /* line 28, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i5 {
-      background-image: url("/medias/animals/fox.jpg"); }
-    /* line 29, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i6 {
-      background-image: url("/medias/animals/wolf.jpg"); }
-    /* line 30, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i7 {
-      background-image: url("/medias/animals/koala.jpg"); }
-    /* line 31, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageHome.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageHome div#i8 {
-      background-image: url("/medias/animals/autruche.jpg"); }
 
 /*# sourceMappingURL=PageHome.css.map */

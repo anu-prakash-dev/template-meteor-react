@@ -1,12 +1,7 @@
 .meteor/local/
-.meteor/.DS_Store
+
 node_modules
 
-
-.meteor/.DS_Store
-
-client/.DS_Store
-
 .DS_Store
-
+.meteor/.DS_Store
 client/.DS_Store

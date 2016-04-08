@@ -55,6 +55,7 @@ class InputFloatingLabel extends React.Component {
               rows     = {1}
               rowsMax  = {5} 
               //Events
+              onEnterKeyDown        = {this.props.onEnterKeyDown}
               onFocus               = {this.props.onFocus}
               //Styles
               style                 = {this.state.styles.style}

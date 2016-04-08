@@ -73,9 +73,9 @@ class App extends React.Component {
                 transitionEnterTimeout={0}
                 transitionLeaveTimeout={0}
               >
-                {/*props.children : page receive from Routes.jsx*/}
+                {/*props.children : page received from Routes.jsx*/}
                 {React.cloneElement(this.props.children, {
-                  key: this.props.children.props.route.mykey,
+                  key: this.props.children.props.route.pageName,
                   openSnackBar: this.openSnackBar
                 })}
               </ReactCSSTransitionGroup>

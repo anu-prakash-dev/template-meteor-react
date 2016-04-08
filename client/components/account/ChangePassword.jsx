@@ -191,7 +191,7 @@ class ChangePassword extends React.Component{
             }
             
             <ButtonFLat 
-              label= "Change"
+              label= "Change Password"
               onClick={this.changePassword}
               backgroundColor={Colors.blueMedium1}
               style = {{}}

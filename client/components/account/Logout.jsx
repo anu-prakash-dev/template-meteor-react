@@ -26,7 +26,7 @@ class Logout extends React.Component{
               label= "Logout"
               onClick={this.logout}
               backgroundColor={Colors.blueMedium1}
-              style = {{width: "50%", marginRight: '10px'}}
+              style = {{width: "50%", marginTop: '10px'}}
             />  
         
           </div>

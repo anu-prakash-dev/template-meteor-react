@@ -14,18 +14,18 @@ class Login extends React.Component{
 
   constructor(props) {
     super(props);
-    this.login  = this.login.bind(this);
+    this.handleChange   = this.handleChange.bind(this);
+    this.controlInputs  = this.controlInputs.bind(this);
+    this.login          = this.login.bind(this);
     this.onLoginError   = this.onLoginError.bind(this);
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
-    this.setErrorText  = this.setErrorText.bind(this);
-    this.resetErrorText= this.resetErrorText.bind(this);
-    this.handleChange  = this.handleChange.bind(this);
+    this.setErrorText   = this.setErrorText.bind(this);
+    this.resetErrorText = this.resetErrorText.bind(this);
     this.state = {
       username: '',
       password: '',
       usernameErrorText: '', 
-      passwordErrorText: '', 
-      outsideErrorText: '', // TODO : maybe not needed anymore
+      passwordErrorText: '',
       timeout: 3500
     };
   }
@@ -38,6 +38,21 @@ class Login extends React.Component{
   }
       
   login() {
+    this.controlInputs( (username, password) => {
+      Meteor.loginWithPassword(
+        username, 
+        password, 
+        (error) => {
+          if(error)
+            this.onLoginError(error)
+          else
+            this.onLoginSuccess()
+        }
+      );
+    });
+  }   
+        
+  controlInputs(callback) {
     
     var username = this.state.username;
     var password = this.state.password;
@@ -45,23 +60,18 @@ class Login extends React.Component{
     // Control empty inputs
     if(username == '' || username == ' '){
       this.setErrorText("username", 'Empty field');
+      return;
     }
     if(password == '' || password == ' '){
       this.setErrorText("password", 'Empty field');
+      return;
     }
-    if(username == '' || username == ' ' || password == '' || password == ' '){return}
+    if(username == '' || username == ' ' || password == '' || password == ' '){
+      return
+    }
     
-    // Login
-    Meteor.loginWithPassword(
-      username, 
-      password, 
-      (error) => {
-        if(error)
-          this.onLoginError(error)
-        else
-          this.onLoginSuccess()
-      }
-    );
+    callback(username, password);
+    
   }   
   
   // Inputs
@@ -128,7 +138,7 @@ class Login extends React.Component{
     
   }
   
-  //
+  
   
   render() {
     return (
@@ -145,6 +155,7 @@ class Login extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.usernameErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'username')}
+            onEnterKeyDown={this.login}
           />
 
           <InputFloatingLabel
@@ -157,6 +168,7 @@ class Login extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
+            onEnterKeyDown={this.login}
           />
 
           <br/>
@@ -169,12 +181,6 @@ class Login extends React.Component{
               backgroundColor={Colors.blueMedium1}
               style = {{}}
             />  
-
-            {this.state.outsideErrorText!='' ?
-              <p>{this.state.outsideErrorText}</p>
-              :
-              ""
-            }
             
             {/*
             {this.state.isLoggingIn ?
@@ -189,12 +195,13 @@ class Login extends React.Component{
             
           </div>
         </div>
-        { this.data.loggingIn ?
+         {/*{ this.data.loggingIn ?
             <LoaderLinear 
                 backgroundColor={Colors.blueDark} 
                 color={Colors.blueMedium1}/>
             : ''
         }
+        */}
       </form>
     )
   }

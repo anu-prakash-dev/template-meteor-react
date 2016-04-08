@@ -32,6 +32,10 @@ Play
 * Folder & pages & scss reorganization
 * Page Transitions [react-addons-css-transition-group](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
 * [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, snackbar, and more comming)
+* [react-motion draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) + 
+`npm install lodash.range`
+
+
 
 -------------------------
 

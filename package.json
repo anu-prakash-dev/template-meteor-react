@@ -14,12 +14,14 @@
     "halogen": "^0.2.0",
     "history": "^2.0.0-rc2",
     "jquery": "^2.2.3",
+    "lodash.range": "^3.1.4",
     "material-ui": "^0.14.4",
     "react": "^0.14.7",
     "react-addons-css-transition-group": "^0.15.0-alpha.1",
     "react-addons-pure-render-mixin": "^0.14.7",
     "react-dom": "^15.0.0-rc.2",
     "react-mixin": "^2.0.2",
+    "react-motion": "^0.4.2",
     "react-router": "^2.0.0-rc5",
     "react-router-ssr": "^1.2.0"
   }

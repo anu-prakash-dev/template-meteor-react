@@ -45,28 +45,28 @@ body #App-wrapper .App {
     position: relative; }
   /* line 55, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
   body #App-wrapper .App #Header, body #App-wrapper .App nav {
-    background: #202633; }
-  /* line 59, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    background: rgba(19, 29, 42, 0.91); }
+  /* line 60, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
   body #App-wrapper .App #Header {
     padding: 0.8em 1.5em;
     align-items: center; }
-    /* line 63, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    /* line 64, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
     body #App-wrapper .App #Header h1 {
       width: 100%;
       font-size: 1.5em;
       color: #466da0; }
-    /* line 68, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    /* line 69, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
     body #App-wrapper .App #Header #login-buttons {
       min-width: 5em; }
-  /* line 76, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+  /* line 77, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
   body #App-wrapper .App #Footer a {
     width: 100%;
     padding: 20px;
     text-align: center; }
-  /* line 84, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+  /* line 85, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
   body #App-wrapper .App .app-main {
     flex: 1; }
-    /* line 87, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    /* line 88, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
     body #App-wrapper .App .app-main .app-content {
       overflow: auto;
       order: 2; }

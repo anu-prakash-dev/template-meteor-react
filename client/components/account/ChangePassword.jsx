@@ -155,6 +155,7 @@ class ChangePassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
+            onEnterKeyDown= {this.changePassword}
           />
 
           <InputFloatingLabel
@@ -166,6 +167,7 @@ class ChangePassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordNewErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordNew')}
+            onEnterKeyDown= {this.changePassword}
           />
 
           <InputFloatingLabel
@@ -177,6 +179,7 @@ class ChangePassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordNewConfirmErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordNewConfirm')}
+            onEnterKeyDown= {this.changePassword}
           />
 
           <br/>

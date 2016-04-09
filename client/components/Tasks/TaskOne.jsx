@@ -1,12 +1,9 @@
-
-
 import React from 'react';
 
-
-import { TaskDelete } from './TaskDelete.jsx';
-import { TaskCheck } from './TaskCheck.jsx';
+import { TaskDelete }  from './TaskDelete.jsx';
+import { TaskCheck }   from './TaskCheck.jsx';
 import { TaskPrivate } from './TaskPrivate.jsx';
-import { TaskText } from './TaskText.jsx';
+import { TaskText }    from './TaskText.jsx';
 
 
 // This component represents the Tasks page of this app

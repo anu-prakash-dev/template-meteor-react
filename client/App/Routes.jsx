@@ -16,11 +16,11 @@ export const Routes = () => (
   <Router history={browserHistory} >
     <Route path="/" component={App}      mykey="App">
       <IndexRoute   component={PageAccount} mykey="PageHome"/>
-      <Route path="account" component={PageAccount}  pageName="Account"/>
-      <Route path="home"    component={PageHome}     pageName="Home"/>
-      <Route path="tasks"   component={PageTasks}    pageName="Tasks"/>
-      <Route path="admin"   component={PageShowcase} pageName="Showcase"/>
-      <Route path="*"       component={NotFoundPage} pageName="NotFoundPage"/>
+      <Route path="account"  component={PageAccount}  pageName="Account"/>
+      <Route path="home"     component={PageHome}     pageName="Home"/>
+      <Route path="tasks"    component={PageTasks}    pageName="Tasks"/>
+      <Route path="showcase" component={PageShowcase} pageName="Showcase"/>
+      <Route path="*"        component={NotFoundPage} pageName="NotFoundPage"/>
     </Route>
   </Router>
 

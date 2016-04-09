@@ -3,8 +3,8 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 import Tasks from '/lib/collections/tasks/declare';
 
-import { TasksList } from './../Tasks/TasksList.jsx';
-import { TaskNew } from './../Tasks/TaskNew.jsx';
+import { TasksList } from './../components/Tasks/TasksList.jsx';
+import { TaskNew }   from './../components/Tasks/TaskNew.jsx';
 
 
 Meteor.subscribe("tasks");

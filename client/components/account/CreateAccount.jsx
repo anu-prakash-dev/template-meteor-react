@@ -179,6 +179,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.usernameErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'username')}
+            onEnterKeyDown= {this.createAccount}
           />
 
           <InputFloatingLabel
@@ -191,6 +192,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.emailErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'email')}
+            onEnterKeyDown= {this.createAccount}
           />
           
           <InputFloatingLabel
@@ -203,6 +205,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
+            onEnterKeyDown= {this.createAccount}
           />
 
           <InputFloatingLabel
@@ -215,6 +218,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordConfirmErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordConfirm')}
+            onEnterKeyDown= {this.createAccount}
           />
 
           <br/>

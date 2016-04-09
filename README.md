@@ -18,31 +18,51 @@ Install node modules (just once)
 > $ npm install 
 
 Build & Run
-> $ meteor -p 3003
+> $ meteor
 
 Play
-> http://localhost:3003/
+> http://localhost:3000/
 
 -------------------------
 
 
 ### New Features
 
+##### Core
+
 * meteor 1.3.1 & react 0.14.7
+
+##### Strucutre
+
 * Folder & pages & scss reorganization
+
+##### Account
+
+* Replaced default meteor account-ui , by components (Login.jsx, CreateAccount.jsx, Logout.jsx etc..), with meteor Account&Password api
+
+##### UI
+
 * Page Transitions [react-addons-css-transition-group](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
 * [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, snackbar, and more comming)
-* [react-motion draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) + 
-`npm install lodash.range`
+* react-motion [draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo8/index.html))
+* react-motion   [animated list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo3/index.html)) 
 
 
+
+### TODO
+
+* Fix ListAnimated [issue](https://github.com/chenglou/react-motion/issues/319) 
+* Little code cleaning
 
 -------------------------
 
 
 ### Next Steps
 
+* Integrate [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction
 * Server side rendering (wainting for [react-router-ssr support meteor1.3](https://github.com/thereactivestack/meteor-react-router-ssr/issues/45)), which will offer SEO possibilities
+* CreateAccount with email validation
+* Better UI as a showcase
 * Looking for [react-helmet](https://github.com/nfl/react-helmet) for SEO too.
 * Doc in the [wiki](https://github.com/MadeInMoon/template-meteor-react/wiki)
 * and more..
@@ -71,4 +91,3 @@ This start-app contains:
   * Change tasks from public to private and vice versa
   * Change tasks from not-completed to completed and vice versa
   * Remove tasks
-

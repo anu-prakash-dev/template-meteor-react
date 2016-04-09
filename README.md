@@ -4,7 +4,24 @@
 
 [Demo](http://template-meteor-react.meteorapp.com/home)
 
-From originial repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app) (Thanks to [Mr Post])(https://github.com/AnnotatedJS)!
+
+##### Goals
+
+Provide a template app, with ready-to-go components, methods and services. 
+
+
+##### Tech
+
+Meteor(1.3), ES6, react(0.14.7), react-router(2.0.0-rc5)
+
+Comming soon : [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction, and more
+
+##### It starts from
+
+this repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app) (Thanks to [Mr Post])(https://github.com/AnnotatedJS)!
+
+
+
 
 -------------------------
 
@@ -47,7 +64,7 @@ Play
 * react-motion [draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo8/index.html))
 * react-motion   [animated list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo3/index.html)) 
 
-
+-------------------------
 
 ### TODO
 

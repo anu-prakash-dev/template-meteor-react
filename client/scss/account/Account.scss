@@ -1,7 +1,7 @@
 @import '../theme/colors.scss';
 
 #Account{
-  margin-top: 1em;
+  margin-top: em;
   section{
     display:   flex;
     margin:    2em auto;
@@ -54,6 +54,7 @@
     #CreateAccount{}
     
     #Profile{
+      padding: 1em;
       div.content{
         //background: red;
         
@@ -70,6 +71,10 @@
             &#textEmail{
               font-size: 12px;
               color: $color_grey_medium;
+              width: 10em;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
             &#textEmailStatut{
               font-size: 10px;
@@ -164,10 +169,13 @@
           margin-top: 10px;
         }
         
-        #Logout, #buttonToggleChangePassword{
-          transform-origin: left top;
-          transform: scale(0.8);
+        #Logout, #buttonPasswordSubmit, .buttonPasswordCancel{
+          //transform-origin: left top;
+          //transform: scale(0.8);
           //padding: 2em;
+          *{
+            font-size:12px !important;
+          }
         }
         
         

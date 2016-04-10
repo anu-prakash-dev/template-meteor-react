@@ -120,7 +120,7 @@ class ChangeAvatar extends React.Component{
   // Preview
   
   openPreview(){
-    this.setState({ isPreview: !this.state.isPreview });
+    this.setState({ isPreview: true });
   }
   
   closePreview(){

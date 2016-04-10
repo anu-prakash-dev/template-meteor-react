@@ -22,6 +22,8 @@ class ChangePassword extends React.Component{
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
     this.toggleRoll      = this.toggleRoll.bind(this);
+    this.openRoll        = this.openRoll.bind(this);
+    this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
       password:           '',
       passwordNew:        '',
@@ -31,7 +33,7 @@ class ChangePassword extends React.Component{
       passwordNewConfirmErrorText:  '',
       timeout: 3500,
       result: '',
-      toggleRollClass: '',
+      isRollOpen: false,
     };
   }
 
@@ -165,32 +167,26 @@ class ChangePassword extends React.Component{
   // Toggle Roll
   
   toggleRoll() {
-    this.setState({ toggleRollClass: !this.state.toggleRollClass });
+    this.setState({ isRollOpen: !this.state.isRollOpen });
+  }
+    
+  openRoll() {
+    this.setState({ isRollOpen: true });
+  }
+  closeRoll() {
+    this.setState({ isRollOpen: false});
   }
   
   // Render
   
   render() {
     
-    let toggleRollClass = this.state.toggleRollClass?' is-visible':'';
+    let isRollOpen      = this.state.isRollOpen;
+    let toggleRollClass = isRollOpen?' is-visible':'';
     
     return (
       <form id="ChangePassword">
-        
-        <div id="buttonTogglechangePassword">
-          <ButtonFLat 
-            label     = "Change Password"
-            backgroundColor = {Colors.blueMedium1}
-            style           = {{minWidth: '200px'}}
-            onClick         = {this.toggleRoll}
-          /> 
-        </div>
-                        
-        { this.state.result!='' ? 
-            <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
-            :''
-        }
-               
+         
         <div className={"roll"+toggleRollClass}>
 
           <InputFloatingLabel
@@ -236,17 +232,31 @@ class ChangePassword extends React.Component{
             
 
             <ButtonFLat 
-              className = ""
-              label     = "Change"
-              onClick   = {this.changePassword}
+              className = "buttonPasswordCancel"
+              label     = "Cancel"
+              onClick   = {this.toggleRoll}
               backgroundColor = {Colors.blueMedium1}
-              style = {{width: '100%'}}
+              style = {{width: '100%', marginBottom: '10px'}}
             />  
 
           </div>
         
         </div>
-        
+                
+        <div id="buttonPasswordSubmit">
+          <ButtonFLat 
+            label     = "Change Password"
+            backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+            style           = {{width: '100%'}}
+            onClick         = {!isRollOpen?this.toggleRoll:this.changePassword}
+          /> 
+        </div>
+              
+        { this.state.result!='' ? 
+            <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
+            :''
+        }
+                
       </form>
     )
   }

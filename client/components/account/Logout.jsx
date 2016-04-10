@@ -22,8 +22,8 @@ class Logout extends React.Component{
         <ButtonFLat 
           label= "Logout"
           onClick={this.logout}
-          backgroundColor={Colors.blueMedium1}
-          style = {{width: "50%", marginTop: '10px'}}
+          backgroundColor={this.props.backgroundColor||Colors.blueMedium2}
+          style = {this.props.style}
         />  
       </div>
     )

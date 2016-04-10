@@ -36,22 +36,23 @@ html, body, #App-wrapper{
 }
 
 .avatar{
+  background:       $color_blue_medium2;
   border-radius: 100%;
 }
 .avatarDefault, .avatarDisconnected{
-  text-transform: uppercase;
-  display:        flex;
-  align-items:    center;
-  justify-content: center;
-  font-size:       1.5em;
+  text-transform:   uppercase;
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  font-size:        1.5em;
 }
 .avatarDefault{
-  background:     $color_grey_light;
-  color:$color_active;
+  background: $color_grey_light;
+  color:      $color_active;
 }
 .avatarDisconnected{
   background: $color_blue_medium2;
-  color:$color_active;
+  color:      $color_active;
 }
 
 
@@ -84,18 +85,27 @@ body {
         
         h1{
           width:      100%;
-          font-size:  1.5em;
+          font-size:  1em;
+          margin-top: 8px;
           color :     $color_blue_medium1;
         }
-        .avatar{
-          font-size:12px;
-            width: 3em;
-            height: 3em;
-            max-width: 3em;
-            max-height: 3em;
-            min-width: 3em;
-            min-height: 3em;
-          
+        a{
+          background: none;
+          transition: all 0.25s ease-out;
+          transform: scale(1);
+          &:active{
+            transform: scale(1.1);
+          }
+          .avatar{
+              font-size:  12px;
+              width:      3em;
+              height:     3em;
+              max-width:  3em;
+              max-height: 3em;
+              min-width:  3em;
+              min-height: 3em;
+
+          }
         }
       }
       

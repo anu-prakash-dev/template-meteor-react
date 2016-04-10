@@ -5,7 +5,7 @@ import Logout         from '../account/Logout';
 import ChangeAvatar   from './ChangeAvatar';
 import ChangePassword from '../account/ChangePassword';
 
-
+import {Colors} from '../../app/Theme';
 
 class Profile extends React.Component{
 
@@ -47,9 +47,11 @@ class Profile extends React.Component{
               </div>
             </div>
 
+            <Logout
+              style={{width: '100%', marginTop: '20px', marginBottom: '10px'}}
+              backgroundColor={Colors.blueMedium1}
+            />
 
-            <Logout/>
-            
             <ChangePassword controlPassword = {this.props.controlPassword} />
             
           </div>

@@ -189,11 +189,13 @@ class ChangeAvatar extends React.Component{
         
         {/* Button Upload */}
         {isPreview ?
-        <ButtonFlat
-          label="upload"
-          backgroundColor={this.state.avatarLocalUri!=''?Colors.active:Colors.blueDark}
-          onClick={this.changeAvatar}
-          style={{marginTop: '20px'}}/>
+        <div id="buttonUploadAvatar">
+          <ButtonFlat
+            label="upload"
+            backgroundColor={this.state.avatarLocalUri!=''?Colors.active:Colors.blueDark}
+            onClick={this.changeAvatar}
+            style={{marginTop: '20px'}}/>
+        </div>
           :''
         }
         

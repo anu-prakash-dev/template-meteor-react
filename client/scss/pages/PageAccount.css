@@ -6,7 +6,9 @@ html body #App-wrapper .App .app-main .app-content .Page.PageAccount {
   html body #App-wrapper .App .app-main .app-content .Page.PageAccount > p {
     font-size: 8px;
     color: #b2b2b2;
-    margin-top: -10px;
     width: 15em; }
+    /* line 15, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageAccount.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageAccount > p:first-of-type {
+      margin-top: -10px; }
 
 /*# sourceMappingURL=PageAccount.css.map */

@@ -11,8 +11,10 @@ html body #App-wrapper .App .app-main .app-content .Page{
   > p{
     font-size: 8px;
     color:$color_grey_medium;
-    margin-top: -10px;
     width: 15em;
+    &:first-of-type{
+      margin-top: -10px;
+    }
   }
   
 

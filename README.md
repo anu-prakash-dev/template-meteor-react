@@ -55,7 +55,7 @@ Play
 
 ##### Account
 
-* Replaced default meteor account-ui , by components (Login.jsx, CreateAccount.jsx, Logout.jsx etc..), with meteor Account&Password api
+* Replaced default meteor account-ui , by components (Login.jsx, CreateAccount.jsx, Logout.jsx etc..), with meteor Account&Password api => Login, Logout, CreateAccount, ChangePassword, ChangeAvatar.
 
 ##### UI
 

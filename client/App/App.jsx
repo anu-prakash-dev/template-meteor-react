@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import reactMixin from 'react-mixin';
 
 import { Routes } from './Routes.jsx';
-import { Header } from './../components/Header.jsx';
+import   Header   from './../components/Header.jsx';
 import { Footer } from './../components/Footer.jsx';
 
 import Snackbar from 'material-ui/lib/snackbar';
@@ -53,7 +53,7 @@ class App extends React.Component {
       isAuthenticated: Meteor.userId() !== null
     };
   }
-    
+  
   render(){
     return(
       <div className="App">

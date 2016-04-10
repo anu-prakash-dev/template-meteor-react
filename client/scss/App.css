@@ -79,15 +79,26 @@ body #App-wrapper .App {
       font-size: 1em;
       margin-top: 8px;
       color: #466da0; }
-    /* line 92, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    /* line 93, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    body #App-wrapper .App #Header #networkBadge {
+      transition: background-color 0.6s;
+      z-index: 1000000;
+      position: absolute;
+      top: 2.7em;
+      right: 0.8em;
+      height: 0.8em;
+      width: 0.8em;
+      min-width: 0.8em;
+      border-radius: 100%; }
+    /* line 105, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
     body #App-wrapper .App #Header a {
       background: none;
       transition: all 0.25s ease-out;
       transform: scale(1); }
-      /* line 96, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+      /* line 109, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
       body #App-wrapper .App #Header a:active {
         transform: scale(1.1); }
-      /* line 99, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+      /* line 112, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
       body #App-wrapper .App #Header a .avatar {
         font-size: 12px;
         width: 3em;
@@ -96,15 +107,15 @@ body #App-wrapper .App {
         max-height: 3em;
         min-width: 3em;
         min-height: 3em; }
-  /* line 115, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+  /* line 128, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
   body #App-wrapper .App #Footer a {
     width: 100%;
     padding: 20px;
     text-align: center; }
-  /* line 123, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+  /* line 136, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
   body #App-wrapper .App .app-main {
     flex: 1; }
-    /* line 126, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
+    /* line 139, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/App.scss */
     body #App-wrapper .App .app-main .app-content {
       overflow: auto;
       order: 2; }

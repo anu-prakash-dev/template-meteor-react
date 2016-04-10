@@ -1,7 +1,6 @@
 import React   from 'react';
 import Account from '../components/account/Account';
  
- 
 
 class PageAccount extends React.Component {
 
@@ -17,7 +16,7 @@ class PageAccount extends React.Component {
         <h1>Account</h1>
         <p> Login, CreateAccount</p>
         <p> Logout, ChangeAvatar, ChangePassword</p>
-
+        
         <Account openSnackBar={this.props.openSnackBar}/>
  
       </div>
@@ -25,6 +24,5 @@ class PageAccount extends React.Component {
   }
 
 };
-
 
 export default PageAccount;

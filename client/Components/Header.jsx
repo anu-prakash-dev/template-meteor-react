@@ -1,20 +1,46 @@
-import React    from 'react';
-import { Link } from 'react-router';
-
-
+import React      from 'react';
+import reactMixin from 'react-mixin';
+import { Link }   from 'react-router';
 
 import Avatar from './profile/Avatar';
+import {Colors} from './../app/Theme';
+ 
 
 
-export const Header = () => (
+class Header extends React.Component {
 
-  <header id="Header">
-
-    <h1>Meteor React app</h1>
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  
+  getMeteorData(){
+    return{
+      connected: Meteor.status().connected
+    }
+  }
+  
+  render(){
     
-    <Link className="button-nav" to="/account">
-      <Avatar/>
-    </Link>
-  </header>
+    let networkBadgeColor = this.data.connected ? 'rgba(255, 255, 255, 0)': Colors.active;
+    return(
+      
+      <header id="Header">
 
-);
+        <h1>Meteor React app</h1>
+
+        <i id="networkBadge" style={{marginRight:'10px', backgroundColor: networkBadgeColor}}></i>
+        
+        <Link className="button-nav" to="/account">
+          <Avatar/>
+        </Link>
+      </header>
+      
+    )
+  }
+  
+};
+
+
+reactMixin(Header.prototype, ReactMeteorData);
+export default Header;

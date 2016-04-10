@@ -89,6 +89,19 @@ body {
           margin-top: 8px;
           color :     $color_blue_medium1;
         }
+        
+        #networkBadge{
+          transition: background-color 0.6s;
+          z-index: 1000000;
+          position: absolute;
+          top:      2.7em;
+          right:    0.8em;
+          height:   0.8em;
+          width:    0.8em;
+          min-width:  0.8em;
+          border-radius: 100%;
+        }
+        
         a{
           background: none;
           transition: all 0.25s ease-out;

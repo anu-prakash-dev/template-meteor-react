@@ -11,6 +11,7 @@ class ButtonFlat extends React.Component {
   render() {
     return(
       <RaisedButton 
+        className={this.props.className}
         label={this.props.label}
         secondary={true} 
         backgroundColor={this.props.backgroundColor}

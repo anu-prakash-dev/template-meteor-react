@@ -1,15 +1,16 @@
 @import '../theme/colors.scss';
 
 #Account{
+  margin-top: 1em;
   section{
-    display: flex;
-    margin: 2em auto;
-    justify-content: center;
+    display:   flex;
+    margin:    2em auto;
+    justify-content:  center;
     -webkit-flex-wrap: wrap; 
     flex-wrap:         wrap; 
     
     
-    form{
+    #Login, #Profile, #CreateAccount{
       position: relative;
       width:      100%;
       max-width:  20em;
@@ -20,7 +21,7 @@
       .content{
         width:      100%;
         padding: 1em 2em 2em 2em;
-
+      
         input{
           // disable yellow input background when autocompletion
           &:-webkit-autofill {
@@ -28,41 +29,168 @@
               -webkit-text-fill-color: $color_grey_light !important;
           }
         }
+      }
 
+    }
+    
+    #Login{
+      // Todo : check in Login.jsx if needed
+      .loaderLinear{
+        position:   absolute !important; 
+        bottom:     0 !important;
+        max-width:  100% !important;
+        width:      100% !important;
+        opacity:    0.5;
+      }    
+      // Todo : check in Login.jsx if needed
+      .loaderBounce{
+        transform: scale(0.6);
+        position: absolute;
+        bottom:0;
+        right:0;
+      }  
+    }
+    
+    #CreateAccount{}
+    
+    #Profile{
+      div.content{
+        //background: red;
+        
+        div.flex{
+          //background: blue;
+          p{
+            &:firs-of-type{
+              margin-top: 10px;
+            }
+            &#textUsername{
+              font-size: 22px;
+              color: $color_active;
+            }
+            &#textEmail{
+              font-size: 12px;
+              color: $color_grey_medium;
+            }
+            &#textEmailStatut{
+              font-size: 10px;
+              color: $color_blue_medium1;
+            }
+          }
+        }
+        
+        #ChangeAvatar{
+          margin-right: 1em;
 
-        &#Login{
+          .currentAvatar, .avatarPreview{
+            transition: all 0.5s;
+            display: inline-block;
+
+            img{
+              height: 60px;
+              width:  60px;
+              border-radius: 100%;
+            }
+
+            &.currentAvatar{
+              position: relative;
+              //left:     28px;
+              left:     0;
+              opacity:  1;
+
+              width:4.5em;
+              
+              &.is-visible{
+                opacity:  0.3;
+                left:     0px;
+              }
+              
+              // If user didn't set is own avatar
+              .avatarDefault{
+                width: 60px;
+                height: 60px;
+                max-width: 60px;
+                max-height: 60px;
+                min-width: 60px;
+                min-height: 60px;
+              }
+              
+              #avatarOptions{
+                position: absolute;
+                top:      0;
+                left:     3.8em;
+                transform: scale(0);
+                
+                transition: all 0.5s;
+                opacity: 0;
+                pointer-events: none;
+                
+
+                #uploadButton{
+                  
+                }
+                #deleteButton{
+                  
+                }
+                
+              }
+              &:hover {
+                width:6.25em;
+                #avatarOptions{
+                  transform: scale(0.8);
+                  opacity: 1;
+                  pointer-events: auto;
+                }
+              }
+            }
+
+            &.avatarPreview{
+              position: absolute;
+              //left:     28px;
+              left:     28px;
+              opacity:  0;
+              pointer-events: none;
+
+              &.is-visible{
+                opacity:  1;
+                left:     60px;
+                pointer-events: auto;
+              }
+
+            }
+          }
         }
-        &#Logout{
-          display: block;
-          max-height: 2em;
-          padding: 2em;
+        
+        #Logout{
+          margin-top: 10px;
         }
-        &#CreateAccount{}
-        &#ChangePassword{
-          max-width: 30em !important;
+        
+        #Logout, #buttonToggleChangePassword{
+          transform-origin: left top;
+          transform: scale(0.8);
+          //padding: 2em;
+        }
+        
+        
+        #ChangePassword{
+          //max-width: 30em !important;
+          width: 100%;
+          .roll{
+            height:     auto;
+            overflow:   hidden;
+            transition: all 0.5s ease;
+            max-height: 0;
+            &.is-visible{
+              max-height: 400px;
+            }
+          }
         }
         
       }
- 
+    }
+    
         
-    }
-    
-    .loaderLinear{
-      position:   absolute !important; 
-      bottom:     0 !important;
-      max-width:  100% !important;
-      width:      100% !important;
-      opacity:    0.5;
-    }    
-    .loaderBounce{
-      transform: scale(0.6);
-      position: absolute;
-      bottom:0;
-      right:0;
-    }
-    
-    
-  }
+  }  
 }
+
 
 

@@ -115,6 +115,7 @@ class Login extends React.Component{
   
   onLoginSuccess(){
     console.log('Login success : ')
+    return; // debug
     browserHistory.push('/home');
     setTimeout(()=>{
       this.props.openSnackBar('Welcome home dear '+this.getMeteorData().user.username);
@@ -155,7 +156,7 @@ class Login extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.usernameErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'username')}
-            onEnterKeyDown={this.login}
+            onEnterKeyDown= {this.login}
           />
 
           <InputFloatingLabel

@@ -44,11 +44,12 @@ class CreateAccount extends React.Component{
         email:    email,
         password: password,
         profile: {
-          name:   '',
-          gender: '',
-          age:    '',
-          city:   '',
-          country:''
+          avatar:  '',
+          name:    '',
+          gender:  '',
+          age:     '',
+          city:    '',
+          country: ''
         },
       }
       

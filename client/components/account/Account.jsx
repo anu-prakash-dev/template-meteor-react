@@ -2,12 +2,9 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 
 import Login          from '../account/Login';
-import Logout         from '../account/Logout';
 import CreateAccount  from '../account/CreateAccount';
-import ChangePassword from '../account/ChangePassword';
-import Profile        from '../account/Profile';
+import Profile        from '../profile/Profile';
 
-// Shared methods
 import {controlUsername, controlEmail, controlPassword} from '../../utilities/Utilities';
 
 
@@ -22,13 +19,8 @@ class Account extends React.Component {
   getMeteorData() {
     return { 
       user: Meteor.user(),
-      users: Meteor.users.find().count(),
       loggingIn: Meteor.loggingIn(),
     }
-  }
-         
-  componentDidMount() {
-    //console.log(Users)
   }
      
   render() {
@@ -38,25 +30,24 @@ class Account extends React.Component {
 
         <section>
           
-          {/*<p>{ Users.count()} </p>*/}
-          
           { Meteor.user() ?
             <Profile
               username  = {this.data.user.username}
               email     = {this.data.user.emails?this.data.user.emails[0].address:false}
-              isEmailVerified={this.data.user.emails?this.data.user.emails[0].verified:false}
+              isEmailVerified = {this.data.user.emails?this.data.user.emails[0].verified:false}
+              controlPassword = {controlPassword}
             />
             :''
           }
           
           { Meteor.user() ?
-            <Logout/>
+            ''
             :
             <Login openSnackBar = {this.props.openSnackBar} />
           }
             
           { Meteor.user() ?
-            <ChangePassword controlPassword = {controlPassword} />
+            ''
             :
             <CreateAccount
               controlUsername = {controlUsername}

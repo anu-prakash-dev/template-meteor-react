@@ -2,5 +2,11 @@
 /* line 7, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageAccount.scss */
 html body #App-wrapper .App .app-main .app-content .Page.PageAccount {
   padding: 20px 30px; }
+  /* line 11, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/pages/PageAccount.scss */
+  html body #App-wrapper .App .app-main .app-content .Page.PageAccount > p {
+    font-size: 8px;
+    color: #b2b2b2;
+    margin-top: -10px;
+    width: 15em; }
 
 /*# sourceMappingURL=PageAccount.css.map */

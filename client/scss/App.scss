@@ -35,6 +35,26 @@ html, body, #App-wrapper{
   display: flex;
 }
 
+.avatar{
+  border-radius: 100%;
+}
+.avatarDefault, .avatarDisconnected{
+  text-transform: uppercase;
+  display:        flex;
+  align-items:    center;
+  justify-content: center;
+  font-size:       1.5em;
+}
+.avatarDefault{
+  background:     $color_grey_light;
+  color:$color_active;
+}
+.avatarDisconnected{
+  background: $color_blue_medium2;
+  color:$color_active;
+}
+
+
 /* APP */
 
 body {
@@ -61,13 +81,21 @@ body {
         padding:     0.8em 1.5em;
         align-items: center;
         
+        
         h1{
           width:      100%;
           font-size:  1.5em;
           color :     $color_blue_medium1;
         }
-        #login-buttons{
-          min-width:  5em;
+        .avatar{
+          font-size:12px;
+            width: 3em;
+            height: 3em;
+            max-width: 3em;
+            max-height: 3em;
+            min-width: 3em;
+            min-height: 3em;
+          
         }
       }
       

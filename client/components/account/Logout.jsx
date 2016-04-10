@@ -9,7 +9,6 @@ class Logout extends React.Component{
 
   constructor(props) {
     super(props);
-    this.logout = this.logout.bind(this);
     this.state = {};
   }
 
@@ -19,18 +18,14 @@ class Logout extends React.Component{
     
   render() {
     return (
-      <form id="Logout" className="align-center">
-          <div className="content">
-        
-            <ButtonFLat 
-              label= "Logout"
-              onClick={this.logout}
-              backgroundColor={Colors.blueMedium1}
-              style = {{width: "50%", marginTop: '10px'}}
-            />  
-        
-          </div>
-      </form>
+      <div id="Logout">
+        <ButtonFLat 
+          label= "Logout"
+          onClick={this.logout}
+          backgroundColor={Colors.blueMedium1}
+          style = {{width: "50%", marginTop: '10px'}}
+        />  
+      </div>
     )
   }
   

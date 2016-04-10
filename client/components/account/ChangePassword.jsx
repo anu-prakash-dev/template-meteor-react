@@ -2,8 +2,10 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 
 import {Colors} from '../../app/Theme';
-import ButtonFLat from '../../components/ui/ButtonFlat'
-import InputFloatingLabel      from '../../components/ui/InputFloatingLabel'
+
+import ButtonFLat         from '../../components/ui/ButtonFlat'
+import InputFloatingLabel from '../../components/ui/InputFloatingLabel'
+
 
 
 class ChangePassword extends React.Component{
@@ -14,9 +16,12 @@ class ChangePassword extends React.Component{
     this.controlInputs   = this.controlInputs.bind(this);
     this.setErrorText    = this.setErrorText.bind(this);
     this.resetErrorText  = this.resetErrorText.bind(this);
+    this.resetAllErrorTexts= this.resetAllErrorTexts.bind(this);
+    this.resetInputs     = this.resetInputs.bind(this);
     this.changePassword  = this.changePassword.bind(this);
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
+    this.toggleRoll      = this.toggleRoll.bind(this);
     this.state = {
       password:           '',
       passwordNew:        '',
@@ -26,16 +31,9 @@ class ChangePassword extends React.Component{
       passwordNewConfirmErrorText:  '',
       timeout: 3500,
       result: '',
+      toggleRollClass: '',
     };
   }
-  
-//  getMeteorData() {
-//    return {
-//      user: Meteor.user(),
-//      isLoginIn: Meteor.loggingIn()
-//    }
-//  }
-
 
   changePassword(){
     var currentPassword     = this.state.currentPassword;
@@ -59,8 +57,18 @@ class ChangePassword extends React.Component{
   }
 
   onSuccess(){
+    
     console.log('Login success ');
-    this.setState({ result: 'Password changed!' });
+    
+    this.resetInputs();
+    this.resetAllErrorTexts();
+    
+    setTimeout(()=>{
+      this.toggleRoll();
+    }, 250);
+    setTimeout(()=>{
+      this.setState({ result: 'Password changed!' });
+    }, 750);
     
     setTimeout(()=>{
       this.setState({ result: '' });
@@ -139,12 +147,51 @@ class ChangePassword extends React.Component{
       this.setState(nextState);
     }
   }
+  
+  resetAllErrorTexts(){
+    this.resetErrorText('password');
+    this.resetErrorText('passwordNew');
+    this.resetErrorText('passwordNewConfirm');
+  }
+     
+  resetInputs(){
+    this.setState({
+      password:'',
+      passwordNew:'',
+      passwordNewConfirm:''
+    })
+  }
    
+  // Toggle Roll
+  
+  toggleRoll() {
+    this.setState({ toggleRollClass: !this.state.toggleRollClass });
+  }
+  
+  // Render
   
   render() {
+    
+    let toggleRollClass = this.state.toggleRollClass?' is-visible':'';
+    
     return (
       <form id="ChangePassword">
-        <div className="content">
+        
+        <div id="buttonTogglechangePassword">
+          <ButtonFLat 
+            label     = "Change Password"
+            backgroundColor = {Colors.blueMedium1}
+            style           = {{minWidth: '200px'}}
+            onClick         = {this.toggleRoll}
+          /> 
+        </div>
+                        
+        { this.state.result!='' ? 
+            <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
+            :''
+        }
+               
+        <div className={"roll"+toggleRollClass}>
 
           <InputFloatingLabel
             name          = "password"
@@ -187,22 +234,19 @@ class ChangePassword extends React.Component{
 
           <div className="row align-right">
             
-                   
-            { this.state.result!='' ? 
-                <p style={{display: "inline-block", fontSize: "12px", marginRight: "10px"}}>{this.state.result}</p>
-                :''
-            }
-            
+
             <ButtonFLat 
-              label= "Change Password"
-              onClick={this.changePassword}
-              backgroundColor={Colors.blueMedium1}
-              style = {{}}
+              className = ""
+              label     = "Change"
+              onClick   = {this.changePassword}
+              backgroundColor = {Colors.blueMedium1}
+              style = {{width: '100%'}}
             />  
 
           </div>
         
         </div>
+        
       </form>
     )
   }
@@ -211,6 +255,5 @@ class ChangePassword extends React.Component{
 };
 
 
-//reactMixin(CreateAccount.prototype, ReactMeteorData);
-
+//reactMixin(ChangePassword.prototype, ReactMeteorData);
 export default ChangePassword;

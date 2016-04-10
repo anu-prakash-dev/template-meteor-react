@@ -1,9 +1,7 @@
-import React from 'react';
+import React    from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { browserHistory } from 'react-router';
 import reactMixin from 'react-mixin';
-
 
 import { Routes } from './Routes.jsx';
 import { Header } from './../components/Header.jsx';

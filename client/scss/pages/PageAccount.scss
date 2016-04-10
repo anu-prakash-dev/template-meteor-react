@@ -7,8 +7,13 @@ html body #App-wrapper .App .app-main .app-content .Page{
 &.PageAccount{
   padding:    20px 30px;
   //background: $color_blue_medium1;
-  h1{} 
-  p{}
+  > h1{} 
+  > p{
+    font-size: 8px;
+    color:$color_grey_medium;
+    margin-top: -10px;
+    width: 15em;
+  }
   
 
 }

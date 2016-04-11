@@ -10,17 +10,17 @@
     flex-wrap:         wrap; 
     
     
-    #Login, #Profile, #CreateAccount{
+    #Login, #Profile{
       position: relative;
       width:      100%;
       max-width:  20em;
       //min-width: 20em;
+        padding: 1.3em 2em 2em 2em;
       margin: 1em 1em;
       background: $color_blue_medium_transparent;
       
-      .content{
+      > .content{
         width:      100%;
-        padding: 1em 2em 2em 2em;
       
         input{
           // disable yellow input background when autocompletion
@@ -31,6 +31,33 @@
         }
       }
 
+    }
+    
+    // Buttons toggling rolls    
+    .buttonLogin, .buttonLoginCancel, #buttonCreateAccount, #buttonForgotSubmit, #Logout, #buttonPasswordSubmit, .buttonPasswordCancel{
+      //transform-origin: left top;
+      //transform: scale(0.8);
+      //padding: 2em;
+      *{
+        font-size:12px !important;
+      }
+    }
+        
+    // Roll over
+  
+    #Login, #ForgotPassword, #ChangePassword, #CreateAccount{
+      //max-width: 30em !important;
+      width: 100%;
+      margin-top: 10px;
+      .roll{
+        height:     auto;
+        overflow:   hidden;
+        transition: all 0.6s ease;
+        max-height: 0;
+        &.is-visible{
+          max-height: 400px;
+        }
+      }
     }
     
     #Login{
@@ -49,6 +76,18 @@
         bottom:0;
         right:0;
       }  
+      
+      #ForgotPassword{
+//        .roll{
+//          height:     auto;
+//          overflow:   hidden;
+//          transition: all 0.6s ease;
+//          max-height: 0;
+//          &.is-visible{
+//            max-height: 400px;
+//          }
+//        }
+      }
     }
     
     #CreateAccount{}
@@ -183,15 +222,7 @@
           margin-top: 10px;
         }
         
-        #Logout, #buttonPasswordSubmit, .buttonPasswordCancel{
-          //transform-origin: left top;
-          //transform: scale(0.8);
-          //padding: 2em;
-          *{
-            font-size:12px !important;
-          }
-        }
-        
+        #Logout, #buttonPasswordSubmit, .buttonPasswordCancel{}
         
         #ChangePassword{
           //max-width: 30em !important;

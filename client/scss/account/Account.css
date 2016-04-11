@@ -10,44 +10,60 @@
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap; }
     /* line 13, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-    #Account section #Login, #Account section #Profile, #Account section #CreateAccount {
+    #Account section #Login, #Account section #Profile {
       position: relative;
       width: 100%;
       max-width: 20em;
+      padding: 1.3em 2em 2em 2em;
       margin: 1em 1em;
       background: rgba(22, 32, 47, 0.61); }
-      /* line 21, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-      #Account section #Login .content, #Account section #Profile .content, #Account section #CreateAccount .content {
-        width: 100%;
-        padding: 1em 2em 2em 2em; }
+      /* line 22, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      #Account section #Login > .content, #Account section #Profile > .content {
+        width: 100%; }
         /* line 27, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-        #Account section #Login .content input:-webkit-autofill, #Account section #Profile .content input:-webkit-autofill, #Account section #CreateAccount .content input:-webkit-autofill {
+        #Account section #Login > .content input:-webkit-autofill, #Account section #Profile > .content input:-webkit-autofill {
           -webkit-box-shadow: 0 0 0px 1000px #131d2a inset;
           -webkit-text-fill-color: #ebebeb !important; }
-    /* line 38, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    /* line 41, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    #Account section .buttonLogin *, #Account section .buttonLoginCancel *, #Account section #buttonCreateAccount *, #Account section #buttonForgotSubmit *, #Account section #Logout *, #Account section #buttonPasswordSubmit *, #Account section .buttonPasswordCancel * {
+      font-size: 12px !important; }
+    /* line 48, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    #Account section #Login, #Account section #ForgotPassword, #Account section #ChangePassword, #Account section #CreateAccount {
+      width: 100%;
+      margin-top: 10px; }
+      /* line 52, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      #Account section #Login .roll, #Account section #ForgotPassword .roll, #Account section #ChangePassword .roll, #Account section #CreateAccount .roll {
+        height: auto;
+        overflow: hidden;
+        transition: all 0.6s ease;
+        max-height: 0; }
+        /* line 57, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+        #Account section #Login .roll.is-visible, #Account section #ForgotPassword .roll.is-visible, #Account section #ChangePassword .roll.is-visible, #Account section #CreateAccount .roll.is-visible {
+          max-height: 400px; }
+    /* line 65, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
     #Account section #Login .loaderLinear {
       position: absolute !important;
       bottom: 0 !important;
       max-width: 100% !important;
       width: 100% !important;
       opacity: 0.5; }
-    /* line 46, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    /* line 73, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
     #Account section #Login .loaderBounce {
       transform: scale(0.6);
       position: absolute;
       bottom: 0;
       right: 0; }
-    /* line 56, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    /* line 95, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
     #Account section #Profile {
       padding: 1em; }
-      /* line 64, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 103, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content div.flex p:firs-of-type {
         margin-top: 10px; }
-      /* line 67, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 106, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content div.flex p#textUsername {
         font-size: 22px;
         color: #f26e63; }
-      /* line 71, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 110, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content div.flex p#textEmail {
         font-size: 12px;
         color: #b2b2b2;
@@ -55,18 +71,18 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
-      /* line 79, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 118, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content div.flex p#textEmailStatut {
         font-size: 10px;
         color: #466da0; }
-      /* line 86, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 125, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content #ChangeAvatar {
         margin-right: 1em; }
-        /* line 89, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+        /* line 128, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
         #Account section #Profile div.content #ChangeAvatar .currentAvatar, #Account section #Profile div.content #ChangeAvatar .avatarPreview {
           transition: all 0.5s;
           display: inline-block; }
-          /* line 93, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+          /* line 132, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
           #Account section #Profile div.content #ChangeAvatar .currentAvatar img, #Account section #Profile div.content #ChangeAvatar .currentAvatar .avatarDefault, #Account section #Profile div.content #ChangeAvatar .avatarPreview img, #Account section #Profile div.content #ChangeAvatar .avatarPreview .avatarDefault {
             width: 60px;
             height: 60px;
@@ -75,17 +91,17 @@
             min-width: 60px;
             min-height: 60px;
             border-radius: 100%; }
-          /* line 103, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+          /* line 142, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
           #Account section #Profile div.content #ChangeAvatar .currentAvatar.currentAvatar, #Account section #Profile div.content #ChangeAvatar .avatarPreview.currentAvatar {
             position: relative;
             left: 0;
             opacity: 1;
             width: 4.5em; }
-            /* line 111, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+            /* line 150, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
             #Account section #Profile div.content #ChangeAvatar .currentAvatar.currentAvatar.is-visible, #Account section #Profile div.content #ChangeAvatar .avatarPreview.currentAvatar.is-visible {
               opacity: 0.7;
               left: 0px; }
-            /* line 120, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+            /* line 159, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
             #Account section #Profile div.content #ChangeAvatar .currentAvatar.currentAvatar #avatarOptions, #Account section #Profile div.content #ChangeAvatar .avatarPreview.currentAvatar #avatarOptions {
               position: absolute;
               top: 0;
@@ -94,27 +110,27 @@
               transition: all 0.5s;
               opacity: 0;
               pointer-events: none; }
-            /* line 139, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+            /* line 178, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
             #Account section #Profile div.content #ChangeAvatar .currentAvatar.currentAvatar:hover, #Account section #Profile div.content #ChangeAvatar .avatarPreview.currentAvatar:hover {
               width: 6.25em; }
-              /* line 141, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+              /* line 180, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
               #Account section #Profile div.content #ChangeAvatar .currentAvatar.currentAvatar:hover #avatarOptions, #Account section #Profile div.content #ChangeAvatar .avatarPreview.currentAvatar:hover #avatarOptions {
                 transform: scale(0.8);
                 opacity: 1;
                 pointer-events: auto; }
-          /* line 149, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+          /* line 188, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
           #Account section #Profile div.content #ChangeAvatar .currentAvatar.avatarPreview, #Account section #Profile div.content #ChangeAvatar .avatarPreview.avatarPreview {
             position: absolute;
             left: 44px;
             transform: scale(1) translate3d(0, 0, 0);
             opacity: 0;
             pointer-events: none; }
-            /* line 157, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+            /* line 196, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
             #Account section #Profile div.content #ChangeAvatar .currentAvatar.avatarPreview.is-visible, #Account section #Profile div.content #ChangeAvatar .avatarPreview.avatarPreview.is-visible {
               transform: scale(1.2) translate3d(-20px, 15px, 0);
               opacity: 1;
               pointer-events: auto; }
-        /* line 166, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+        /* line 205, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
         #Account section #Profile div.content #ChangeAvatar #buttonUploadAvatar {
           width: 0em;
           height: 0em;
@@ -122,30 +138,27 @@
           transform-origin: top;
           transform: scale(0);
           opacity: 0; }
-          /* line 173, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+          /* line 212, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
           #Account section #Profile div.content #ChangeAvatar #buttonUploadAvatar.is-visible {
             transform: scale(1);
             opacity: 1;
             height: 4em; }
-          /* line 178, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+          /* line 217, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
           #Account section #Profile div.content #ChangeAvatar #buttonUploadAvatar * {
             font-size: 10px !important; }
-      /* line 182, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 221, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content #Logout {
         margin-top: 10px; }
-      /* line 190, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-      #Account section #Profile div.content #Logout *, #Account section #Profile div.content #buttonPasswordSubmit *, #Account section #Profile div.content .buttonPasswordCancel * {
-        font-size: 12px !important; }
-      /* line 196, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+      /* line 227, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
       #Account section #Profile div.content #ChangePassword {
         width: 100%; }
-        /* line 199, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+        /* line 230, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
         #Account section #Profile div.content #ChangePassword .roll {
           height: auto;
           overflow: hidden;
           transition: all 0.6s ease;
           max-height: 0; }
-          /* line 204, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+          /* line 235, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
           #Account section #Profile div.content #ChangePassword .roll.is-visible {
             max-height: 400px; }
 

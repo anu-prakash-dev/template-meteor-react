@@ -9,6 +9,9 @@ import LoaderCircular       from '../../components/ui/LoaderCircular'
 import LoaderBounce         from '../../components/ui/LoaderBounce'
 import InputFloatingLabel   from '../../components/ui/InputFloatingLabel'
 
+import ForgotPassword  from './ForgotPassword'
+import CreateAccount   from './CreateAccount'
+
 
 class Login extends React.Component{
 
@@ -21,6 +24,9 @@ class Login extends React.Component{
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
     this.setErrorText   = this.setErrorText.bind(this);
     this.resetErrorText = this.resetErrorText.bind(this);
+    this.toggleRoll = this.toggleRoll.bind(this);
+    this.openRoll = this.openRoll.bind(this);
+    this.closeRoll = this.closeRoll.bind(this);
     this.state = {
       username: '',
       password: '',
@@ -139,18 +145,35 @@ class Login extends React.Component{
     
   }
   
+   
+  // Toggle Roll
   
+  toggleRoll() {
+    this.setState({ isRollOpen: !this.state.isRollOpen });
+  }
+    
+  openRoll() {
+    this.setState({ isRollOpen: true });
+  }
+  closeRoll() {
+    this.setState({ isRollOpen: false});
+  }
+   
   
   render() {
+    
+    let isRollOpen      = this.state.isRollOpen;
+    let toggleRollClass = isRollOpen?' is-visible':'';
+    
     return (
-      <form id="Login">
-        <div className="content">
+      <div id="Login">
+        
+        <div className={"roll"+toggleRollClass}>
 
           <InputFloatingLabel
             name          = "username"
             type          = "text"
             floatingLabel = "Username"
-            placeholder   = "type your username.."
             value         = {this.state.username}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -163,7 +186,6 @@ class Login extends React.Component{
             name          = "password"
             type          = "password"
             floatingLabel = "Password"
-            placeholder   = "type your password.."
             value         = {this.state.password}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -175,14 +197,23 @@ class Login extends React.Component{
           <br/>
           <br/>
 
-          <div className="flex">
             <ButtonFLat 
-              label   = "Login"
-              onClick = {this.login}
+              className="buttonLoginCancel"
+              label   = "Cancel"
+              onClick = {this.toggleRoll}
               backgroundColor={Colors.blueMedium1}
-              style = {{}}
-            />  
+              style = {{width:'100%', marginTop:'10px'}}
+            /> 
+          
+        </div>
             
+        <ButtonFLat 
+          className = "buttonLogin"
+          label     = "Login"
+          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          style           = {{width: '100%', marginTop: '10px'}}
+          onClick         = {!isRollOpen?this.toggleRoll:this.login}
+        /> 
             {/*
             {this.state.isLoggingIn ?
               <LoaderCircular 
@@ -194,8 +225,17 @@ class Login extends React.Component{
 
             {/*<LoaderBounce color={Colors.blueMedium1} style={{marginLeft: '20px'}}/>*/}
             
-          </div>
-        </div>
+          
+          <ForgotPassword
+            controlEmail = {this.props.controlEmail}/>  
+          
+         
+          <CreateAccount
+            controlUsername = {this.props.controlUsername}
+            controlEmail    = {this.props.controlEmail}
+            controlPassword = {this.props.controlPassword}
+          />
+          
          {/*{ this.data.loggingIn ?
             <LoaderLinear 
                 backgroundColor={Colors.blueDark} 
@@ -203,7 +243,7 @@ class Login extends React.Component{
             : ''
         }
         */}
-      </form>
+      </div>
     )
   }
   

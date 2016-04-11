@@ -17,7 +17,9 @@ class CreateAccount extends React.Component{
     this.resetErrorText = this.resetErrorText.bind(this);
     this.createAccount  = this.createAccount.bind(this);
     this.onSuccess      = this.onSuccess.bind(this);
-    this.onError        = this.onError.bind(this);
+    this.toggleRoll     = this.toggleRoll.bind(this);
+    this.openRoll       = this.openRoll.bind(this);
+    this.closeRoll      = this.closeRoll.bind(this);
     //this.getMeteorData = this.getMeteorData.bind(this);
     this.state = {
       username:         '',
@@ -30,6 +32,7 @@ class CreateAccount extends React.Component{
       passwordConfirmErrorText: '',
       outsideErrorText: '', // TODO : maybe not needed anymore
       timeout: 3500, 
+      isRollOpen: false,
     };
   }
   
@@ -164,17 +167,36 @@ class CreateAccount extends React.Component{
       this.setState(nextState);
     }
   }
-   
+ 
+     
+  // Toggle Roll
+  
+  toggleRoll() {
+    this.setState({ isRollOpen: !this.state.isRollOpen });
+  }
+    
+  openRoll() {
+    this.setState({ isRollOpen: true });
+  }
+  closeRoll() {
+    this.setState({ isRollOpen: false});
+  }
+ 
+  
   render() {
+    
+    let isRollOpen      = this.state.isRollOpen;
+    let toggleRollClass = isRollOpen?' is-visible':'';
+    
     return (
-      <form id="CreateAccount">
-        <div className="content">
-
+      
+      <div id="CreateAccount">
+        
+        <div className={"roll"+toggleRollClass}>
           <InputFloatingLabel
             name          = "username"
             type          = "text"
             floatingLabel = "Username"
-            placeholder   = "type your username.."
             value         = {this.state.username}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -187,7 +209,6 @@ class CreateAccount extends React.Component{
             name          = "email"
             type          = "email"
             floatingLabel = "Email"
-            placeholder   = "type your email.."
             value         = {this.state.email}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -200,7 +221,6 @@ class CreateAccount extends React.Component{
             name          = "password"
             type          = "password"
             floatingLabel = "Password"
-            placeholder   = "type your password.."
             value         = {this.state.password}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -213,7 +233,6 @@ class CreateAccount extends React.Component{
             name          = "passwordConfirm"
             type          = "password"
             floatingLabel = "Confirm Password"
-            placeholder   = "again.."
             value         = {this.state.passwordConfirm}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -224,20 +243,27 @@ class CreateAccount extends React.Component{
 
           <br/>
           <br/>
-
-          <div className="row align-right">
-            <ButtonFLat 
-              label= "Create Account"
-              onClick={this.createAccount}
-              backgroundColor={Colors.blueMedium1}
-              style = {{}}
-            />
-            
-          </div>
           
+          <ButtonFLat 
+            className = "buttonPasswordCancel"
+            label     = "Cancel"
+            onClick   = {this.toggleRoll}
+            backgroundColor = {Colors.blueMedium1}
+            style     = {{width: '100%', marginBottom: '10px'}}
+          />  
           
         </div>
-      </form>
+        
+        <div id="buttonCreateAccount">
+          <ButtonFLat 
+            label= "Create Account"
+            backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+            style = {{width: '100%'}}
+            onClick = {!isRollOpen?this.toggleRoll:this.createAccount}
+          />
+        </div>
+
+      </div>
     )
   }
   

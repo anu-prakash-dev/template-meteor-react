@@ -43,9 +43,15 @@ class Account extends React.Component {
           { Meteor.user() ?
             ''
             :
-            <Login openSnackBar = {this.props.openSnackBar} />
+            <Login 
+              openSnackBar = {this.props.openSnackBar}
+              controlUsername = {controlUsername}
+              controlEmail    = {controlEmail}
+              controlPassword = {controlPassword}
+            />
           }
             
+           {/*
           { Meteor.user() ?
             ''
             :
@@ -55,6 +61,7 @@ class Account extends React.Component {
               controlPassword = {controlPassword}
             />
           }
+           */}
             
         </section>
         

@@ -1,6 +1,18 @@
-/* PAGES ANIMATIONS */
+/*  PAGES TRANSITIONS */
+/*  
+    Dynamic classes given by <ReactCSSTransitionGroup/> (in App.jsx):
 
-  
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="page"
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}
+        >
+          {page from router}
+        </ReactCSSTransitionGroup>
+*/
+
+
 html body #App-wrapper .App .app-main {
 
   

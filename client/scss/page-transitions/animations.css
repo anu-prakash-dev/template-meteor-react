@@ -1,0 +1,43 @@
+/*  PAGES TRANSITIONS */
+/*  
+    Dynamic classes given by <ReactCSSTransitionGroup/> (in App.jsx):
+
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="page"
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}
+        >
+          {page from router}
+        </ReactCSSTransitionGroup>
+*/
+/* line 21, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .app-content {
+  position: relative; }
+
+/* line 25, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .Page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
+
+/* line 33, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .page-enter {
+  opacity: 0.01; }
+
+/* line 37, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .page-enter.page-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in; }
+
+/* line 42, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .page-leave {
+  opacity: 1; }
+
+/* line 46, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .page-leave.page-leave-active {
+  opacity: 0;
+  transition: opacity 250ms ease-in; }
+
+/*# sourceMappingURL=animations.css.map */

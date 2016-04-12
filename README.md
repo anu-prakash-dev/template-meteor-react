@@ -1,8 +1,8 @@
 
 
-## [Meteor-React template App](http://template-meteor-react.meteorapp.com/home)
+## [Meteor-React template App](http://template-meteor-react.meteorapp.com/)
 
-[Demo](http://template-meteor-react.meteorapp.com/home)
+[Demo](http://template-meteor-react.meteorapp.com)
 
 
 **Goals**
@@ -43,11 +43,11 @@ Play
 -------------------------
 
 
-### New Features
+### Features
 
 ##### Core
 
-* meteor 1.3.1 & react 0.14.7
+* meteor 1.3.1, react 0.14.7, react-router 2.0.0-rc5
 
 ##### Strucutre
 
@@ -75,11 +75,21 @@ Play
     PageResetForgotPassword // landing on app after clicking on the email link (triggered by ForgotPassword
       ResetForgotPassword/
 
+##### Home
 
-##### UI
+* coming soon
+
+##### Tasks List
+
+* As the original repo
+* (tasks: add, remove, edit, private/public, state, counter)
+
+
+##### Showace UI
 
 * Page Transitions [react-addons-css-transition-group](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
-* [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, snackbar, and more comming)
+* [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, loaders, snackbar, and more comming)
+* [Halogen](http://madscript.com/halogen/) loaders
 * react-motion [draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo8/index.html))
 * react-motion   [animated list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo3/index.html)) 
 

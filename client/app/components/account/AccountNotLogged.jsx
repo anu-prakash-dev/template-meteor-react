@@ -1,18 +1,8 @@
 import React      from 'react';
-import reactMixin from 'react-mixin';
-import {browserHistory} from 'react-router';
 
 import ForgotPassword  from './items/ForgotPassword'
 import CreateAccount   from './items/CreateAccount'
 import Login           from './items/Login'
-
-import {Colors}        from '/client/app/Theme';
-
-import ButtonFLat           from '/client/app/components/ui/ButtonFlat'
-import LoaderLinear         from '/client/app/components/ui/LoaderLinear'
-import LoaderCircular       from '/client/app/components/ui/LoaderCircular'
-import LoaderBounce         from '/client/app/components/ui/LoaderBounce'
-import InputFloatingLabel   from '/client/app/components/ui/InputFloatingLabel'
 
 
 
@@ -28,14 +18,7 @@ class AccountNotLogged extends React.Component{
       timeout: 3500
     };
   }
-  
-  getMeteorData() {
-    return { 
-      user: Meteor.user(),
-      loggingIn: Meteor.loggingIn(),
-    }
-  }
-  
+
   render() {
     
     return (
@@ -61,13 +44,6 @@ class AccountNotLogged extends React.Component{
             controlPassword = {this.props.controlPassword}
           />
           
-         {/*{ this.data.loggingIn ?
-            <LoaderLinear 
-                backgroundColor={Colors.blueDark} 
-                color={Colors.blueMedium1}/>
-            : ''
-        }
-        */}
       </div>
     )
   }
@@ -76,5 +52,4 @@ class AccountNotLogged extends React.Component{
 };
 
 
-reactMixin(AccountNotLogged.prototype, ReactMeteorData);
 export default AccountNotLogged;

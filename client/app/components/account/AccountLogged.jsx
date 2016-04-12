@@ -1,5 +1,4 @@
 import React      from 'react';
-import reactMixin from 'react-mixin';
 
 import ChangeAvatar   from './items/ChangeAvatar';
 import BasicInfo      from './items/BasicInfo';

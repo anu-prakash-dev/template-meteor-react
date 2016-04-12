@@ -231,6 +231,11 @@ html body #App-wrapper .App .app-main .app-content .Page{
     //cursor: url('/medias/icons/cursor.png') 39 39, auto;  
 
     h1{}
+    h2{
+      margin-top:     3em;
+      margin-bottom:  1.5em;
+      color:$color_grey_light;
+    }
     p{}
 
     section {
@@ -241,11 +246,44 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
       // Material Buttons
       .wrapper-buttons{
-        margin-top: 20px;
+        *{
+          font-size: 12px !important;
+        }
         a.button-material-ui{
           >div{ // button material-ui
-            margin-right: 20px;
+            margin-right: 10px;
           }
+        }
+      }
+      // Loader
+      .wrapper-loader{
+        text-align: center;
+        label{
+          margin-bottom: 0.5em;
+        }
+        .loaderLinear{
+          margin-top: 1.5em !important;
+        }
+        .flex {
+          margin-top: 2em;
+          > div{
+            width:          100%;
+            padding:        0em;
+            display:        flex;
+            flex-direction:  column;
+            align-items:     center;
+            justify-content: center;
+            > *{
+              display: block;
+            } 
+          }
+          
+          .loaderBounce{
+            margin-top: -3px;
+            transform: scale(0.6);
+          }
+          
+          
         }
       }
 
@@ -263,12 +301,14 @@ html body #App-wrapper .App .app-main .app-content .Page{
           pointer-events: auto;
           transform-origin: 50% 50% 0px;
           border-radius: 4px;
-          color: rgb(153, 153, 153);
           line-height: 96px;
           padding-left: 32px;
           font-size: 24px;
           font-weight: 400;
+          //color: rgb(153, 153, 153);
+          color: $color_active;
           background-color: $color_blue_medium1;
+          background-color: white;
         }
         .link {
         position: absolute;

@@ -58,22 +58,22 @@ Play
 * Meteor `account-ui`package deleted.
 * Uses `accounts-password` api to make re-usable, scalable and small react components.
 
-    <PageAccount/>
-      <Account/>
+    PageAccount
+      Account
         (!logged)
-          <AccountNotLogged/>
+          AccountNotLogged
             <Login/>
-            <ForgotPassword/>
-            <CreateAccount/>
+            ForgotPassword
+            CreateAccount
         (logged)
-          <AccountLogged/>
-            <ChangeAvatar/>
-            <BasicInfo/>
-            <Logout/>
-            <ChangePassword/>
+          AccountLogged
+            ChangeAvatar
+            BasicInfo
+            Logout
+            ChangePassword
 
-    <PageResetForgotPassword/> // landing on app after clicking on the email link (triggered by <ForgotPassword/>)
-      <ResetForgotPassword/> 
+    PageResetForgotPassword // landing on app after clicking on the email link (triggered by ForgotPassword
+      ResetForgotPassword/
 
 
 ##### UI

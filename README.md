@@ -45,15 +45,15 @@ Play
 
 ### Features
 
-##### Core
+#### Core
 
 * meteor 1.3.1, react 0.14.7, react-router 2.0.0-rc5
 
-##### Strucutre
+#### Strucutre
 
 * Folder & pages & scss reorganization
 
-##### Account
+#### Account
 
 
 * **Features**
@@ -68,16 +68,16 @@ Play
   * ForgotPassword (send email with link)
   * ResetForgotPassword (from the email link)
 
----
 
 * Meteor `account-ui`/`account-ui-unstyled` package **deleted**.
 
 * **Only using** meteor **`accounts-password`** api and custom **css** `(app/scss/account.scss)`
 * **Result**:  logical, re-usable, scalable and small react components, which allow to a custom UX.
 
----
 
-`Actual implementation: in PageAccount.jsx & PageResetForgotPassword.jsx:`
+* Actual implementation: 
+
+`in PageAccount.jsx & PageResetForgotPassword.jsx:`
 
     <PageAccount/>
       <Account/>
@@ -101,19 +101,19 @@ Play
     <PageResetForgotPassword/>
        <ResetForgotPassword/>
 
----
 
-##### Home
+
+#### Home
 
 * coming soon
 
-##### Tasks List
+#### Tasks List
 
 * As the original repo
 * (tasks: add, remove, edit, private/public, state, counter)
 
 
-##### Showace UI
+#### Showace UI
 
 * Page Transitions [react-addons-css-transition-group](https://libraries.io/npm/react-addons-css-transition-group/0.15.0-alpha.1)
 * [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, loaders, snackbar, and more comming)

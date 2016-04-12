@@ -10,7 +10,7 @@ class LoaderBounce extends React.Component {
   
   render() {
       
-    const styles = {
+    let styles = {
         backgroundColor: this.props.backgroundColor || ''
     }
       

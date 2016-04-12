@@ -55,25 +55,53 @@ Play
 
 ##### Account
 
-* Meteor `account-ui`package deleted.
-* Uses `accounts-password` api to make re-usable, scalable and small react components.
 
-    PageAccount
-      Account
-        (!logged)
-          AccountNotLogged
-            Login
-            ForgotPassword
-            CreateAccount
-      (logged)
-        AccountLogged
-          ChangeAvatar
-          BasicInfo
-          Logout
-          ChangePassword
+* **Features**
+  * Login/Logout
+  * CreateAccount
+  * Avatar
+    * avatarDisconnected  
+    * avatarDefault (first letter of the username)
+    * avatar (input->base64->mongodb)
+  * ChangeAvatar
+  * ChangePassword
+  * ForgotPassword (send email with link)
+  * ResetForgotPassword (from the email link)
 
-    PageResetForgotPassword // landing on app after clicking on the email link (triggered by ForgotPassword
-      ResetForgotPassword/
+---
+
+* Meteor `account-ui`/`account-ui-unstyled` package **deleted**.
+
+* **Only using** meteor **`accounts-password`** api and custom **css** `(app/scss/account.scss)`
+* **Result**:  logical, re-usable, scalable and small react components, which allow to a custom UX.
+
+---
+
+`Actual implementation: in PageAccount.jsx & PageResetForgotPassword.jsx:`
+
+    <PageAccount/>
+      <Account/>
+
+        if(!logged)
+          <AccountNotLogged/>
+          -  <Login/>
+          -  <ForgotPassword/>
+          -  <CreateAccount/>
+
+        if(logged)
+          <AccountLogged/>
+          -  <ChangeAvatar/>
+               <Avatar/>
+          -  <BasicInfo/>
+          -  <Logout/>
+          -  <ChangePassword/>
+
+
+    // landing on app after clicking on the email link (triggered by ForgotPassword
+    <PageResetForgotPassword/>
+       <ResetForgotPassword/>
+
+---
 
 ##### Home
 

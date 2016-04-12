@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin';
 
 import Avatar     from './Avatar';
 import ButtonFlat from '../ui/ButtonFlat'
-import {Colors}   from '../../app/Theme';
+import {Colors}   from '../../Theme';
 
 import IconButton from 'material-ui/lib/icon-button';
 import IconUpload from 'material-ui/lib/svg-icons/file/cloud-download';

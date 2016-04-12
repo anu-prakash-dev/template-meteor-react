@@ -2,8 +2,8 @@ import React      from 'react';
 import reactMixin from 'react-mixin';
 import { Link }   from 'react-router';
 
-import Avatar from './profile/Avatar';
-import {Colors} from './../app/Theme';
+import Avatar   from './profile/Avatar';
+import {Colors} from '../Theme';
  
 
 

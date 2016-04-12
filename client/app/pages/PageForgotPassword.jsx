@@ -1,4 +1,5 @@
 import React   from 'react';
+import {browserHistory}   from 'react-router';
 import ResetForgotPassword from '../components/account/ResetForgotPassword.jsx';
  
 
@@ -8,12 +9,18 @@ class PageForgotPassword extends React.Component {
     super(props);
     this.state = {};
   }
-  componentWillMount() {}
+  componentWillMount() {
+    // Redirect if user type route by hand, without resetPassword token (from mail link)
+   return;
+    let onResetPasswordLink = Session.get("onResetPasswordLink");
+    if(!onResetPasswordLink) 
+      browserHistory.push('/');
+  }
   componentDidMount() {}
   
   render() {
     return (
-      <div className="Page PageAccount">
+      <div className="Page PageForgotPassword">
 
         <h1>Reset your Password</h1>
         

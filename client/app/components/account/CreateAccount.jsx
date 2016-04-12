@@ -1,9 +1,9 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
 
-import {Colors} from '../../app/Theme';
-import ButtonFLat from '../../components/ui/ButtonFlat'
-import InputFloatingLabel      from '../../components/ui/InputFloatingLabel'
+import {Colors} from '../../Theme';
+import ButtonFLat from '../ui/ButtonFlat'
+import InputFloatingLabel      from '../ui/InputFloatingLabel'
 
 
 class CreateAccount extends React.Component{

@@ -1,15 +1,15 @@
-import React    from 'react';
-import ReactDOM from 'react-dom';
+import React      from 'react';
+import ReactDOM   from 'react-dom';
+import reactMixin from 'react-mixin';
 import {browserHistory} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import reactMixin from 'react-mixin';
 
-import { Routes } from './Routes.jsx';
-import   Header   from './../components/Header.jsx';
-import { Footer } from './../components/Footer.jsx';
+import { Routes } from './Routes';
+import   Header   from './components/Header';
+import { Footer } from './components/Footer';
+import { Colors } from './Theme';
 
 import Snackbar from 'material-ui/lib/snackbar';
-import {Colors} from '../app/Theme';
 
 
 

@@ -50,7 +50,7 @@ class ListAnimated extends React.Component {
     this.setState({
       todos: {
         ['t' + Date.now()]: {text: value, isDone: false},
-        ...todos,
+        //...todos,
       },
     });
   }

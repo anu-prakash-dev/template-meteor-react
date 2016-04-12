@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Colors} from '../app/Theme';
+import {Colors} from '../Theme';
 
 import ButtonFlat     from '../components/ui/ButtonFlat'
 import LinkButtonFlat from '../components/ui/LinkButtonFlat'

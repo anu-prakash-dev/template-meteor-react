@@ -1,8 +1,8 @@
 import React from 'react';
 //import reactMixin from 'react-mixin';
 
-import {Colors} from '../../app/Theme';
-import ButtonFLat from '../../components/ui/ButtonFlat'
+import {Colors} from '../../Theme';
+import ButtonFLat from '../ui/ButtonFlat'
 
 
 class Logout extends React.Component{

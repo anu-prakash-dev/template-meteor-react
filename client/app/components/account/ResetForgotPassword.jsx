@@ -1,11 +1,11 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
 
-import ButtonFLat         from '../../components/ui/ButtonFlat'
-import InputFloatingLabel from '../../components/ui/InputFloatingLabel'
+import ButtonFLat         from '../ui/ButtonFlat'
+import InputFloatingLabel from '../ui/InputFloatingLabel'
 
-import {Colors} from '../../app/Theme';
-import {controlPassword} from '../../utilities/Utilities';
+import {Colors} from '../../Theme';
+import {controlPassword} from '../../../utilities/Utilities';
 
 class ResetForgotPassword extends React.Component{
 

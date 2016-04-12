@@ -4,12 +4,12 @@ import ReactDOM from "react-dom";
 import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
 
 import App          from './App.jsx';
-import PageHome     from './../pages/PageHome.jsx';
-import PageTasks    from './../pages/PageTasks.jsx';
-import PageShowcase from './../pages/PageShowcase.jsx';
-import PageAccount  from './../pages/PageAccount.jsx';
-import PageForgotPassword  from './../pages/PageForgotPassword.jsx';
-import { NotFoundPage } from './../pages/NotFoundPage.jsx';
+import PageHome     from './pages/PageHome.jsx';
+import PageTasks    from './pages/PageTasks.jsx';
+import PageShowcase from './pages/PageShowcase.jsx';
+import PageAccount  from './pages/PageAccount.jsx';
+import PageForgotPassword  from './pages/PageForgotPassword.jsx';
+import { NotFoundPage }    from './pages/NotFoundPage.jsx';
 
 
 export const Routes = () => (

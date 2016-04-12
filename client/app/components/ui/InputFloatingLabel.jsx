@@ -1,8 +1,7 @@
-              
-var React     = require('react');
-var TextField = require('material-ui/lib/text-field');
+import React     from 'react';
+import TextField from 'material-ui/lib/text-field';
 
-import {Colors} from '../../app/Theme';
+import {Colors}  from '../../Theme';
 
 
 class InputFloatingLabel extends React.Component {

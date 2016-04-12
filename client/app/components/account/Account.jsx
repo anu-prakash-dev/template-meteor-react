@@ -5,7 +5,7 @@ import Login          from '../account/Login';
 import CreateAccount  from '../account/CreateAccount';
 import Profile        from '../profile/Profile';
 
-import {controlUsername, controlEmail, controlPassword} from '../../utilities/Utilities';
+import {controlUsername, controlEmail, controlPassword} from '../../../utilities/Utilities';
 
 
 

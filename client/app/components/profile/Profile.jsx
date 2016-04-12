@@ -5,7 +5,7 @@ import Logout         from '../account/Logout';
 import ChangeAvatar   from './ChangeAvatar';
 import ChangePassword from '../account/ChangePassword';
 
-import {Colors} from '../../app/Theme';
+import {Colors} from '../../Theme';
 
 class Profile extends React.Component{
 

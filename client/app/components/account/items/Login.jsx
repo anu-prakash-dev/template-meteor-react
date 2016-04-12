@@ -58,33 +58,37 @@ class Login extends React.Component{
       );
     });
   }   
-        
-  controlInputs(callback) {
     
-    var username = this.state.username;
-    var password = this.state.password;
-    
-    // Control empty inputs
-    if(username == '' || username == ' '){
-      this.setErrorText("username", 'Empty field');
-      return;
-    }
-    if(password == '' || password == ' '){
-      this.setErrorText("password", 'Empty field');
-      return;
-    }
-    if(username == '' || username == ' ' || password == '' || password == ' '){
-      return
-    }
-    
-    callback(username, password);
-    
-  }   
+  // Login Callbacks
   
+  onLoginSuccess(){
+    console.log('Login success : ')
+    return; // debug
+    //this.props.openSnackBar('Welcome home dear '+this.getMeteorData().user.username);
+    //browserHistory.push('/home');
+  }
+    
+  onLoginError(error){
+
+    console.log('Login Error : ' + error.reason + ', ' + error.error);
+    
+    if(error.reason === 'User not found'){ 
+      this.setErrorText('username', error.reason);
+    }
+    else if(error.reason === 'Incorrect password'){ 
+      this.setErrorText('password', error.reason);
+    }
+    else{
+      // TODO : normally not needed, have to check
+      this.setErrorText('outside', error.reason);
+    }
+    
+  }
+
   // Inputs
   
   handleChange(event){
-
+    
     var inputName = event.target.name;
     var value     = event.target.value;
     
@@ -117,34 +121,28 @@ class Login extends React.Component{
       this.setState(nextState);
     }
   }
+            
+  controlInputs(callback) {
     
-  // Login Callbacks
-  
-  onLoginSuccess(){
-    console.log('Login success : ')
-    return; // debug
-    browserHistory.push('/home');
-    setTimeout(()=>{
-      this.props.openSnackBar('Welcome home dear '+this.getMeteorData().user.username);
-    },400);
-  }
+    var username = this.state.username;
+    var password = this.state.password;
     
-  onLoginError(error){
-
-    console.log('Login Error : ' + error.reason + ', ' + error.error);
-    
-    if(error.reason === 'User not found'){ 
-      this.setErrorText('username', error.reason);
+    // Control empty inputs
+    if(username == '' || username == ' '){
+      this.setErrorText("username", 'Empty field');
+      return;
     }
-    else if(error.reason === 'Incorrect password'){ 
-      this.setErrorText('password', error.reason);
+    if(password == '' || password == ' '){
+      this.setErrorText("password", 'Empty field');
+      return;
     }
-    else{
-      // TODO : normally not needed, have to check
-      this.setErrorText('outside', error.reason);
+    if(username == '' || username == ' ' || password == '' || password == ' '){
+      return
     }
     
-  }
+    callback(username, password);
+    
+  }   
   
    
   // Toggle Roll
@@ -156,6 +154,7 @@ class Login extends React.Component{
   openRoll() {
     this.setState({ isRollOpen: true });
   }
+  
   closeRoll() {
     this.setState({ isRollOpen: false});
   }

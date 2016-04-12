@@ -38,9 +38,6 @@ class ChangePassword extends React.Component{
   }
 
   changePassword(){
-    var currentPassword     = this.state.currentPassword;
-    var newPassword         = this.state.newPassword;
-    var newPasswordConfirm  = this.state.newPasswordConfirm;
     
     this.controlInputs( (password, passwordNew) => {
       
@@ -69,7 +66,7 @@ class ChangePassword extends React.Component{
       this.toggleRoll();
     }, 250);
     setTimeout(()=>{
-      this.setState({ result: 'Password changed!' });
+      this.props.openSnackBar('Password changed!');
     }, 750);
     
     setTimeout(()=>{
@@ -81,10 +78,11 @@ class ChangePassword extends React.Component{
     
     console.log('Login Error : ' + error.reason + ', ' + error.error);
     
-    if(error.reason === 'Incorrect password'){ 
+    if(error.reason === 'Incorrect password')
       this.setErrorText('password', error.reason);
-    }
-    console.log('todo: error not handled')
+    else
+      this.props.openSnackBar('Something went wrong..');
+    
   }
   
   // Inputs
@@ -244,11 +242,6 @@ class ChangePassword extends React.Component{
           style           = {{width: '100%'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.changePassword}
         /> 
-              
-        { this.state.result!='' ? 
-            <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
-            :''
-        }
                 
       </form>
     )

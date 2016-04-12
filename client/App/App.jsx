@@ -104,8 +104,8 @@ class App extends React.Component {
           autoHideDuration= {this.state.snackBarAutoHideDuration}
           onActionTouchTap= {this.handleSnackBarClick}
           onRequestClose  = {this.closeSnackBar}
-          bodyStyle       = {{backgroundColor: Colors.blueDarkTansparent}}
-          style           = {{textColor: Colors.orange}}
+          bodyStyle       = {{backgroundColor: Colors.blueDark}}
+          style           = {{color: Colors.orange}}
         />
 
       </div>

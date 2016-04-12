@@ -24,7 +24,9 @@ class PageForgotPassword extends React.Component {
 
         <h1>Reset your Password</h1>
         
-        <ResetForgotPassword/>
+        <ResetForgotPassword
+          openSnackBar = {this.props.openSnackBar}
+        />
         
       </div>
     );

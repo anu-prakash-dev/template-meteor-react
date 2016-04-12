@@ -28,7 +28,6 @@ class ForgotPassword extends React.Component{
       email:           '',
       emailErrorText:  '',
       timeout: 3500,
-      result: '',
       isRollOpen: false,
     };
   }
@@ -52,19 +51,16 @@ class ForgotPassword extends React.Component{
     
     console.log('forgotPassword success ');
     
-//    this.resetInputs();
-//    this.resetAllErrorTexts();
-//    
-//    setTimeout(()=>{
-//      this.toggleRoll();
-//    }, 250);
-//    setTimeout(()=>{
-//      this.setState({ result: 'Password changed!' });
-//    }, 750);
-//    
-//    setTimeout(()=>{
-//      this.setState({ result: '' });
-//    }, this.state.timeout);
+    
+    this.resetInputs();
+    this.resetAllErrorTexts();
+    
+    setTimeout(()=>{
+      this.toggleRoll();
+    }, 250);
+    setTimeout(()=>{
+      this.props.openSnackBar('An email has been sent to you!');
+    }, 600);
   }
     
   onError(error){
@@ -92,10 +88,8 @@ class ForgotPassword extends React.Component{
   
   controlInputs(callback){
     
-    email = this.state.email;
-    console.log(email)
-    console.log( !this.props.controlEmail(email) );
-    if( !this.props.controlEmail(email)){
+    const email = this.state.email;
+    if( !this.props.controlEmail(email) ){
       console.log("email not valid");
       this.setErrorText("email", "Email format not valid");
       return;
@@ -148,6 +142,7 @@ class ForgotPassword extends React.Component{
   openRoll() {
     this.setState({ isRollOpen: true });
   }
+  
   closeRoll() {
     this.setState({ isRollOpen: false});
   }
@@ -196,12 +191,7 @@ class ForgotPassword extends React.Component{
           style           = {{width: '100%'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.forgotPassword}
         /> 
-              
-        { this.state.result!='' ? 
-            <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
-            :''
-        }
-                
+      
       </div>
     )
   }

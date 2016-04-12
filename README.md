@@ -55,7 +55,26 @@ Play
 
 ##### Account
 
-* Replaced default meteor account-ui , by components (Login.jsx, CreateAccount.jsx, Logout.jsx etc..), with meteor Account&Password api => Login, Logout, CreateAccount, ChangePassword, ChangeAvatar.
+* Meteor `account-ui`package deleted.
+* Uses `accounts-password` api to make re-usable, scalable and small react components.
+
+    <PageAccount/>
+      <Account/>
+        (!logged)
+          <AccountNotLogged/>
+            <Login/>
+            <ForgotPassword/>
+            <CreateAccount/>
+        (logged)
+          <AccountLogged/>
+            <ChangeAvatar/>
+            <BasicInfo/>
+            <Logout/>
+            <ChangePassword/>
+
+    <PageResetForgotPassword/> // landing on app after clicking on the email link (triggered by <ForgotPassword/>)
+      <ResetForgotPassword/> 
+
 
 ##### UI
 
@@ -70,6 +89,7 @@ Play
 
 * Fix ListAnimated [issue](https://github.com/chenglou/react-motion/issues/319) 
 * Little code cleaning
+* Account Creation : send verification email and implement callback&ui
 * Customize Email for reset password
 * in client/api/ -> create clean methods
 
@@ -80,10 +100,9 @@ Play
 
 * Integrate [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction
 * Server side rendering (wainting for [react-router-ssr support meteor1.3](https://github.com/thereactivestack/meteor-react-router-ssr/issues/45)), which will offer SEO possibilities
-* CreateAccount with email validation
-* Better UI as a showcase
 * Looking for [react-helmet](https://github.com/nfl/react-helmet) for SEO too.
 * Doc in the [wiki](https://github.com/MadeInMoon/template-meteor-react/wiki)
+* Better UI as a showcase
 * and more..
 
 

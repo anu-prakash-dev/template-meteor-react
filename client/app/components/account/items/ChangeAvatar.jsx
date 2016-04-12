@@ -16,11 +16,15 @@ class ChangeAvatar extends React.Component{
   constructor(props) {
     super(props);
     this.handleFile   = this.handleFile.bind(this);
+    this.chooseImage  = this.chooseImage.bind(this);
+    this.openPreview  = this.openPreview.bind(this);
+    this.closePreview = this.closePreview.bind(this);
     this.changeAvatar = this.changeAvatar.bind(this);
     this.deleteAvatar = this.deleteAvatar.bind(this);
-    this.chooseImage  = this.chooseImage.bind(this);
-    this.closePreview = this.closePreview.bind(this);
-    this.openPreview = this.openPreview.bind(this);
+    this.onChangeAvatarSuccess = this.onChangeAvatarSuccess.bind(this);
+    this.onChangeAvatarError   = this.onChangeAvatarError.bind(this);
+    this.onDeleteAvatarSuccess = this.onDeleteAvatarSuccess.bind(this);
+    this.onDeleteAvatarError   = this.onDeleteAvatarError.bind(this);
     this.state = {
       avatarLocalUri: '',
       previewImgClass: '',
@@ -47,13 +51,10 @@ class ChangeAvatar extends React.Component{
       null,
       (error)=>{
         if(!error){
-          this.closePreview();
-          setTimeout(()=>{
-            this.resetInput();
-          }, 450)
+          this.onChangeAvatarSuccess();
         }
         else{
-          console.log(error);
+          this.onChangeAvatarError(error);
         }
       }
     );
@@ -69,15 +70,31 @@ class ChangeAvatar extends React.Component{
       null,
       (error)=>{
         if(!error){
-          this.resetInput();
+          this.onDeleteAvatarSuccess();
         }
         else{
-          console.log(error);
+          this.onDeleteAvatarError(error);
         }
       }
     );
   }
 
+  onChangeAvatarSuccess(){
+    this.closePreview();
+    setTimeout(()=>{
+      this.resetInput();
+    }, 450)
+  }
+  onChangeAvatarError(){
+    this.resetInput();
+  }
+  onDeleteAvatarSuccess(){
+    this.resetInput();
+  }
+  onDeleteAvatarError(){
+  }
+  
+  
   // Input[file]
   
   chooseImage(){

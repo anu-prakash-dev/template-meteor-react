@@ -1,8 +1,9 @@
 import React      from 'react';
 import reactMixin from 'react-mixin';
 
-import Logout         from './items/Logout';
 import ChangeAvatar   from './items/ChangeAvatar';
+import BasicInfo      from './items/BasicInfo';
+import Logout         from './items/Logout';
 import ChangePassword from './items/ChangePassword';
 
 import {Colors} from '/client/app/Theme';
@@ -13,46 +14,34 @@ class AccountLogged extends React.Component{
     super(props);
     this.state = {};
   }  
-  
-  getMeteorData() {
-    return { 
-      user: Meteor.user(),
-      //loggingIn: Meteor.loggingIn(),
-      //isAuthenticated: Meteor.userId() !== null
-    }
-  }
 
   render() {
     return (
       <div id="AccountLogged" className="account-box">
           <div className="content">
         
+            
             <div className="flex">
+              <ChangeAvatar openSnackBar={this.props.openSnackBar} />     
               
-              <ChangeAvatar/>
-              
-              <div id>
-                <p id="textUsername" onClick={this.updateUserAvatar}> {this.props.username} </p>
-
-                { this.props.email ?
-                  <p id="textEmail"> {this.props.email} </p>
-                  :''
-                }
-                { this.props.isEmailVerified ?
-                  <p id="textEmailStatut"> (verified) </p>
-                  :
-                  <p id="textEmailStatut"> (not verified) </p>
-                }
-                
-              </div>
+              <BasicInfo
+                openSnackBar   = {this.props.openSnackBar}
+                username       = {this.props.username}
+                email          = {this.props.email}
+                isEmailVerified= {this.props.isEmailVerified}
+              />
             </div>
 
+            
             <Logout
               style={{width: '100%', marginTop: '10px'}}
               backgroundColor={Colors.blueMedium1}
             />
 
-            <ChangePassword controlPassword = {this.props.controlPassword} />
+            <ChangePassword 
+              openSnackBar    = {this.props.openSnackBar}
+              controlPassword = {this.props.controlPassword} />
+            
             
           </div>
       </div>
@@ -62,5 +51,5 @@ class AccountLogged extends React.Component{
 
 };
 
-//reactMixin(AccountLogged.prototype, ReactMeteorData);
+
 export default AccountLogged;

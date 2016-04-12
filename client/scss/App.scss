@@ -55,6 +55,9 @@ html, body, #App-wrapper{
   color:      $color_active;
 }
 
+input{
+  font-size: 10px !important;
+}
 
 
 
@@ -77,7 +80,7 @@ body {
       
       #Header, nav {
         //background: #202633;
-        background: $color_blue_dark_transparent;
+        background: $color_blueDark;
       }
       
       #Header {

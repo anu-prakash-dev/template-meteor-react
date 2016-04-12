@@ -71,19 +71,22 @@ class CreateAccount extends React.Component{
   }   
 
   onSuccess(){
-    console.log('Login success ');
+    console.log('Account creation success ');
+    this.props.openSnackBar('Welcome ' + Meteor.user().username);
   }
     
   onError(error){
     
     console.log('Login Error : ' + error.reason + ', ' + error.error);
     
-    if(error.reason === 'Username already exists.'){ 
+    if(error.reason === 'Username already exists.')
       this.setErrorText('username', error.reason);
-    }
-    if(error.reason === 'Email already exists.'){ 
+    
+    if(error.reason === 'Email already exists.')
       this.setErrorText('email', error.reason);
-    }
+    
+    else
+      this.props.openSnackBar('Something went wrong');
     
   }
   
@@ -133,8 +136,7 @@ class CreateAccount extends React.Component{
     callback(username, email, password);
     
   }
-  
-  
+
   handleChange(event){
 
     var inputName = event.target.name;
@@ -180,6 +182,7 @@ class CreateAccount extends React.Component{
   openRoll() {
     this.setState({ isRollOpen: true });
   }
+  
   closeRoll() {
     this.setState({ isRollOpen: false});
   }

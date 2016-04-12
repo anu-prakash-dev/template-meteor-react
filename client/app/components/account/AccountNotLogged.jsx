@@ -42,17 +42,20 @@ class AccountNotLogged extends React.Component{
       <div id="AccountNotLogged" className="account-box">
         
           <Login
+            openSnackBar    = {this.props.openSnackBar}
             controlUsername = {this.props.controlUsername}
             controlEmail    = {this.props.controlEmail}
             controlPassword = {this.props.controlPassword}
           />  
         
           <ForgotPassword
+            openSnackBar = {this.props.openSnackBar}
             controlEmail = {this.props.controlEmail}
           />  
           
          
           <CreateAccount
+            openSnackBar    = {this.props.openSnackBar}
             controlUsername = {this.props.controlUsername}
             controlEmail    = {this.props.controlEmail}
             controlPassword = {this.props.controlPassword}

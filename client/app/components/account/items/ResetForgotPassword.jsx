@@ -5,7 +5,7 @@ import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 import {Colors} from '/client/app/Theme';
-import {controlPassword} from '/client/utilities/Utilities';
+import {controlPassword, redirect} from '/client/utilities/Utilities';
 
 class ResetForgotPassword extends React.Component{
 
@@ -24,38 +24,41 @@ class ResetForgotPassword extends React.Component{
     this.openRoll        = this.openRoll.bind(this);
     this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
-      password:           '',
-      passwordConfirm:    '',
-      passwordErrorText:            '',
-      passwordConfirmErrorText:  '',
-      timeout: 3500,
-      result: '',
-      isRollOpen: false,
+      password:                 '',
+      passwordConfirm:          '',
+      passwordErrorText:        '',
+      passwordConfirmErrorText: '',
+      timeout:    3500,
+      isRollOpen: true,
     };
   }
 
   resetForgetPassword(){
-    
     this.controlInputs( (password) => {
       
       const token = Session.get("onResetPasswordLinkToken");
+      if (!token){
+        this.props.openSnackBar('Your reset token is not valid anymore.');
+        redirect('/');
+        return;
+      }
+      
       Accounts.resetPassword(
         token, 
         password, 
         (error) => {
             if(error)
-              this.onError(error)
+              this.onSuccess(error)
             else
               this.onSuccess()
         }
       );
     });
-    
   }
 
   onSuccess(){
     
-    console.log('Login success ');
+    console.log('Reset forgot password success !');
     
     this.resetInputs();
     this.resetAllErrorTexts();
@@ -63,13 +66,11 @@ class ResetForgotPassword extends React.Component{
     setTimeout(()=>{
       this.toggleRoll();
     }, 250);
-    setTimeout(()=>{
-      this.setState({ result: 'Password changed!' });
-    }, 750);
     
     setTimeout(()=>{
-      this.setState({ result: '' });
-    }, this.state.timeout);
+      this.props.openSnackBar('Password successfully reset');
+      redirect('/');
+    }, 800);
   }
     
   onError(error){
@@ -96,8 +97,8 @@ class ResetForgotPassword extends React.Component{
   
   controlInputs(callback){
     
-    password        = this.state.password;
-    passwordConfirm = this.state.passwordConfirm;
+    const password        = this.state.password;
+    const passwordConfirm = this.state.passwordConfirm;
     
     
     if( !controlPassword(password)){
@@ -181,10 +182,10 @@ class ResetForgotPassword extends React.Component{
           <InputFloatingLabel
             name          = "password"
             type          = "password"
-            floatingLabel = "Password"
+            floatingLabel = "New Password"
             value         = {this.state.password}
             onChange      = {this.handleChange}
-            style         = {{width: "100%", marginTop: "-10px"}}
+            style         = {{width: "100%", marginTop: "-20px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
             onEnterKeyDown= {this.resetForgetPassword}
@@ -194,7 +195,7 @@ class ResetForgotPassword extends React.Component{
           <InputFloatingLabel
             name          = "passwordConfirm"
             type          = "password"
-            floatingLabel = "Password (confirm)"
+            floatingLabel = "New Password (again)"
             value         = {this.state.passwordConfirm}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
@@ -214,11 +215,6 @@ class ResetForgotPassword extends React.Component{
           style           = {{width: '100%'}}
           onClick         = {this.resetForgetPassword}
         />
-
-        { this.state.result!='' ? 
-            <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
-            :''
-        }
         
       </div>
     )

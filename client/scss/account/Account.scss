@@ -2,7 +2,7 @@
 
 
 
-// ResetForgotPassword & PageAccount
+// in ResetForgotPassword & in PageAccount
 .account-box{
   position: relative;
   width:      100%;
@@ -20,6 +20,12 @@
     }
   }
 
+  .inputFloatingLabel{
+    *{
+      font-size: 14px !important;  
+    }
+  }
+  
   .button-mui{}
   .btn-cancel{
     *{
@@ -32,6 +38,21 @@
     }
   }
 
+}
+
+      
+// RollOver animation
+#Login, #ForgotPassword, #ChangePassword, #CreateAccount, #ResetForgotPassword{
+  width: 100%;
+  .roll{
+    height:     auto;
+    overflow:   hidden;
+    transition: all 0.6s ease;
+    max-height: 0;
+    &.is-visible{
+      max-height: 400px;
+    }
+  }
 }
 
 #ResetForgotPassword{
@@ -201,20 +222,7 @@
     #Login, #ForgotPassword, #Logout{
       margin-bottom: 10px;
     }
-      
-    // RollOver animation
-    #Login, #ForgotPassword, #ChangePassword, #CreateAccount{
-      width: 100%;
-      .roll{
-        height:     auto;
-        overflow:   hidden;
-        transition: all 0.6s ease;
-        max-height: 0;
-        &.is-visible{
-          max-height: 400px;
-        }
-      }
-    }
+
  
   }  
   

@@ -1,22 +1,22 @@
 
 
-## Meteor-React template App
+## [Meteor-React template App](http://template-meteor-react.meteorapp.com/home)
 
 [Demo](http://template-meteor-react.meteorapp.com/home)
 
 
-##### Goals
+**Goals**
 
 Provide a template app, with ready-to-go components, methods and services. 
 
 
-##### Tech
+**Tech**
 
 Meteor(1.3), ES6, react(0.14.7), react-router(2.0.0-rc5)
 
 Comming soon : [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction, and more
 
-##### It starts from
+**It starts from**
 
 this repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/meteor-react-start-app) (Thanks to [Mr Post])(https://github.com/AnnotatedJS)!
 
@@ -62,15 +62,15 @@ Play
       Account
         (!logged)
           AccountNotLogged
-            <Login/>
+            Login
             ForgotPassword
             CreateAccount
-        (logged)
-          AccountLogged
-            ChangeAvatar
-            BasicInfo
-            Logout
-            ChangePassword
+      (logged)
+        AccountLogged
+          ChangeAvatar
+          BasicInfo
+          Logout
+          ChangePassword
 
     PageResetForgotPassword // landing on app after clicking on the email link (triggered by ForgotPassword
       ResetForgotPassword/

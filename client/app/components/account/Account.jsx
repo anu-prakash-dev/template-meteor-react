@@ -1,11 +1,10 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
 
-import Login          from '../account/Login';
-import CreateAccount  from '../account/CreateAccount';
-import Profile        from '../profile/Profile';
+import AccountLogged    from './AccountLogged';
+import AccountNotLogged from './AccountNotLogged';
 
-import {controlUsername, controlEmail, controlPassword} from '../../../utilities/Utilities';
+import {controlUsername, controlEmail, controlPassword} from '/client/utilities/Utilities';
 
 
 
@@ -31,37 +30,20 @@ class Account extends React.Component {
         <section>
           
           { Meteor.user() ?
-            <Profile
+            <AccountLogged
               username  = {this.data.user.username}
               email     = {this.data.user.emails?this.data.user.emails[0].address:false}
               isEmailVerified = {this.data.user.emails?this.data.user.emails[0].verified:false}
               controlPassword = {controlPassword}
             />
-            :''
-          }
-          
-          { Meteor.user() ?
-            ''
             :
-            <Login 
+            <AccountNotLogged 
               openSnackBar = {this.props.openSnackBar}
               controlUsername = {controlUsername}
               controlEmail    = {controlEmail}
               controlPassword = {controlPassword}
             />
           }
-            
-           {/*
-          { Meteor.user() ?
-            ''
-            :
-            <CreateAccount
-              controlUsername = {controlUsername}
-              controlEmail    = {controlEmail}
-              controlPassword = {controlPassword}
-            />
-          }
-           */}
             
         </section>
         

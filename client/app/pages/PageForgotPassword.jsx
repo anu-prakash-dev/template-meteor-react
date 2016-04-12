@@ -1,6 +1,6 @@
 import React   from 'react';
 import {browserHistory}   from 'react-router';
-import ResetForgotPassword from '../components/account/ResetForgotPassword.jsx';
+import ResetForgotPassword from '../components/account/items/ResetForgotPassword.jsx';
  
 
 class PageForgotPassword extends React.Component {

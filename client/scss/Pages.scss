@@ -1,15 +1,25 @@
 // "tete.css"
 
-@import '../../scss/theme/colors.scss';
+@import '../scss/theme/colors.scss';
 
-html body #App-wrapper .App .app-main .app-content .Page, body{
-  
-  overflow: auto;
+
+
+
+
+body, .Page{
+    overflow: auto;
 
   background: url('/medias/backgrounds/background-dark.jpg'); 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  
+}
+html body #App-wrapper .App .app-main .app-content .Page{
+  
+
+  
+  padding:    2em 3em;
   
   // General texts
   h1{
@@ -36,8 +46,6 @@ html body #App-wrapper .App .app-main .app-content .Page, body{
   
   
   &.PageAccount{
-    padding:    20px 30px;
-    //background: $color_blue_medium1;
     > h1{} 
     > p{
       font-size: 8px;
@@ -51,12 +59,13 @@ html body #App-wrapper .App .app-main .app-content .Page, body{
   
   
   &.PageForgotPassword{
-    background: blue !important;
+    #ResetForgotPassword{
+      
+    }
   }
  
 
   &.PageTasks{
-    padding:    20px 30px;
     //background: $color_blue_medium1;
 
     h2{
@@ -220,7 +229,6 @@ html body #App-wrapper .App .app-main .app-content .Page, body{
   
   &.PageShowcase{
     //cursor: url('/medias/icons/cursor.png') 39 39, auto;  
-    padding:    20px 30px;
 
     h1{}
     p{}

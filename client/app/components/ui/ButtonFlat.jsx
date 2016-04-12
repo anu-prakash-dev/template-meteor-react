@@ -10,14 +10,16 @@ class ButtonFlat extends React.Component {
   
   render() {
     return(
-      <RaisedButton 
-        className={this.props.className}
-        label={this.props.label}
-        secondary={true} 
-        backgroundColor={this.props.backgroundColor}
-        onClick={this.props.onClick}
-        style={this.props.style}
-      />
+      <div id={this.props.id} className={"button-mui "+this.props.className}>
+        <RaisedButton 
+          className={this.props.className}
+          label={this.props.label}
+          secondary={true} 
+          backgroundColor={this.props.backgroundColor}
+          onClick={this.props.onClick}
+          style={this.props.style}
+        />
+      </div>
     )
   }
 

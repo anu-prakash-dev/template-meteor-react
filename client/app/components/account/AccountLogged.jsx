@@ -1,13 +1,13 @@
 import React      from 'react';
 import reactMixin from 'react-mixin';
 
-import Logout         from '../account/Logout';
-import ChangeAvatar   from './ChangeAvatar';
-import ChangePassword from '../account/ChangePassword';
+import Logout         from './items/Logout';
+import ChangeAvatar   from './items/ChangeAvatar';
+import ChangePassword from './items/ChangePassword';
 
-import {Colors} from '../../Theme';
+import {Colors} from '/client/app/Theme';
 
-class Profile extends React.Component{
+class AccountLogged extends React.Component{
 
   constructor(props) {
     super(props);
@@ -24,14 +24,14 @@ class Profile extends React.Component{
 
   render() {
     return (
-      <div id="Profile">
+      <div id="AccountLogged" className="account-box">
           <div className="content">
         
             <div className="flex">
               
               <ChangeAvatar/>
               
-              <div>
+              <div id>
                 <p id="textUsername" onClick={this.updateUserAvatar}> {this.props.username} </p>
 
                 { this.props.email ?
@@ -48,7 +48,7 @@ class Profile extends React.Component{
             </div>
 
             <Logout
-              style={{width: '100%', marginTop: '20px', marginBottom: '10px'}}
+              style={{width: '100%', marginTop: '10px'}}
               backgroundColor={Colors.blueMedium1}
             />
 
@@ -62,5 +62,5 @@ class Profile extends React.Component{
 
 };
 
-//reactMixin(Profile.prototype, ReactMeteorData);
-export default Profile;
+//reactMixin(AccountLogged.prototype, ReactMeteorData);
+export default AccountLogged;

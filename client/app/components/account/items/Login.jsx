@@ -2,15 +2,16 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 import {browserHistory} from 'react-router';
 
-import {Colors} from '../../Theme';
-import ButtonFLat           from '../ui/ButtonFlat'
-import LoaderLinear         from '../ui/LoaderLinear'
-import LoaderCircular       from '../ui/LoaderCircular'
-import LoaderBounce         from '../ui/LoaderBounce'
-import InputFloatingLabel   from '../ui/InputFloatingLabel'
-
 import ForgotPassword  from './ForgotPassword'
 import CreateAccount   from './CreateAccount'
+
+import {Colors}        from '/client/app/Theme';
+
+import ButtonFLat           from '/client/app/components/ui/ButtonFlat'
+import LoaderLinear         from '/client/app/components/ui/LoaderLinear'
+import LoaderCircular       from '/client/app/components/ui/LoaderCircular'
+import LoaderBounce         from '/client/app/components/ui/LoaderBounce'
+import InputFloatingLabel   from '/client/app/components/ui/InputFloatingLabel'
 
 
 class Login extends React.Component{
@@ -195,55 +196,25 @@ class Login extends React.Component{
           />
 
           <br/>
-          <br/>
 
-            <ButtonFLat 
-              className="buttonLoginCancel"
-              label   = "Cancel"
-              onClick = {this.toggleRoll}
-              backgroundColor={Colors.blueMedium1}
-              style = {{width:'100%', marginTop:'10px'}}
-            /> 
+          <ButtonFLat 
+            className = "btn-cancel"
+            label     = "Cancel"
+            onClick   = {this.toggleRoll}
+            backgroundColor={Colors.blueMedium1}
+            style = {{width:'100%'}}
+          /> 
           
         </div>
             
         <ButtonFLat 
-          className = "buttonLogin"
+          className = "btn-action"
           label     = "Login"
           backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
           style           = {{width: '100%', marginTop: '10px'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.login}
         /> 
-            {/*
-            {this.state.isLoggingIn ?
-              <LoaderCircular 
-                style={{marginTop: '-8px'}} 
-                color={Colors.active} />
-              :""
-            }
-            */}
 
-            {/*<LoaderBounce color={Colors.blueMedium1} style={{marginLeft: '20px'}}/>*/}
-            
-          
-          <ForgotPassword
-            controlEmail = {this.props.controlEmail}
-          />  
-          
-         
-          <CreateAccount
-            controlUsername = {this.props.controlUsername}
-            controlEmail    = {this.props.controlEmail}
-            controlPassword = {this.props.controlPassword}
-          />
-          
-         {/*{ this.data.loggingIn ?
-            <LoaderLinear 
-                backgroundColor={Colors.blueDark} 
-                color={Colors.blueMedium1}/>
-            : ''
-        }
-        */}
       </div>
     )
   }

@@ -70,6 +70,8 @@ Play
 
 * Fix ListAnimated [issue](https://github.com/chenglou/react-motion/issues/319) 
 * Little code cleaning
+* Customize Email for reset password
+* in client/api/ -> create clean methods
 
 -------------------------
 

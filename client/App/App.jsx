@@ -1,10 +1,8 @@
 import React      from 'react';
-import ReactDOM   from 'react-dom';
 import reactMixin from 'react-mixin';
 import {browserHistory} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import { Routes } from './Routes';
 import   Header   from './components/Header';
 import { Footer } from './components/Footer';
 import { Colors } from './Theme';
@@ -120,24 +118,3 @@ class App extends React.Component {
 
 reactMixin(App.prototype, ReactMeteorData);
 export default App;
-
-
-//==========================================================================
-
-
-// Triggered when users arrive from a forgotMail link (email). Should be on top of 'Meteor.startup()'
-Accounts.onResetPasswordLink((token)=>{
-  
-  //console.log(token);
-  Session.set({
-    onResetPasswordLink: true,
-    onResetPasswordLinkToken: token
-  })
-  
-});
-    
-// App Start
-Meteor.startup(function () {
-  // Use Meteor.startup to render the component after the page is ready
-  ReactDOM.render(<Routes/>, document.getElementById("App-wrapper"));
-});

@@ -2,8 +2,9 @@ import React      from 'react';
 import reactMixin from 'react-mixin';
 
 import Avatar     from './Avatar';
-import ButtonFlat from '../ui/ButtonFlat'
-import {Colors}   from '../../Theme';
+
+import ButtonFlat from '/client/app/components/ui/ButtonFlat'
+import {Colors}   from '/client/app/Theme';
 
 import IconButton from 'material-ui/lib/icon-button';
 import IconUpload from 'material-ui/lib/svg-icons/file/cloud-download';

@@ -1,10 +1,10 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
 
-import {Colors} from '../../Theme';
+import {Colors} from '/client/app/Theme';
 
-import ButtonFLat         from '../ui/ButtonFlat'
-import InputFloatingLabel from '../ui/InputFloatingLabel'
+import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
+import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 
 
@@ -177,10 +177,9 @@ class ForgotPassword extends React.Component{
           />
 
           <br/>
-          <br/>
 
           <ButtonFLat 
-            className = "buttonPasswordCancel"
+            className = "btn-cancel"
             label     = "Cancel"
             onClick   = {this.toggleRoll}
             backgroundColor = {Colors.blueMedium1}
@@ -189,15 +188,14 @@ class ForgotPassword extends React.Component{
 
         
         </div>
-                
-        <div id="buttonForgotSubmit">
-          <ButtonFLat 
-            label     = "Forgot Password?"
-            backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
-            style           = {{width: '100%'}}
-            onClick         = {!isRollOpen?this.toggleRoll:this.forgotPassword}
-          /> 
-        </div>
+
+        <ButtonFLat 
+          className = "btn-action"
+          label     = "Forgot Password?"
+          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          style           = {{width: '100%'}}
+          onClick         = {!isRollOpen?this.toggleRoll:this.forgotPassword}
+        /> 
               
         { this.state.result!='' ? 
             <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>

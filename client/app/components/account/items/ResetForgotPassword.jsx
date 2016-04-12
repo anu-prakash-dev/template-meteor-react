@@ -1,14 +1,13 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
 
-import {Colors} from '../../Theme';
+import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
+import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
-import ButtonFLat         from '../ui/ButtonFlat'
-import InputFloatingLabel from '../ui/InputFloatingLabel'
+import {Colors} from '/client/app/Theme';
+import {controlPassword} from '/client/utilities/Utilities';
 
-
-
-class ChangePassword extends React.Component{
+class ResetForgotPassword extends React.Component{
 
   constructor(props) {
     super(props);
@@ -18,7 +17,7 @@ class ChangePassword extends React.Component{
     this.resetErrorText  = this.resetErrorText.bind(this);
     this.resetAllErrorTexts= this.resetAllErrorTexts.bind(this);
     this.resetInputs     = this.resetInputs.bind(this);
-    this.changePassword  = this.changePassword.bind(this);
+    this.resetForgetPassword  = this.resetForgetPassword.bind(this);
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
     this.toggleRoll      = this.toggleRoll.bind(this);
@@ -26,27 +25,23 @@ class ChangePassword extends React.Component{
     this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
       password:           '',
-      passwordNew:        '',
-      passwordNewConfirm: '',
+      passwordConfirm:    '',
       passwordErrorText:            '',
-      passwordNewErrorText:         '',
-      passwordNewConfirmErrorText:  '',
+      passwordConfirmErrorText:  '',
       timeout: 3500,
       result: '',
       isRollOpen: false,
     };
   }
 
-  changePassword(){
-    var currentPassword     = this.state.currentPassword;
-    var newPassword         = this.state.newPassword;
-    var newPasswordConfirm  = this.state.newPasswordConfirm;
+  resetForgetPassword(){
     
-    this.controlInputs( (password, passwordNew) => {
+    this.controlInputs( (password) => {
       
-      Accounts.changePassword(
+      const token = Session.get("onResetPasswordLinkToken");
+      Accounts.resetPassword(
+        token, 
         password, 
-        passwordNew, 
         (error) => {
             if(error)
               this.onError(error)
@@ -101,29 +96,24 @@ class ChangePassword extends React.Component{
   
   controlInputs(callback){
     
-    password      = this.state.password;
-    passwordNew   = this.state.passwordNew;
-    passwordNewConfirm = this.state.passwordNewConfirm;
+    password        = this.state.password;
+    passwordConfirm = this.state.passwordConfirm;
     
-    // TODO : control username validity (caracters)
-    if( password !== password ){
-      console.log('Invalid password');
-      this.setErrorText('password', "Invalid password");
-      return;
-    }   
-    if( !this.props.controlPassword(passwordNew)){
+    
+    if( !controlPassword(password)){
       console.log("password not valide");
-      this.setErrorText('passwordNew', "Invalid format (a-z, 0-9, with at least one digit and one uppercase letter) ");
+      this.setErrorText('password', "Invalid format (a-z, 0-9, with at least one digit and one uppercase letter) ");
       return;
     }
-    if( passwordNew !== passwordNewConfirm){
-      console.log("password not valide");
-      this.setErrorText('passwordNew',        "Passwords don't match");
-      this.setErrorText('passwordNewConfirm', "Passwords don't match");
+    if( password !== passwordConfirm){
+      console.log("passwords don't match");
+      this.setErrorText('password',        "Passwords don't match");
+      this.setErrorText('passwordConfirm', "Passwords don't match");
       return;
     }
     
-    callback(password, passwordNew);
+    
+    callback(password);
     
   }
   
@@ -152,15 +142,13 @@ class ChangePassword extends React.Component{
   
   resetAllErrorTexts(){
     this.resetErrorText('password');
-    this.resetErrorText('passwordNew');
-    this.resetErrorText('passwordNewConfirm');
+    this.resetErrorText('passwordConfirm');
   }
      
   resetInputs(){
     this.setState({
       password:'',
-      passwordNew:'',
-      passwordNewConfirm:''
+      passwordConfirm:''
     })
   }
    
@@ -169,10 +157,11 @@ class ChangePassword extends React.Component{
   toggleRoll() {
     this.setState({ isRollOpen: !this.state.isRollOpen });
   }
-    
+  
   openRoll() {
     this.setState({ isRollOpen: true });
   }
+  
   closeRoll() {
     this.setState({ isRollOpen: false});
   }
@@ -185,79 +174,53 @@ class ChangePassword extends React.Component{
     let toggleRollClass = isRollOpen?' is-visible':'';
     
     return (
-      <form id="ChangePassword">
+      <div id="ResetForgotPassword" className="account-box">
          
         <div className={"roll"+toggleRollClass}>
 
           <InputFloatingLabel
             name          = "password"
             type          = "password"
-            floatingLabel = "Current Password "
+            floatingLabel = "Password"
             value         = {this.state.password}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
-            onEnterKeyDown= {this.changePassword}
+            onEnterKeyDown= {this.resetForgetPassword}
           />
 
-          <InputFloatingLabel
-            name          = "passwordNew"
-            type          = "password"
-            floatingLabel = "New Password "
-            value         = {this.state.passwordNew}
-            onChange      = {this.handleChange}
-            style         = {{width: "100%", marginTop: "-10px"}}
-            errorText     = {this.state.passwordNewErrorText}
-            onFocus       = {this.resetErrorText.bind(this, 'passwordNew')}
-            onEnterKeyDown= {this.changePassword}
-          />
 
           <InputFloatingLabel
-            name          = "passwordNewConfirm"
+            name          = "passwordConfirm"
             type          = "password"
-            floatingLabel = "New Password (confirm)"
-            value         = {this.state.passwordNewConfirm}
+            floatingLabel = "Password (confirm)"
+            value         = {this.state.passwordConfirm}
             onChange      = {this.handleChange}
             style         = {{width: "100%", marginTop: "-10px"}}
-            errorText     = {this.state.passwordNewConfirmErrorText}
-            onFocus       = {this.resetErrorText.bind(this, 'passwordNewConfirm')}
-            onEnterKeyDown= {this.changePassword}
+            errorText     = {this.state.passwordConfirmErrorText}
+            onFocus       = {this.resetErrorText.bind(this, 'passwordConfirm')}
+            onEnterKeyDown= {this.resetForgetPassword}
           />
 
           <br/>
-          <br/>
-
-          <div className="row align-right">
-            
-
-            <ButtonFLat 
-              className = "buttonPasswordCancel"
-              label     = "Cancel"
-              onClick   = {this.toggleRoll}
-              backgroundColor = {Colors.blueMedium1}
-              style = {{width: '100%', marginBottom: '10px'}}
-            />  
-
-          </div>
         
         </div>
-                
-        <div id="buttonPasswordSubmit">
-          <ButtonFLat 
-            label     = "Change Password"
-            backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
-            style           = {{width: '100%'}}
-            onClick         = {!isRollOpen?this.toggleRoll:this.changePassword}
-          /> 
-        </div>
-              
+
+        <ButtonFLat 
+          className = "btn-action"
+          label     = "Reset Password"
+          backgroundColor = {Colors.blueMedium1}
+          style           = {{width: '100%'}}
+          onClick         = {this.resetForgetPassword}
+        />
+
         { this.state.result!='' ? 
             <p style={{display: "inline-block", fontSize: "12px", marginTop: "10px"}}>{this.state.result}</p>
             :''
         }
-                
-      </form>
+        
+      </div>
     )
   }
   
@@ -265,5 +228,5 @@ class ChangePassword extends React.Component{
 };
 
 
-//reactMixin(ChangePassword.prototype, ReactMeteorData);
-export default ChangePassword;
+//reactMixin(ResetForgotPassword.prototype, ReactMeteorData);
+export default ResetForgotPassword;

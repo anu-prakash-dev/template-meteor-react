@@ -1,6 +1,7 @@
 {
   "galaxy.meteor.com": {
     "env": {
+      // mongodb hosted on mlab.com
       "MONGO_URL": "mongodb://user:useruseruser@ds025449.mlab.com:25449/template-meteor-react"
     }
   }

@@ -8,6 +8,8 @@ class PageAccount extends React.Component {
     super(props);
     this.state = {};
   }
+  componentWillMount() {}
+  componentDidMount() {}
   
   render() {
     return (

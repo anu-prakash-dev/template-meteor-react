@@ -1,5 +1,6 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
+import {browserHistory} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import reactMixin from 'react-mixin';
 
@@ -19,9 +20,6 @@ class App extends React.Component {
     this.openSnackBar         = this.openSnackBar.bind(this);
     this.closeSnackBar        = this.closeSnackBar.bind(this);
     this.handleSnackBarClick  = this.handleSnackBarClick.bind(this);
-    
-    this.getMeteorData = this.getMeteorData.bind(this);
-    
     this.state = {
       snackBarAutoHideDuration: 4000,
       snackBarMessage: '',
@@ -29,6 +27,12 @@ class App extends React.Component {
     };
   }
   
+  getMeteorData(){
+    return{
+      onResetPasswordLink: Session.get("onResetPasswordLink")
+    }  
+  }
+
   openSnackBar(text){
     if(typeof text != 'string'){text="Nothing special.."}
     this.setState({
@@ -53,14 +57,20 @@ class App extends React.Component {
       isAuthenticated: Meteor.userId() !== null
     };
   }
-  
-  componentDidMount(){
-    
+
+  componentWillMount(){
+    let onResetPasswordLink = Session.get("onResetPasswordLink");
+    if(onResetPasswordLink) 
+      browserHistory.push('/forgot-password');
   }
   
   render(){
+    
+    
+    //console.log(Session.get("onResetPasswordLink"));
+    
     return(
-      <div className="App">
+      <div className="App" onClick={this.test}>
 
         <Header />
 
@@ -68,19 +78,20 @@ class App extends React.Component {
 
           <div className="app-content">
 
-              {/* Where pages animate*/}
-              <ReactCSSTransitionGroup
-                component="div"
-                transitionName="page"
-                transitionEnterTimeout={0}
-                transitionLeaveTimeout={0}
-              >
-                {/*props.children : page received from Routes.jsx*/}
-                {React.cloneElement(this.props.children, {
-                  key: this.props.children.props.route.pageName,
-                  openSnackBar: this.openSnackBar
-                })}
-              </ReactCSSTransitionGroup>
+            {/* Where pages animate*/}
+            <ReactCSSTransitionGroup
+              component="div"
+              transitionName="page"
+              transitionEnterTimeout={0}
+              transitionLeaveTimeout={0}
+            >
+              {/*props.children : page received from Routes.jsx*/}
+              {React.cloneElement(this.props.children, {
+                key: this.props.children.props.route.pageName,
+                openSnackBar: this.openSnackBar
+
+              })}
+            </ReactCSSTransitionGroup>
 
           </div>
 
@@ -106,7 +117,7 @@ class App extends React.Component {
 
 };
 
-//reactMixin(App.prototype, ReactMeteorData, Router.history);
+
 reactMixin(App.prototype, ReactMeteorData);
 export default App;
 
@@ -114,7 +125,19 @@ export default App;
 //==========================================================================
 
 
+// Triggered when users arrive from a forgotMail link (email). Should be on top of 'Meteor.startup()'
+Accounts.onResetPasswordLink((token)=>{
+  
+  //console.log(token);
+  Session.set({
+    onResetPasswordLink: true,
+    onResetPasswordLinkToken: token
+  })
+  
+});
+    
+// App Start
 Meteor.startup(function () {
   // Use Meteor.startup to render the component after the page is ready
-  ReactDOM.render(<Routes />, document.getElementById("App-wrapper"));
+  ReactDOM.render(<Routes/>, document.getElementById("App-wrapper"));
 });

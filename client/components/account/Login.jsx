@@ -227,7 +227,8 @@ class Login extends React.Component{
             
           
           <ForgotPassword
-            controlEmail = {this.props.controlEmail}/>  
+            controlEmail = {this.props.controlEmail}
+          />  
           
          
           <CreateAccount

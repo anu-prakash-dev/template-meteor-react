@@ -16,10 +16,10 @@
     font-size: 14px !important; }
   /* line 31, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .account-box .btn-cancel * {
-    font-size: 10px !important; }
+    font-size: 12px !important; }
   /* line 36, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .account-box .btn-action * {
-    font-size: 10px !important; }
+    font-size: 12px !important; }
 
 /* line 45, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
 #Login, #ForgotPassword, #ChangePassword, #CreateAccount, #ResetForgotPassword {

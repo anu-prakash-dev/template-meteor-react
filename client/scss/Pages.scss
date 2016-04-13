@@ -306,9 +306,10 @@ html body #App-wrapper .App .app-main .app-content .Page{
           font-size: 24px;
           font-weight: 400;
           //color: rgb(153, 153, 153);
-          color: $color_active;
+          //color: $color_active;
+          cursor: pointer;
+          color: white;
           background-color: $color_blue_medium1;
-          background-color: white;
         }
         .link {
         position: absolute;

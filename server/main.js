@@ -1,12 +1,13 @@
-import Config from './config';
-
-
 // Server entry point (code executed server side only)
-
+import { Meteor } from 'meteor/meteor';
+import initialAdds from './config/initial_adds';
+import {emailTemplate, emailMailUrl} from './config/email';
 
 Meteor.startup(function () {
   
-  // required for Email service (forgotPassword etc..)
-  process.env.MAIL_URL = Config.MAIL_URL;
-
+  initialAdds();
+  
+  emailMailUrl();
+  emailTemplate();
+  
 });

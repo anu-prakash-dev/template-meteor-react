@@ -1,10 +1,6 @@
-
-
 import Tasks from '/lib/collections/tasks/declare';
 
-
-Meteor.startup(function(){
-
+export default function () {
 
 
   /***************************************/
@@ -14,12 +10,12 @@ Meteor.startup(function(){
   if (Meteor.users.find().count() === 0) {
 
     Accounts.createUser({
-      'username': 'UserOne',
+      'username': 'userOne',
       'password': 'password'
     });
 
     Accounts.createUser({
-      'username': 'UserTwo',
+      'username': 'userTwo',
       'password': 'password'
     });
 
@@ -70,9 +66,6 @@ Meteor.startup(function(){
     });
   }
 
-
-
-
-
-
-});
+  
+  
+}

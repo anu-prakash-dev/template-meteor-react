@@ -6,13 +6,11 @@ import {Colors}   from '/client/app/Theme';
 import IconButton from 'material-ui/lib/icon-button';
 import FontIcon from 'material-ui/lib/font-icon';
 
-import ButtonIconAccount  from './ui/button-icons/ButtonIconAccount';
-import ButtonIconHome     from './ui/button-icons/ButtonIconHome';
-import ButtonIconTasks    from './ui/button-icons/ButtonIconTasks';
-import ButtonIconShowcase from './ui/button-icons/ButtonIconShowcase';
-import ButtonIconGithub   from './ui/button-icons/ButtonIconGithub';
-
-const iconSize= '8px';
+import ButtonIconAccount  from './ui/button_icons/ButtonIconAccount';
+import ButtonIconHome     from './ui/button_icons/ButtonIconHome';
+import ButtonIconTasks    from './ui/button_icons/ButtonIconTasks';
+import ButtonIconShowcase from './ui/button_icons/ButtonIconShowcase';
+import ButtonIconGithub   from './ui/button_icons/ButtonIconGithub';
 
 export const NavBar = () => (
 
@@ -29,8 +27,6 @@ export const NavBar = () => (
       <ButtonIconHome 
         color       = {Colors.blueMedium1}
         hoverColor  = {Colors.active}
-        buttonStyle = {{fontSize: iconSize}}
-        iconStyle   = {{fontSize: iconSize}}
       />
     </Link>  
     

@@ -186,7 +186,6 @@ class ChangeAvatar extends React.Component{
                   className="material-icons" 
                   color={Colors.greyMedium}
                   hoverColor={Colors.active}
-                  style={{fontSize:'6px'}}
                 />
               </IconButton>
             </div>

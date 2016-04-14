@@ -1,4 +1,4 @@
-import React      from 'react';
+import React       from 'react';
 
 
 
@@ -9,10 +9,11 @@ class BasicInfo extends React.Component{
     this.state = {};
   }  
 
+  
+  
   render() {
     return (
       <div id="BasicInfo">
-        
         
         <p id="textUsername"> {this.props.username} </p>
 
@@ -27,7 +28,7 @@ class BasicInfo extends React.Component{
           :
             <p id="textEmailStatut"> (not verified) </p>
         }
-                
+
       </div>
     )
   }

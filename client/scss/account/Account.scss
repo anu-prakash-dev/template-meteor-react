@@ -84,133 +84,135 @@
       &#AccountLogged{
         .content{
 
-          div.flex{
+        div.flex{
+          margin-bottom: 20px;
 
-            p{
-              &:firs-of-type{
-                margin-top: 10px;
-              }
-              &#textUsername{
-                font-size: 22px;
-                color: $color_active;
-              }
-              &#textEmail{
-                font-size: 12px;
-                color: $color_grey_medium;
-                width: 10em;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-              }
-              &#textEmailStatut{
-                font-size: 10px;
-                color: $color_blue_medium1;
-              }
+          p{
+            &:firs-of-type{
+              margin-top: 10px;
             }
+            &#textUsername{
+              font-size: 22px;
+              color: $color_active;
+            }
+            &#textEmail{
+              font-size: 12px;
+              color: $color_grey_medium;
+              width: 10em;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            &#textEmailStatut{
+              font-size: 10px;
+              color: $color_blue_medium1;
+            }
+          }
 
-            #ChangeAvatar{
-              margin-right: 1em;
+          #ChangeAvatar{
+            margin-right: 1em;
 
-              .currentAvatar, .avatarPreview{
-                transition: all 0.5s;
-                display: inline-block;
+            .currentAvatar, .avatarPreview{
+              transition: all 0.5s;
+              display: inline-block;
 
-                img, .avatarDefault{
-                  width:      60px;
-                  height:     60px;
-                  max-width:  60px;
-                  max-height: 60px;
-                  min-width:  60px;
-                  min-height: 60px;
-                  border-radius: 100%;
+              img, .avatarDefault{
+                width:      60px;
+                height:     60px;
+                max-width:  60px;
+                max-height: 60px;
+                min-width:  60px;
+                min-height: 60px;
+                border-radius: 100%;
+              }
+
+              &.currentAvatar{
+                position: relative;
+                //left:     28px;
+                left:     0;
+                opacity:  1;
+
+                width:4.5em;
+
+                &.is-visible{
+                  opacity:  0.7;
+                  left:     0px;
                 }
 
-                &.currentAvatar{
-                  position: relative;
-                  //left:     28px;
-                  left:     0;
-                  opacity:  1;
-
-                  width:4.5em;
-
-                  &.is-visible{
-                    opacity:  0.7;
-                    left:     0px;
-                  }
-
-                  // If user didn't set is own avatar
-                  .avatarDefault{
-                  }
-
-                  #avatarOptions{
-                    position: absolute;
-                    top:      0;
-                    left:     3.8em;
-                    transform: scale(0);
-
-                    transition: all 0.5s;
-                    opacity:    0;
-                    pointer-events: none;
-
-
-                    #uploadButton{
-
-                    }
-                    #deleteButton{
-
-                    }
-
-                  }
-                  &:hover {
-                    width:6.25em;
-                    #avatarOptions{
-                      transform: scale(0.8);
-                      opacity: 1;
-                      pointer-events: auto;
-                    }
-                  }
+                // If user didn't set is own avatar
+                .avatarDefault{
                 }
 
-                &.avatarPreview{
+                #avatarOptions{
                   position: absolute;
-                  //left:     28px;
-                  left:44px;
-                  transform:  scale(1) translate3d(0, 0, 0);
+                  top:      0;
+                  left:     3.8em;
+                  transform: scale(0);
+
+                  transition: all 0.5s;
                   opacity:    0;
                   pointer-events: none;
 
-                  &.is-visible{
-                    transform:  scale(1.2) translate3d(-20px, 15px, 0);
-                    opacity:    1;
-                    pointer-events: auto;
+
+                  #uploadButton{
+
+                  }
+                  #deleteButton{
+
                   }
 
                 }
-
-              }
-              #buttonUploadAvatar{
-                width: 0em; // trick
-                height: 0em;
-                transition: all 0.4s;
-                transform-origin: top;
-                transform:  scale(0);
-                opacity:    0;
-                &.is-visible{
-                  transform:  scale(1);
-                  opacity:    1;
-                  height:     4em;
+                &:hover {
+                  width:6.25em;
+                  #avatarOptions{
+                    transform: scale(0.8);
+                    opacity: 1;
+                    pointer-events: auto;
+                  }
                 }
-                *{ font-size: 10px !important; }
               }
+
+              &.avatarPreview{
+                position: absolute;
+                //left:     28px;
+                left:44px;
+                transform:  scale(1) translate3d(0, 0, 0);
+                opacity:    0;
+                pointer-events: none;
+
+                &.is-visible{
+                  transform:  scale(1.2) translate3d(-20px, 15px, 0);
+                  opacity:    1;
+                  pointer-events: auto;
+                }
+
+              }
+
             }
-
+            #buttonUploadAvatar{
+              width: 0em; // trick
+              height: 0em;
+              transition: all 0.4s;
+              transform-origin: top;
+              transform:  scale(0);
+              opacity:    0;
+              &.is-visible{
+                transform:  scale(1);
+                opacity:    1;
+                height:     4em;
+              }
+              *{ font-size: 10px !important; }
+            }
           }
 
-          #Logout{
+        }
+
+        #VerifyEmail, #ChangePassword, #Logout{
             margin-top: 10px;
-          }
-
-          #ChangePassword{}
+        }
+        #VerifyEmail{}
+        #ChangePassword{}
+        #Logout{}
 
         }
       }

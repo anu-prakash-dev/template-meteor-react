@@ -1,8 +1,7 @@
 import React from 'react';
-//import reactMixin from 'react-mixin';
 
 import {Colors} from '/client/app/Theme';
-import ButtonFLat from '/client/app/components/ui/ButtonFlat'
+import ButtonFlat from '/client/app/components/ui/ButtonFlat';
 
 
 
@@ -19,12 +18,12 @@ class Logout extends React.Component{
     
   render() {
     return (
-      <ButtonFLat 
+      <ButtonFlat 
         className = "btn-action"
         id="Logout"
         label= "Logout"
         onClick={this.logout}
-        backgroundColor={this.props.backgroundColor||Colors.blueMedium2}
+        backgroundColor={this.props.backgroundColor||Colors.active}
         style = {this.props.style}
       />  
     )
@@ -33,7 +32,5 @@ class Logout extends React.Component{
 
 };
 
-
-//reactMixin(Login.prototype, ReactMeteorData);
 
 export default Logout;

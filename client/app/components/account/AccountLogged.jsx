@@ -2,10 +2,12 @@ import React      from 'react';
 
 import ChangeAvatar   from './items/ChangeAvatar';
 import BasicInfo      from './items/BasicInfo';
-import Logout         from './items/Logout';
+import VerifyEmail    from './items/VerifyEmail';
 import ChangePassword from './items/ChangePassword';
-
+import Logout         from './items/Logout';
 import {Colors} from '/client/app/Theme';
+
+
 
 class AccountLogged extends React.Component{
 
@@ -24,22 +26,33 @@ class AccountLogged extends React.Component{
               <ChangeAvatar openSnackBar={this.props.openSnackBar} />     
               
               <BasicInfo
-                openSnackBar   = {this.props.openSnackBar}
+                userId         = {this.props.userId}
                 username       = {this.props.username}
                 email          = {this.props.email}
                 isEmailVerified= {this.props.isEmailVerified}
+                openSnackBar   = {this.props.openSnackBar}
               />
             </div>
 
-            
-            <Logout
-              style={{width: '100%', marginTop: '10px'}}
-              backgroundColor={Colors.blueMedium1}
+        
+            <VerifyEmail
+              isEmailVerified = {this.props.isEmailVerified}
+              userId          = {this.props.userId}
+              email           = {this.props.email}
+              openSnackBar    = {this.props.openSnackBar}
             />
 
+            
             <ChangePassword 
+              controlPassword = {this.props.controlPassword}
               openSnackBar    = {this.props.openSnackBar}
-              controlPassword = {this.props.controlPassword} />
+            />
+              
+              
+            <Logout
+              style={{width: '100%'}}
+              backgroundColor={Colors.blueMedium1}
+            />
             
             
           </div>

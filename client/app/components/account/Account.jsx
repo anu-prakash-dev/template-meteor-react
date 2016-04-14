@@ -33,6 +33,7 @@ class Account extends React.Component {
               <AccountLogged
                 openSnackBar = {this.props.openSnackBar}
                 username     = {this.data.user.username}
+                userId       = {this.data.user._id}
                 email        = {this.data.user.emails?this.data.user.emails[0].address:false}
                 isEmailVerified = {this.data.user.emails?this.data.user.emails[0].verified:false}
                 controlPassword = {controlPassword}

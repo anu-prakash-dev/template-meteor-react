@@ -27,7 +27,8 @@ class App extends React.Component {
   
   getMeteorData(){
     return{
-      onResetPasswordLink: Session.get("onResetPasswordLink")
+      onResetPasswordLink: Session.get("onResetPasswordLink"),
+      onEmailVerificationLink: Session.get("onEmailVerificationLink")
     }  
   }
 
@@ -55,11 +56,35 @@ class App extends React.Component {
       isAuthenticated: Meteor.userId() !== null
     };
   }
-
+//
+//  shouldComponentUpdate(a, b){
+////    console.log(a);
+////    console.log(b);
+//    return false;
+//  }
+//  
   componentWillMount(){
-    let onResetPasswordLink = Session.get("onResetPasswordLink");
-    if(onResetPasswordLink) 
+    let onResetPasswordLink= Session.get("onResetPasswordLink");
+    if(onResetPasswordLink)
       browserHistory.push('/forgot-password');
+    
+    let onEmailVerificationLink = Session.get("onEmailVerificationLink");
+    console.log('App');
+    console.log(onEmailVerificationLink);
+    
+    if(onEmailVerificationLink)
+      this.openSnackBar('Your email has been verified!')
+  }
+  
+  componentDidMount(){
+
+    let onEmailVerificationLink = Session.get("onEmailVerificationLink");
+    console.log('App');
+    console.log(onEmailVerificationLink);
+    
+    if(onEmailVerificationLink)
+      this.openSnackBar('Your email has been verified!')
+    
   }
   
   render(){

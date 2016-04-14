@@ -1,3 +1,5 @@
+import { Meteor }   from 'meteor/meteor'
+import { Accounts } from 'meteor/accounts-base'
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import {Routes} from './app/Routes';
@@ -13,6 +15,24 @@ Accounts.onResetPasswordLink((token)=>{
     onResetPasswordLink: true,
     onResetPasswordLinkToken: token
   })
+  
+});
+
+Accounts.onEmailVerificationLink((token, done)=>{
+
+    Session.set({
+      onEmailVerificationLink: true,
+    })
+    
+    Accounts.verifyEmail(token, (err)=>{
+        if(!err){
+          console.log('verifyEmail ok');
+          console.log('todo : trigger snackbar after verifyEmail');
+        }
+        else{
+          console.log('Error : ' + err);
+        }
+    });
   
 });
    

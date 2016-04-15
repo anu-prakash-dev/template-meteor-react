@@ -56,13 +56,7 @@ class App extends React.Component {
       isAuthenticated: Meteor.userId() !== null
     };
   }
-//
-//  shouldComponentUpdate(a, b){
-////    console.log(a);
-////    console.log(b);
-//    return false;
-//  }
-//  
+
   componentWillMount(){
     let onResetPasswordLink= Session.get("onResetPasswordLink");
     if(onResetPasswordLink)
@@ -75,22 +69,9 @@ class App extends React.Component {
     if(onEmailVerificationLink)
       this.openSnackBar('Your email has been verified!')
   }
-  
-  componentDidMount(){
 
-    let onEmailVerificationLink = Session.get("onEmailVerificationLink");
-    console.log('App');
-    console.log(onEmailVerificationLink);
-    
-    if(onEmailVerificationLink)
-      this.openSnackBar('Your email has been verified!')
-    
-  }
   
   render(){
-    
-    
-    //console.log(Session.get("onResetPasswordLink"));
     
     return(
       <div className="App" onClick={this.test}>

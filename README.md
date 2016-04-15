@@ -64,6 +64,7 @@ Play
     * avatarDefault (first letter of the username)
     * avatar (input->base64->mongodb)
   * ChangeAvatar
+  * VerifyEmail
   * ChangePassword
   * ForgotPassword (send email with link)
   * ResetForgotPassword (from the email link)
@@ -95,6 +96,8 @@ Play
           -  <BasicInfo/>
           -  <Logout/>
           -  <ChangePassword/>
+             if(emailIsNotVerified)
+               <VerifyEmail/>
 
 
     // landing on app after clicking on the email link (triggered by ForgotPassword

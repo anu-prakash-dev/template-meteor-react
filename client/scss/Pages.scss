@@ -228,21 +228,28 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
   
   &.PageShowcase{
+    overflow: auto;
     //cursor: url('/medias/icons/cursor.png') 39 39, auto;  
 
-    h1{}
+    h1{
+      margin-bottom:     -2em;
+    }
     h2{
-      margin-top:     3em;
-      margin-bottom:  1.5em;
+      margin-top:     4em;
       color:$color_grey_light;
+    }
+    label{
+      display: block;
+      margin-bottom:  1.5em !important;
     }
     p{}
 
     section {
       position: relative;
-      margin: 0 auto;
-      width:  100%;
+      margin:   0 auto;
+      width:    100%;
       max-width: 35em;
+      padding-bottom: 4em;
 
       // Material Buttons
       .wrapper-buttons{
@@ -257,7 +264,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
       }
       // Loader
       .wrapper-loader{
-        text-align: center;
+        //text-align: center;
         label{
           margin-bottom: 0.5em;
         }
@@ -326,11 +333,13 @@ html body #App-wrapper .App .app-main .app-content .Page{
       // ListAnimated
       .ListAnimated{
         background: #fff;
-        margin: 130px 0 40px 0;
         position: relative;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
                     0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
+        input{
+          font-size: 14px !important;
+        }
           hr {
             margin: 20px 0;
             border: 0;
@@ -600,7 +609,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
           .todo-list li {
             position: relative;
-            font-size: 24px;
+            font-size: 22px;
             box-shadow: 0 -1px 0 #ededed;
             overflow: hidden;
           }

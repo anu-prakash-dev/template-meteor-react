@@ -5,8 +5,8 @@ import {Colors} from '../Theme';
 import ButtonFlat     from '../components/ui/ButtonFlat'
 import LinkButtonFlat from '../components/ui/LinkButtonFlat'
 
-import ListDraggable  from '../components/ui/ListDraggable'
-import ListAnimated   from '../components/ui/ListAnimated'
+import ListDraggable  from '../components/ui/lists/ListDraggable'
+import ListAnimated   from '../components/ui/lists/ListAnimated'
  
 import LoaderLinear   from '/client/app/components/ui/LoaderLinear'
 import LoaderCircular from '/client/app/components/ui/LoaderCircular'
@@ -36,7 +36,8 @@ class PageShowcase extends React.Component {
         
         <section>
           
-          <h2> Material UI buttons </h2>
+          <h2> Buttons </h2>
+          <label>material-ui</label>
           <div className="wrapper-buttons flex">
             <LinkButtonFlat 
               link="/home" 
@@ -53,17 +54,17 @@ class PageShowcase extends React.Component {
           
 
           <h2> Draggable List </h2>
+          <label>react-motion</label>
           <ListDraggable/>
           
           
           
-          {/*
           <h2> Animated Todo List </h2>
+          <label>react-motion</label>
           <ListAnimated/>
-          */}
+
           
          
-          
           <h2> Loaders </h2>
           <div className="wrapper-loader">
             

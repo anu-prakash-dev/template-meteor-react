@@ -23,13 +23,14 @@ class Account extends React.Component {
   }
      
   render() {
+    
     return (
   
       <div id="Account">
 
         <section>
           
-          { Meteor.user() ?
+          { this.props.user ?
               <AccountLogged
                 openSnackBar = {this.props.openSnackBar}
                 username     = {this.data.user.username}
@@ -37,6 +38,7 @@ class Account extends React.Component {
                 email        = {this.data.user.emails?this.data.user.emails[0].address:false}
                 isEmailVerified = {this.data.user.emails?this.data.user.emails[0].verified:false}
                 controlPassword = {controlPassword}
+                user            = {this.props.user}
               />
             :
               <AccountNotLogged 
@@ -44,6 +46,7 @@ class Account extends React.Component {
                 controlUsername = {controlUsername}
                 controlEmail    = {controlEmail}
                 controlPassword = {controlPassword}
+                user            = {this.props.user}
               />
           }
             

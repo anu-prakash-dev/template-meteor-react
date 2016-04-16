@@ -12,6 +12,7 @@ class PageAccount extends React.Component {
   componentDidMount() {}
   
   render() {
+    
     return (
       <div className="Page PageAccount">
 
@@ -19,7 +20,10 @@ class PageAccount extends React.Component {
         <p> Login, ForgotPassword, CreateAccount</p>
         <p> Profile (ChangeAvatar, Logout, ChangePassword</p>
         
-        <Account openSnackBar={this.props.openSnackBar}/>
+        <Account 
+          openSnackBar = {this.props.openSnackBar}
+          user         = {this.props.user}
+        />
  
       </div>
     );

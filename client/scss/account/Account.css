@@ -145,7 +145,7 @@
     #Account section #AccountLogged#AccountLogged .content #VerifyEmail, #Account section #AccountLogged#AccountLogged .content #ChangePassword, #Account section #AccountLogged#AccountLogged .content #Logout, #Account section #AccountNotLogged#AccountLogged .content #VerifyEmail, #Account section #AccountNotLogged#AccountLogged .content #ChangePassword, #Account section #AccountNotLogged#AccountLogged .content #Logout {
       margin-top: 10px; }
     /* line 224, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-    #Account section #Login, #Account section #ForgotPassword, #Account section #Logout {
+    #Account section #Login, #Account section #LoginGoogle, #Account section #ForgotPassword, #Account section #Logout {
       margin-bottom: 10px; }
 
 /*# sourceMappingURL=Account.css.map */

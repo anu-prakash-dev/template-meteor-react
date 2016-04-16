@@ -57,7 +57,7 @@ Play
 
 
 * **Features**
-  * Login/Logout
+  * Login / LoginGoogle / Logout
   * CreateAccount
   * Avatar
     * avatarDisconnected  
@@ -70,11 +70,13 @@ Play
   * ResetForgotPassword (from the email link)
 
 
+
 * Meteor `account-ui`/`account-ui-unstyled` package **deleted**.
 
 * **Only using** meteor **`accounts-password`** api and custom **css** `(app/scss/account.scss)`
 * **Result**:  logical, re-usable, scalable and small react components, which allow to a custom UX.
 
+* Google Login: added `meteor add accounts-google` & `meteor add service-configuration`.
 
 * Actual implementation: 
 

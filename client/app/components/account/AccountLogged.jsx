@@ -17,46 +17,50 @@ class AccountLogged extends React.Component{
   }  
 
   render() {
+    
     return (
+      
       <div id="AccountLogged" className="account-box">
-          <div className="content">
-        
-            
-            <div className="flex">
-              <ChangeAvatar openSnackBar={this.props.openSnackBar} />     
-              
-              <BasicInfo
-                userId         = {this.props.userId}
-                username       = {this.props.username}
-                email          = {this.props.email}
-                isEmailVerified= {this.props.isEmailVerified}
-                openSnackBar   = {this.props.openSnackBar}
-              />
-            </div>
+        <div className="content">
 
-        
-            <VerifyEmail
-              isEmailVerified = {this.props.isEmailVerified}
-              userId          = {this.props.userId}
-              email           = {this.props.email}
-              openSnackBar    = {this.props.openSnackBar}
-            />
+          <div className="flex">
+            <ChangeAvatar openSnackBar={this.props.openSnackBar} />     
 
-            
-            <ChangePassword 
-              controlPassword = {this.props.controlPassword}
-              openSnackBar    = {this.props.openSnackBar}
+            <BasicInfo
+              userId         = {this.props.userId}
+              username       = {this.props.username}
+              email          = {this.props.email}
+              isEmailVerified= {this.props.isEmailVerified}
+              openSnackBar   = {this.props.openSnackBar}
             />
-              
-              
-            <Logout
-              style={{width: '100%'}}
-              backgroundColor={Colors.blueMedium1}
-            />
-            
-            
           </div>
+
+
+          <VerifyEmail
+            isEmailVerified = {this.props.isEmailVerified}
+            userId          = {this.props.userId}
+            email           = {this.props.email}
+            openSnackBar    = {this.props.openSnackBar}
+          />
+
+          { this.props.user.service === 'intern' ?
+              <ChangePassword 
+                controlPassword = {this.props.controlPassword}
+                openSnackBar    = {this.props.openSnackBar}
+              />
+            : 
+              ''
+          }
+
+          <Logout
+            style={{width: '100%'}}
+            backgroundColor={Colors.blueMedium1}
+          />
+
+
+        </div>
       </div>
+      
     )
   }
   

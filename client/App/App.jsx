@@ -27,6 +27,7 @@ class App extends React.Component {
   
   getMeteorData(){
     return{
+      user: Meteor.user(),
       onResetPasswordLink: Session.get("onResetPasswordLink"),
       onEmailVerificationLink: Session.get("onEmailVerificationLink")
     }  
@@ -53,7 +54,9 @@ class App extends React.Component {
 
   getMeteorData() {
     return {
-      isAuthenticated: Meteor.userId() !== null
+      user: Meteor.user(),
+      isLogged: Meteor.userId() !== null,
+      //isUserGoogle: Meteor.user().services.google !== null,
     };
   }
 
@@ -63,11 +66,26 @@ class App extends React.Component {
       browserHistory.push('/forgot-password');
     
     let onEmailVerificationLink = Session.get("onEmailVerificationLink");
-    console.log('App');
-    console.log(onEmailVerificationLink);
-    
     if(onEmailVerificationLink)
       this.openSnackBar('Your email has been verified!')
+  }
+
+  componentDidMount(){
+    
+//    // client
+      Meteor.subscribe("Meteor.users.initials");
+//
+//    setTimeout(function(){
+//      
+//      const userId = Meteor.userId();
+//      //const user   = Meteor.users.findOne(userId);
+//      const user   = Meteor.user();
+//      console.log(userId);
+//      console.log(user);
+//
+//      console.log();
+//
+//    }, 1000);
   }
 
   
@@ -92,7 +110,9 @@ class App extends React.Component {
               {/*props.children : page received from Routes.jsx*/}
               {React.cloneElement(this.props.children, {
                 key: this.props.children.props.route.pageName,
-                openSnackBar: this.openSnackBar
+                openSnackBar: this.openSnackBar,
+                user: this.data.user,
+                isLogged: this.data.isLogged,
 
               })}
             </ReactCSSTransitionGroup>

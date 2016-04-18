@@ -21,9 +21,9 @@ class LoginFacebook extends React.Component{
     
     const options = {
       redirectUrl: this.state.redirecUrl,
-      requestOfflineToken:false,
+      requestOfflineToken:true,
       loginStyle: 'popup',
-      //loginHint:'userEmail@gmail.com',
+      forceApprovalPrompt: true,
       //loginUrlParameters:'',
     }
 

@@ -1,5 +1,4 @@
 
-
 export const setGoogleAuthConfig = () =>  {
 
   ServiceConfiguration.configurations.upsert(
@@ -21,7 +20,7 @@ export const setFacebookAuthConfig = () =>  {
     {
       $set: {
         appId:  "",
-        secret: ""
+        secret: "",
       }
     }
   );

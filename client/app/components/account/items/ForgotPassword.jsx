@@ -1,5 +1,4 @@
 import React from 'react';
-import reactMixin from 'react-mixin';
 
 import {Colors} from '/client/app/Theme';
 
@@ -39,9 +38,9 @@ class ForgotPassword extends React.Component{
 
       Accounts.forgotPassword({email: email}, (error)=> {
         if (error)
-          this.onError(error)
+          this.onError(error);
         else
-          this.onSuccess()
+          this.onSuccess();
       });
       
     });
@@ -200,5 +199,4 @@ class ForgotPassword extends React.Component{
 };
 
 
-//reactMixin(ForgotPassword.prototype, ReactMeteorData);
 export default ForgotPassword;

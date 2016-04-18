@@ -16,7 +16,6 @@ onCreateUser();
 
 
 
-
 Meteor.startup(function () {
   
   initialAdds();
@@ -25,5 +24,6 @@ Meteor.startup(function () {
   emailMailUrl();
   emailTemplate();
   
+
 });
 

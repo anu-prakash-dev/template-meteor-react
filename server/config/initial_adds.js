@@ -1,8 +1,8 @@
-import Tasks from '/lib/collections/tasks/declare';
+import {Tasks} from '/lib/collections/collections';
 
 
 
-// Add fake users & tasks if collections are empty
+// Add fake users & tasks if collections are empty on server launch
 
 
 export default function () {

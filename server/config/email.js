@@ -42,7 +42,8 @@ export const emailTemplate = () =>  {
 // Set email templates
 export const emailMailUrl = () =>  {
   // mailgun account
-  const MAIL_URL = 'smtp://postmaster@sandboxedff1adce6d54492ad12c36bdfc1e0df.mailgun.org:1e35fc000ad879b602e2f79b93a897ca@smtp.mailgun.org:587';
+  //const MAIL_URL = 'smtp://postmaster@sandboxedff1adce6d54492ad12c36bdfc1e0df.mailgun.org:1e35fc000ad879b602e2f79b93a897ca@smtp.mailgun.org:587';
+  const MAIL_URL = 'smtp://postmaster@	mg.madeinmoon.io:dfe19604f2bccbdc1ae6376b71f04234@smtp.mailgun.org:587';
   process.env.MAIL_URL = MAIL_URL;
 }
 

@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import reactMixin from 'react-mixin';
-import Tasks from '/lib/collections/tasks/declare';
+import {Tasks} from '/lib/collections/collections';
 
 import { TasksList } from '../components/Tasks/TasksList.jsx';
 import { TaskNew }   from '../components/Tasks/TaskNew.jsx';

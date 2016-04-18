@@ -21,9 +21,10 @@ class LoginGoogle extends React.Component{
     
     const options = {
       redirectUrl: this.state.redirecUrl,
-      requestOfflineToken:false,
+      requestOfflineToken:true,
       loginStyle: 'popup',
-      //loginHint:'userEmail@gmail.com',
+      prompt: 'select_account',
+      //loginHint:'user_email@gmail.com',
       //loginUrlParameters:'',
     }
 

@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import Tasks from '/lib/collections/tasks/declare';
+import {Tasks} from '/lib/collections/collections';
 
 
 //Meteor.publish('tasks', () => Tasks.find());

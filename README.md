@@ -2,7 +2,7 @@
 
 ## [Meteor-React template App](http://template-meteor-react.meteorapp.com/)
 
-[Demo](http://template-meteor-react.meteorapp.com)
+[Demo](http://www.madeinmoon.io)
 
 
 **Goals**
@@ -57,8 +57,8 @@ Play
 
 
 * **Features**
-  * Login / LoginGoogle / Logout
-  * CreateAccount
+  * Login / LoginGoogle/ LoginFacebook / Logout
+  * CreateAccount / DeleteAccount
   * Avatar
     * avatarDisconnected  
     * avatarDefault (first letter of the username)
@@ -73,7 +73,8 @@ Play
 
 * Meteor `account-ui`/`account-ui-unstyled` package **deleted**.
 
-* **Only using** meteor **`accounts-password`** api and custom **css** `(app/scss/account.scss)`
+* loginWithPassword
+  * **Only using** meteor **`accounts-password`** api and custom **css** `(app/scss/account.scss)`
 * **Result**:  logical, re-usable, scalable and small react components, which allow to a custom UX.
 
 * loginWith[Service]
@@ -91,6 +92,8 @@ Play
         if(!logged)
           <AccountNotLogged/>
           -  <Login/>
+          -  <LoginGoogle/>
+          -  <LoginFacebook/>
           -  <ForgotPassword/>
           -  <CreateAccount/>
 
@@ -101,6 +104,7 @@ Play
           -  <BasicInfo/>
           -  <Logout/>
           -  <ChangePassword/>
+          -  <DeleteAccount/>
              if(emailIsNotVerified)
                <VerifyEmail/>
 
@@ -113,7 +117,7 @@ Play
 
 #### Home
 
-* coming soon
+* coming soon : Display
 
 #### Tasks List
 

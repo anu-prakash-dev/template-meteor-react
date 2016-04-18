@@ -22,16 +22,16 @@
     font-size: 12px !important; }
 
 /* line 45, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-#Login, #ForgotPassword, #ChangePassword, #CreateAccount, #ResetForgotPassword {
+#Login, #ForgotPassword, #ChangePassword, #CreateAccount, #ResetForgotPassword, #DeleteAccount {
   width: 100%; }
   /* line 47, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-  #Login .roll, #ForgotPassword .roll, #ChangePassword .roll, #CreateAccount .roll, #ResetForgotPassword .roll {
+  #Login .roll, #ForgotPassword .roll, #ChangePassword .roll, #CreateAccount .roll, #ResetForgotPassword .roll, #DeleteAccount .roll {
     height: auto;
     overflow: hidden;
     transition: all 0.6s ease;
     max-height: 0; }
     /* line 52, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
-    #Login .roll.is-visible, #ForgotPassword .roll.is-visible, #ChangePassword .roll.is-visible, #CreateAccount .roll.is-visible, #ResetForgotPassword .roll.is-visible {
+    #Login .roll.is-visible, #ForgotPassword .roll.is-visible, #ChangePassword .roll.is-visible, #CreateAccount .roll.is-visible, #ResetForgotPassword .roll.is-visible, #DeleteAccount .roll.is-visible {
       max-height: 400px; }
 
 /* line 58, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */

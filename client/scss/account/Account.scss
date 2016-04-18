@@ -42,7 +42,7 @@
 
       
 // RollOver animation
-#Login, #ForgotPassword, #ChangePassword, #CreateAccount, #ResetForgotPassword{
+#Login, #ForgotPassword, #ChangePassword, #CreateAccount, #ResetForgotPassword, #DeleteAccount{
   width: 100%;
   .roll{
     height:     auto;
@@ -224,7 +224,7 @@
     #Login, #LoginGoogle, #LoginFacebook, #ForgotPassword, #Logout{
       margin-bottom: 10px;
     }
-
+    #DeleteAccount{}
  
   }  
   

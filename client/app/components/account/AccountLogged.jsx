@@ -5,6 +5,7 @@ import BasicInfo      from './items/BasicInfo';
 import VerifyEmail    from './items/VerifyEmail';
 import ChangePassword from './items/ChangePassword';
 import Logout         from './items/Logout';
+import DeleteAccount  from './items/DeleteAccount';
 import {Colors} from '/client/app/Theme';
 
 
@@ -53,6 +54,11 @@ class AccountLogged extends React.Component{
           }
 
           <Logout
+            style={{width: '100%'}}
+            backgroundColor={Colors.blueMedium1}
+          />
+
+          <DeleteAccount
             style={{width: '100%'}}
             backgroundColor={Colors.blueMedium1}
           />

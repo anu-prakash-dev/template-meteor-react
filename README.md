@@ -76,7 +76,10 @@ Play
 * **Only using** meteor **`accounts-password`** api and custom **css** `(app/scss/account.scss)`
 * **Result**:  logical, re-usable, scalable and small react components, which allow to a custom UX.
 
-* Google Login: added `meteor add accounts-google` & `meteor add service-configuration`.
+* loginWith[Service]
+  * Config:   `meteor add service-configuration`
+  * Google:   `meteor add accounts-google`
+  * Facebook: `meteor add accounts-facebook`
 
 * Actual implementation: 
 

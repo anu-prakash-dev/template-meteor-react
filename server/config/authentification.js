@@ -13,3 +13,17 @@ export const setGoogleAuthConfig = () =>  {
   );
 
 }
+
+export const setFacebookAuthConfig = () =>  {
+
+  ServiceConfiguration.configurations.upsert(
+    { service: "facebook" },
+    {
+      $set: {
+        appId:  "527109410805279",
+        secret: "5edadf9f160338d928444a6b5cac0993"
+      }
+    }
+  );
+
+}

@@ -4,6 +4,7 @@ import ForgotPassword  from './items/ForgotPassword'
 import CreateAccount   from './items/CreateAccount'
 import Login           from './items/Login'
 import LoginGoogle     from './items/LoginGoogle'
+import LoginFacebook   from './items/LoginFacebook'
 
 
 
@@ -27,6 +28,10 @@ class AccountNotLogged extends React.Component{
           />          
         
           <LoginGoogle
+            openSnackBar    = {this.props.openSnackBar}
+          />     
+            
+          <LoginFacebook
             openSnackBar    = {this.props.openSnackBar}
           />  
         

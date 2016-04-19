@@ -1,7 +1,8 @@
 import React      from 'react';
-import reactMixin from 'react-mixin';
 
 import Avatar     from './Avatar';
+
+import {changeAvatar, deleteAvatar} from '/client/api/accounts'
 
 import ButtonFlat from '/client/app/components/ui/ButtonFlat'
 import {Colors}   from '/client/app/Theme';
@@ -33,22 +34,9 @@ class ChangeAvatar extends React.Component{
     };
   }  
   
-  // Data
-  
-  getMeteorData() {
-    return { 
-      //avatar: Meteor.user().profile.avatar,
-    }
-  }
-
   changeAvatar(){
-    Meteor.users.update(
-      Meteor.userId(),
-      {$set: {
-         "profile.avatar": this.state.avatarLocalUri
-        }
-      }, 
-      null,
+    changeAvatar(
+      this.state.avatarLocalUri,
       (error)=>{
         if(!error){
           this.onChangeAvatarSuccess();
@@ -61,22 +49,14 @@ class ChangeAvatar extends React.Component{
   }
 
   deleteAvatar(){
-    Meteor.users.update(
-      Meteor.userId(),
-      {$set: {
-         "profile.avatar": ''
-        }
-      }, 
-      null,
-      (error)=>{
-        if(!error){
-          this.onDeleteAvatarSuccess();
-        }
-        else{
-          this.onDeleteAvatarError(error);
-        }
+    deleteAvatar( (error)=>{
+      if(!error){
+        this.onDeleteAvatarSuccess();
       }
-    );
+      else{
+        this.onDeleteAvatarError(error);
+      }
+    });
   }
 
   onChangeAvatarSuccess(){
@@ -85,12 +65,15 @@ class ChangeAvatar extends React.Component{
       this.resetInput();
     }, 450)
   }
+  
   onChangeAvatarError(){
     this.resetInput();
   }
+  
   onDeleteAvatarSuccess(){
     this.resetInput();
   }
+  
   onDeleteAvatarError(){
   }
   
@@ -233,5 +216,4 @@ class ChangeAvatar extends React.Component{
   
 };
 
-reactMixin(ChangeAvatar.prototype, ReactMeteorData);
 export default ChangeAvatar;

@@ -22,6 +22,7 @@ class AccountNotLogged extends React.Component{
         
           <Login
             openSnackBar    = {this.props.openSnackBar}
+            toggleRoll      = {this.props.toggleRoll}
             controlUsername = {this.props.controlUsername}
             controlEmail    = {this.props.controlEmail}
             controlPassword = {this.props.controlPassword}
@@ -37,11 +38,13 @@ class AccountNotLogged extends React.Component{
         
           <ForgotPassword
             openSnackBar = {this.props.openSnackBar}
+            toggleRoll   = {this.props.toggleRoll}
             controlEmail = {this.props.controlEmail}
           />  
          
           <CreateAccount
             openSnackBar    = {this.props.openSnackBar}
+            toggleRoll      = {this.props.toggleRoll}
             controlUsername = {this.props.controlUsername}
             controlEmail    = {this.props.controlEmail}
             controlPassword = {this.props.controlPassword}

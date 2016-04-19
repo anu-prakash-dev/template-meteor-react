@@ -21,7 +21,11 @@ class Account extends React.Component {
       loggingIn: Meteor.loggingIn(),
     }
   }
-     
+
+  toggleRoll(context) {
+    context.setState({ isRollOpen: !context.state.isRollOpen });
+  }
+  
   render() {
     
     return (
@@ -39,6 +43,7 @@ class Account extends React.Component {
                 isEmailVerified = {this.data.user.emails?this.data.user.emails[0].verified:false}
                 controlPassword = {controlPassword}
                 user            = {this.props.user}
+                toggleRoll = {this.toggleRoll}
               />
             :
               <AccountNotLogged 
@@ -47,6 +52,7 @@ class Account extends React.Component {
                 controlEmail    = {controlEmail}
                 controlPassword = {controlPassword}
                 user            = {this.props.user}
+                toggleRoll = {this.toggleRoll}
               />
           }
             

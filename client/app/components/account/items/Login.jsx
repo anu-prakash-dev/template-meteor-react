@@ -1,16 +1,15 @@
-import React from 'react';
-import reactMixin from 'react-mixin';
+import {Meteor} from 'meteor/meteor';
+import React    from 'react';
 import {browserHistory} from 'react-router';
 
 import ForgotPassword  from './ForgotPassword'
 import CreateAccount   from './CreateAccount'
 
-import {Colors}        from '/client/app/Theme';
+import {loginWithPassword} from '/client/api/accounts'
+
+import {Colors}          from '/client/app/Theme';
 
 import ButtonFLat           from '/client/app/components/ui/ButtonFlat'
-import LoaderLinear         from '/client/app/components/ui/LoaderLinear'
-import LoaderCircular       from '/client/app/components/ui/LoaderCircular'
-import LoaderBounce         from '/client/app/components/ui/LoaderBounce'
 import InputFloatingLabel   from '/client/app/components/ui/InputFloatingLabel'
 
 
@@ -26,8 +25,6 @@ class Login extends React.Component{
     this.setErrorText   = this.setErrorText.bind(this);
     this.resetErrorText = this.resetErrorText.bind(this);
     this.toggleRoll = this.toggleRoll.bind(this);
-    this.openRoll = this.openRoll.bind(this);
-    this.closeRoll = this.closeRoll.bind(this);
     this.state = {
       username: '',
       password: '',
@@ -37,16 +34,11 @@ class Login extends React.Component{
     };
   }
   
-  getMeteorData() {
-    return { 
-      user: Meteor.user(),
-      loggingIn: Meteor.loggingIn(),
-    }
-  }
-      
+  // Login Methods
+  
   login() {
     this.controlInputs( (username, password) => {
-      Meteor.loginWithPassword(
+      loginWithPassword(
         username, 
         password, 
         (error) => {
@@ -58,8 +50,6 @@ class Login extends React.Component{
       );
     });
   }   
-    
-  // Login Callbacks
   
   onLoginSuccess(){
     console.log('Login success : ')
@@ -144,21 +134,11 @@ class Login extends React.Component{
     
   }   
   
-   
-  // Toggle Roll
+  // Roll
   
   toggleRoll() {
-    this.setState({ isRollOpen: !this.state.isRollOpen });
+    this.props.toggleRoll(this);
   }
-    
-  openRoll() {
-    this.setState({ isRollOpen: true });
-  }
-  
-  closeRoll() {
-    this.setState({ isRollOpen: false});
-  }
-   
   
   render() {
     
@@ -217,10 +197,8 @@ class Login extends React.Component{
       </div>
     )
   }
-  
 
 };
 
 
-reactMixin(Login.prototype, ReactMeteorData);
 export default Login;

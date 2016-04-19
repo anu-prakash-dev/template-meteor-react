@@ -15,7 +15,6 @@ export const googleAuth = {
   
 }    
 
-
 export const facebookAuth = {
   
  getRedirectUrl : () =>  {

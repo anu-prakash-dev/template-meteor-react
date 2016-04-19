@@ -8,13 +8,13 @@ import LinkButtonFlat from '../components/ui/LinkButtonFlat'
 import ListDraggable  from '../components/ui/lists/ListDraggable'
 import ListAnimated   from '../components/ui/lists/ListAnimated'
  
-import LoaderLinear   from '/client/app/components/ui/LoaderLinear'
-import LoaderCircular from '/client/app/components/ui/LoaderCircular'
-import LoaderBounce   from '/client/app/components/ui/LoaderBounce'
-import LoaderPulse    from '/client/app/components/ui/LoaderPulse'
-import LoaderScale    from '/client/app/components/ui/LoaderScale'
-import LoaderMoon     from '/client/app/components/ui/LoaderMoon'
-import LoaderRing     from '/client/app/components/ui/LoaderRing'
+import LoaderLinear   from '/client/app/components/ui/loaders/LoaderLinear'
+import LoaderCircular from '/client/app/components/ui/loaders/LoaderCircular'
+import LoaderBounce   from '/client/app/components/ui/loaders/LoaderBounce'
+import LoaderPulse    from '/client/app/components/ui/loaders/LoaderPulse'
+import LoaderScale    from '/client/app/components/ui/loaders/LoaderScale'
+import LoaderMoon     from '/client/app/components/ui/loaders/LoaderMoon'
+import LoaderRing     from '/client/app/components/ui/loaders/LoaderRing'
 
 
 

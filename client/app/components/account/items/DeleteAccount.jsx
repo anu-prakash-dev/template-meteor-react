@@ -1,5 +1,6 @@
-import {Meteor} from 'meteor/meteor';
-import React from 'react';
+import React    from 'react';
+
+import {deleteAccount} from '/client/api/accounts';
 
 import {Colors} from '/client/app/Theme';
 
@@ -18,55 +19,46 @@ class DeleteAccount extends React.Component{
     this.resetErrorText  = this.resetErrorText.bind(this);
     this.resetAllErrorTexts= this.resetAllErrorTexts.bind(this);
     this.resetInputs     = this.resetInputs.bind(this);
+    this.toggleRoll      = this.toggleRoll.bind(this);
     this.handleClick     = this.handleClick.bind(this);
     this.deleteAccount   = this.deleteAccount.bind(this);
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
-    this.toggleRoll      = this.toggleRoll.bind(this);
-    this.openRoll        = this.openRoll.bind(this);
-    this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
       // input
       passwordConfirm:           '',
       passwordConfirmErrorText:  '',
-      // data
-      userId: '',
-      userService: '',
       // ui
       timeout: 3500,
       isRollOpen: false,
     };
   }
 
-  componentDidMount(){
-    const userService = Meteor.user().service;  // 'intern', 'google' or 'facebook'
-    const userId      = Meteor.user()._id;
-    this.setState({ 
-      userService: userService,
-      userId: userId
-    })
-  }
-
   handleClick(){
     
-    if(this.state.userService === 'intern'){
+    var userId = this.props.user._id;
+    var userService = this.props.user.service;
+    console.log()
+    if(userService === 'intern'){
       this.controlPassword(()=>{
-        this.deleteAccount(this.state.userId);
+        this.deleteAccount(userId);
       });
     }
     else{
-      this.deleteAccount(this.state.userId);
+      this.deleteAccount(userId);
     }
     
   }
   
   deleteAccount(userId){
-    Meteor.users.remove({_id: userId}, (error)=> {
+    
+    deleteAccount(userId, (error)=> {
       if (error)
         this.onError(error);
       else
         this.onSuccess();
-    });   
+    });
+    
   }
 
   onSuccess(){
@@ -76,7 +68,7 @@ class DeleteAccount extends React.Component{
   onError(error){
     console.log(error);
     // todo
-    this.setErrorText("passwordConfirm", "Ouups.. Something went wrong");
+    this.props.openSnackbar("Ouups.. Something went wrong");
   }
   
   // Inputs
@@ -95,6 +87,8 @@ class DeleteAccount extends React.Component{
     
     const passwordConfirm = this.state.passwordConfirm;
     // todo : checkPassword
+    console.warn('TODO : control password before delete user');
+    
     if( this.props.controlEmail != this.props.controlEmail ){
       console.log("password not valid");
       this.setErrorText("passwordConfirm", "Password not valid");
@@ -138,33 +132,22 @@ class DeleteAccount extends React.Component{
       passwordConfirm: ''
     })
   }
-   
-  // Toggle Roll
   
-  toggleRoll() {
-    this.setState({ isRollOpen: !this.state.isRollOpen });
-  }
-    
-  openRoll() {
-    this.setState({ isRollOpen: true });
-  }
-  
-  closeRoll() {
-    this.setState({ isRollOpen: false});
+  toggleRoll(){
+    this.props.toggleRoll(this);
   }
   
   // Render
   
   render() {
-    let aaa = this.state.userService ;
-    console.log(aaa);
+    let userService     = this.props.user.service;
     let isRollOpen      = this.state.isRollOpen;
     let toggleRollClass = isRollOpen?' is-visible':'';
     
     return (
       <div id="DeleteAccount">
          
-        { aaa == 'intern' ?
+        { userService == 'intern' ?
             <div className={"roll"+toggleRollClass}>
 
               <InputFloatingLabel

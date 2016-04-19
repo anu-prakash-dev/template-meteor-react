@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {forgotPassword} from '/client/api/accounts';
+
 import {Colors} from '/client/app/Theme';
 
 import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
@@ -21,8 +23,6 @@ class ForgotPassword extends React.Component{
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
     this.toggleRoll      = this.toggleRoll.bind(this);
-    this.openRoll        = this.openRoll.bind(this);
-    this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
       email:           '',
       emailErrorText:  '',
@@ -33,10 +33,8 @@ class ForgotPassword extends React.Component{
 
   
   forgotPassword(){
-    
     this.controlInputs((email)=>{
-
-      Accounts.forgotPassword({email: email}, (error)=> {
+      forgotPassword(email, (error)=> {
         if (error)
           this.onError(error);
         else
@@ -69,7 +67,7 @@ class ForgotPassword extends React.Component{
     if (error.message === 'User not found [403]')
       this.setErrorText("email", "Email not found");
     else 
-      this.setErrorText("email", "We are sorry but something went wrong");
+      this.props.openSnackBar("We are sorry but something went wrong");
     
   }
   
@@ -135,15 +133,7 @@ class ForgotPassword extends React.Component{
   // Toggle Roll
   
   toggleRoll() {
-    this.setState({ isRollOpen: !this.state.isRollOpen });
-  }
-    
-  openRoll() {
-    this.setState({ isRollOpen: true });
-  }
-  
-  closeRoll() {
-    this.setState({ isRollOpen: false});
+    this.props.toggleRoll(this);
   }
   
   // Render

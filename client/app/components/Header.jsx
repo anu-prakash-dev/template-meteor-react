@@ -34,6 +34,7 @@ class Header extends React.Component {
         <Link className="button-nav" to="/account">
           <Avatar/>
         </Link>
+        
       </header>
       
     )

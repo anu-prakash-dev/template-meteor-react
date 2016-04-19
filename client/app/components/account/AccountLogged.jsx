@@ -47,6 +47,7 @@ class AccountLogged extends React.Component{
           { this.props.user.service === 'intern' ?
               <ChangePassword 
                 controlPassword = {this.props.controlPassword}
+                toggleRoll      = {this.props.toggleRoll}
                 openSnackBar    = {this.props.openSnackBar}
               />
             : 
@@ -61,6 +62,8 @@ class AccountLogged extends React.Component{
           <DeleteAccount
             style={{width: '100%'}}
             backgroundColor={Colors.blueMedium1}
+            toggleRoll = {this.props.toggleRoll}
+            user  = {this.props.user}
           />
 
 

@@ -1,11 +1,15 @@
 import React from 'react';
-import reactMixin from 'react-mixin';
+
+import {resetForgetPassword} from '/client/api/accounts';
+import {controlPassword, redirect} from '/client/utilities/Utilities';
+
+import {Colors} from '/client/app/Theme';
 
 import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
-import {Colors} from '/client/app/Theme';
-import {controlPassword, redirect} from '/client/utilities/Utilities';
+
+
 
 class ResetForgotPassword extends React.Component{
 
@@ -21,8 +25,6 @@ class ResetForgotPassword extends React.Component{
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
     this.toggleRoll      = this.toggleRoll.bind(this);
-    this.openRoll        = this.openRoll.bind(this);
-    this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
       password:                 '',
       passwordConfirm:          '',
@@ -43,7 +45,7 @@ class ResetForgotPassword extends React.Component{
         return;
       }
       
-      Accounts.resetPassword(
+      resetForgetPassword(
         token, 
         password, 
         (error) => {
@@ -53,6 +55,7 @@ class ResetForgotPassword extends React.Component{
               this.onSuccess()
         }
       );
+      
     });
   }
 
@@ -153,18 +156,10 @@ class ResetForgotPassword extends React.Component{
     })
   }
    
-  // Toggle Roll
+  // Roll
   
   toggleRoll() {
     this.setState({ isRollOpen: !this.state.isRollOpen });
-  }
-  
-  openRoll() {
-    this.setState({ isRollOpen: true });
-  }
-  
-  closeRoll() {
-    this.setState({ isRollOpen: false});
   }
   
   // Render
@@ -220,9 +215,7 @@ class ResetForgotPassword extends React.Component{
     )
   }
   
-
 };
 
 
-//reactMixin(ResetForgotPassword.prototype, ReactMeteorData);
 export default ResetForgotPassword;

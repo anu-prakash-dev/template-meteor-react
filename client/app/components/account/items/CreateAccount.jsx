@@ -1,5 +1,6 @@
 import React from 'react';
-import reactMixin from 'react-mixin';
+
+import {createAccount} from '/client/api/accounts';
 
 import {Colors} from '/client/app/Theme';
 
@@ -20,9 +21,6 @@ class CreateAccount extends React.Component{
     this.createAccount  = this.createAccount.bind(this);
     this.onSuccess      = this.onSuccess.bind(this);
     this.toggleRoll     = this.toggleRoll.bind(this);
-    this.openRoll       = this.openRoll.bind(this);
-    this.closeRoll      = this.closeRoll.bind(this);
-    //this.getMeteorData = this.getMeteorData.bind(this);
     this.state = {
       username:         '',
       email:         '',
@@ -43,24 +41,13 @@ class CreateAccount extends React.Component{
   createAccount(){
     this.controlInputs( (username, email, password)=>{
       // if control is ok
-      
-      const options={
-        username: username,
-        email:    email,
-        password: password,
-        profile: {
-          avatar:  '',
-          name:    '',
-          gender:  '',
-          age:     '',
-          city:    '',
-          country: ''
-        },
-      }
-      
-      Accounts.createUser(
-        options, 
+
+      createAccount(
+        username, 
+        email, 
+        password, 
         (error) => {
+          console.log(typeof error)
           if(error)
             this.onError(error)
           else
@@ -176,17 +163,8 @@ class CreateAccount extends React.Component{
   // Toggle Roll
   
   toggleRoll() {
-    this.setState({ isRollOpen: !this.state.isRollOpen });
+    this.props.toggleRoll(this);
   }
-    
-  openRoll() {
-    this.setState({ isRollOpen: true });
-  }
-  
-  closeRoll() {
-    this.setState({ isRollOpen: false});
-  }
- 
   
   render() {
     
@@ -272,7 +250,5 @@ class CreateAccount extends React.Component{
   
 };
 
-
-//reactMixin(CreateAccount.prototype, ReactMeteorData);
 
 export default CreateAccount;

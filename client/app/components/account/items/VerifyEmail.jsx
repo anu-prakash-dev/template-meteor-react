@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {sendVerificationEmail} from '/client/api/accounts';
 import {Colors} from '/client/app/Theme';
 import ButtonFlat from '/client/app/components/ui/ButtonFlat';
 
@@ -16,8 +17,8 @@ class VerifyEmail extends React.Component{
   sendVerificationEmail(){
     const userId = this.props.userId;
     const email  = this.props.email;
-    Meteor.call(
-      'sendVerificationEmail',
+    
+    sendVerificationEmail(
       userId, 
       email, 
       (err)=>{

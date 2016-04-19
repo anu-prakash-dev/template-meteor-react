@@ -12,7 +12,7 @@ Provide a template app, with ready-to-go components, methods and services.
 
 **Tech**
 
-Meteor(1.3.2.2), ES6, react(15.0.1), react-router(15.0.1)
+Meteor, ES6, react, react-router
 
 Comming soon : [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction, and more
 

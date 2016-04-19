@@ -1,5 +1,6 @@
 import React      from 'react';
-import reactMixin from 'react-mixin';
+
+import {changePassword}   from '/client/api/accounts';
 
 import {Colors}   from '/client/app/Theme';
 
@@ -22,8 +23,6 @@ class ChangePassword extends React.Component{
     this.onSuccess       = this.onSuccess.bind(this);
     this.onError         = this.onError.bind(this);
     this.toggleRoll      = this.toggleRoll.bind(this);
-    this.openRoll        = this.openRoll.bind(this);
-    this.closeRoll       = this.closeRoll.bind(this);
     this.state = {
       password:           '',
       passwordNew:        '',
@@ -37,11 +36,12 @@ class ChangePassword extends React.Component{
     };
   }
 
+  // ChangePassword methods
+  
   changePassword(){
     
     this.controlInputs( (password, passwordNew) => {
-      
-      Accounts.changePassword(
+      changePassword(
         password, 
         passwordNew, 
         (error) => {
@@ -57,13 +57,13 @@ class ChangePassword extends React.Component{
 
   onSuccess(){
     
-    console.log('Login success ');
+    console.log('changePassword success ');
     
     this.resetInputs();
     this.resetAllErrorTexts();
     
     setTimeout(()=>{
-      this.toggleRoll();
+      this.props.toggleRoll(this);
     }, 250);
     setTimeout(()=>{
       this.props.openSnackBar('Password changed!');
@@ -165,14 +165,7 @@ class ChangePassword extends React.Component{
   // Toggle Roll
   
   toggleRoll() {
-    this.setState({ isRollOpen: !this.state.isRollOpen });
-  }
-    
-  openRoll() {
-    this.setState({ isRollOpen: true });
-  }
-  closeRoll() {
-    this.setState({ isRollOpen: false});
+    this.props.toggleRoll(this);
   }
   
   // Render
@@ -251,5 +244,4 @@ class ChangePassword extends React.Component{
 };
 
 
-//reactMixin(ChangePassword.prototype, ReactMeteorData);
 export default ChangePassword;

@@ -1,6 +1,6 @@
 import React from 'react';
+import {loginWithFacebook} from '/client/api/accounts';
 import {Colors}     from '/client/app/Theme';
-import {facebookAuth} from '/client/api/authentification';
 import ButtonFLat   from '/client/app/components/ui/ButtonFlat'
 
 
@@ -12,30 +12,17 @@ class LoginFacebook extends React.Component{
     this.loginFacebook    = this.loginFacebook.bind(this);
     this.onLoginError   = this.onLoginError.bind(this);
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
-    this.state = {
-      redirecUrl: facebookAuth.getRedirectUrl()
-    };
+    this.state = {};
   }
  
   loginFacebook() {
-    
-    const options = {
-      redirectUrl: this.state.redirecUrl,
-      requestOfflineToken:true,
-      loginStyle: 'popup',
-      forceApprovalPrompt: true,
-      //loginUrlParameters:'',
-    }
 
-    Meteor.loginWithFacebook(
-      options, 
-      (error) => {
-        if(error)
-          this.onLoginError(error)
-        else
-          this.onLoginSuccess()
-      }
-    );
+    loginWithFacebook((error) => {
+      if(error)
+        this.onLoginError(error);
+      else
+        this.onLoginSuccess();
+    });
     
   }   
   
@@ -66,5 +53,6 @@ class LoginFacebook extends React.Component{
   }
 
 };
+
 
 export default LoginFacebook;

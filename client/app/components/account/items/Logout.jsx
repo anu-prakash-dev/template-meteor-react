@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {logout} from '/client/api/accounts'
 import {Colors} from '/client/app/Theme';
 import ButtonFlat from '/client/app/components/ui/ButtonFlat';
 
@@ -13,7 +14,7 @@ class Logout extends React.Component{
   }
 
   logout() {
-    Meteor.logout();
+    logout();
   }
     
   render() {

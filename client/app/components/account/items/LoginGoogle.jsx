@@ -1,6 +1,6 @@
 import React from 'react';
+import {loginWithGoogle} from '/client/api/accounts';
 import {Colors}     from '/client/app/Theme';
-import {googleAuth} from '/client/api/authentification';
 import ButtonFLat   from '/client/app/components/ui/ButtonFlat'
 
 
@@ -12,31 +12,17 @@ class LoginGoogle extends React.Component{
     this.loginGoogle    = this.loginGoogle.bind(this);
     this.onLoginError   = this.onLoginError.bind(this);
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
-    this.state = {
-      redirecUrl: googleAuth.getRedirectUrl()
-    };
+    this.state = {};
   }
  
   loginGoogle() {
-    
-    const options = {
-      redirectUrl: this.state.redirecUrl,
-      requestOfflineToken:true,
-      loginStyle: 'popup',
-      prompt: 'select_account',
-      //loginHint:'user_email@gmail.com',
-      //loginUrlParameters:'',
-    }
 
-    Meteor.loginWithGoogle(
-      options, 
-      (error) => {
-        if(error)
-          this.onLoginError(error)
-        else
-          this.onLoginSuccess()
-      }
-    );
+    loginWithGoogle((error) => {
+      if(error)
+        this.onLoginError(error);
+      else
+        this.onLoginSuccess();
+    });
     
   }   
   
@@ -45,6 +31,8 @@ class LoginGoogle extends React.Component{
   }
     
   onLoginError(error){
+    if(error.errorType === 'Accounts.LoginCancelledError'){return}
+    
     console.log('Google Login Error : ' + error);
     this.props.openSnackBar('Ouups.. Something went wrong');
   }
@@ -60,7 +48,7 @@ class LoginGoogle extends React.Component{
           backgroundColor = {Colors.blueMedium1}
           style           = {{width: '100%'}}
           onClick         = {this.loginGoogle}
-        /> 
+        />
 
       </div>
     )

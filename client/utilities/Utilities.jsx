@@ -20,8 +20,9 @@ export const controlPassword = (password) => {
   return re.test(password);
 }
     
-    
+
+
+
 export const redirect = (route) => {
   browserHistory.push(route);
 }
-    

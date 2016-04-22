@@ -4,16 +4,15 @@ import initialAdds                   from './config/initial_adds';
 import {emailTemplate, emailMailUrl} from './config/email';
 import {setGoogleAuthConfig}         from './config/authentification';
 import {setFacebookAuthConfig}       from './config/authentification';
-import {onCreateUser}                from './api/accounts';
+import {onCreateUser}                from './methods/accounts';
+
 
 
 
 
 setGoogleAuthConfig();
 setFacebookAuthConfig();
-
 onCreateUser();
-
 
 
 Meteor.startup(function () {
@@ -23,7 +22,7 @@ Meteor.startup(function () {
   
   emailMailUrl();
   emailTemplate();
-  
+
 
 });
 

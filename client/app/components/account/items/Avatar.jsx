@@ -1,3 +1,4 @@
+import {Meteor}   from 'meteor/meteor';
 import React      from 'react';
 import reactMixin from 'react-mixin';
 
@@ -8,6 +9,8 @@ const defaultAvatar = '/medias/default-avatar.svg';
       2) Logged in, with avatar = ''     : "avatarDefault"
       2) Logged in, with avatar = base64 : "avatar"
 */
+
+
 
 class Avatar extends React.Component{
 
@@ -21,7 +24,7 @@ class Avatar extends React.Component{
       user:   Meteor.user(),
       avatar: Meteor.user()?Meteor.user().profile.avatar:false,
     }
-  }
+  }  
   
   render() {
     
@@ -66,3 +69,5 @@ class Avatar extends React.Component{
 
 reactMixin(Avatar.prototype, ReactMeteorData);
 export default Avatar;
+
+

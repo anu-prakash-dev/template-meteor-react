@@ -47,7 +47,7 @@ Play
 
 #### Core
 
-* meteor 1.3.2.2, react 15.0.1, react-router 15.0.1
+* meteor 1.3.2.4, react 15.0.1, react-router 15.0.1
 
 #### Strucutre
 
@@ -117,7 +117,7 @@ Play
 
 #### Home
 
-* coming soon : Display
+* coming soons
 
 #### Tasks List
 
@@ -161,7 +161,7 @@ Play
 This app isn’t done yet. If you think something is missing or wrong, just sent me an email.
 
 This start-app contains:
-* Meteor release 1.3.2.2 with React and React Router
+* Meteor release 1.3.2.4 with React and React Router
 * NPM Packages: react@15.0.1 react-dom@15.0.1 react-router@2.0.0 history@2.0.0-rc2  react-mixin babel@6.5.1
 * ES6: arrow functions
 * User Login (create account, login/logout, change password)

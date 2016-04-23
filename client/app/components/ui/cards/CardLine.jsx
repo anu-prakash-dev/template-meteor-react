@@ -47,7 +47,7 @@ class CardLine extends React.Component {
           docked={false}
           width={200}
           open={this.state.open}
-          swipeAreaWidth={100}
+          swipeAreaWidth={60}
           onRequestChange={open => this.setState({open})}
         >
           <MenuItem onTouchTap={this.handleClose}>Menu Item</MenuItem>

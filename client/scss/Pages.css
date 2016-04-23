@@ -660,7 +660,7 @@ html body #App-wrapper .App .app-main .app-content .Page {
             bottom: 10px; } }
 
 /* line 854, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-#CardLine {
+#CardFull {
   width: 80%;
   margin: 2em auto; }
 

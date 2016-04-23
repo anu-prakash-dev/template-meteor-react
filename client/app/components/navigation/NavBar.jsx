@@ -4,13 +4,13 @@ import { Link } from 'react-router';
 import {Colors}   from '/client/app/Theme';
 
 import IconButton from 'material-ui/lib/icon-button';
-import FontIcon from 'material-ui/lib/font-icon';
+import FontIcon   from 'material-ui/lib/font-icon';
 
-import ButtonIconAccount  from './ui/button_icons/ButtonIconAccount';
-import ButtonIconHome     from './ui/button_icons/ButtonIconHome';
-import ButtonIconTasks    from './ui/button_icons/ButtonIconTasks';
-import ButtonIconShowcase from './ui/button_icons/ButtonIconShowcase';
-import ButtonIconGithub   from './ui/button_icons/ButtonIconGithub';
+import ButtonIconAccount  from '/client/app/components/ui/button_icons/ButtonIconAccount';
+import ButtonIconHome     from '/client/app/components/ui/button_icons/ButtonIconHome';
+import ButtonIconTasks    from '/client/app/components/ui/button_icons/ButtonIconTasks';
+import ButtonIconShowcase from '/client/app/components/ui/button_icons/ButtonIconShowcase';
+import ButtonIconGithub   from '/client/app/components/ui/button_icons/ButtonIconGithub';
 
 export const NavBar = () => (
 

@@ -1,8 +1,9 @@
+import {Meteor}   from 'meteor/meteor';
 import React      from 'react';
 import reactMixin from 'react-mixin';
 import { Link }   from 'react-router';
 
-import Avatar   from './account/items/Avatar';
+import Avatar   from '/client/app/components/account/items/Avatar';
 import {Colors} from '/client/app/Theme';
  
 

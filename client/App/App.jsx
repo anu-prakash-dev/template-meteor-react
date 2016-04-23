@@ -3,9 +3,10 @@ import reactMixin from 'react-mixin';
 import {browserHistory} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import   Header   from './components/Header';
-import { Footer } from './components/Footer';
-import { Colors } from './Theme';
+import   Header     from '/client/app/components/navigation/Header';
+import   DrawerLeft from '/client/app/components/navigation/DrawerLeft';
+import { Footer }   from '/client/app/components/navigation/Footer';
+import { Colors }   from '/client/app/Theme';
 
 import Snackbar from 'material-ui/lib/snackbar';
 
@@ -18,21 +19,32 @@ class App extends React.Component {
     this.openSnackBar         = this.openSnackBar.bind(this);
     this.closeSnackBar        = this.closeSnackBar.bind(this);
     this.handleSnackBarClick  = this.handleSnackBarClick.bind(this);
+    this.toggleDrawer = this.toggleDrawer.bind(this);
+    this.openDrawer   = this.openDrawer.bind(this);
+    this.closeDrawer  = this.closeDrawer.bind(this);
     this.state = {
       snackBarAutoHideDuration: 4000,
       snackBarMessage: '',
       snackBar: false,
+      isDrawerOpen: false
     };
   }
+  
+  
+  // Data
   
   getMeteorData(){
     return{
       user: Meteor.user(),
       onResetPasswordLink: Session.get("onResetPasswordLink"),
-      onEmailVerificationLink: Session.get("onEmailVerificationLink")
+      onEmailVerificationLink: Session.get("onEmailVerificationLink"),
+      isLogged: Meteor.userId() !== null,
     }  
   }
 
+  
+  // SnackBar methods
+  
   openSnackBar(text){
     if(typeof text != 'string'){text="Nothing special.."}
     this.setState({
@@ -52,14 +64,30 @@ class App extends React.Component {
     alert('Event removed from your calendar.');
   }
 
-  getMeteorData() {
-    return {
-      user: Meteor.user(),
-      isLogged: Meteor.userId() !== null,
-      //isUserGoogle: Meteor.user().services.google !== null,
-    };
+  
+  // Drawer methods
+  
+  toggleDrawer(){
+    this.setState({isDrawerOpen: !this.state.open});
+  }
+  
+  openDrawer(){
+    this.setState({isDrawerOpen: true});
+  }
+  
+  closeDrawer(){
+    this.setState({isDrawerOpen: false});
+  }
+  
+  attachCloseDrawerToOverlay(){
+    // TODO : find a cleaner way to close drawer on overlay click
+    const overlay = document.getElementsByClassName("drawerOverlay")[0];
+    overlay.addEventListener('click', this.closeDrawer)
   }
 
+  
+  // Component methods
+  
   componentWillMount(){
     let onResetPasswordLink= Session.get("onResetPasswordLink");
     if(onResetPasswordLink)
@@ -69,8 +97,10 @@ class App extends React.Component {
     if(onEmailVerificationLink)
       this.openSnackBar('Your email has been verified!')
   }
-
+  
   componentDidMount(){
+    this.attachCloseDrawerToOverlay();
+    
     
 //    // client
       Meteor.subscribe("Meteor.users.initials");
@@ -86,15 +116,22 @@ class App extends React.Component {
 //      console.log();
 //
 //    }, 1000);
+    
   }
 
-  
   render(){
     
     return(
-      <div className="App" onClick={this.test}>
+      <div className="App">
 
         <Header />
+        
+        <DrawerLeft 
+          isOpen = {this.state.isDrawerOpen}
+          toggleDrawer = {this.toggleDrawer}
+          openDrawer   = {this.openDrawer}
+          closeDrawer  = {this.closeDrawer}
+        />
 
         <main className="app-main">
 

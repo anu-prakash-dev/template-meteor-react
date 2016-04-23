@@ -1,6 +1,6 @@
 import React from 'react';
 import DragAndDrop from '/client/app/components/draganddrop/DragAndDrop'
-import CardLine    from '/client/app/components/cards/CardLine'
+import CardFull    from '/client/app/components/ui/cards/CardFull'
 
 class PageHome extends React.Component {
 
@@ -13,11 +13,12 @@ class PageHome extends React.Component {
     return(
 
       <div className="Page PageHome">
+
         {/*
-          <h1> DragAndDrop </h1>
           <DragAndDrop />
-          <CardLine />
         */}
+        
+          <CardFull />
         
       </div>
     );

@@ -26,12 +26,12 @@ export class TaskTextPlain extends React.Component {
 
       return (
 
-          <span className="text">
-            <strong>{p.task.username}</strong>:
+          <div className="text">
+            <p className="username">{p.task.username}</p>
             <span onClick={this.onClick.bind(this)}>
               {p.task.text}
             </span>
-          </span>
+          </div>
 
     );
   }

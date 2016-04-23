@@ -26,15 +26,15 @@ class CardFull extends React.Component {
         <Card>
           
           <CardHeader
-            title="URL Avatar"
-            subtitle="Subtitle"
-            avatar="http://lorempixel.com/100/100/nature/"
+            title={this.props.headerTitle}
+            subtitle={this.props.headerSubTitle}
+            avatar={this.props.headerAvatar}
           />
           
           <CardMedia
             overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
           >
-            <img src="http://lorempixel.com/600/337/nature/" />
+            <img src={this.props.mediaBackground} />
           </CardMedia>
           
           <CardTitle title="Card title" subtitle="Card subtitle" />
@@ -47,8 +47,8 @@ class CardFull extends React.Component {
           </CardText>
           
           <CardActions>
-            <FlatButton label="Action1" />
-            <FlatButton label="Action2" />
+            <FlatButton label="Like" />
+            <FlatButton label="Share" />
           </CardActions>
           
         </Card>

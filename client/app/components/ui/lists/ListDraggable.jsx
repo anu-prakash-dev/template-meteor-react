@@ -3,6 +3,7 @@ import {Motion, spring} from 'react-motion';
 import range            from 'lodash.range';
 
 
+// todo : optimize for perf, see https://github.com/chenglou/react-motion/issues/267
 
 function reinsert(arr, from, to) {
   const _arr = arr.slice(0);
@@ -57,8 +58,11 @@ class ListDraggable extends React.Component {
   }
 
   handleTouchMove(e) {
-    e.preventDefault();
-    this.handleMouseMove(e.touches[0]);
+    // page's scroll fix
+    if(e.target.className === "item"){
+      e.preventDefault();
+      this.handleMouseMove(e.touches[0]);
+    }
   }
 
   handleMouseDown(pos, pressY, {pageY}) {

@@ -7,13 +7,13 @@
 
 
 body, .Page{
-    overflow: auto;
-
-  background: url('/medias/backgrounds/background-dark.jpg'); 
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
+//    overflow: auto;
+//
+//  background: url('/medias/backgrounds/background-dark.jpg'); 
+//  background-position: center;
+//  background-size: cover;
+//  background-repeat: no-repeat;
+  background: $color_blue_dark;
 }
 html body #App-wrapper .App .app-main .app-content .Page{
   
@@ -23,10 +23,11 @@ html body #App-wrapper .App .app-main .app-content .Page{
   
   // General texts
   h1{
-    color: $color_blue_medium2;
+    //color: $color_blue_medium2;
+    color: $color_active;
     font-size: 26px;
     display:        inline-block;
-    margin-bottom:  10px;
+    margin-bottom:  2em;
     margin-right:   1em;
   }
   h2{
@@ -41,7 +42,9 @@ html body #App-wrapper .App .app-main .app-content .Page{
   
   
   &.PageHome{
-    padding: 0;
+    #CardFull{
+      margin-bottom: 3em;
+    }
   }
   
   
@@ -70,7 +73,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
     h2{
       color: $color_active;
-      margin-bottom: 0.5em;
+      //margin-bottom: 0.5em;
     }
 
     input{
@@ -79,10 +82,10 @@ html body #App-wrapper .App .app-main .app-content .Page{
     }
 
     p{
-      color: $color_blue_dark;
+      //color: $color_blue_dark;
     }
     .task-new, .task-list{
-      margin: 1em auto 2em auto;
+      margin: 0em auto 2em auto;
     }
 
     .task-new{
@@ -106,12 +109,12 @@ html body #App-wrapper .App .app-main .app-content .Page{
     }
 
     .task-list{
+      margin-top: 3em;
       h2{}
 
       .hide-completed {
-        //float: right;
-        position: relative;
         input{
+          margin-top: 1.5em;
           margin-right: 0.5em;
         }
       }
@@ -244,16 +247,17 @@ html body #App-wrapper .App .app-main .app-content .Page{
     overflow: auto;
     //cursor: url('/medias/icons/cursor.png') 39 39, auto;  
 
-    h1{
-      margin-bottom:     -2em;
-    }
+    h1{}
     h2{
-      margin-top:     4em;
       color:$color_grey_light;
+      &:not(:first-child){
+        margin-top:     3em;
+      }
     }
     label{
       display: block;
-      margin-bottom:  1.5em !important;
+      margin-top:  1em !important;
+      margin-bottom:  2em !important;
     }
     p{}
 
@@ -264,18 +268,24 @@ html body #App-wrapper .App .app-main .app-content .Page{
       max-width: 35em;
       padding-bottom: 4em;
 
-      // Material Buttons
+
       .wrapper-buttons{
+        margin-top: 1em;
         *{
-          font-size: 12px !important;
+          font-size: 10px !important;
         }
-        a.button-material-ui{
+        .button-mui{
+            width:100% !important;
+            &:not(:last-child){
+              margin-right: 1em;
+            }
           >div{ // button material-ui
-            margin-right: 10px;
+            width:100% !important;
+            min-width:100% !important;
           }
         }
       }
-      // Loader
+
       .wrapper-loader{
         //text-align: center;
         label{
@@ -307,7 +317,9 @@ html body #App-wrapper .App .app-main .app-content .Page{
         }
       }
 
-      // ListDraggable
+      .ListDraggable, .ListAnimated{
+        margin-top: 2em;  
+      }
       .ListDraggable {
         position: relative;
         width:    100%;
@@ -343,7 +355,6 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
         }  
 
-      // ListAnimated
       .ListAnimated{
         background: #fff;
         position: relative;
@@ -860,12 +871,6 @@ html body #App-wrapper .App .app-main .app-content .Page{
   
   
 }
-
-#CardFull{
-  width: 80%;
-  margin: 2em auto;
-}
-    
 
 
 

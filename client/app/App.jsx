@@ -1,6 +1,6 @@
 import React      from 'react';
 import reactMixin from 'react-mixin';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import   Header     from '/client/app/components/navigation/Header';
@@ -146,11 +146,11 @@ class App extends React.Component {
             >
               {/*props.children : page received from Routes.jsx*/}
               {React.cloneElement(this.props.children, {
-                key: this.props.children.props.route.pageName,
+                key:          this.props.children.props.route.pageName,
+                user:         this.data.user,
+                isLogged:     this.data.isLogged,
                 openSnackBar: this.openSnackBar,
-                user: this.data.user,
-                isLogged: this.data.isLogged,
-
+                toggleDrawer: this.toggleDrawer
               })}
             </ReactCSSTransitionGroup>
 

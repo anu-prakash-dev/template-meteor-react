@@ -16,14 +16,7 @@ export const NavBar = () => (
 
   <nav className="flex-row-align">
 
-    <Link to="/account">
-      <ButtonIconAccount 
-        color      = {Colors.blueMedium1}
-        hoverColor = {Colors.active}
-      />
-    </Link>   
-    
-    <Link to="/home">
+    <Link to="/">
       <ButtonIconHome 
         color       = {Colors.blueMedium1}
         hoverColor  = {Colors.active}

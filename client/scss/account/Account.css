@@ -4,9 +4,8 @@
   position: relative;
   width: 100%;
   max-width: 20em;
-  padding: 1.3em 2em 2em 2em;
-  margin: 1em 1em;
-  background: rgba(22, 32, 47, 0.61); }
+  padding: 0em 2em 2em 2em;
+  margin: 0em 1em 1em 1em; }
   /* line 17, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .account-box input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #131d2a inset;

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import {Colors} from '../Theme';
 
@@ -22,10 +23,20 @@ class PageShowcase extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.showListDraggable = this.showListDraggable.bind(this);
+    this.showListAnimated = this.showListAnimated.bind(this);
+    this.state = {
+      isListDraggable: true
+    };
   }
   
-  componentWillMount() {}
+  showListDraggable(){
+    this.setState({ isListDraggable: true });
+  }
+      
+  showListAnimated(){
+    this.setState({ isListDraggable: false });
+  }
     
   render() {
     return (
@@ -36,32 +47,58 @@ class PageShowcase extends React.Component {
         
         <section>
           
-          <h2> Buttons </h2>
-          <label>material-ui</label>
+          <h2> Material-UI </h2>
           <div className="wrapper-buttons flex">
-            <LinkButtonFlat 
-              link="/home" 
-              label="Home" 
+            <ButtonFlat 
+              label="Drawer" 
               backgroundColor={Colors.blueMedium1}
+              onClick={this.props.toggleDrawer}
             />
             <ButtonFlat 
               label="SnackBar" 
               backgroundColor={Colors.blueMedium1}
               onClick={this.props.openSnackBar}
             />
+            <ButtonFlat 
+              label="Dialog" 
+              backgroundColor={Colors.blueMedium1}
+              onClick={this.props.openSnackBar}
+            />
           </div>
-            
-          
 
-          <h2> Draggable List </h2>
-          <label>react-motion</label>
+
+          <h2> React-Motion </h2>
+          <div className="wrapper-buttons flex">
+            <ButtonFlat 
+              label="Draggable List " 
+              backgroundColor={Colors.blueMedium1}
+              onClick={this.showListDraggable}
+            />
+            <ButtonFlat 
+              label="Animated Todo List" 
+              backgroundColor={Colors.blueMedium1}
+              onClick={this.showListAnimated}
+            />
+          </div>
+          
+          
+          <ReactCSSTransitionGroup
+            component="div"
+            transitionName="lists"
+            transitionEnterTimeout={0}
+            transitionLeaveTimeout={0}
+          >
+            {/*props.children : page received from Routes.jsx*/}
+            { this.state.isListDraggable? 
+                <ListDraggable/>
+              :
+                <ListAnimated/>
+            }
+          </ReactCSSTransitionGroup>
+          {/*
           <ListDraggable/>
-          
-          
-          
-          <h2> Animated Todo List </h2>
-          <label>react-motion</label>
           <ListAnimated/>
+          */}
 
           
          

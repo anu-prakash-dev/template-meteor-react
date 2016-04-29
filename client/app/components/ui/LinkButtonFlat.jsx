@@ -17,6 +17,7 @@ class LinkButtonFlat extends React.Component {
           label={this.props.label}
           secondary={true} 
           backgroundColor={this.props.backgroundColor}
+          style={this.props.style}
         />
       </Link>
 

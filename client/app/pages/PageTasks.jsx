@@ -1,10 +1,14 @@
-import { Meteor } from 'meteor/meteor';
-import React from 'react';
-import reactMixin from 'react-mixin';
-import {Tasks} from '/lib/collections/collections';
+import { Meteor }     from 'meteor/meteor';
+import   React        from 'react';
+import   reactMixin   from 'react-mixin';
 
+import { Tasks }     from '/lib/collections/collections';
 import { TasksList } from '../components/Tasks/TasksList.jsx';
 import { TaskNew }   from '../components/Tasks/TaskNew.jsx';
+
+import { PleaseLogin } from '/client/app/components/account/items/PleaseLogin';
+
+
 
 
 Meteor.subscribe("tasks");
@@ -142,11 +146,13 @@ class PageTasks extends React.Component {
         <h1> Tasks </h1>
 
         { d.currentUser ?
-          <TaskNew
-            text={s.text}
-            onTextChange={this.onTextChange.bind(this)}
-            handleSubmit={this.handleSubmit.bind(this)}
-          /> : ""
+            <TaskNew
+              text={s.text}
+              onTextChange={this.onTextChange.bind(this)}
+              handleSubmit={this.handleSubmit.bind(this)}
+            /> 
+          : 
+            <PleaseLogin text="to post new tasks!"/>
         }
 
         <TasksList

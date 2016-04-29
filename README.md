@@ -1,20 +1,33 @@
 
 
-## [Meteor-React template App](http://template-meteor-react.meteorapp.com/)
-
-[Demo](http://www.madeinmoon.io)
+## [Meteor-React template App](http://meteor-react-template-app.madeinmoon.io/)
 
 
-**Goals**
+Work In Progress!! (advices, questions or contributions are very welcome!)
 
-Provide a template app, with ready-to-go components, methods and services. 
+
+[Hosted Demo](http://meteor-react-template-app.madeinmoon.io/)
+
+
+**Reason to be**
+
+Provide a template app
+
+- react-router with page transitions (css)
+- livequery+ddp for data real-time (waiting for [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md))
+- custom `Accounts` services (login etc..)
+- high order components, scalable, re-usable
+- shared, clean & safe methods.
+- UI components ([material-ui](http://www.material-ui.com/#/) and more)
+
+Inspired by [Mantra](https://github.com/kadirahq/mantra), an architecture, breaking with the universal concept of meteor, for future-proof apps, with a high-maintainability ([here](https://kadirahq.github.io/mantra/).
 
 
 **Tech**
 
-Meteor, ES6, react, react-router
+Meteor, ES6, npm, react, react-router
 
-Comming soon : [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction, and more
+Comming soon : [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction, using graphQL (reactive data with mongodb, rest or sql)
 
 **It starts from**
 
@@ -45,16 +58,29 @@ Play
 
 ### Features
 
-#### Core
-
 * meteor 1.3.2.4, react 15.0.1, react-router 15.0.1
 
-#### Strucutre
 
-* Folder & pages & scss reorganization
+#### Page Transitions
+
+- [react-addons-css-transition-group](https://www.npmjs.com/package/react-addons-css-transition-group)
+
+#### Page Contents
+
+- PageAccount
+  - Account: login, createAccount, etc..
+- PageHome
+  - todo
+- PageTasks
+  - Tasks (add, remove, edit, private/public, state, counter)
+- PageShowcase
+  - [material-ui](http://www.material-ui.com/#/components/) left drawer (swipable on mobile!)
+  - [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, loaders, snackbar, and more comming)
+  - [Halogen](http://madscript.com/halogen/) loaders
+  - react-motion [draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo8/index.html))
+  - react-motion [animated list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo3/index.html)) 
 
 #### Account
-
 
 * **Features**
   * Login / LoginGoogle/ LoginFacebook / Logout
@@ -68,8 +94,6 @@ Play
   * ChangePassword
   * ForgotPassword (send email with link)
   * ResetForgotPassword (from the email link)
-
-
 
 * Meteor `account-ui`/`account-ui-unstyled` package **deleted**.
 
@@ -114,65 +138,31 @@ Play
        <ResetForgotPassword/>
 
 
+#### External Services
 
-#### Home
-
-* coming soons
-
-#### Tasks List
-
-* As the original repo
-* (tasks: add, remove, edit, private/public, state, counter)
+- Galaxy:   app hosting
+- mLab:     monogdb hosting
+- A Domain Name Registrar
+- Mailgun:  email service
 
 
-#### Showace UI
+#### External Api
 
-* Page Transitions [react-addons-css-transition-group](https://www.npmjs.com/package/react-addons-css-transition-group)
-* [material-ui](http://www.material-ui.com/#/components/) (ripple buttons, loaders, snackbar, and more comming)
-* [Halogen](http://madscript.com/halogen/) loaders
-* react-motion [draggable list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo8/index.html))
-* react-motion [animated list](https://github.com/chenglou/react-motion/tree/0627243316c564f6c2f480bf615b82135f649a0a/demos/demo8) ([demo](https://cdn.rawgit.com/chenglou/react-motion/043231a84e420ba1cc7f5b0ceb1753a6406d38f1/demos/demo3/index.html)) 
-
--------------------------
-
-### TODO
-
-* Customize Email for reset password
-* in client/api/ -> create clean methods
+- Google (for login)
+- Facebook (for login)
 
 -------------------------
 
 
 ### Next Steps
 
+* Find the perfect folder strucutre
+* Image upload
+* More UI components
+* Full doc in the [wiki](https://github.com/MadeInMoon/template-meteor-react/wiki)
 * Integrate [Apollo](https://github.com/apollostack/apollo/blob/master/design/high-level-reactivity.md) for data abstraction
-* Server side rendering (wainting for [react-router-ssr support meteor1.3](https://github.com/thereactivestack/meteor-react-router-ssr/issues/45)), which will offer SEO possibilities
-* Looking for [react-helmet](https://github.com/nfl/react-helmet) for SEO too.
-* Doc in the [wiki](https://github.com/MadeInMoon/template-meteor-react/wiki)
-* Better UI as a showcase
-* Perfect folder strucutre and more..
 
 
 -------------------------
 
 
-### [Original](https://github.com/AnnotatedJS/meteor-react-start-app) Features
-
-This app isn’t done yet. If you think something is missing or wrong, just sent me an email.
-
-This start-app contains:
-* Meteor release 1.3.2.4 with React and React Router
-* NPM Packages: react@15.0.1 react-dom@15.0.1 react-router@2.0.0 history@2.0.0-rc2  react-mixin babel@6.5.1
-* ES6: arrow functions
-* User Login (create account, login/logout, change password)
-* Router
-* Pages
-* >Dynamic Task page with all features of MDG's simple-todos-react, such as:
-  * Add a new task
-  * Edit the text of an existing task
-  * List of tasks
-  * Counter with number of not completed tasks
-  * Filter or not completed tasks
-  * Change tasks from public to private and vice versa
-  * Change tasks from not-completed to completed and vice versa
-  * Remove tasks

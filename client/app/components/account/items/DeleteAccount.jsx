@@ -168,7 +168,7 @@ class DeleteAccount extends React.Component{
                 className = "btn-cancel"
                 label     = "Cancel"
                 onClick   = {this.toggleRoll}
-                backgroundColor = {Colors.blueMedium1}
+                backgroundColor = {this.props.btnBackgroundColor}
                 style     = {{width: '100%', marginBottom: '10px'}}
               />  
             </div>
@@ -179,7 +179,7 @@ class DeleteAccount extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Delete Account"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.handleClick}
         /> 

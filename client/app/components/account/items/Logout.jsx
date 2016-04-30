@@ -24,7 +24,7 @@ class Logout extends React.Component{
         id="Logout"
         label= "Logout"
         onClick={this.logout}
-        backgroundColor={this.props.backgroundColor||Colors.active}
+        backgroundColor={this.props.btnBackgroundColor}
         style = {this.props.style}
       />  
     )

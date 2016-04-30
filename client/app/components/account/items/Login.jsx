@@ -180,7 +180,7 @@ class Login extends React.Component{
             className = "btn-cancel"
             label     = "Cancel"
             onClick   = {this.toggleRoll}
-            backgroundColor={Colors.blueMedium1}
+            backgroundColor={this.props.btnBackgroundColor}
             style = {{width:'100%'}}
           /> 
           
@@ -189,7 +189,7 @@ class Login extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Login"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style           = {{width: '100%', marginTop: '10px'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.login}
         /> 

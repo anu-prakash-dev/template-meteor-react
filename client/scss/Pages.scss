@@ -4,27 +4,27 @@
 
 
 
-
+ 
 
 body, .Page{
 //    overflow: auto;
-//
+// 
 //  background: url('/medias/backgrounds/background-dark.jpg'); 
 //  background-position: center;
 //  background-size: cover;
 //  background-repeat: no-repeat;
-  background: $color_blue_dark;
-}
+  background: $color_primary;
+} 
 html body #App-wrapper .App .app-main .app-content .Page{
   
-
-  
-  padding:    2em 3em;
-  
+  padding: 2em;
+  overflow-y: auto;
+  overflow-x: auto;
+   
   // General texts
   h1{
-    //color: $color_blue_medium2;
-    color: $color_active;
+    //color: $color_tertiary;
+    color: $color_text_primary; 
     font-size: 26px;
     display:        inline-block;
     margin-bottom:  2em;
@@ -32,9 +32,10 @@ html body #App-wrapper .App .app-main .app-content .Page{
   }
   h2{
     font-size: 18px;
+    color: $color_white; 
   } 
   p{
-    color: $color_grey_light;
+    color: $color_white; 
   } 
   label{
     color: $color_grey_medium;
@@ -69,20 +70,20 @@ html body #App-wrapper .App .app-main .app-content .Page{
  
 
   &.PageTasks{
-    //background: $color_blue_medium1;
+    //background: $color_secondary;
 
     h2{
-      color: $color_active;
+      color: $color_text_secondary;
       //margin-bottom: 0.5em;
     }
 
     input{
-      color: $color_grey_light;
+      color: $color_text_secondary;
       font-size: 16px !important;
     }
 
     p{
-      //color: $color_blue_dark;
+      //color: $color_primary;
     }
     .task-new, .task-list{
       margin: 0em auto 2em auto;
@@ -94,13 +95,12 @@ html body #App-wrapper .App .app-main .app-content .Page{
         width: 100%;
 
         button.add{
-          //background: $color_active;
-          color:       $color_blue_medium2;
+          width:       3em;
           font-size:   1.5em;
           line-height: 1.5em;
-          margin-top:  -0.2em;
+          margin-top:  0.66em;
           padding:     0em 0.7em;
-          width: 3em;
+          color:       $color_tertiary;
         }
         >div{
           width: 100%;
@@ -128,15 +128,20 @@ html body #App-wrapper .App .app-main .app-content .Page{
           position:     relative;
           list-style:   none;
           padding:      1.25em 1em;
-          border-bottom:$color_grey_medium solid 1px;
-          color:        $color_blue_dark;
+          color:        $color_primary;
           
           background: white;
           margin-top: 1em;
+          
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          transition: all 0.25s ease;
 
+          &:hover {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+          }
+          
           span{
             width: 100%;
-
           }
           
           .text {
@@ -144,6 +149,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
             width:    100%;
             margin-left: 0.6em;
             cursor:   pointer;
+            color:    $color_text_primary;
           }
 
           .username{
@@ -159,7 +165,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
             min-width:    5em;
             cursor:       pointer;
             transition:   all 0.25s;
-            color:        $color_blue_medium2;
+            color:        $color_tertiary;
           }
 
           // Delete cross
@@ -169,7 +175,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
             min-width:    2em;
             font-size:    1em;
             font-weight:  bold;
-            color:        $color_blue_medium2;
+            color:        $color_tertiary;
           }
 
           // Toggle
@@ -181,13 +187,13 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
 
           &.task-checked, &.task-private{
-            color:      $color_blue_dark;
+            color:      $color_primary;
             //background: $color_blue_medium_transparent;
             transition: all 0.25s;
           }
 
           &.task-checked{
-            color: $color_grey_medium;
+            color: $color_text_disabled;
             .text{
               text-decoration: line-through; 
             }
@@ -195,7 +201,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
           &.task-private{
             button.toggle-private{
-              color: $color_active;
+              color: $color_tertiary;
             }
           }
 
@@ -209,17 +215,17 @@ html body #App-wrapper .App .app-main .app-content .Page{
               margin-top:   0em;
               margin-bottom: 0em;
               font-size:    1.1em !important;
-              color:        $color_blue_dark;
+              color:        $color_text_primary;
             }
             button{
-              ////background:   $color_blue_medium2;
-              //color:        $color_blue_medium1;
+              ////background:   $color_tertiary;
+              //color:        $color_secondary;
               padding:      0.3em 0.9em;
               margin-right: 0.3em;
               margin-top:   0.5em;
               &[type="submit"]{
              // background:   $color_active;
-             // color:        $color_blue_medium2;
+             // color:        $color_tertiary;
               }
             }
           }
@@ -244,12 +250,10 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
   
   &.PageShowcase{
-    overflow: auto;
     //cursor: url('/medias/icons/cursor.png') 39 39, auto;  
 
-    h1{}
     h2{
-      color:$color_grey_light;
+      color: $color_text_secondary;
       &:not(:first-child){
         margin-top:     3em;
       }
@@ -274,11 +278,18 @@ html body #App-wrapper .App .app-main .app-content .Page{
         *{
           font-size: 10px !important;
         }
+
+        @media screen and (min-width: 374px){
+          display: flex;
+        }
         .button-mui{
             width:100% !important;
+            margin-top: 0.66em;
+          
             &:not(:last-child){
               margin-right: 1em;
             }
+          
           >div{ // button material-ui
             width:100% !important;
             min-width:100% !important;
@@ -317,6 +328,19 @@ html body #App-wrapper .App .app-main .app-content .Page{
         }
       }
 
+      
+      .listView{
+        position: fixed;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        padding: 8em 2em 2em 2em;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 10;
+        overflow: auto;
+      }
+      
       .ListDraggable, .ListAnimated{
         margin-top: 2em;  
       }
@@ -324,6 +348,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
         position: relative;
         width:    100%;
         height:   400px;
+        
 
         .item {
           position: absolute;
@@ -341,7 +366,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
           //color: $color_active;
           cursor: pointer;
           color: white;
-          background-color: $color_blue_medium1;
+          background-color: $color_secondary;
         }
         .link {
         position: absolute;
@@ -873,5 +898,30 @@ html body #App-wrapper .App .app-main .app-content .Page{
 }
 
 
+.closeX{
+  padding: 1em;
+  font-size: 1.3em;
+  cursor: pointer;
+  position: absolute;
+  top:4em;
+  right:1em;
+}
 
+.lists-enter {
+  opacity: 0.01;
+}
+
+.lists-enter.lists-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.lists-leave {
+  opacity: 1;
+}
+
+.lists-leave.lists-leave-active {
+  opacity: 0.01;
+  transition: opacity 180ms ease-in;
+}
 

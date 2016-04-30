@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import IconButton from 'material-ui/lib/icon-button';
-import IconHome   from 'material-ui/lib/svg-icons/action/account-circle';
+import IconButton  from 'material-ui/lib/icon-button';
+import IconAccount from 'material-ui/lib/svg-icons/action/account-circle';
 
 
 
@@ -22,7 +22,7 @@ class ButtonIconAccount extends React.Component {
           style   = {this.props.buttonStyle}
           onClick = {this.props.onClick}
         >
-          <IconHome 
+          <IconAccount 
             color     = {this.props.color}
             hoverColor= {this.props.hoverColor}
           />

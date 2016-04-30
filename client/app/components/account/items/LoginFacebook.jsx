@@ -43,7 +43,7 @@ class LoginFacebook extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Login facebook"
-          backgroundColor = {Colors.blueMedium1}
+          backgroundColor = {this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {this.loginFacebook}
         /> 

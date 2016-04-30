@@ -143,8 +143,6 @@ class PageTasks extends React.Component {
 
       <div className="Page PageTasks">
 
-        <h1> Tasks </h1>
-
         { d.currentUser ?
             <TaskNew
               text={s.text}
@@ -170,7 +168,8 @@ class PageTasks extends React.Component {
           endTextEditSave={this.endTextEditSave.bind(this)}
           endTextEditClear={this.endTextEditClear.bind(this)}
         />
-
+        
+        
       </div>
 
     )

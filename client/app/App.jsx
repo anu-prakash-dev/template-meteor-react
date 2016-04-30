@@ -5,12 +5,10 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import   Header     from '/client/app/components/navigation/Header';
 import   DrawerLeft from '/client/app/components/navigation/DrawerLeft';
-import { Footer }   from '/client/app/components/navigation/Footer';
 import { Colors }   from '/client/app/Theme';
 
 import Snackbar from 'material-ui/lib/snackbar';
-
-
+import DialogSimple from '/client/app/components/ui/dialogs/DialogSimple';
 
 class App extends React.Component {
 
@@ -22,11 +20,14 @@ class App extends React.Component {
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.openDrawer   = this.openDrawer.bind(this);
     this.closeDrawer  = this.closeDrawer.bind(this);
+    this.openDialog   = this.openDialog.bind(this);
+    this.closeDialog  = this.closeDialog.bind(this);
     this.state = {
       snackBarAutoHideDuration: 4000,
       snackBarMessage: '',
       snackBar: false,
-      isDrawerOpen: false
+      isDrawerOpen: false,
+      isDialogOpen: false
     };
   }
   
@@ -84,6 +85,16 @@ class App extends React.Component {
     const overlay = document.getElementsByClassName("drawerOverlay")[0];
     overlay.addEventListener('click', this.closeDrawer)
   }
+  
+  // Dialog methods
+
+  openDialog() {
+    this.setState({isDialogOpen: true});
+  }
+
+  closeDialog() {
+    this.setState({isDialogOpen: false});
+  }
 
   
   // Component methods
@@ -124,7 +135,11 @@ class App extends React.Component {
     return(
       <div className="App">
 
-        <Header />
+        <Header 
+          openDrawer = {this.openDrawer}
+        />
+        
+        <DialogSimple isOpen={this.state.isDialogOpen} close={this.closeDialog}/>
         
         <DrawerLeft 
           isOpen = {this.state.isDrawerOpen}
@@ -150,15 +165,14 @@ class App extends React.Component {
                 user:         this.data.user,
                 isLogged:     this.data.isLogged,
                 openSnackBar: this.openSnackBar,
-                toggleDrawer: this.toggleDrawer
+                toggleDrawer: this.toggleDrawer,
+                openDialog:   this.openDialog
               })}
             </ReactCSSTransitionGroup>
 
           </div>
 
         </main>
-
-        <Footer />
         
         <Snackbar
           open    = {this.state.snackBar}
@@ -167,7 +181,7 @@ class App extends React.Component {
           autoHideDuration= {this.state.snackBarAutoHideDuration}
           onActionTouchTap= {this.handleSnackBarClick}
           onRequestClose  = {this.closeSnackBar}
-          bodyStyle       = {{backgroundColor: Colors.active}}
+          bodyStyle       = {{backgroundColor: Colors.secondary}}
           style           = {{color: Colors.active}}
         />
 

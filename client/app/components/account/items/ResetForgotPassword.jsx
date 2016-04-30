@@ -206,7 +206,7 @@ class ResetForgotPassword extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Reset Password"
-          backgroundColor = {Colors.blueMedium1}
+          backgroundColor = {this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {this.resetForgetPassword}
         />

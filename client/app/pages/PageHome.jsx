@@ -21,9 +21,6 @@ class PageHome extends React.Component {
 
       <div className="Page PageHome">
 
-        <h1> Home </h1>
-        
-        
         {/*
           <DragAndDrop />
         */}
@@ -39,6 +36,8 @@ class PageHome extends React.Component {
           : 
             <PleaseLogin text="to access to this content"/>
         }
+        
+
         
       </div>
     );

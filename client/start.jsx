@@ -35,7 +35,12 @@ Accounts.onEmailVerificationLink((token, done)=>{
     });
   
 });
-   
+  
+
+// Detect Touch events
+injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
+
 
 // App Start
 Meteor.startup(function () {

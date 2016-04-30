@@ -7,6 +7,13 @@ import Avatar   from '/client/app/components/account/items/Avatar';
 import {Colors} from '/client/app/Theme';
  
 
+import AppBar from 'material-ui/lib/app-bar';
+import IconButton from 'material-ui/lib/icon-button';
+import NavigationClose from 'material-ui/lib/svg-icons/navigation/menu';
+import IconMenu from 'material-ui/lib/menus/icon-menu';
+import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
+import MenuItem from 'material-ui/lib/menus/menu-item';
+
 
 class Header extends React.Component {
 
@@ -25,19 +32,24 @@ class Header extends React.Component {
     
     let networkBadgeColor = this.data.connected ? 'rgba(255, 255, 255, 0)': Colors.active;
     return(
-      
-      <header id="Header">
 
-        <h1>Meteor React app</h1>
+      <AppBar
+        id="Header"
+        title="App"
+        iconElementLeft={
+          <IconButton onClick={this.props.openDrawer}><NavigationClose /></IconButton>
+        }
+        iconElementRight={
+            <Link className="button-nav" to="/account">
+              <Avatar/>
+              <i id="networkBadge" style={{marginRight:'10px', backgroundColor: networkBadgeColor}}></i>
+            </Link>
 
-        <i id="networkBadge" style={{marginRight:'10px', backgroundColor: networkBadgeColor}}></i>
-        
-        <Link className="button-nav" to="/account">
-          <Avatar/>
-        </Link>
-        
-      </header>
-      
+        }
+        style={{backgroundColor: Colors.secondary}}
+      />
+
+
     )
   }
   

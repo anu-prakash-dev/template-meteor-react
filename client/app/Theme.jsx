@@ -1,9 +1,26 @@
 export const Colors = {
-  greyLight:    "#ebebeb",
+  greyLight:    "#8E93AA",
   greyMedium:   "#acacac",
-  blueMedium1:  "#466da0",
-  blueMedium2:  "#315481",
-  active:       "#f26e63",
-  blueDark:     "#121c28",
+  blueMedium1:  "#002848",
+  blueMedium2:  "#D0D0F2",
+
+  test:         "#1C2670",
+  blueDark:     "#01579B",
   blueDarkTansparent:  "rgba(19, 29, 42, 0.91)",
+  
+  
+  
+  primary:    "#ffffff",
+  secondary:  "#3f51b5",
+  tertiary:   "#ff4081", 
+  active:     "#ff4081",
+  exotic:     "",
+  
+  textPrimary:   "rgba(0, 0, 0, 0.87)",
+  textSecondary: "rgba(0, 0, 0, 0.54)",
+  textDisabled:  "rgba(0, 0, 0, 0.38)"
+  
+  
+  
+  
 }

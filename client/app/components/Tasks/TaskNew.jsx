@@ -20,8 +20,6 @@ export class TaskNew extends React.Component {
       return (
 
         <div className="task-new">
-          
-          <h2>Add new Task</h2>
 
           <form className="new-task" onSubmit={p.handleSubmit.bind(this)} >
 

@@ -43,7 +43,7 @@ class VerifyEmail extends React.Component{
               className = "btn-action"
               label     = "Verify Email"
               onClick   = {this.sendVerificationEmail}
-              backgroundColor={Colors.blueMedium1}
+              backgroundColor={this.props.btnBackgroundColor}
               style     = {{width: '100%'}}
             /> 
           :

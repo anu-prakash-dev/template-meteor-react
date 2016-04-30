@@ -17,88 +17,101 @@ import LoaderScale    from '/client/app/components/ui/loaders/LoaderScale'
 import LoaderMoon     from '/client/app/components/ui/loaders/LoaderMoon'
 import LoaderRing     from '/client/app/components/ui/loaders/LoaderRing'
 
-
-
 class PageShowcase extends React.Component {
 
   constructor(props) {
     super(props);
     this.showListDraggable = this.showListDraggable.bind(this);
-    this.showListAnimated = this.showListAnimated.bind(this);
+    this.showListAnimated  = this.showListAnimated.bind(this);
+    this.closeListView = this.closeListView.bind(this);
     this.state = {
-      isListDraggable: true
+      activeList: null
     };
   }
   
   showListDraggable(){
-    this.setState({ isListDraggable: true });
+    this.setState({ activeList: 'listDraggable' });
   }
       
   showListAnimated(){
-    this.setState({ isListDraggable: false });
+    this.setState({ activeList: 'listAnimated' });
+  }
+        
+  closeListView(){
+    console.log('ok');
+    this.setState({ activeList: '' });
   }
     
   render() {
+    
+    
+    const activeList = this.state.activeList;
+    let   activeItem = null;
+    if(activeList === 'listDraggable'){
+      activeItem = (
+        <div key="1" className="listView">
+          <p className="closeX" onClick={this.closeListView}>x</p>
+          <ListDraggable/>
+        </div> 
+      )
+    }
+    else if(activeList === 'listAnimated'){
+      activeItem = (
+        <div key="2" className="listView">
+          <p className="closeX" onClick={this.closeListView}>x</p>
+          <ListAnimated/>
+        </div>
+      )
+    }
+    
+    
     return (
   
       <div className="Page PageShowcase">
-
-        <h1> Showcase </h1>
         
         <section>
           
           <h2> Material-UI </h2>
-          <div className="wrapper-buttons flex">
+          <div className="wrapper-buttons">
             <ButtonFlat 
               label="Drawer" 
-              backgroundColor={Colors.blueMedium1}
+              backgroundColor={Colors.secondary}
               onClick={this.props.toggleDrawer}
             />
             <ButtonFlat 
               label="SnackBar" 
-              backgroundColor={Colors.blueMedium1}
+              backgroundColor={Colors.secondary}
               onClick={this.props.openSnackBar}
             />
             <ButtonFlat 
               label="Dialog" 
-              backgroundColor={Colors.blueMedium1}
-              onClick={this.props.openSnackBar}
+              backgroundColor={Colors.secondary}
+              onClick={this.props.openDialog}
             />
           </div>
 
 
           <h2> React-Motion </h2>
-          <div className="wrapper-buttons flex">
+          <div className="wrapper-buttons">
             <ButtonFlat 
               label="Draggable List " 
-              backgroundColor={Colors.blueMedium1}
+              backgroundColor={Colors.secondary}
               onClick={this.showListDraggable}
             />
             <ButtonFlat 
               label="Animated Todo List" 
-              backgroundColor={Colors.blueMedium1}
+              backgroundColor={Colors.secondary}
               onClick={this.showListAnimated}
             />
           </div>
-          
-          
           <ReactCSSTransitionGroup
             component="div"
             transitionName="lists"
             transitionEnterTimeout={0}
             transitionLeaveTimeout={0}
           >
-            {/*props.children : page received from Routes.jsx*/}
-            { this.state.isListDraggable? 
-                <ListDraggable/>
-              :
-                <ListAnimated/>
-            }
+            {activeItem}
           </ReactCSSTransitionGroup>
-          {/*
-          <ListDraggable/>
-          <ListAnimated/>
-          */}
 
           
          
@@ -107,14 +120,14 @@ class PageShowcase extends React.Component {
             
             <label>Material Ui &alpha; Halogen</label>
             <LoaderLinear
-              backgroundColor={Colors.blueDark} 
+              backgroundColor={Colors.primary} 
               color={Colors.active}
             />
             
             <div className="flex">
               <div>
                 <LoaderCircular
-                  backgroundColor={Colors.blueDark} 
+                  backgroundColor={Colors.primary} 
                   color={Colors.active}
                 />
               </div>
@@ -133,7 +146,7 @@ class PageShowcase extends React.Component {
             <div className="flex">
               <div>
                 <LoaderScale
-                  backgroundColor={Colors.blueDark} 
+                  backgroundColor={Colors.primary} 
                   color={Colors.active}
                 />
               </div>

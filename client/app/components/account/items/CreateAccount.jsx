@@ -230,7 +230,7 @@ class CreateAccount extends React.Component{
             className = "btn-cancel"
             label     = "Cancel"
             onClick   = {this.toggleRoll}
-            backgroundColor = {Colors.blueMedium1}
+            backgroundColor = {this.props.btnBackgroundColor}
             style     = {{width: '100%', marginBottom: '10px'}}
           />  
           
@@ -239,7 +239,7 @@ class CreateAccount extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label= "Create Account"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style = {{width: '100%'}}
           onClick = {!isRollOpen?this.toggleRoll:this.createAccount}
         />

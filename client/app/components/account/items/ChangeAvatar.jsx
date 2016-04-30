@@ -156,7 +156,7 @@ class ChangeAvatar extends React.Component{
               >
                 <IconUpload 
                   className="material-icons" 
-                  color={Colors.greyMedium}
+                  color={Colors.tertiary}
                   hoverColor={Colors.active}
                 />
               </IconButton>
@@ -167,7 +167,7 @@ class ChangeAvatar extends React.Component{
               >
                 <IconDelete 
                   className="material-icons" 
-                  color={Colors.greyMedium}
+                  color={Colors.tertiary}
                   hoverColor={Colors.active}
                 />
               </IconButton>
@@ -193,7 +193,7 @@ class ChangeAvatar extends React.Component{
           className={isPreview?"is-visible":""}>
           <ButtonFlat
             label="upload"
-            backgroundColor={this.state.avatarLocalUri!=''?Colors.active:Colors.blueDark}
+            backgroundColor={this.state.avatarLocalUri!=''?Colors.active:Colors.primary}
             onClick={this.changeAvatar}
             style={{marginTop: '20px'}}/>
         </div>

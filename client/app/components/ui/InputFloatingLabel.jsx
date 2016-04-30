@@ -12,20 +12,20 @@ class InputFloatingLabel extends React.Component {
       styles:{
         style:this.props.style,
         hintStyle:{
-          color: Colors.blueMedium1,
+          color: Colors.secondary,
         },
         floatingLabelStyle:{
           pointerEvents: 'none', // fix : first click on labelText doesn't work
-          color: Colors.blueMedium1,
+          color: Colors.secondary,
         },
         inputStyle:{
-          color: Colors.greyLight,
+          color: Colors.secondary,
         },
         underlineStyle:{
-          borderColor: Colors.blueMedium1,
+          borderColor: Colors.secondary,
         },
         underlineFocusStyle:{
-          borderColor: Colors.greyLight,
+          borderColor: Colors.tertiary,
         },
         underlineDisabledStyle:{
         },

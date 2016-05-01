@@ -60,7 +60,7 @@
       #Account section #AccountLogged#AccountLogged .content div.flex p#textEmail, #Account section #AccountNotLogged#AccountLogged .content div.flex p#textEmail {
         font-size: 12px;
         color: rgba(0, 0, 0, 0.54);
-        width: 10em;
+        width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }

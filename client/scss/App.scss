@@ -50,7 +50,7 @@ html, body, #App-wrapper{
 }
 
 .avatar{
-  background:       $color_blue_medium2;
+  background:       $color_tertiary;
   border-radius: 100%;
 }
 .avatarDefault, .avatarDisconnected{
@@ -59,13 +59,14 @@ html, body, #App-wrapper{
   align-items:      center;
   justify-content:  center;
   font-size:        1.5em;
+  cursor:           pointer;
 }
 .avatarDefault{
-  background: $color_grey_light;
-  color:      $color_active;
+  background: $color_tertiary;
+  color:      white;
 }
 .avatarDisconnected{
-  background: $color_blue_medium2;
+  background: white;
   color:      $color_active;
 }
 

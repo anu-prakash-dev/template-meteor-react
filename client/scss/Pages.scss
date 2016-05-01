@@ -25,8 +25,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
   h1{
     //color: $color_tertiary;
     color: $color_text_primary; 
-    font-size: 26px;
-    display:        inline-block;
+    font-size:      26px;
     margin-bottom:  2em;
     margin-right:   1em;
   }
@@ -43,9 +42,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
   
   
   &.PageHome{
-    #CardFull{
-      margin-bottom: 3em;
-    }
+    #CardFull{}
   }
   
   
@@ -71,7 +68,22 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
   &.PageTasks{
     //background: $color_secondary;
-
+    padding: 0;
+    
+    
+    
+    header{
+      background: $color_secondary;
+      padding: 2em 1em 0.3em 2em;
+      
+      
+      #PleaseLogin{
+        margin-bottom: -1.5em;
+      }
+    }
+    section{
+      padding: 2em 2em;
+    }
     h2{
       color: $color_text_secondary;
       //margin-bottom: 0.5em;
@@ -91,6 +103,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
     .task-new{
       width: 100%;
+      
       form {
         width: 100%;
 
@@ -109,18 +122,18 @@ html body #App-wrapper .App .app-main .app-content .Page{
     }
 
     .task-list{
-      margin-top: 3em;
+      margin-top: 1em;
       h2{}
-
+      label{
+        display: block;
+      }
       .hide-completed {
         input{
-          margin-top: 1.5em;
           margin-right: 0.5em;
         }
       }
 
       .task-ul {
-        margin: 0.5em auto;
         padding: 0;
         //background: white;
 
@@ -129,8 +142,9 @@ html body #App-wrapper .App .app-main .app-content .Page{
           list-style:   none;
           padding:      1.25em 1em;
           color:        $color_primary;
+          overflow:     hidden;
           
-          background: white;
+          background: $color_secondary;
           margin-top: 1em;
           
           box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -138,51 +152,67 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
           &:hover {
             box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            .overlay{
+              transform:translateY(0);
+            }
           }
+  
           
           span{
             width: 100%;
           }
           
-          .text {
-            display:  block;
-            width:    100%;
-            margin-left: 0.6em;
-            cursor:   pointer;
-            color:    $color_text_primary;
-          }
-
-          .username{
-            width:      5em;
-            min-width:  100%;
-            margin-bottom: 0.3em;
-            color: $color_grey_medium;
+          .lineText{
+            .text {
+              display:  block;
+              width:    100%;
+              margin-left: 0.6em;
+              cursor:   pointer;
+              .username{
+                width:      5em;
+                min-width:  100%;
+                margin-bottom: 0.3em;
+                color:    $color_text_white_primary;
+              }
+              .message{
+                color: $color_text_white_secondary;
+              }
+            }
           }
           
-          // Button public/private
-          button.toggle-private{
-            padding:      0.2em 0;
-            min-width:    5em;
-            cursor:       pointer;
-            transition:   all 0.25s;
-            color:        $color_tertiary;
-          }
+          .lineControls{
+            margin-top:     2em;
+            text-align:     right;
+            width:    100%;
+            display:  block;
+            align-items: center;
+            // Button public/private
+            button.toggle-private{
+              padding:      0.2em 0;
+              min-width:    5em;
+              cursor:       pointer;
+              transition:   all 0.25s;
+              color:        $color_tertiary;
+            }
 
-          // Delete cross
-          .delete {
-            margin-right: 0.5em;
-            margin-left:  1em;
-            min-width:    2em;
-            font-size:    1em;
-            font-weight:  bold;
-            color:        $color_tertiary;
-          }
+            // Delete cross
+            .delete {
+              margin-right: 0em;
+              margin-left:  0em;
+              min-width:    2em;
+              font-size:    1em;
+              font-weight:  bold;
+              color:        $color_tertiary;
+            }
 
-          // Toggle
-          input{
-            padding: 20px;
-            height: 1em;
-            min-width: 3em;
+            // Toggle
+            input{
+              //padding: 20px;
+              //height: 1em;
+              //margin-bottom: 0em;
+              //min-width: 2em;
+              background: grey;
+            }
           }
 
 
@@ -194,7 +224,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
           &.task-checked{
             color: $color_text_disabled;
-            .text{
+            .text .message{
               text-decoration: line-through; 
             }
           }
@@ -214,15 +244,17 @@ html body #App-wrapper .App .app-main .app-content .Page{
               width:        100%;
               margin-top:   0em;
               margin-bottom: 0em;
+              padding:      2em 0.5em;
               font-size:    1.1em !important;
-              color:        $color_text_primary;
+              color:        $color_text_white_primary;
             }
             button{
               ////background:   $color_tertiary;
               //color:        $color_secondary;
-              padding:      0.3em 0.9em;
+              padding:      0.3em 0.6em;
               margin-right: 0.3em;
               margin-top:   0.5em;
+              color: $color_text_white_secondary;
               &[type="submit"]{
              // background:   $color_active;
              // color:        $color_tertiary;
@@ -235,7 +267,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
       }
     }
 
-    .task-li, .task-new form{
+    .task-new form{
       display:        -webkit-flex;
       display:        -moz-flex;
       display:        -ms-flex;
@@ -251,7 +283,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
   
   &.PageShowcase{
     //cursor: url('/medias/icons/cursor.png') 39 39, auto;  
-
+    padding: 0;
     h2{
       color: $color_text_secondary;
       &:not(:first-child){
@@ -270,7 +302,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
       margin:   0 auto;
       width:    100%;
       max-width: 35em;
-      padding-bottom: 4em;
+      padding: 2em 2em 4em 2em;
 
 
       .wrapper-buttons{
@@ -328,28 +360,42 @@ html body #App-wrapper .App .app-main .app-content .Page{
         }
       }
 
+
+    }
       
-      .listView{
-        position: fixed;
-        top:0;
-        right:0;
-        left:0;
-        bottom:0;
-        padding: 8em 2em 2em 2em;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 10;
-        overflow: auto;
+    .listView{
+      position: absolute;
+      z-index:  10;
+      top:    0;
+      right:  0;
+      left:   0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      overflow: auto;
+      
+      .overlay{
+        position: absolute;
+        z-index:  12;
+        top:    0;
+        right:  0;
+        left:   0;
+        bottom: 0;
+
       }
       
+      
       .ListDraggable, .ListAnimated{
-        margin-top: 2em;  
+        z-index: 12;
+        box-sizing: border-box;
+        margin: 3em auto;
+        width: 90%;
+        max-width: 35em;
       }
       .ListDraggable {
         position: relative;
-        width:    100%;
+        //width:    100%;
         height:   400px;
         
-
         .item {
           position: absolute;
           width: 100%;
@@ -382,7 +428,7 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
       .ListAnimated{
         background: #fff;
-        position: relative;
+        position:   relative;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
                     0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
@@ -889,39 +935,10 @@ html body #App-wrapper .App .app-main .app-content .Page{
 
       }
     }
-
+    
   }
   
   
   
   
 }
-
-
-.closeX{
-  padding: 1em;
-  font-size: 1.3em;
-  cursor: pointer;
-  position: absolute;
-  top:4em;
-  right:1em;
-}
-
-.lists-enter {
-  opacity: 0.01;
-}
-
-.lists-enter.lists-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-}
-
-.lists-leave {
-  opacity: 1;
-}
-
-.lists-leave.lists-leave-active {
-  opacity: 0.01;
-  transition: opacity 180ms ease-in;
-}
-

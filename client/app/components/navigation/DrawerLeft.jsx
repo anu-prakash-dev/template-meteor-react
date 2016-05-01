@@ -37,8 +37,8 @@ class DrawerLeft extends React.Component {
       
       <LeftNav
         docked = {false}
-        width  = {200}
-        swipeAreaWidth  = {60}
+        width  = {220}
+        swipeAreaWidth  = {35}
         open   = {this.props.isOpen}
         onRequestChange = {this.onRequestChange}
         overlayClassName="drawerOverlay"

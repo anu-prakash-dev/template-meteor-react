@@ -40,4 +40,22 @@ html body #App-wrapper .App .app-main .page-leave.page-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in; }
 
+/* line 57, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .PageShowcase .lists-enter {
+  opacity: 0.01; }
+
+/* line 61, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .PageShowcase .lists-enter.lists-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in; }
+
+/* line 66, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .PageShowcase .lists-leave {
+  opacity: 1; }
+
+/* line 70, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/page-transitions/animations.scss */
+html body #App-wrapper .App .app-main .PageShowcase .lists-leave.lists-leave-active {
+  opacity: 0.01;
+  transition: opacity 180ms ease-in; }
+
 /*# sourceMappingURL=animations.css.map */

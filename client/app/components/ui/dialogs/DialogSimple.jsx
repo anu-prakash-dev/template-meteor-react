@@ -13,7 +13,18 @@ class DialogSimple extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      backgroundColor: Colors.primary
+      title: this.props.title || 'Dialog With Actions',
+      titleStyle: {
+        backgroundColor: Colors.primary, 
+        color:Colors.textPrimary
+      },
+      bodyStyle: {
+        backgroundColor: Colors.primary, 
+        color:Colors.textSecondary
+      },
+      actionsContainerStyle: {
+        backgroundColor: Colors.primary
+      }
     }
   }
 
@@ -31,23 +42,21 @@ class DialogSimple extends React.Component {
         style={{color:Colors.tertiary}}
       />,
     ];
-
-    const backgroundColor = this.state.backgroundColor;
+    
     
     return (
 
         <Dialog
-          title="Dialog With Actions"
+          title   = {this.state.title||'Dialog With Actions'}
           actions = {actions}
           modal   = {true}
           open    = {this.props.isOpen}
           onRequestClose = {this.props.close}
-          onTouchTap={this.props.close}
-          titleStyle = {{backgroundColor: backgroundColor, color:Colors.textPrimary}}
-          bodyStyle  = {{backgroundColor: backgroundColor, color:Colors.textSecondary}}
-          actionsContainerStyle  = {{backgroundColor: backgroundColor}}
+          titleStyle = {this.state.titleStyle}
+          bodyStyle  = {this.state.bodyStyle}
+          actionsContainerStyle  = {this.state.actionContainerStyle}
         >
-          The actions in this window were passed in as an array of React objects.
+          "Arrest this man, he talks in maths, he buzzes like a fridge, he's like a detuned radio"
         </Dialog>
 
     );

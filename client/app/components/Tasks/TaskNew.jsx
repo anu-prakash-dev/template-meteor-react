@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Colors }   from '/client/app/Theme';
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 export class TaskNew extends React.Component {
@@ -30,6 +31,10 @@ export class TaskNew extends React.Component {
               value         = {p.text}
               onChange      = {p.onTextChange.bind(this)}
               style         = {{width: "100%", marginTop: "-10px"}}
+              inputColor         = {Colors.primary}
+              floatingLabelColor = {Colors.primary}
+              underlineColor      = {Colors.primary}
+              underlineFocusColor = {Colors.primary}
             />
           
             <button className="add">+</button>

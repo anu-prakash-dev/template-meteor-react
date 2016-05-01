@@ -50,6 +50,29 @@ html body #App-wrapper .App .app-main {
   
 
   
-  
+// PageShowcase : ListView
+   
+.PageShowcase{
+    
+  .lists-enter {
+    opacity: 0.01;
+  }
+
+  .lists-enter.lists-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+
+  .lists-leave {
+    opacity: 1;
+  }
+
+  .lists-leave.lists-leave-active {
+    opacity: 0.01;
+    transition: opacity 180ms ease-in;
+  }
+
+}
+ 
   
 }

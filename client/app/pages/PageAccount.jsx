@@ -19,6 +19,7 @@ class PageAccount extends React.Component {
         <Account 
           openSnackBar = {this.props.openSnackBar}
           user         = {this.props.user}
+          openDialogContainer = {this.props.openDialogContainer}
         />
         
       </div>

@@ -24,8 +24,8 @@ class App extends React.Component {
     this.closeDialog  = this.closeDialog.bind(this);
     this.state = {
       snackBarAutoHideDuration: 4000,
-      snackBarMessage: '',
-      snackBar: false,
+      snackBarMessage:          '',
+      isSnackBarOpen:     false,
       isDrawerOpen: false,
       isDialogOpen: false
     };
@@ -50,13 +50,13 @@ class App extends React.Component {
     if(typeof text != 'string'){text="Nothing special.."}
     this.setState({
       snackBarMessage: text,
-      snackBar:        true,
+      isSnackBarOpen:        true,
     });
   }
   
   closeSnackBar (){
     this.setState({
-      snackBar: false,
+      isSnackBarOpen: false,
     });
   }
     
@@ -86,7 +86,7 @@ class App extends React.Component {
     overlay.addEventListener('click', this.closeDrawer)
   }
   
-  // Dialog methods
+  // Dialogs methods
 
   openDialog() {
     this.setState({isDialogOpen: true});
@@ -95,7 +95,6 @@ class App extends React.Component {
   closeDialog() {
     this.setState({isDialogOpen: false});
   }
-
   
   // Component methods
   
@@ -139,8 +138,12 @@ class App extends React.Component {
           openDrawer = {this.openDrawer}
         />
         
-        <DialogSimple isOpen={this.state.isDialogOpen} close={this.closeDialog}/>
-        
+        <DialogSimple 
+          isOpen = {this.state.isDialogOpen} 
+          close  = {this.closeDialog}
+          title  = "Karma Police"
+        />
+
         <DrawerLeft 
           isOpen = {this.state.isDrawerOpen}
           toggleDrawer = {this.toggleDrawer}
@@ -166,7 +169,8 @@ class App extends React.Component {
                 isLogged:     this.data.isLogged,
                 openSnackBar: this.openSnackBar,
                 toggleDrawer: this.toggleDrawer,
-                openDialog:   this.openDialog
+                openDialogSimple:    this.openDialogSimple,
+                openDialogContainer: this.openDialogContainer,
               })}
             </ReactCSSTransitionGroup>
 
@@ -175,7 +179,7 @@ class App extends React.Component {
         </main>
         
         <Snackbar
-          open    = {this.state.snackBar}
+          open    = {this.state.isSnackBarOpen}
           message = {this.state.snackBarMessage}
           //action  = "Cancel"
           autoHideDuration= {this.state.snackBarAutoHideDuration}

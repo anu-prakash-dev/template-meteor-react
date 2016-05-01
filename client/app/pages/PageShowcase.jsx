@@ -45,29 +45,33 @@ class PageShowcase extends React.Component {
   render() {
     
     
+    {/* Layou fix for webkit : overflow when ListView is open */}
     const activeList = this.state.activeList;
     let   activeItem = null;
     if(activeList === 'listDraggable'){
       activeItem = (
-        <div key="1" className="listView">
-          <p className="closeX" onClick={this.closeListView}>x</p>
+        <div key="listView" className="listView">
+          <div className="overlay" onClick={this.closeListView}></div> 
           <ListDraggable/>
         </div> 
       )
     }
     else if(activeList === 'listAnimated'){
       activeItem = (
-        <div key="2" className="listView">
-          <p className="closeX" onClick={this.closeListView}>x</p>
+        <div key="listAnimated" className="listView">
+          <div className="overlay" onClick={this.closeListView}></div>
           <ListAnimated/>
         </div>
       )
     }
     
     
+    {/* Layout fix for webkit : overflow when ListView is open */}
+    const pageStyle=  { overflow: activeList? 'hidden':'auto' }
+    
     return (
   
-      <div className="Page PageShowcase">
+      <div className="Page PageShowcase" style={pageStyle}>
         
         <section>
           
@@ -86,7 +90,7 @@ class PageShowcase extends React.Component {
             <ButtonFlat 
               label="Dialog" 
               backgroundColor={Colors.secondary}
-              onClick={this.props.openDialog}
+              onClick={this.props.openDialogSimple}
             />
           </div>
 
@@ -104,15 +108,6 @@ class PageShowcase extends React.Component {
               onClick={this.showListAnimated}
             />
           </div>
-          <ReactCSSTransitionGroup
-            component="div"
-            transitionName="lists"
-            transitionEnterTimeout={0}
-            transitionLeaveTimeout={0}
-          >
-            {activeItem}
-          </ReactCSSTransitionGroup>
-
           
          
           <h2> Loaders </h2>
@@ -165,6 +160,17 @@ class PageShowcase extends React.Component {
           </div>
           
         </section>
+        
+        {/* List Animated Container*/}
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="lists"
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}
+        >
+          {activeItem}
+        </ReactCSSTransitionGroup>
+
         
       </div>
     );

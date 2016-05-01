@@ -6,7 +6,7 @@ import IconCode   from 'material-ui/lib/svg-icons/action/code';
 
 
 
-class ButtonIconGithub extends React.Component {
+class ButtonIconCode extends React.Component {
 
   constructor(props) {
     super(props);
@@ -31,4 +31,4 @@ class ButtonIconGithub extends React.Component {
 
 }
 
-export default ButtonIconGithub;
+export default ButtonIconCode;

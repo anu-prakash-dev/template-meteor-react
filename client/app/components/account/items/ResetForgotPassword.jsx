@@ -5,8 +5,8 @@ import {controlPassword, redirect} from '/client/utilities/Utilities';
 
 import {Colors} from '/client/app/Theme';
 
-import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
-import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
+import ButtonFLat         from '/client/app/components/ui/ButtonFlat';
+import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel';
 
 
 
@@ -206,7 +206,7 @@ class ResetForgotPassword extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Reset Password"
-          backgroundColor = {this.props.btnBackgroundColor}
+          backgroundColor = {Colors.tertiary}
           style           = {{width: '100%'}}
           onClick         = {this.resetForgetPassword}
         />

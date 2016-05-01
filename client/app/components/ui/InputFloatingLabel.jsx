@@ -16,16 +16,16 @@ class InputFloatingLabel extends React.Component {
         },
         floatingLabelStyle:{
           pointerEvents: 'none', // fix : first click on labelText doesn't work
-          color: Colors.secondary,
+          color: this.props.floatingLabelColor || Colors.secondary,
         },
         inputStyle:{
-          color: Colors.secondary,
+          color: this.props.inputColor || Colors.secondary,
         },
         underlineStyle:{
-          borderColor: Colors.secondary,
+          borderColor: this.props.underlineColor || Colors.secondary,
         },
         underlineFocusStyle:{
-          borderColor: Colors.tertiary,
+          borderColor: this.props.underlineFocusColor || Colors.tertiary,
         },
         underlineDisabledStyle:{
         },

@@ -25,8 +25,9 @@ class AccountLogged extends React.Component{
 
           <div className="flex">
             <ChangeAvatar 
-              openSnackBar={this.props.openSnackBar} 
-              btnBackgroundColor={this.props.btnBackgroundColor}
+              openSnackBar        = {this.props.openSnackBar} 
+              btnBackgroundColor  = {this.props.btnBackgroundColor}
+              openDialogContainer = {this.props.openDialogContainer}
             />     
 
             <BasicInfo

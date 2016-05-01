@@ -38,6 +38,7 @@ class Account extends React.Component {
           { this.props.user ?
               <AccountLogged
                 openSnackBar = {this.props.openSnackBar}
+                openDialogContainer={this.props.openDialogContainer}
                 username     = {this.data.user.username}
                 userId       = {this.data.user._id}
                 email        = {this.data.user.emails?this.data.user.emails[0].address:false}

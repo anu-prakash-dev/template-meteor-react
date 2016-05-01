@@ -4,6 +4,10 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 import {Routes} from './app/Routes';
 
+// Set Material-Ui theme
+import getMuiTheme      from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 // if Landing on app from forgotMail link email
 Accounts.onResetPasswordLink((token)=>{
@@ -35,10 +39,21 @@ Accounts.onEmailVerificationLink((token, done)=>{
     });
   
 });
-   
+  
+
+// Detect Touch events
+injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
+
 
 // App Start
 Meteor.startup(function () {
   // Use Meteor.startup to render the component after the page is ready
-  ReactDOM.render(<Routes/>, document.getElementById("App-wrapper"));
+  ReactDOM.render(  
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
+      <Routes/>
+    </MuiThemeProvider>
+  , 
+    document.getElementById("App-wrapper")
+  );
 });

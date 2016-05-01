@@ -1,7 +1,7 @@
 import React from 'react';
 import {loginWithFacebook} from '/client/api/accounts';
 import {Colors}     from '/client/app/Theme';
-import ButtonFLat   from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat   from '/client/app/components/ui/buttons/ButtonFlat'
 
 
 
@@ -43,7 +43,7 @@ class LoginFacebook extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Login facebook"
-          backgroundColor = {Colors.blueMedium1}
+          backgroundColor = {this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {this.loginFacebook}
         /> 

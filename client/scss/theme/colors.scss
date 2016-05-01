@@ -1,13 +1,29 @@
 /*  Colors  */
 
-$color_grey_light:    #ebebeb;
+$color_white:         #ffffff;
+$color_grey_light:    #8E93AA;
 $color_grey_medium:   #b2b2b2;
 
-$color_blue_medium1:  #466da0;
-$color_blue_medium2:  #315481;
+$color_blue_medium1:  #FF8A65;
+$color_blue_medium2:  #D0D0F2;
 
 $color_blue_medium_transparent:  rgba(22, 32, 47, 0.61);
 
-$color_active:        #f26e63;
-$color_blue_dark:  #131d2a;
+$color_active:        #FF8A65;
+$color_blue_dark:     #01579B;
 $color_blue_dark_transparent:  rgba(19, 29, 42, 0.91);
+
+  
+  
+$color_primary:    #ffffff; 
+$color_secondary:  #3f51b5;
+$color_tertiary:   #ff4081;
+$color_active:     #FF8A65;
+
+
+$color_text_primary:     rgba(0, 0, 0, 0.87);
+$color_text_secondary:   rgba(0, 0, 0, 0.54);
+$color_text_disabled:     rgba(0, 0, 0, 0.38);
+$color_text_white_primary:     rgba(255, 255, 255, 0.87);
+$color_text_white_secondary:   rgba(255, 255, 255, 0.54);
+$color_text_white_disabled:     rgba(255, 255, 255, 0.38);

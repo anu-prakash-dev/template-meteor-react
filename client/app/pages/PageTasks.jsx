@@ -1,10 +1,14 @@
-import { Meteor } from 'meteor/meteor';
-import React from 'react';
-import reactMixin from 'react-mixin';
-import {Tasks} from '/lib/collections/collections';
+import { Meteor }     from 'meteor/meteor';
+import   React        from 'react';
+import   reactMixin   from 'react-mixin';
 
-import { TasksList } from '../components/Tasks/TasksList.jsx';
-import { TaskNew }   from '../components/Tasks/TaskNew.jsx';
+import { Tasks }     from '/lib/collections/collections';
+import { TasksList } from '/client/app/components/Tasks/TasksList.jsx';
+import { TaskNew }   from '/client/app/components/Tasks/TaskNew.jsx';
+
+import { PleaseLogin } from '/client/app/components/account/items/PleaseLogin';
+
+
 
 
 Meteor.subscribe("tasks");
@@ -38,6 +42,7 @@ class PageTasks extends React.Component {
     return {
       tasks: Tasks.find(query, {sort: {createdAt: -1}}).fetch(),
       incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
+      count: Tasks.find().count(),
       currentUser: Meteor.user()
 
     }
@@ -138,33 +143,39 @@ class PageTasks extends React.Component {
     return (
 
       <div className="Page PageTasks">
+        
 
-        <h1> Tasks </h1>
-
-        { d.currentUser ?
-          <TaskNew
-            text={s.text}
-            onTextChange={this.onTextChange.bind(this)}
-            handleSubmit={this.handleSubmit.bind(this)}
-          /> : ""
-        }
-
-        <TasksList
-          tasks={d.tasks}
-          incompleteCount={d.incompleteCount}
-          edit={s.edit}
-          toggleHideCompleted={this.toggleHideCompleted.bind(this)}
-          toggleChecked={this.toggleChecked.bind(this)}
-          togglePrivate={this.togglePrivate.bind(this)}
-          deleteThisTask={this.deleteThisTask.bind(this)}
-          beginTextEdit={this.beginTextEdit.bind(this)}
-          processTextTyping={this.processTextTyping.bind(this)}
-          processTextClear={this.processTextClear.bind(this)}
-          processTextReset={this.processTextReset.bind(this)}
-          endTextEditSave={this.endTextEditSave.bind(this)}
-          endTextEditClear={this.endTextEditClear.bind(this)}
-        />
-
+        <header>
+          { d.currentUser ?
+              <TaskNew
+                text={s.text}
+                onTextChange={this.onTextChange.bind(this)}
+                handleSubmit={this.handleSubmit.bind(this)}
+              /> 
+            : 
+              <PleaseLogin text="to post new tasks!"/>
+          }
+        </header>
+          
+        <section>
+          <TasksList
+            tasks={d.tasks}
+            incompleteCount={d.incompleteCount}
+            count={d.count}
+            edit={s.edit}
+            toggleHideCompleted={this.toggleHideCompleted.bind(this)}
+            toggleChecked={this.toggleChecked.bind(this)}
+            togglePrivate={this.togglePrivate.bind(this)}
+            deleteThisTask={this.deleteThisTask.bind(this)}
+            beginTextEdit={this.beginTextEdit.bind(this)}
+            processTextTyping={this.processTextTyping.bind(this)}
+            processTextClear={this.processTextClear.bind(this)}
+            processTextReset={this.processTextReset.bind(this)}
+            endTextEditSave={this.endTextEditSave.bind(this)}
+            endTextEditClear={this.endTextEditClear.bind(this)}
+          />
+        </section>
+        
       </div>
 
     )

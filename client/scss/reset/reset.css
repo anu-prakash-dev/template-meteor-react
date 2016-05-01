@@ -36,4 +36,8 @@ input {
 button, input[type="checkbox"] {
   cursor: pointer; }
 
+/* line 42, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/reset/reset.scss */
+a, button, input, span, div, img {
+  -webkit-tap-highlight-color: transparent; }
+
 /*# sourceMappingURL=reset.css.map */

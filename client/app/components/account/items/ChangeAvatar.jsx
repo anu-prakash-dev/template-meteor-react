@@ -4,22 +4,30 @@ import Avatar     from './Avatar';
 
 import {changeAvatar, deleteAvatar} from '/client/api/accounts'
 
-import ButtonFlat from '/client/app/components/ui/ButtonFlat'
+import ButtonFlat from '/client/app/components/ui/buttons/ButtonFlat'
 import {Colors}   from '/client/app/Theme';
 
-import IconButton from 'material-ui/lib/icon-button';
-import IconUpload from 'material-ui/lib/svg-icons/file/cloud-download';
-import IconDelete from 'material-ui/lib/svg-icons/action/delete';
+import IconButton from 'material-ui/IconButton';
+import IconUpload from 'material-ui/svg-icons/file/cloud-download';
+import IconDelete from 'material-ui/svg-icons/action/delete';
+
+import Dialog       from 'material-ui/Dialog';
+import FlatButton   from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 
 class ChangeAvatar extends React.Component{
 
   constructor(props) {
     super(props);
+    this.showAvatarOverlay = this.showAvatarOverlay.bind(this);
+    this.hideAvatarOverlay = this.hideAvatarOverlay.bind(this);
+    this.openDialog   = this.openDialog.bind(this);
+    this.closeDialog  = this.closeDialog.bind(this);
+    this.dialogCancel = this.dialogCancel.bind(this);
     this.handleFile   = this.handleFile.bind(this);
     this.chooseImage  = this.chooseImage.bind(this);
-    this.openPreview  = this.openPreview.bind(this);
-    this.closePreview = this.closePreview.bind(this);
     this.changeAvatar = this.changeAvatar.bind(this);
     this.deleteAvatar = this.deleteAvatar.bind(this);
     this.onChangeAvatarSuccess = this.onChangeAvatarSuccess.bind(this);
@@ -30,7 +38,21 @@ class ChangeAvatar extends React.Component{
       avatarLocalUri: '',
       previewImgClass: '',
       isButtonUpload: false,
-      isPreview:false,
+      isDialogOpen:false,
+      isAvatarOverlay:false,
+      isAvatarClone:false,
+      dialogContentStyle: {maxWidth: '18em'},
+      titleStyle: {
+        backgroundColor: Colors.secondary, 
+        color:Colors.textPrimary
+      },
+      bodyStyle: {
+        backgroundColor: Colors.secondary, 
+        color:Colors.textSecondary
+      },
+      actionsContainerStyle: {
+        backgroundColor: Colors.secondary
+      }
     };
   }  
   
@@ -60,8 +82,12 @@ class ChangeAvatar extends React.Component{
   }
 
   onChangeAvatarSuccess(){
-    this.closePreview();
+    
+    this.setState({ isAvatarClone: false });
+    
     setTimeout(()=>{
+      this.hideAvatarOverlay();
+      this.closeDialog();
       this.resetInput();
     }, 450)
   }
@@ -74,10 +100,40 @@ class ChangeAvatar extends React.Component{
     this.resetInput();
   }
   
-  onDeleteAvatarError(){
+  onDeleteAvatarError(){}
+  
+
+  // Avatar Overlay
+  
+  showAvatarOverlay(){
+    this.setState({ isAvatarOverlay: true });
+  }  
+  
+  hideAvatarOverlay(){
+    this.setState({ isAvatarOverlay: false });
   }
+
   
+  // Dialog (update avatar)
   
+  openDialog() {
+    this.setState({
+      isDialogOpen: true,
+      isAvatarClone: true
+    });
+  }
+
+  closeDialog() {
+    this.setState({isDialogOpen: false});
+  }
+
+  dialogCancel(){
+    this.resetInput();
+    this.hideAvatarOverlay();
+    this.closeDialog();
+  }
+
+    
   // Input[file]
   
   chooseImage(){
@@ -114,26 +170,40 @@ class ChangeAvatar extends React.Component{
     reader.readAsDataURL(file);
 
     // Toggle preview
-    this.openPreview();
+    //this.openPreview();
+    this.openDialog();
     
   }
 
-  // Preview
   
-  openPreview(){
-    this.setState({ isPreview: true });
-  }
   
-  closePreview(){
-    this.setState({ isPreview: false});
-  }
-  
-  // Render
   
   render() {
     
-    const isPreview = this.state.isPreview;
-    let toggleClass = isPreview ? ' is-visible' : '';
+    // Dynamic classes
+    
+    const isAvatarOverlay = this.state.isAvatarOverlay;
+    const isAvatarClone   = this.state.isAvatarClone;
+    let dynamicClass      = isAvatarOverlay ? ' is-visible' : '';
+    let avatarCloneClass  = isAvatarClone ? ' is-visible' : '';
+    
+        
+    // Dialog action buttons
+    
+    const dialogActions = [
+      <FlatButton
+        label="Cancel"
+        onTouchTap={this.dialogCancel}
+        style={{color:Colors.textWhiteSecondary}}
+      />,
+      <FlatButton
+        label="Update"
+        keyboardFocused={true}
+        onTouchTap={this.changeAvatar}
+        style={{color:Colors.tertiary}}
+      />,
+    ];
+
     
     return (
 
@@ -142,60 +212,26 @@ class ChangeAvatar extends React.Component{
         <div>
           
           {/* Current Avatar */}
-          <div className={"currentAvatar"+toggleClass}>
+          <div className={"currentAvatar"+dynamicClass}>
 
-            <Avatar 
-              style   = {this.state.avatarLocalUri==''?{}:{opacity:0.3}}
-            /> 
+            <Avatar/> 
 
-            <div id="avatarOptions">
+          
+            <div id="avatarOverlay" className={dynamicClass}>
               <IconButton 
                 tooltipPosition="top-left"
-                style={{marginTop:'-13px'}}
                 onClick={this.chooseImage}
               >
                 <IconUpload 
-                  className="material-icons" 
-                  color={Colors.greyMedium}
-                  hoverColor={Colors.active}
-                />
-              </IconButton>
-              <IconButton 
-                touch   ={true} 
-                style={{marginTop:'-15px'}}
-                onClick={this.deleteAvatar}
-              >
-                <IconDelete 
-                  className="material-icons" 
-                  color={Colors.greyMedium}
-                  hoverColor={Colors.active}
+                  className="material-icons uploadButton" 
+                  color={Colors.primary}
+                  hoverColor={Colors.tertiary}
                 />
               </IconButton>
             </div>
 
           </div>
-
-
-          {/* Preview Avatar */}
-          <div className={"avatarPreview"+toggleClass}>
-            <img className = {"avatar"+toggleClass}
-                 src       = {this.state.avatarLocalUri}
-                 onClick   = {this.chooseImage}
-            />
-          </div>
-
-        </div>
-
-        
-        {/* Button Upload */}
-        <div 
-          id={"buttonUploadAvatar"}
-          className={isPreview?"is-visible":""}>
-          <ButtonFlat
-            label="upload"
-            backgroundColor={this.state.avatarLocalUri!=''?Colors.active:Colors.blueDark}
-            onClick={this.changeAvatar}
-            style={{marginTop: '20px'}}/>
+          
         </div>
         
         
@@ -208,6 +244,32 @@ class ChangeAvatar extends React.Component{
           accept = "image/gif,image/png, image/svg, image/jpg, image/jpeg"
           onChange={this.handleFile} required
         />
+
+
+        <Dialog
+          title   = 'Change your avatar'
+          className = 'dialogAvatar'
+          actions = {dialogActions}
+          modal   = {true}
+          open    = {this.state.isDialogOpen}
+          onRequestClose = {this.closeDialog}
+          contentStyle={this.state.dialogContentStyle}
+          titleStyle = {this.state.titleStyle}
+          bodyStyle  = {this.state.bodyStyle}
+          actionsContainerStyle  = {this.state.actionsContainerStyle}
+        >
+          <div className="currentAvatarInModal">
+            <Avatar className={avatarCloneClass} /> 
+            {/* Clone Avatar (preview) */}
+            <div className={"avatarPreview"+avatarCloneClass}>
+              <img className = {"avatarClone"}
+                   src       = {this.state.avatarLocalUri}
+                   onClick   = {this.chooseImage}
+              />
+            </div>
+          </div> 
+        </Dialog>
+
         
       </div>
       
@@ -217,3 +279,20 @@ class ChangeAvatar extends React.Component{
 };
 
 export default ChangeAvatar;
+
+/*
+
+
+              <IconButton 
+                touch   ={true} 
+                style={{marginTop:'-15px'}}
+                onClick={this.deleteAvatar}
+              >
+                <IconDelete 
+                  className="material-icons" 
+                  color={Colors.textSecondary}
+                  hoverColor={Colors.tertiary}
+                />
+              </IconButton>
+              
+*/

@@ -5,8 +5,8 @@ import {controlPassword, redirect} from '/client/utilities/Utilities';
 
 import {Colors} from '/client/app/Theme';
 
-import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
-import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
+import ButtonFLat         from '/client/app/components/ui/buttons/ButtonFlat';
+import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel';
 
 
 
@@ -16,6 +16,7 @@ class ResetForgotPassword extends React.Component{
   constructor(props) {
     super(props);
     this.handleChange    = this.handleChange.bind(this);
+    this.handleKeyDown   = this.handleKeyDown.bind(this);
     this.controlInputs   = this.controlInputs.bind(this);
     this.setErrorText    = this.setErrorText.bind(this);
     this.resetErrorText  = this.resetErrorText.bind(this);
@@ -96,6 +97,11 @@ class ResetForgotPassword extends React.Component{
     nextState[inputName] = value;
     
     this.setState(nextState);
+  }  
+    
+  handleKeyDown(event){
+    if(event.keyCode !== 13) return;
+    this.resetForgetPassword();
   }  
   
   controlInputs(callback){
@@ -183,7 +189,7 @@ class ResetForgotPassword extends React.Component{
             style         = {{width: "100%", marginTop: "-20px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
-            onEnterKeyDown= {this.resetForgetPassword}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
 
@@ -196,7 +202,7 @@ class ResetForgotPassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordConfirmErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordConfirm')}
-            onEnterKeyDown= {this.resetForgetPassword}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <br/>
@@ -206,7 +212,7 @@ class ResetForgotPassword extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Reset Password"
-          backgroundColor = {Colors.blueMedium1}
+          backgroundColor = {Colors.tertiary}
           style           = {{width: '100%'}}
           onClick         = {this.resetForgetPassword}
         />

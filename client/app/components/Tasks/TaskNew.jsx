@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Colors }   from '/client/app/Theme';
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 export class TaskNew extends React.Component {
@@ -8,39 +9,36 @@ export class TaskNew extends React.Component {
         super(props);
     }
 
+  render() {
 
-/***************************************/
-/* RENDER
-/***************************************/
+    var p = this.props;
 
-    render() {
+    return (
 
-      var p = this.props;
+      <div className="task-new">
 
-      return (
+        <form className="new-task" onSubmit={p.handleSubmit.bind(this)} >
 
-        <div className="task-new">
-          
-          <h2>Add new Task</h2>
+          <InputFloatingLabel
+            name          = "text"
+            type          = "text"
+            floatingLabel = "Add a new task"
+            value         = {p.text}
+            onChange      = {p.onTextChange.bind(this)}
+            style         = {{width: "100%", marginTop: "-10px"}}
+            inputColor         = {Colors.primary}
+            floatingLabelColor = {Colors.primary}
+            underlineColor      = {Colors.primary}
+            underlineFocusColor = {Colors.primary}
+          />
 
-          <form className="new-task" onSubmit={p.handleSubmit.bind(this)} >
+          <button className="add">+</button>
 
-            <InputFloatingLabel
-              name          = "text"
-              type          = "text"
-              floatingLabel = "Add a new task"
-              value         = {p.text}
-              onChange      = {p.onTextChange.bind(this)}
-              style         = {{width: "100%", marginTop: "-10px"}}
-            />
-          
-            <button className="add">+</button>
-            
-          </form>
+        </form>
 
-        </div>
+      </div>
 
-      );
+    );
 
-    }
   }
+}

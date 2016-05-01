@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {sendVerificationEmail} from '/client/api/accounts';
-import {Colors} from '/client/app/Theme';
-import ButtonFlat from '/client/app/components/ui/ButtonFlat';
+import {Colors}   from '/client/app/Theme';
+import ButtonFlat from '/client/app/components/ui/buttons/ButtonFlat';
 
 
 
@@ -43,7 +43,7 @@ class VerifyEmail extends React.Component{
               className = "btn-action"
               label     = "Verify Email"
               onClick   = {this.sendVerificationEmail}
-              backgroundColor={Colors.blueMedium1}
+              backgroundColor={this.props.btnBackgroundColor}
               style     = {{width: '100%'}}
             /> 
           :

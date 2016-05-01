@@ -4,7 +4,7 @@ import {changePassword}   from '/client/api/accounts';
 
 import {Colors}   from '/client/app/Theme';
 
-import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat         from '/client/app/components/ui/buttons/ButtonFlat'
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 
@@ -14,6 +14,7 @@ class ChangePassword extends React.Component{
   constructor(props) {
     super(props);
     this.handleChange    = this.handleChange.bind(this);
+    this.handleKeyDown   = this.handleKeyDown.bind(this);
     this.controlInputs   = this.controlInputs.bind(this);
     this.setErrorText    = this.setErrorText.bind(this);
     this.resetErrorText  = this.resetErrorText.bind(this);
@@ -95,6 +96,11 @@ class ChangePassword extends React.Component{
     nextState[inputName] = value;
     
     this.setState(nextState);
+  }  
+
+  handleKeyDown(event){
+    if(event.keyCode !== 13) return;
+    this.changePassword();
   }  
   
   controlInputs(callback){
@@ -189,7 +195,7 @@ class ChangePassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
-            onEnterKeyDown= {this.changePassword}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <InputFloatingLabel
@@ -201,7 +207,7 @@ class ChangePassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordNewErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordNew')}
-            onEnterKeyDown= {this.changePassword}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <InputFloatingLabel
@@ -213,7 +219,7 @@ class ChangePassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordNewConfirmErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordNewConfirm')}
-            onEnterKeyDown= {this.changePassword}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <br/>
@@ -222,7 +228,7 @@ class ChangePassword extends React.Component{
             className = "btn-cancel"
             label     = "Cancel"
             onClick   = {this.toggleRoll}
-            backgroundColor = {Colors.blueMedium1}
+            backgroundColor = {this.props.btnBackgroundColor}
             style = {{width: '100%', marginBottom: '10px'}}
           />  
 
@@ -231,7 +237,7 @@ class ChangePassword extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Change Password"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.changePassword}
         /> 

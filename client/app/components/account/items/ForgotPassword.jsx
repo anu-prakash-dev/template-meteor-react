@@ -4,7 +4,7 @@ import {forgotPassword} from '/client/api/accounts';
 
 import {Colors} from '/client/app/Theme';
 
-import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat         from '/client/app/components/ui/buttons/ButtonFlat'
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 
@@ -14,6 +14,7 @@ class ForgotPassword extends React.Component{
   constructor(props) {
     super(props);
     this.handleChange    = this.handleChange.bind(this);
+    this.handleKeyDown   = this.handleKeyDown.bind(this);
     this.controlInputs   = this.controlInputs.bind(this);
     this.setErrorText    = this.setErrorText.bind(this);
     this.resetErrorText  = this.resetErrorText.bind(this);
@@ -82,6 +83,11 @@ class ForgotPassword extends React.Component{
     
     this.setState(nextState);
   }  
+
+  handleKeyDown(event){
+    if(event.keyCode !== 13) return;
+    this.forgotPassword();
+  } 
   
   controlInputs(callback){
     
@@ -157,7 +163,7 @@ class ForgotPassword extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.emailErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'email')}
-            onEnterKeyDown= {this.forgotPassword}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <br/>
@@ -166,7 +172,7 @@ class ForgotPassword extends React.Component{
             className = "btn-cancel"
             label     = "Cancel"
             onClick   = {this.toggleRoll}
-            backgroundColor = {Colors.blueMedium1}
+            backgroundColor = {this.props.btnBackgroundColor}
             style     = {{width: '100%', marginBottom: '10px'}}
           />  
 
@@ -176,7 +182,7 @@ class ForgotPassword extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Forgot Password?"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.forgotPassword}
         /> 

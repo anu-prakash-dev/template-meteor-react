@@ -1,8 +1,13 @@
-import React from 'react';
+import React from 'react'
 import DragAndDrop from '/client/app/components/draganddrop/DragAndDrop'
 import CardFull    from '/client/app/components/ui/cards/CardFull'
 
+import LinkButtonFlat from '/client/app/components/ui/buttons/LinkButtonFlat'
 import {Colors} from '/client/app/Theme'
+
+import { PleaseLogin } from '/client/app/components/account/items/PleaseLogin';
+
+
 
 class PageHome extends React.Component {
 
@@ -20,6 +25,7 @@ class PageHome extends React.Component {
           <DragAndDrop />
         */}
         
+        
         { this.props.user ?
             <CardFull 
               headerTitle    = {this.props.user.username+"'s"}
@@ -28,8 +34,10 @@ class PageHome extends React.Component {
               mediaBackground= "/medias/backgrounds/background-water.png"
               user = {this.props.user}/> 
           : 
-            '' 
+            <PleaseLogin text="to access to this content"/>
         }
+        
+
         
       </div>
     );

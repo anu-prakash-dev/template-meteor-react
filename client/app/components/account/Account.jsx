@@ -6,6 +6,7 @@ import AccountNotLogged from './AccountNotLogged';
 
 import {controlUsername, controlEmail, controlPassword} from '/client/utilities/Utilities';
 
+import {Colors} from '/client/app/Theme';
 
 
 class Account extends React.Component {
@@ -37,6 +38,7 @@ class Account extends React.Component {
           { this.props.user ?
               <AccountLogged
                 openSnackBar = {this.props.openSnackBar}
+                openDialogContainer={this.props.openDialogContainer}
                 username     = {this.data.user.username}
                 userId       = {this.data.user._id}
                 email        = {this.data.user.emails?this.data.user.emails[0].address:false}
@@ -44,6 +46,7 @@ class Account extends React.Component {
                 controlPassword = {controlPassword}
                 user            = {this.props.user}
                 toggleRoll = {this.toggleRoll}
+                btnBackgroundColor ={Colors.secondary}
               />
             :
               <AccountNotLogged 
@@ -53,6 +56,7 @@ class Account extends React.Component {
                 controlPassword = {controlPassword}
                 user            = {this.props.user}
                 toggleRoll = {this.toggleRoll}
+                btnBackgroundColor ={Colors.secondary}
               />
           }
             

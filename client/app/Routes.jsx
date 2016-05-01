@@ -16,9 +16,8 @@ export const Routes = () => (
 
   <Router history={browserHistory} >
     <Route path="/" component={App}      mykey="App">
-      <IndexRoute   component={PageAccount} mykey="PageHome"/>
+      <IndexRoute   component={PageHome} mykey="Home"/>
       <Route path="account"  component={PageAccount}  pageName="Account"/>
-      <Route path="home"     component={PageHome}     pageName="Home"/>
       <Route path="tasks"    component={PageTasks}    pageName="Tasks"/>
       <Route path="showcase" component={PageShowcase} pageName="Showcase"/>
       <Route path="forgot-password" component={PageForgotPassword} pageName="ForgotPassword"/>

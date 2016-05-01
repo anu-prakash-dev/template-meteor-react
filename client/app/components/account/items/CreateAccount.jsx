@@ -4,7 +4,7 @@ import {createAccount} from '/client/api/accounts';
 
 import {Colors} from '/client/app/Theme';
 
-import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat         from '/client/app/components/ui/buttons/ButtonFlat'
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 
@@ -15,6 +15,7 @@ class CreateAccount extends React.Component{
     super(props);
     //this.logout = this.logout.bind(this);
     this.handleChange   = this.handleChange.bind(this);
+    this.handleKeyDown  = this.handleKeyDown.bind(this);
     this.controlInputs  = this.controlInputs.bind(this);
     this.setErrorText   = this.setErrorText.bind(this);
     this.resetErrorText = this.resetErrorText.bind(this);
@@ -135,7 +136,12 @@ class CreateAccount extends React.Component{
     
     this.setState(nextState);
   }  
-  
+
+  handleKeyDown(event){
+    if(event.keyCode !== 13) return;
+    this.createAccount();
+  }  
+ 
   setErrorText(inputName, text){
     var nextState = {};
     nextState[inputName+'ErrorText'] = text;
@@ -185,7 +191,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.usernameErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'username')}
-            onEnterKeyDown= {this.createAccount}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <InputFloatingLabel
@@ -197,7 +203,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.emailErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'email')}
-            onEnterKeyDown= {this.createAccount}
+            onEnterKeyDown= {this.handleKeyDown}
           />
           
           <InputFloatingLabel
@@ -209,7 +215,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
-            onEnterKeyDown= {this.createAccount}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <InputFloatingLabel
@@ -221,7 +227,7 @@ class CreateAccount extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordConfirmErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'passwordConfirm')}
-            onEnterKeyDown= {this.createAccount}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <br/>
@@ -230,7 +236,7 @@ class CreateAccount extends React.Component{
             className = "btn-cancel"
             label     = "Cancel"
             onClick   = {this.toggleRoll}
-            backgroundColor = {Colors.blueMedium1}
+            backgroundColor = {this.props.btnBackgroundColor}
             style     = {{width: '100%', marginBottom: '10px'}}
           />  
           
@@ -239,7 +245,7 @@ class CreateAccount extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label= "Create Account"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style = {{width: '100%'}}
           onClick = {!isRollOpen?this.toggleRoll:this.createAccount}
         />

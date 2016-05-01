@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 
 
@@ -31,38 +29,34 @@ export class TaskTextFormEdit extends React.Component {
     this.props.processTextReset()
   }
 
-/***************************************/
-/* RENDER
-/***************************************/
+  render() {
 
-    render() {
+    var p = this.props
 
-      var p = this.props
+    return (
 
-      return (
+      <div>
 
-        <div>
+        <form className={ p.frmClassName }
+          onSubmit={this.processSubmit.bind(this)}
+          >
 
-          <form className={ p.frmClassName }
-            onSubmit={this.processSubmit.bind(this)}
-            >
+          <input
+            autoFocus
+            type="text"
+            value={p.editText}
+            onChange={this.onTextChange.bind(this)}
+          />
 
-            <input
-              autoFocus
-              type="text"
-              value={p.editText}
-              onChange={this.onTextChange.bind(this)}
-            />
+          <button type="button" onClick={this.btnCancel.bind(this)}>    Cancel</button>
+          <button type="button" onClick={this.btnClear.bind(this)}>     Clear </button>
+          <button type="button" onClick={this.btnReset.bind(this)}>     Reset </button>
+          <button type="submit" onClick={this.processSubmit.bind(this)}>Submit</button>
 
-            <button type="button" onClick={this.btnCancel.bind(this)}>    Cancel</button>
-            <button type="button" onClick={this.btnClear.bind(this)}>     Clear </button>
-            <button type="button" onClick={this.btnReset.bind(this)}>     Reset </button>
-            <button type="submit" onClick={this.processSubmit.bind(this)}>Submit</button>
+        </form>
 
-          </form>
+      </div>
 
-        </div>
-
-      );
-    }
+    );
   }
+}

@@ -1,14 +1,14 @@
 import React      from 'react';
 import reactMixin from 'react-mixin';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import   Header     from '/client/app/components/navigation/Header';
-import   DrawerLeft from '/client/app/components/navigation/DrawerLeft';
-import { Footer }   from '/client/app/components/navigation/Footer';
-import { Colors }   from '/client/app/Theme';
+import   Header   from '/client/app/components/navigation/Header';
+import   Drawer   from '/client/app/components/navigation/Drawer';
+import   Snackbar from '/client/app/components/navigation/SnackBar';
 
-import Snackbar from 'material-ui/lib/snackbar';
+import DialogSimple from '/client/app/components/ui/dialogs/DialogSimple';
+import { Colors }   from '/client/app/Theme';
 
 
 
@@ -22,11 +22,15 @@ class App extends React.Component {
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.openDrawer   = this.openDrawer.bind(this);
     this.closeDrawer  = this.closeDrawer.bind(this);
+    this.openDialog   = this.openDialog.bind(this);
+    this.closeDialog  = this.closeDialog.bind(this);
     this.state = {
+      headerTitle: this.props.children.props.route.pageName,
       snackBarAutoHideDuration: 4000,
-      snackBarMessage: '',
-      snackBar: false,
-      isDrawerOpen: false
+      snackBarMessage:          '',
+      isSnackBarOpen:     false,
+      isDrawerOpen: false,
+      isDialogOpen: false
     };
   }
   
@@ -49,13 +53,13 @@ class App extends React.Component {
     if(typeof text != 'string'){text="Nothing special.."}
     this.setState({
       snackBarMessage: text,
-      snackBar:        true,
+      isSnackBarOpen:        true,
     });
   }
   
   closeSnackBar (){
     this.setState({
-      snackBar: false,
+      isSnackBarOpen: false,
     });
   }
     
@@ -84,7 +88,16 @@ class App extends React.Component {
     const overlay = document.getElementsByClassName("drawerOverlay")[0];
     overlay.addEventListener('click', this.closeDrawer)
   }
+  
+  // Dialogs methods
 
+  openDialog() {
+    this.setState({isDialogOpen: true});
+  }
+
+  closeDialog() {
+    this.setState({isDialogOpen: false});
+  }
   
   // Component methods
   
@@ -119,20 +132,33 @@ class App extends React.Component {
     
   }
 
+  componentWillReceiveProps(nextProps) {
+    // Update headerTitle from the routeName
+    if(nextProps.children.props.route.pageName){
+      //this.props.children.props.route.pageName
+      this.setState({
+        headerTitle: nextProps.children.props.route.pageName
+      });
+    }
+    else{
+      this.setState({
+        headerTitle: 'Home'
+      });
+    }
+  }
+
   render(){
     
     return(
       <div className="App">
 
-        <Header />
         
-        <DrawerLeft 
-          isOpen = {this.state.isDrawerOpen}
-          toggleDrawer = {this.toggleDrawer}
-          openDrawer   = {this.openDrawer}
-          closeDrawer  = {this.closeDrawer}
+        <Header 
+          openDrawer = {this.openDrawer}
+          title={this.state.headerTitle}
         />
 
+        
         <main className="app-main">
 
           <div className="app-content">
@@ -146,11 +172,12 @@ class App extends React.Component {
             >
               {/*props.children : page received from Routes.jsx*/}
               {React.cloneElement(this.props.children, {
-                key: this.props.children.props.route.pageName,
+                key:          this.props.children.props.route.pageName,
+                user:         this.data.user,
+                isLogged:     this.data.isLogged,
                 openSnackBar: this.openSnackBar,
-                user: this.data.user,
-                isLogged: this.data.isLogged,
-
+                toggleDrawer: this.toggleDrawer,
+                openDialogSimple: this.openDialog,
               })}
             </ReactCSSTransitionGroup>
 
@@ -158,18 +185,30 @@ class App extends React.Component {
 
         </main>
 
-        <Footer />
         
+        <Drawer 
+          isOpen = {this.state.isDrawerOpen}
+          toggleDrawer = {this.toggleDrawer}
+          openDrawer   = {this.openDrawer}
+          closeDrawer  = {this.closeDrawer}
+        />
+      
         <Snackbar
-          open    = {this.state.snackBar}
+          isOpen  = {this.state.isSnackBarOpen}
           message = {this.state.snackBarMessage}
           //action  = "Cancel"
-          autoHideDuration= {this.state.snackBarAutoHideDuration}
           onActionTouchTap= {this.handleSnackBarClick}
           onRequestClose  = {this.closeSnackBar}
-          bodyStyle       = {{backgroundColor: Colors.active}}
-          style           = {{color: Colors.active}}
+          backgroundColor = {Colors.secondary}
+          color           = {Colors.active}
         />
+        
+        <DialogSimple 
+          isOpen = {this.state.isDialogOpen} 
+          close  = {this.closeDialog}
+          title  = "Karma Dialog"
+        />
+        
 
       </div>
 

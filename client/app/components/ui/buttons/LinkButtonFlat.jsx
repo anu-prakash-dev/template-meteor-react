@@ -1,6 +1,6 @@
-import React from 'react';
+import React  from 'react';
 import {Link} from 'react-router';
-import RaisedButton from 'material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 class LinkButtonFlat extends React.Component {
@@ -17,6 +17,7 @@ class LinkButtonFlat extends React.Component {
           label={this.props.label}
           secondary={true} 
           backgroundColor={this.props.backgroundColor}
+          style={this.props.style}
         />
       </Link>
 

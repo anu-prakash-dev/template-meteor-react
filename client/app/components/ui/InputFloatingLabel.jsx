@@ -1,7 +1,7 @@
 import React     from 'react';
-import TextField from 'material-ui/lib/text-field';
+import TextField from 'material-ui/TextField';
 
-import {Colors}  from '../../Theme';
+import {Colors}  from '/client/app/Theme';
 
 
 class InputFloatingLabel extends React.Component {
@@ -12,20 +12,20 @@ class InputFloatingLabel extends React.Component {
       styles:{
         style:this.props.style,
         hintStyle:{
-          color: Colors.blueMedium1,
+          color: Colors.secondary,
         },
         floatingLabelStyle:{
           pointerEvents: 'none', // fix : first click on labelText doesn't work
-          color: Colors.blueMedium1,
+          color: this.props.floatingLabelColor || Colors.secondary,
         },
         inputStyle:{
-          color: Colors.greyLight,
+          color: this.props.inputColor || Colors.secondary,
         },
         underlineStyle:{
-          borderColor: Colors.blueMedium1,
+          borderColor: this.props.underlineColor || Colors.secondary,
         },
         underlineFocusStyle:{
-          borderColor: Colors.greyLight,
+          borderColor: this.props.underlineFocusColor || Colors.tertiary,
         },
         underlineDisabledStyle:{
         },
@@ -37,6 +37,7 @@ class InputFloatingLabel extends React.Component {
   }
   
   render() { 
+    
     return (
 
         <div className="inputFloatingLabel">
@@ -54,8 +55,8 @@ class InputFloatingLabel extends React.Component {
               rows     = {1}
               rowsMax  = {5} 
               //Events
-              onEnterKeyDown        = {this.props.onEnterKeyDown}
-              onFocus               = {this.props.onFocus}
+              onKeyDown = {this.props.onEnterKeyDown}
+              onFocus   = {this.props.onFocus}
               //Styles
               style                 = {this.state.styles.style}
               hintStyle             = {this.state.styles.hintStyle}

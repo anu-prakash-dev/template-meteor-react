@@ -26,20 +26,24 @@ class AccountNotLogged extends React.Component{
             controlUsername = {this.props.controlUsername}
             controlEmail    = {this.props.controlEmail}
             controlPassword = {this.props.controlPassword}
+            btnBackgroundColor={this.props.btnBackgroundColor}
           />          
         
           <LoginGoogle
             openSnackBar    = {this.props.openSnackBar}
+            btnBackgroundColor={this.props.btnBackgroundColor}
           />     
             
           <LoginFacebook
             openSnackBar    = {this.props.openSnackBar}
+            btnBackgroundColor={this.props.btnBackgroundColor}
           />  
         
           <ForgotPassword
             openSnackBar = {this.props.openSnackBar}
             toggleRoll   = {this.props.toggleRoll}
             controlEmail = {this.props.controlEmail}
+            btnBackgroundColor={this.props.btnBackgroundColor}
           />  
          
           <CreateAccount
@@ -48,6 +52,7 @@ class AccountNotLogged extends React.Component{
             controlUsername = {this.props.controlUsername}
             controlEmail    = {this.props.controlEmail}
             controlPassword = {this.props.controlPassword}
+            btnBackgroundColor={this.props.btnBackgroundColor}
           />
           
       </div>

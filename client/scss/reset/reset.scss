@@ -38,3 +38,7 @@ input{
 button, input[type="checkbox"]{
   cursor: pointer;
 }
+
+a, button, input, span, div, img{
+  -webkit-tap-highlight-color: transparent;
+}

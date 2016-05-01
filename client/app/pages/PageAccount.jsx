@@ -15,14 +15,13 @@ class PageAccount extends React.Component {
     
     return (
       <div className="Page PageAccount">
-
-        <h1>Account</h1>
-        
+      
         <Account 
           openSnackBar = {this.props.openSnackBar}
           user         = {this.props.user}
+          openDialogContainer = {this.props.openDialogContainer}
         />
- 
+        
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/lib/raised-button';
-
+import RaisedButton from 'material-ui/RaisedButton';
+import { Colors }   from '/client/app/Theme';
 
 class ButtonFlat extends React.Component {
 
@@ -14,7 +14,7 @@ class ButtonFlat extends React.Component {
         <RaisedButton 
           className={this.props.className}
           label={this.props.label}
-          secondary={true} 
+          labelColor={this.props.labelColor||Colors.primary}
           backgroundColor={this.props.backgroundColor}
           onClick={this.props.onClick}
           style={this.props.style}

@@ -2,222 +2,290 @@
 /*  Colors  */
 /* line 9, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
 body, .Page {
-  overflow: auto;
-  background: url("/medias/backgrounds/background-dark.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background: #ffffff; }
 
 /* line 18, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
 html body #App-wrapper .App .app-main .app-content .Page {
-  padding: 2em 3em; }
+  padding: 2em;
+  overflow-y: auto;
+  overflow-x: auto; }
   /* line 25, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
   html body #App-wrapper .App .app-main .app-content .Page h1 {
-    color: #315481;
+    color: rgba(0, 0, 0, 0.87);
     font-size: 26px;
-    display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 2em;
     margin-right: 1em; }
   /* line 32, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
   html body #App-wrapper .App .app-main .app-content .Page h2 {
-    font-size: 18px; }
-  /* line 35, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    font-size: 18px;
+    color: #ffffff; }
+  /* line 36, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
   html body #App-wrapper .App .app-main .app-content .Page p {
-    color: #ebebeb; }
-  /* line 38, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    color: #ffffff; }
+  /* line 39, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
   html body #App-wrapper .App .app-main .app-content .Page label {
     color: #b2b2b2; }
-  /* line 43, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageHome {
-    padding: 0; }
-  /* line 50, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+  /* line 51, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
   html body #App-wrapper .App .app-main .app-content .Page.PageAccount > p {
     font-size: 8px;
     color: #b2b2b2;
     width: 15em; }
-    /* line 54, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    /* line 55, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
     html body #App-wrapper .App .app-main .app-content .Page.PageAccount > p:first-of-type {
       margin-top: -10px; }
-  /* line 71, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks h2 {
-    color: #f26e63;
-    margin-bottom: 0.5em; }
-  /* line 76, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks input {
-    color: #ebebeb;
-    font-size: 16px !important; }
-  /* line 81, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks p {
-    color: #131d2a; }
-  /* line 84, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new, html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list {
-    margin: 1em auto 2em auto; }
-  /* line 88, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new {
-    width: 100%; }
-    /* line 90, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form {
-      width: 100%; }
-      /* line 93, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form button.add {
-        color: #315481;
-        font-size: 1.5em;
-        line-height: 1.5em;
-        margin-top: -0.2em;
-        padding: 0em 0.7em;
-        width: 3em; }
-      /* line 102, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form > div {
-        width: 100%; }
-  /* line 111, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .hide-completed {
-    position: relative; }
-    /* line 114, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .hide-completed input {
-      margin-right: 0.5em; }
-  /* line 119, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul {
-    margin: 0.5em auto;
+  /* line 69, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+  html body #App-wrapper .App .app-main .app-content .Page.PageTasks {
     padding: 0; }
-    /* line 124, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li {
-      position: relative;
-      list-style: none;
-      padding: 1.25em 1em;
-      border-bottom: #b2b2b2 solid 1px;
-      color: #131d2a;
-      background: white;
-      margin-top: 1em; }
-      /* line 134, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li span {
-        width: 100%; }
-      /* line 139, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .text {
-        display: block;
+    /* line 75, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageTasks header {
+      background: #3f51b5;
+      padding: 2em 1em 0.3em 2em; }
+      /* line 78, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageTasks header #PleaseLogin {
+        margin-bottom: -1.5em; }
+    /* line 83, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new {
+      width: 100%;
+      max-width: 32em;
+      margin: 0 auto 1em auto; }
+      /* line 88, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form {
         width: 100%;
-        margin-left: 0.6em;
-        cursor: pointer; }
-      /* line 146, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .username {
-        width: 5em;
-        min-width: 100%;
-        margin-bottom: 0.3em;
-        color: #b2b2b2; }
-      /* line 154, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li button.toggle-private {
-        padding: 0.2em 0;
-        min-width: 5em;
-        cursor: pointer;
-        transition: all 0.25s;
-        color: #315481; }
-      /* line 163, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .delete {
-        margin-right: 0.5em;
-        margin-left: 1em;
-        min-width: 2em;
-        font-size: 1em;
-        font-weight: bold;
-        color: #315481; }
-      /* line 173, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li input {
-        padding: 20px;
-        height: 1em;
-        min-width: 3em; }
-      /* line 180, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-checked, html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-private {
-        color: #131d2a;
-        transition: all 0.25s; }
-      /* line 186, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-checked {
-        color: #b2b2b2; }
-        /* line 188, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-checked .text {
-          text-decoration: line-through; }
-      /* line 194, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li.task-private button.toggle-private {
-        color: #f26e63; }
-      /* line 200, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task {
-        width: 100%;
-        padding: 0em 0.5em 0 1em;
-        margin-top: -0.85em; }
-        /* line 204, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task input {
-          width: 100%;
-          margin-top: 0em;
-          margin-bottom: 0em;
-          font-size: 1.1em !important;
-          color: #131d2a; }
-        /* line 211, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-list .task-ul .task-li .edit-task button {
-          padding: 0.3em 0.9em;
-          margin-right: 0.3em;
-          margin-top: 0.5em; }
-  /* line 229, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-  html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-li, html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: flex;
-    align-items: center; }
-  /* line 243, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        display: flex; }
+        /* line 92, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form button.add {
+          width: 3em;
+          font-size: 1.5em;
+          line-height: 1.5em;
+          margin-top: 0.66em;
+          padding: 0em 0.7em;
+          color: #ff4081; }
+        /* line 100, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageTasks .task-new form > div {
+          width: 100%; }
+    /* line 106, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageTasks section {
+      max-width: 35em;
+      margin: 0 auto;
+      padding: 2em 2em; }
+      /* line 111, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageTasks section h2 {
+        color: rgba(0, 0, 0, 0.54); }
+      /* line 118, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list {
+        margin: 1em auto 2em auto; }
+        /* line 121, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list label {
+          display: block; }
+        /* line 125, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .hide-completed input {
+          color: rgba(0, 0, 0, 0.54);
+          font-size: 16px !important;
+          margin-right: 0.5em; }
+        /* line 132, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul {
+          padding: 0; }
+          /* line 136, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li {
+            position: relative;
+            list-style: none;
+            color: #ffffff;
+            overflow: hidden;
+            background: #3f51b5;
+            margin-top: 1em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.25s ease; }
+            /* line 148, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li:hover {
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+              /* line 150, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li:hover .overlay {
+                transform: translateY(0); }
+            /* line 156, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li span {
+              width: 100%; }
+            /* line 160, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineText, html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineControls {
+              padding: 1.25em 1em; }
+            /* line 165, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineText .text {
+              display: block;
+              width: 100%;
+              margin-left: 0.6em;
+              cursor: pointer; }
+              /* line 170, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineText .text .username {
+                width: 5em;
+                min-width: 100%;
+                margin-bottom: 0.3em;
+                color: rgba(255, 255, 255, 0.87); }
+              /* line 176, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineText .text .message {
+                color: rgba(255, 255, 255, 0.54); }
+            /* line 182, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li hr {
+              background: rgba(0, 0, 0, 0.54) !important; }
+            /* line 186, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineControls {
+              display: block;
+              width: 100%;
+              align-items: center;
+              text-align: right; }
+              /* line 191, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineControls button.toggle-private {
+                padding: 0.2em 0;
+                min-width: 5em;
+                cursor: pointer;
+                transition: all 0.25s;
+                color: rgba(255, 255, 255, 0.54);
+                background: none; }
+              /* line 201, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineControls .delete {
+                margin-right: 0em;
+                margin-left: 0em;
+                min-width: 2em;
+                font-size: 1em;
+                font-weight: bold;
+                color: rgba(255, 255, 255, 0.54);
+                background: none; }
+              /* line 212, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .lineControls input {
+                color: rgba(255, 255, 255, 0.54); }
+            /* line 222, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li.task-checked, html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li.task-private {
+              transition: all 0.25s; }
+            /* line 227, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li.task-checked {
+              color: rgba(0, 0, 0, 0.38); }
+              /* line 229, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li.task-checked .text .message {
+                text-decoration: line-through; }
+            /* line 235, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li.task-private button.toggle-private {
+              color: #ff4081; }
+            /* line 241, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .edit-task {
+              width: 100%;
+              padding: 0em 0.5em 0 1em;
+              margin-top: -0.85em; }
+              /* line 245, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .edit-task input {
+                width: 100%;
+                margin-top: 0em;
+                margin-bottom: 0em;
+                padding: 2em 0.5em;
+                font-size: 1.1em !important;
+                color: rgba(255, 255, 255, 0.87); }
+              /* line 253, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-list .task-ul .task-li .edit-task button {
+                padding: 0.3em 0.6em;
+                margin-right: 0.3em;
+                margin-top: 0.5em;
+                color: rgba(255, 255, 255, 0.54); }
+      /* line 272, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageTasks section .task-new form {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: flex;
+        align-items: center; }
+  /* line 287, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
   html body #App-wrapper .App .app-main .app-content .Page.PageShowcase {
-    overflow: auto; }
-    /* line 247, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageShowcase h1 {
-      margin-bottom: -2em; }
-    /* line 250, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    padding: 0; }
+    /* line 290, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
     html body #App-wrapper .App .app-main .app-content .Page.PageShowcase h2 {
-      margin-top: 4em;
-      color: #ebebeb; }
-    /* line 254, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      color: rgba(0, 0, 0, 0.54); }
+      /* line 292, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase h2:not(:first-child) {
+        margin-top: 3em; }
+    /* line 296, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
     html body #App-wrapper .App .app-main .app-content .Page.PageShowcase label {
       display: block;
-      margin-bottom: 1.5em !important; }
-    /* line 260, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-    html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section {
+      margin-top: 1em !important;
+      margin-bottom: 2em !important; }
+    /* line 303, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section {
       position: relative;
       margin: 0 auto;
       width: 100%;
       max-width: 35em;
-      padding-bottom: 4em; }
-      /* line 269, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-buttons * {
-        font-size: 12px !important; }
-      /* line 273, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-buttons a.button-material-ui > div {
-        margin-right: 10px; }
-      /* line 281, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-loader label {
+      padding: 2em 2em 4em 2em; }
+      /* line 311, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-buttons {
+        margin-top: 1em; }
+        /* line 313, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-buttons * {
+          font-size: 10px !important; }
+        @media screen and (min-width: 374px) {
+          /* line 311, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-buttons {
+            display: flex; } }
+        /* line 320, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-buttons .button-mui {
+          width: 100% !important;
+          margin-top: 0.66em; }
+          /* line 324, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-buttons .button-mui:not(:last-child) {
+            margin-right: 1em; }
+          /* line 328, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-buttons .button-mui > div {
+            width: 100% !important;
+            min-width: 100% !important; }
+      /* line 337, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-loader label {
         margin-bottom: 0.5em; }
-      /* line 284, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-loader .loaderLinear {
+      /* line 340, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-loader .loaderLinear {
         margin-top: 1.5em !important; }
-      /* line 287, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-loader .flex {
+      /* line 343, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-loader .flex {
         margin-top: 2em; }
-        /* line 289, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-loader .flex > div {
+        /* line 345, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-loader .flex > div {
           width: 100%;
           padding: 0em;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center; }
-          /* line 296, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-loader .flex > div > * {
+          /* line 352, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-loader .flex > div > * {
             display: block; }
-        /* line 301, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .wrapper-loader .flex .loaderBounce {
+        /* line 357, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase > section .wrapper-loader .flex .loaderBounce {
           margin-top: -3px;
           transform: scale(0.6); }
-      /* line 311, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListDraggable {
+    /* line 369, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+    html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      overflow: auto; }
+      /* line 379, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .overlay {
+        position: absolute;
+        z-index: 12;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0; }
+      /* line 390, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListDraggable, html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated {
+        z-index: 12;
+        box-sizing: border-box;
+        margin: 3em auto;
+        width: 90%;
+        max-width: 35em; }
+      /* line 397, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListDraggable {
         position: relative;
-        width: 100%;
         height: 400px; }
-        /* line 316, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListDraggable .item {
+        /* line 402, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListDraggable .item {
           position: absolute;
           width: 100%;
           height: 90px;
@@ -231,9 +299,9 @@ html body #App-wrapper .App .app-main .app-content .Page {
           font-weight: 400;
           cursor: pointer;
           color: white;
-          background-color: #466da0; }
-        /* line 334, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListDraggable .link {
+          background-color: #3f51b5; }
+        /* line 420, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListDraggable .link {
           position: absolute;
           color: #4c4c4c;
           text-decoration: none;
@@ -241,433 +309,283 @@ html body #App-wrapper .App .app-main .app-content .Page {
           padding: 10px;
           top: 0;
           left: 0; }
-      /* line 347, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated {
+      /* line 432, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+      html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated {
         background: #fff;
         position: relative;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
         /*
-            Hack to remove background from Mobile Safari.
-            Can't use it globally since it destroys checkboxes in Firefox
-          */ }
-        /* line 353, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated input {
+          Hack to remove background from Mobile Safari.
+          Can't use it globally since it destroys checkboxes in Firefox
+        */ }
+        /* line 438, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated input {
           font-size: 14px !important; }
-        /* line 356, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated hr {
-          margin: 20px 0;
-          border: 0;
-          border-top: 1px dashed #c5c5c5;
-          border-bottom: 1px dashed #f7f7f7; }
-        /* line 363, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn a {
-          font-weight: normal;
-          text-decoration: none;
-          color: #b83f45; }
-        /* line 369, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn a:hover {
-          text-decoration: underline;
-          color: #787e7e; }
-        /* line 376, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn h3,
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn h4,
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn h5 {
-          margin: 10px 0;
-          font-weight: 500;
-          line-height: 1.2;
-          color: #000; }
-        /* line 383, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn h3 {
-          font-size: 24px; }
-        /* line 387, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn h4 {
-          font-size: 18px; }
-        /* line 391, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn h5 {
-          margin-bottom: 0;
-          font-size: 14px; }
-        /* line 396, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn ul {
-          padding: 0;
-          margin: 0 0 30px 25px; }
-        /* line 401, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn li {
-          line-height: 20px; }
-        /* line 405, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn p {
-          font-size: 15px;
-          font-weight: 300;
-          line-height: 1.3;
-          margin-top: 0;
-          margin-bottom: 0; }
-        /* line 413, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated #issue-count {
+        /* line 442, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .hidden {
           display: none; }
-        /* line 417, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote {
-          border: none;
-          margin: 20px 0 60px 0; }
-        /* line 422, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote p {
-          font-style: italic; }
-        /* line 426, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote p:before {
-          content: '“';
-          font-size: 50px;
-          opacity: .15;
-          position: absolute;
-          top: -20px;
-          left: 3px; }
-        /* line 435, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote p:after {
-          content: '”';
-          font-size: 50px;
-          opacity: .15;
-          position: absolute;
-          bottom: -42px;
-          right: 3px; }
-        /* line 444, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote footer {
-          position: absolute;
-          bottom: -40px;
-          right: 0; }
-        /* line 450, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote footer img {
-          border-radius: 3px; }
-        /* line 454, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .quote footer a {
-          margin-left: 5px;
-          vertical-align: middle; }
-        /* line 459, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .speech-bubble {
-          position: relative;
-          padding: 10px;
-          background: rgba(0, 0, 0, 0.04);
-          border-radius: 5px; }
-        /* line 466, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .speech-bubble:after {
-          content: '';
-          position: absolute;
-          top: 100%;
-          right: 30px;
-          border: 13px solid transparent;
-          border-top-color: rgba(0, 0, 0, 0.04); }
-        /* line 475, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn-bar > .learn {
-          position: absolute;
-          width: 272px;
-          top: 8px;
-          left: -300px;
-          padding: 10px;
-          border-radius: 5px;
-          background-color: rgba(255, 255, 255, 0.6);
-          transition-property: left;
-          transition-duration: 500ms; }
-        @media (min-width: 899px) {
-          /* line 488, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn-bar {
-            width: auto;
-            padding-left: 300px; }
-          /* line 493, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .learn-bar > .learn {
-            left: 8px; } }
-        /* line 500, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated button {
-          margin: 0;
-          padding: 0;
-          border: 0;
-          background: none;
-          font-size: 100%;
-          vertical-align: baseline;
-          font-family: inherit;
-          font-weight: inherit;
-          color: inherit;
-          -webkit-appearance: none;
-          appearance: none;
-          -webkit-font-smoothing: antialiased;
-          -moz-font-smoothing: antialiased;
-          font-smoothing: antialiased; }
-        /* line 518, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated button,
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated input[type="checkbox"] {
-          outline: none; }
-        /* line 522, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .hidden {
-          display: none; }
-        /* line 526, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated input::-webkit-input-placeholder {
+        /* line 446, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated input::-webkit-input-placeholder {
           font-style: italic;
           font-weight: 300;
           color: #e6e6e6; }
-        /* line 532, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated input::-moz-placeholder {
+        /* line 452, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated input::-moz-placeholder {
           font-style: italic;
           font-weight: 300;
           color: #e6e6e6; }
-        /* line 538, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated input::input-placeholder {
+        /* line 458, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated input::input-placeholder {
           font-style: italic;
           font-weight: 300;
           color: #e6e6e6; }
-        /* line 544, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated h1 {
-          position: absolute;
-          top: -155px;
-          width: 100%;
-          font-size: 100px;
-          font-weight: 100;
-          text-align: center;
-          color: rgba(175, 47, 47, 0.15);
-          -webkit-text-rendering: optimizeLegibility;
-          -moz-text-rendering: optimizeLegibility;
-          text-rendering: optimizeLegibility; }
-        /* line 559, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .new-todo,
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .edit {
-          position: relative;
-          margin: 0;
-          width: 100%;
-          font-size: 24px;
-          font-family: inherit;
-          font-weight: inherit;
-          line-height: 1.4em;
-          border: 0;
-          outline: none;
-          color: inherit;
-          padding: 6px;
-          border: 1px solid #999;
-          box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-          box-sizing: border-box;
-          -webkit-font-smoothing: antialiased;
-          -moz-font-smoothing: antialiased;
-          font-smoothing: antialiased; }
-        /* line 579, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .new-todo {
-          padding: 16px 16px 16px 60px;
+        /* line 502, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated header input.new-todo {
+          padding: 16px 0px 16px 60px;
           border: none;
           background: rgba(0, 0, 0, 0.003);
           box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03); }
-        /* line 586, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .main {
+        /* line 512, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main {
           position: relative;
           z-index: 2;
           border-top: 1px solid #e6e6e6; }
-        /* line 592, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated label[for='toggle-all'] {
-          display: none; }
-        /* line 596, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .toggle-all {
-          position: absolute;
-          top: -55px;
-          left: -12px;
-          width: 60px;
-          height: 34px;
-          text-align: center;
-          border: none;
-          /* Mobile Safari */ }
-        /* line 606, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .toggle-all:before {
-          content: '❯';
-          font-size: 22px;
-          color: #e6e6e6;
-          padding: 10px 27px 10px 27px; }
-        /* line 613, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .toggle-all:checked:before {
-          color: #737373; }
-        /* line 617, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list {
-          margin: 0;
-          padding: 0;
-          list-style: none; }
-        /* line 623, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li {
-          position: relative;
-          font-size: 22px;
-          box-shadow: 0 -1px 0 #ededed;
-          overflow: hidden; }
-        /* line 630, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li:last-child {
-          border-bottom: none; }
-        /* line 634, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li.editing {
-          border-bottom: none;
-          padding: 0; }
-        /* line 639, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li.editing .edit {
-          display: block;
-          width: 506px;
-          padding: 13px 17px 12px 17px;
-          margin: 0 0 0 43px; }
-        /* line 646, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li.editing .view {
-          display: none; }
-        /* line 651, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .toggle {
-          text-align: center;
-          width: 40px;
-          /* auto, since non-WebKit browsers doesn't support input styling */
-          height: auto;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto 0;
-          border: none;
-          /* Mobile Safari */
-          -webkit-appearance: none;
-          appearance: none; }
-        /* line 665, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .toggle:after {
-          content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>'); }
-        /* line 669, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .toggle:checked:after {
-          content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>'); }
-        /* line 673, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li label {
-          white-space: pre;
-          word-break: break-word;
-          padding: 15px 60px 15px 15px;
-          margin-left: 45px;
-          display: block;
-          line-height: 1.2;
-          transition: color 0.4s; }
-        /* line 683, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li.completed label {
-          color: #d9d9d9;
-          text-decoration: line-through; }
-        /* line 688, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .destroy {
-          display: none;
-          position: absolute;
-          top: 0;
-          right: 10px;
-          bottom: 0;
-          width: 40px;
-          height: 40px;
-          margin: auto 0;
-          font-size: 30px;
-          color: #cc9a9a;
-          margin-bottom: 11px;
-          transition: color 0.2s ease-out; }
-        /* line 703, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .destroy:hover {
-          color: #af5b5e; }
-        /* line 707, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .destroy:after {
-          content: '×'; }
-        /* line 711, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li:hover .destroy {
-          display: block; }
-        /* line 715, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .edit {
-          display: none; }
-        /* line 719, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li.editing:last-child {
-          margin-bottom: -1px; }
-        /* line 723, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .footer {
+          /* line 518, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .toggle-all {
+            position: absolute;
+            top: -45px;
+            left: -12px;
+            width: 60px;
+            height: 34px;
+            text-align: center;
+            border: none;
+            /* Mobile Safari */ }
+            /* line 526, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .toggle-all:before {
+              content: '❯';
+              font-size: 22px;
+              color: #e6e6e6;
+              padding: 10px 27px 10px 27px; }
+            /* line 532, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .toggle-all:checked:before {
+              color: #737373; }
+          /* line 536, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main label[for='toggle-all'] {
+            display: none; }
+          /* line 541, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list {
+            margin: 0;
+            padding: 0;
+            list-style: none; }
+            /* line 546, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li {
+              position: relative;
+              font-size: 16px;
+              box-shadow: 0 -1px 0 #ededed;
+              overflow: hidden;
+              width: 100%; }
+              /* line 554, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li:last-child {
+                border-bottom: none; }
+              /* line 558, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li.editing {
+                border-bottom: none;
+                padding: 0; }
+                /* line 561, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+                html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li.editing .edit {
+                  display: block;
+                  width: 506px;
+                  padding: 13px 17px 12px 17px;
+                  margin: 0 0 0 43px; }
+                /* line 567, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+                html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li.editing .view {
+                  display: none; }
+                /* line 570, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+                html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li.editing:last-child {
+                  margin-bottom: -1px; }
+              /* line 576, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .toggle {
+                text-align: center;
+                width: 30px;
+                /* auto, since non-WebKit browsers doesn't support input styling */
+                height: 30px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 5px;
+                margin: auto 0;
+                border: none;
+                /* Mobile Safari */
+                -webkit-appearance: none;
+                appearance: none; }
+              /* line 591, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .toggle:after {
+                content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="rgba(63, 75, 172, 0.31)" stroke-width="3"/></svg>'); }
+              /* line 595, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .toggle:checked:after {
+                content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="rgba(63, 81, 181, 0.95)" stroke-width="3"/><path fill="#3f4bac" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>'); }
+              /* line 599, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li label {
+                padding: 5px 40px 15px 15px;
+                margin-left: 40px;
+                display: block;
+                white-space: pre;
+                word-break: break-word;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: color 0.4s; }
+              /* line 611, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li.completed label {
+                color: #d9d9d9;
+                text-decoration: line-through; }
+              /* line 616, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .destroy {
+                display: none;
+                position: absolute;
+                top: -3px;
+                right: 10px;
+                bottom: 0;
+                width: 30px;
+                height: 30px;
+                margin: auto 0;
+                font-size: 20px;
+                color: #ff4081;
+                transition: color 0.2s ease-out; }
+              /* line 631, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .destroy:hover {
+                color: #af5b5e; }
+              /* line 635, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .destroy:after {
+                content: '×'; }
+              /* line 639, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li:hover .destroy {
+                display: block; }
+              /* line 643, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated section.main .todo-list li .edit {
+                display: none; }
+        /* line 654, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer {
           color: #777;
           padding: 10px 15px;
-          height: 20px;
+          height: 40px !important;
           text-align: center;
           border-top: 1px solid #e6e6e6; }
-        /* line 731, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .footer:before {
-          content: '';
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          height: 50px;
-          overflow: hidden;
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2); }
-        /* line 746, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-count {
-          float: left;
-          text-align: left; }
-        /* line 751, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-count strong {
-          font-weight: 300; }
-        /* line 755, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          position: absolute;
-          right: 0;
-          left: 0; }
-        /* line 764, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters li {
-          display: inline; }
-        /* line 768, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters li a {
-          color: inherit;
-          margin: 3px;
-          padding: 3px 7px;
-          text-decoration: none;
-          border: 1px solid transparent;
-          border-radius: 3px; }
-        /* line 778, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters li a.selected,
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters li a:hover {
-          border-color: rgba(175, 47, 47, 0.1); }
-        /* line 782, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters li a.selected {
-          border-color: rgba(175, 47, 47, 0.2); }
-        /* line 787, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .clear-completed,
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated html .clear-completed:active {
-          float: right;
-          position: relative;
-          line-height: 20px;
-          text-decoration: none;
-          cursor: pointer;
-          position: relative; }
-        /* line 796, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .clear-completed:hover {
-          text-decoration: underline; }
-        /* line 800, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .info {
-          margin: 65px auto 0;
-          color: #bfbfbf;
-          font-size: 10px;
-          text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-          text-align: center; }
-        /* line 808, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .info p {
-          line-height: 1; }
-        /* line 812, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .info a {
-          color: inherit;
-          text-decoration: none;
-          font-weight: 400; }
-        /* line 818, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-        html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .info a:hover {
-          text-decoration: underline; }
+          @media screen and (max-width: 550px) {
+            /* line 654, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer {
+              height: 80px !important; }
+              /* line 664, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters {
+                bottom: 10px; } }
+          /* line 670, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: none;
+            font-size: 100%;
+            vertical-align: baseline;
+            font-family: inherit;
+            font-weight: inherit;
+            color: inherit;
+            -webkit-appearance: none;
+            appearance: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            font-smoothing: antialiased; }
+          /* line 687, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 90px;
+            overflow: hidden;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2); }
+          /* line 702, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .todo-count {
+            float: left;
+            text-align: left; }
+            /* line 705, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .todo-count strong {
+              font-weight: 300; }
+          /* line 710, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none; }
+            /* line 719, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters li {
+              display: inline; }
+              /* line 722, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters li a {
+                color: inherit;
+                margin: 3px;
+                padding: 3px 7px;
+                text-decoration: none;
+                border: 1px solid transparent;
+                border-radius: 3px; }
+                /* line 730, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+                html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters li a.selected, html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters li a:hover {
+                  border-color: rgba(175, 47, 47, 0.1); }
+                /* line 733, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+                html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .filters li a.selected {
+                  border-color: rgba(175, 47, 47, 0.2); }
+          /* line 742, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .clear-completed,
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer html .clear-completed:active {
+            float: right;
+            position: relative;
+            line-height: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative; }
+          /* line 751, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .clear-completed:hover {
+            text-decoration: underline; }
+          /* line 755, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .info {
+            margin: 65px auto 0;
+            color: #bfbfbf;
+            font-size: 10px;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            text-align: center; }
+            /* line 762, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .info p {
+              line-height: 1; }
+            /* line 766, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+            html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .info a {
+              color: inherit;
+              text-decoration: none;
+              font-weight: 400; }
+              /* line 770, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+              html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer .info a:hover {
+                text-decoration: underline; }
         @media screen and (-webkit-min-device-pixel-ratio: 0) {
-          /* line 828, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .toggle-all,
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .toggle {
+          /* line 783, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .toggle-all,
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .todo-list li .toggle {
             background: none; }
-          /* line 832, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .todo-list li .toggle {
+          /* line 787, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .todo-list li .toggle {
             height: 40px; }
-          /* line 836, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .toggle-all {
+          /* line 791, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .toggle-all {
             -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
             -webkit-appearance: none;
             appearance: none; } }
         @media (max-width: 430px) {
-          /* line 845, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .footer {
+          /* line 800, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .footer {
             height: 50px; }
-          /* line 849, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase section .ListAnimated .filters {
+          /* line 804, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
+          html body #App-wrapper .App .app-main .app-content .Page.PageShowcase .listView .ListAnimated .filters {
             bottom: 10px; } }
-
-/* line 864, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/Pages.scss */
-#CardFull {
-  width: 80%;
-  margin: 2em auto; }
 
 /*# sourceMappingURL=Pages.css.map */

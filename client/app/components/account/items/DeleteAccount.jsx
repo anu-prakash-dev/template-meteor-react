@@ -4,7 +4,7 @@ import {deleteAccount} from '/client/api/accounts';
 
 import {Colors} from '/client/app/Theme';
 
-import ButtonFLat         from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat         from '/client/app/components/ui/buttons/ButtonFlat'
 import InputFloatingLabel from '/client/app/components/ui/InputFloatingLabel'
 
 
@@ -14,6 +14,7 @@ class DeleteAccount extends React.Component{
   constructor(props) {
     super(props);
     this.handleChange    = this.handleChange.bind(this);
+    this.handleKeyDown   = this.handleKeyDown.bind(this);
     this.controlPassword = this.controlPassword.bind(this);
     this.setErrorText    = this.setErrorText.bind(this);
     this.resetErrorText  = this.resetErrorText.bind(this);
@@ -82,7 +83,12 @@ class DeleteAccount extends React.Component{
     
     this.setState(nextState);
   }  
-  
+
+  handleKeyDown(event){
+    if(event.keyCode !== 13) return;
+    this.handleClick();
+  }  
+ 
   controlPassword(callback){
     
     const passwordConfirm = this.state.passwordConfirm;
@@ -159,7 +165,7 @@ class DeleteAccount extends React.Component{
                 style         = {{width: "100%", marginTop: "-10px"}}
                 errorText     = {this.state.passwordConfirmErrorText}
                 onFocus       = {this.resetErrorText.bind(this, 'passwordConfirm')}
-                onEnterKeyDown= {this.deleteAccount}
+                onEnterKeyDown= {this.handleKeyDown}
               />
 
               <br/>
@@ -168,7 +174,7 @@ class DeleteAccount extends React.Component{
                 className = "btn-cancel"
                 label     = "Cancel"
                 onClick   = {this.toggleRoll}
-                backgroundColor = {Colors.blueMedium1}
+                backgroundColor = {this.props.btnBackgroundColor}
                 style     = {{width: '100%', marginBottom: '10px'}}
               />  
             </div>
@@ -179,7 +185,7 @@ class DeleteAccount extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Delete Account"
-          backgroundColor = {isRollOpen?Colors.active:Colors.blueMedium1}
+          backgroundColor = {isRollOpen?Colors.active:this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {!isRollOpen?this.toggleRoll:this.handleClick}
         /> 

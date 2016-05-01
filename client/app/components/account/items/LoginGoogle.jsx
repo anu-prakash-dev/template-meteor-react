@@ -1,7 +1,7 @@
 import React from 'react';
 import {loginWithGoogle} from '/client/api/accounts';
 import {Colors}     from '/client/app/Theme';
-import ButtonFLat   from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat   from '/client/app/components/ui/buttons/ButtonFlat'
 
 
 
@@ -45,7 +45,7 @@ class LoginGoogle extends React.Component{
         <ButtonFLat 
           className = "btn-action"
           label     = "Login Google"
-          backgroundColor = {Colors.blueMedium1}
+          backgroundColor = {this.props.btnBackgroundColor}
           style           = {{width: '100%'}}
           onClick         = {this.loginGoogle}
         />

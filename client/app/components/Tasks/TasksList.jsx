@@ -74,11 +74,36 @@ export class TasksList extends React.Component {
 
         <div className="task-list">
 
-          <h2> Todo List {p.incompleteCount} </h2>
+          {p.count > 0 ?
+              <h2> {p.count} tasks </h2>
+            :
+              <h2> No tasks </h2>
+          }
           
-          <TasksFilter
-            toggleHideCompleted={p.toggleHideCompleted.bind(this)}
-          />
+          
+          {p.count > 0 ?
+              <div>
+                {p.incompleteCount > 0 ?
+                    <div>
+                      <label> {p.incompleteCount} incompleted tasks </label>
+                      <br/><br/>
+                      <TasksFilter
+                        toggleHideCompleted={p.toggleHideCompleted.bind(this)}
+                      />
+                    </div>
+                  :
+                    <div>
+                      <label> No incompleted tasks </label>
+                      <br/><br/>
+                      <TasksFilter
+                        toggleHideCompleted={p.toggleHideCompleted.bind(this)}
+                      />
+                    </div>
+                }
+              </div>
+            :
+              ''
+          }
 
           <ul className="task-ul">
             {this.renderTasks()}

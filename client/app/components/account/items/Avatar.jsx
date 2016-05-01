@@ -38,14 +38,14 @@ class Avatar extends React.Component{
           <div> 
             { isDefaultAvatar ?
               <div 
-                className="avatar avatarDefault"
+                className={"avatar avatarDefault " + this.props.className}
                 onClick={this.props.onClick}
                 style = {this.props.style}>
                 {Meteor.user().username.substring(0, 1)}
               </div>
               :
               <img 
-                className="avatar"
+                className={"avatar " + this.props.className}
                 id    = {this.props.id}
                 src   = {this.data.avatar||defaultAvatar}
                 style = {this.props.style}
@@ -55,7 +55,7 @@ class Avatar extends React.Component{
           </div>
           :
           <img 
-            className="avatar avatarDisconnected"
+            className={"avatar avatarDisconnected " + this.props.className}
             src   = {defaultAvatar}
             style = {this.props.style}
             onClick={this.props.onClick}

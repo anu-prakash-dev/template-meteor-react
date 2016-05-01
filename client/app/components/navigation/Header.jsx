@@ -35,7 +35,7 @@ class Header extends React.Component {
 
       <AppBar
         id="Header"
-        title="App"
+        title={this.props.title}
         iconElementLeft={
           <IconButton onClick={this.props.openDrawer}><NavigationClose /></IconButton>
         }

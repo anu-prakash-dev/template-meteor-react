@@ -17,21 +17,26 @@ export const PleaseLogin = (props) => (
   
   <div id="PleaseLogin">
     <Card style={{
-            paddingLeft:'0.5em'
+            paddingLeft:'0.5em',
+            backgroundColor: Colors.secondary
           }}
     >
 
       <CardHeader
         title="Please log in"
         subtitle={props.text} 
-        style={{marginBottom:'-1em'}}
+        style={{marginBottom:'-1em',}}
+        titleStyle={{color: Colors.textWhitePrimary,}}
+        subtitleStyle={{color: Colors.textWhiteSecondary,}}
       />
 
       <CardActions>
         <Link to="/account">
           <FlatButton label="Account Page" 
+                      backgroundColor="rgba(255, 255, 255, 0.13)"
                       style={{
-                        marginBottom:'0.5em'
+                        marginBottom:'0.5em',
+                        color: Colors.textWhitePrimary
                       }}
           />
         </Link>

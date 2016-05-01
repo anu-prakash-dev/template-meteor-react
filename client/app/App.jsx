@@ -25,6 +25,7 @@ class App extends React.Component {
     this.openDialog   = this.openDialog.bind(this);
     this.closeDialog  = this.closeDialog.bind(this);
     this.state = {
+      headerTitle: this.props.children.props.route.pageName,
       snackBarAutoHideDuration: 4000,
       snackBarMessage:          '',
       isSnackBarOpen:     false,
@@ -131,6 +132,21 @@ class App extends React.Component {
     
   }
 
+  componentWillReceiveProps(nextProps) {
+    // Update headerTitle from the routeName
+    if(nextProps.children.props.route.pageName){
+      //this.props.children.props.route.pageName
+      this.setState({
+        headerTitle: nextProps.children.props.route.pageName
+      });
+    }
+    else{
+      this.setState({
+        headerTitle: 'Home'
+      });
+    }
+  }
+
   render(){
     
     return(
@@ -139,6 +155,7 @@ class App extends React.Component {
         
         <Header 
           openDrawer = {this.openDrawer}
+          title={this.state.headerTitle}
         />
 
         

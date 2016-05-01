@@ -1,7 +1,7 @@
 import React from 'react';
 import {loginWithFacebook} from '/client/api/accounts';
 import {Colors}     from '/client/app/Theme';
-import ButtonFLat   from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat   from '/client/app/components/ui/buttons/ButtonFlat'
 
 
 

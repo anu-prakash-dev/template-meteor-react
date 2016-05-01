@@ -8,7 +8,7 @@
   /* line 16, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .account-box input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.54) !important; }
+    -webkit-text-fill-color: #3f51b5 !important; }
   /* line 23, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .account-box .inputFloatingLabel * {
     font-size: 14px !important; }
@@ -151,23 +151,24 @@
 
 /* line 237, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
 .dialogAvatar .currentAvatarInModal {
-  position: relative; }
-  /* line 239, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+  position: relative;
+  padding-top: 0.66em; }
+  /* line 240, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .dialogAvatar .currentAvatarInModal .avatar {
     opacity: 1 !important; }
-    /* line 241, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    /* line 242, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
     .dialogAvatar .currentAvatarInModal .avatar.is-visible {
       opacity: 0.3 !important; }
-  /* line 246, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+  /* line 247, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
   .dialogAvatar .currentAvatarInModal .avatarPreview {
     position: absolute;
-    top: 0;
+    top: 0.66em;
     left: 0;
     transform: scale(1) translate3d(0, 0, 0);
     opacity: 0;
     transition: all 0.3s;
     pointer-events: none; }
-    /* line 256, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
+    /* line 257, /Users/maxblue/Documents/Dev/GitHub/template-meteor-react/client/scss/account/Account.scss */
     .dialogAvatar .currentAvatarInModal .avatarPreview.is-visible {
       transform: scale(1.2) translate3d(44px, 0, 0);
       opacity: 1;

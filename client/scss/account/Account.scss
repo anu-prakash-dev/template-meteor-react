@@ -15,7 +15,7 @@
     // disable yellow input background when autocompletion
     &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $color_primary inset;
-        -webkit-text-fill-color: $color_text_secondary !important;
+        -webkit-text-fill-color: $color_secondary !important;
     }
   }
 
@@ -235,7 +235,8 @@
   }
 
   .currentAvatarInModal{
-    position: relative;
+    position:     relative;
+    padding-top:  0.66em;
     .avatar{
       opacity:    1 !important;
       &.is-visible{
@@ -246,7 +247,7 @@
     .avatarPreview{
       position: absolute;
       //left:     28px;
-      top:  0;
+      top:  0.66em;
       left: 0;
       transform:  scale(1) translate3d(0, 0, 0);
       opacity:    0;

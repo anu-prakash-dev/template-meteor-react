@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import IconButton from 'material-ui/lib/icon-button';
-import IconTasks   from 'material-ui/lib/svg-icons/action/view-list';
+import IconButton  from 'material-ui/IconButton';
+import IconUpload  from 'material-ui/svg-icons/image/remove-red-eye';
 
 
 
-class ButtonIconTasks extends React.Component {
+class ButtonIconShowcase extends React.Component {
 
   constructor(props) {
     super(props);
@@ -19,10 +19,9 @@ class ButtonIconTasks extends React.Component {
 
         <IconButton 
           touch   = {true} 
-          style   = {this.props.buttonStyle}
           onClick = {this.props.onClick}
         >
-          <IconTasks 
+          <IconUpload 
             color     = {this.props.color}
             hoverColor= {this.props.hoverColor}
           />
@@ -33,4 +32,4 @@ class ButtonIconTasks extends React.Component {
 
 }
 
-export default ButtonIconTasks;
+export default ButtonIconShowcase;

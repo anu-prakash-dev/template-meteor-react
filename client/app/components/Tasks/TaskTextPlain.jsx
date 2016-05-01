@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 
 
@@ -15,23 +13,18 @@ export class TaskTextPlain extends React.Component {
     p.beginTextEdit(p.task._id, p.task.text)
   }
 
+  render() {
 
-/***************************************/
-/* RENDER
-/***************************************/
+    var p = this.props;
 
-    render() {
+    return (
 
-      var p = this.props;
-
-      return (
-
-          <div className="text">
-            <p className="username">{p.task.username}</p>
-            <span className="message" onClick={this.onClick.bind(this)}>
-              {p.task.text}
-            </span>
-          </div>
+        <div className="text">
+          <p className="username">{p.task.username}</p>
+          <span className="message" onClick={this.onClick.bind(this)}>
+            {p.task.text}
+          </span>
+        </div>
 
     );
   }

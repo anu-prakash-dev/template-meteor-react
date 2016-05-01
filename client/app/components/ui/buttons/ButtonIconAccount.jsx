@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import IconButton from 'material-ui/lib/icon-button';
-import IconCode   from 'material-ui/lib/svg-icons/action/code';
+import IconButton  from 'material-ui/IconButton';
+import IconAccount from 'material-ui/svg-icons/action/account-circle';
 
 
 
-class ButtonIconCode extends React.Component {
+class ButtonIconAccount extends React.Component {
 
   constructor(props) {
     super(props);
@@ -14,13 +14,15 @@ class ButtonIconCode extends React.Component {
   }
   
   render() {
+    
     return(
 
         <IconButton 
           touch   = {true} 
+          style   = {this.props.buttonStyle}
           onClick = {this.props.onClick}
         >
-          <IconCode 
+          <IconAccount 
             color     = {this.props.color}
             hoverColor= {this.props.hoverColor}
           />
@@ -31,4 +33,4 @@ class ButtonIconCode extends React.Component {
 
 }
 
-export default ButtonIconCode;
+export default ButtonIconAccount;

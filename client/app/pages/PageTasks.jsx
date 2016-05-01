@@ -3,8 +3,8 @@ import   React        from 'react';
 import   reactMixin   from 'react-mixin';
 
 import { Tasks }     from '/lib/collections/collections';
-import { TasksList } from '../components/Tasks/TasksList.jsx';
-import { TaskNew }   from '../components/Tasks/TaskNew.jsx';
+import { TasksList } from '/client/app/components/Tasks/TasksList.jsx';
+import { TaskNew }   from '/client/app/components/Tasks/TaskNew.jsx';
 
 import { PleaseLogin } from '/client/app/components/account/items/PleaseLogin';
 

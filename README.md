@@ -19,6 +19,7 @@ Provide a template app
 - high order components, scalable, re-usable
 - shared, clean & safe methods.
 - UI components ([material-ui](http://www.material-ui.com/#/) and more)
+- A "clean" presentation, with Material-UI, but easily changeable
 
 Inspired by [Mantra](https://github.com/kadirahq/mantra), an architecture, breaking with the universal concept of meteor, for future-proof apps, with a high-maintainability ([here](https://kadirahq.github.io/mantra/).
 
@@ -58,7 +59,7 @@ Play
 
 ### Features
 
-* meteor 1.3.2.4, react 15.0.1, react-router 15.0.1
+* meteor@1.3.2.4, react@15.0.1, react-router@15.0.1, material-ui@0.15.0-beta.2
 
 
 #### Page Transitions

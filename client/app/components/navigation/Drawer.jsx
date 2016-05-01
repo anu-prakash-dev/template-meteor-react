@@ -1,28 +1,26 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+import DrawerMui    from 'material-ui/Drawer';
+import MenuItem     from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+import Divider      from 'material-ui/Divider';
+
+import IconAccount from 'material-ui/svg-icons/action/account-circle';
+import IconHome    from 'material-ui/svg-icons/action/home';
+import IconTasks   from 'material-ui/svg-icons/action/view-list';
+import IconEye     from 'material-ui/svg-icons/image/remove-red-eye';
+import IconCode    from 'material-ui/svg-icons/action/code';
+
 import {Colors} from '/client/app/Theme';
 
-import LeftNav from 'material-ui/lib/left-nav';
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import RaisedButton from 'material-ui/lib/raised-button';
-import Divider from 'material-ui/lib/divider';
 
-import IconAccount from 'material-ui/lib/svg-icons/action/account-circle';
-import IconHome    from 'material-ui/lib/svg-icons/action/home';
-import IconTasks   from 'material-ui/lib/svg-icons/action/view-list';
-import IconEye     from 'material-ui/lib/svg-icons/image/remove-red-eye';
-import IconCode    from 'material-ui/lib/svg-icons/action/code';
-
-
-class DrawerLeft extends React.Component {
+class Drawer extends React.Component {
   
   constructor(props){
     super(props);
     this.onRequestChange=this.onRequestChange.bind(this);
-    this.state={
-      open: false
-    }
+    this.state={}
   }
   
   onRequestChange(open){
@@ -35,7 +33,7 @@ class DrawerLeft extends React.Component {
   render() {
     return(
       
-      <LeftNav
+      <DrawerMui
         docked = {false}
         width  = {220}
         swipeAreaWidth  = {35}
@@ -95,7 +93,7 @@ class DrawerLeft extends React.Component {
           </MenuItem>
         </a>
         
-      </LeftNav>
+      </DrawerMui>
     
       
     );
@@ -103,4 +101,4 @@ class DrawerLeft extends React.Component {
 }
 
 
-export default DrawerLeft;
+export default Drawer;

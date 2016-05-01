@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import IconButton from 'material-ui/lib/icon-button';
-import IconHome   from 'material-ui/lib/svg-icons/action/home';
+import IconButton  from 'material-ui/IconButton';
+import IconHome    from 'material-ui/svg-icons/action/home';
 
 
 

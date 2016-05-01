@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {sendVerificationEmail} from '/client/api/accounts';
-import {Colors} from '/client/app/Theme';
-import ButtonFlat from '/client/app/components/ui/ButtonFlat';
+import {Colors}   from '/client/app/Theme';
+import ButtonFlat from '/client/app/components/ui/buttons/ButtonFlat';
 
 
 

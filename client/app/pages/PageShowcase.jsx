@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import {Colors} from '../Theme';
+import {Colors} from '/client/app/Theme';
 
-import ButtonFlat     from '../components/ui/ButtonFlat'
-import LinkButtonFlat from '../components/ui/LinkButtonFlat'
+import ButtonFlat     from '/client/app/components/ui/buttons/ButtonFlat'
+import LinkButtonFlat from '/client/app/components/ui/buttons/LinkButtonFlat'
 
-import ListDraggable  from '../components/ui/lists/ListDraggable'
-import ListAnimated   from '../components/ui/lists/ListAnimated'
+import ListDraggable  from '/client/app/components/ui/lists/ListDraggable'
+import ListAnimated   from '/client/app/components/ui/lists/ListAnimated'
  
 import LoaderLinear   from '/client/app/components/ui/loaders/LoaderLinear'
 import LoaderCircular from '/client/app/components/ui/loaders/LoaderCircular'
@@ -38,7 +38,6 @@ class PageShowcase extends React.Component {
   }
         
   closeListView(){
-    console.log('ok');
     this.setState({ activeList: '' });
   }
     

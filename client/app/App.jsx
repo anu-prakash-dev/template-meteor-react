@@ -3,12 +3,14 @@ import reactMixin from 'react-mixin';
 import { browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import   Header     from '/client/app/components/navigation/Header';
-import   DrawerLeft from '/client/app/components/navigation/DrawerLeft';
+import   Header   from '/client/app/components/navigation/Header';
+import   Drawer   from '/client/app/components/navigation/Drawer';
+import   Snackbar from '/client/app/components/navigation/SnackBar';
+
+import DialogSimple from '/client/app/components/ui/dialogs/DialogSimple';
 import { Colors }   from '/client/app/Theme';
 
-import Snackbar from 'material-ui/lib/snackbar';
-import DialogSimple from '/client/app/components/ui/dialogs/DialogSimple';
+
 
 class App extends React.Component {
 
@@ -134,23 +136,12 @@ class App extends React.Component {
     return(
       <div className="App">
 
+        
         <Header 
           openDrawer = {this.openDrawer}
         />
+
         
-        <DialogSimple 
-          isOpen = {this.state.isDialogOpen} 
-          close  = {this.closeDialog}
-          title  = "Karma Police"
-        />
-
-        <DrawerLeft 
-          isOpen = {this.state.isDrawerOpen}
-          toggleDrawer = {this.toggleDrawer}
-          openDrawer   = {this.openDrawer}
-          closeDrawer  = {this.closeDrawer}
-        />
-
         <main className="app-main">
 
           <div className="app-content">
@@ -169,25 +160,38 @@ class App extends React.Component {
                 isLogged:     this.data.isLogged,
                 openSnackBar: this.openSnackBar,
                 toggleDrawer: this.toggleDrawer,
-                openDialogSimple:    this.openDialogSimple,
-                openDialogContainer: this.openDialogContainer,
+                openDialogSimple: this.openDialog,
               })}
             </ReactCSSTransitionGroup>
 
           </div>
 
         </main>
+
         
+        <Drawer 
+          isOpen = {this.state.isDrawerOpen}
+          toggleDrawer = {this.toggleDrawer}
+          openDrawer   = {this.openDrawer}
+          closeDrawer  = {this.closeDrawer}
+        />
+      
         <Snackbar
-          open    = {this.state.isSnackBarOpen}
+          isOpen  = {this.state.isSnackBarOpen}
           message = {this.state.snackBarMessage}
           //action  = "Cancel"
-          autoHideDuration= {this.state.snackBarAutoHideDuration}
           onActionTouchTap= {this.handleSnackBarClick}
           onRequestClose  = {this.closeSnackBar}
-          bodyStyle       = {{backgroundColor: Colors.secondary}}
-          style           = {{color: Colors.active}}
+          backgroundColor = {Colors.secondary}
+          color           = {Colors.active}
         />
+        
+        <DialogSimple 
+          isOpen = {this.state.isDialogOpen} 
+          close  = {this.closeDialog}
+          title  = "Karma Dialog"
+        />
+        
 
       </div>
 

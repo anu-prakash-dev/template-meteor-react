@@ -9,7 +9,7 @@ import {loginWithPassword} from '/client/api/accounts'
 
 import {Colors}          from '/client/app/Theme';
 
-import ButtonFLat           from '/client/app/components/ui/ButtonFlat'
+import ButtonFLat           from '/client/app/components/ui/buttons/ButtonFlat'
 import InputFloatingLabel   from '/client/app/components/ui/InputFloatingLabel'
 
 
@@ -18,6 +18,7 @@ class Login extends React.Component{
   constructor(props) {
     super(props);
     this.handleChange   = this.handleChange.bind(this);
+    this.handleKeyDown  = this.handleKeyDown.bind(this);
     this.controlInputs  = this.controlInputs.bind(this);
     this.login          = this.login.bind(this);
     this.onLoginError   = this.onLoginError.bind(this);
@@ -87,6 +88,11 @@ class Login extends React.Component{
     nextState[inputName+'errorText'] = '';
     
     this.setState(nextState);
+  }  
+    
+  handleKeyDown(event){
+    if(event.keyCode !== 13) return;
+    this.login();
   }  
   
   setErrorText(inputName, text){
@@ -159,7 +165,7 @@ class Login extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.usernameErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'username')}
-            onEnterKeyDown= {this.login}
+            onEnterKeyDown= {this.handleKeyDown}
           />
 
           <InputFloatingLabel
@@ -171,7 +177,7 @@ class Login extends React.Component{
             style         = {{width: "100%", marginTop: "-10px"}}
             errorText     = {this.state.passwordErrorText}
             onFocus       = {this.resetErrorText.bind(this, 'password')}
-            onEnterKeyDown={this.login}
+            onEnterKeyDown={this.handleKeyDown}
           />
 
           <br/>

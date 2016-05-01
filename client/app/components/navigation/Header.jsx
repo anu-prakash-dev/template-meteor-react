@@ -3,16 +3,16 @@ import React      from 'react';
 import reactMixin from 'react-mixin';
 import { Link }   from 'react-router';
 
+import AppBar           from 'material-ui/AppBar';
+import IconButton       from 'material-ui/IconButton';
+import NavigationClose  from 'material-ui/svg-icons/navigation/menu';
+import IconMenu         from 'material-ui/IconMenu';
+import MoreVertIcon     from 'material-ui/svg-icons/navigation/more-vert';
+import MenuItem         from 'material-ui/MenuItem';
+
 import Avatar   from '/client/app/components/account/items/Avatar';
 import {Colors} from '/client/app/Theme';
  
-
-import AppBar from 'material-ui/lib/app-bar';
-import IconButton from 'material-ui/lib/icon-button';
-import NavigationClose from 'material-ui/lib/svg-icons/navigation/menu';
-import IconMenu from 'material-ui/lib/menus/icon-menu';
-import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
-import MenuItem from 'material-ui/lib/menus/menu-item';
 
 
 class Header extends React.Component {

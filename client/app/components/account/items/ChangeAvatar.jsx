@@ -4,16 +4,16 @@ import Avatar     from './Avatar';
 
 import {changeAvatar, deleteAvatar} from '/client/api/accounts'
 
-import ButtonFlat from '/client/app/components/ui/ButtonFlat'
+import ButtonFlat from '/client/app/components/ui/buttons/ButtonFlat'
 import {Colors}   from '/client/app/Theme';
 
-import IconButton from 'material-ui/lib/icon-button';
-import IconUpload from 'material-ui/lib/svg-icons/file/cloud-download';
-import IconDelete from 'material-ui/lib/svg-icons/action/delete';
+import IconButton from 'material-ui/IconButton';
+import IconUpload from 'material-ui/svg-icons/file/cloud-download';
+import IconDelete from 'material-ui/svg-icons/action/delete';
 
-import Dialog       from 'material-ui/lib/dialog';
-import FlatButton   from 'material-ui/lib/flat-button';
-import RaisedButton from 'material-ui/lib/raised-button';
+import Dialog       from 'material-ui/Dialog';
+import FlatButton   from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 
@@ -41,7 +41,18 @@ class ChangeAvatar extends React.Component{
       isDialogOpen:false,
       isAvatarOverlay:false,
       isAvatarClone:false,
-      dialogContentStyle: {maxWidth: '18em'}
+      dialogContentStyle: {maxWidth: '18em'},
+      titleStyle: {
+        backgroundColor: Colors.secondary, 
+        color:Colors.textPrimary
+      },
+      bodyStyle: {
+        backgroundColor: Colors.secondary, 
+        color:Colors.textSecondary
+      },
+      actionsContainerStyle: {
+        backgroundColor: Colors.secondary
+      }
     };
   }  
   
@@ -183,7 +194,7 @@ class ChangeAvatar extends React.Component{
       <FlatButton
         label="Cancel"
         onTouchTap={this.dialogCancel}
-        style={{color:Colors.textPrimary}}
+        style={{color:Colors.textWhiteSecondary}}
       />,
       <FlatButton
         label="Update"
@@ -245,7 +256,7 @@ class ChangeAvatar extends React.Component{
           contentStyle={this.state.dialogContentStyle}
           titleStyle = {this.state.titleStyle}
           bodyStyle  = {this.state.bodyStyle}
-          actionsContainerStyle  = {this.state.actionContainerStyle}
+          actionsContainerStyle  = {this.state.actionsContainerStyle}
         >
           <div className="currentAvatarInModal">
             <Avatar className={avatarCloneClass} /> 

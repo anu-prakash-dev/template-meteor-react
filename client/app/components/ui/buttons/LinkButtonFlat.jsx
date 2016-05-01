@@ -1,6 +1,6 @@
-import React from 'react';
+import React  from 'react';
 import {Link} from 'react-router';
-import RaisedButton from 'material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 class LinkButtonFlat extends React.Component {

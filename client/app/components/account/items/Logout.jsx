@@ -1,8 +1,9 @@
 import React from 'react';
 
-import {logout} from '/client/api/accounts'
+import {logout} from '/client/api/accounts';
 import {Colors} from '/client/app/Theme';
-import ButtonFlat from '/client/app/components/ui/ButtonFlat';
+
+import ButtonFlat from '/client/app/components/ui/buttons/ButtonFlat';
 
 
 

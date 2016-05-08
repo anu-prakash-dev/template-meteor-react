@@ -11,8 +11,8 @@ export const googleAuth = {
     const isDev  = ( Meteor.absoluteUrl() === 'http://localhost:3000/' );
 
     const urlDev  = 'http://localhost:3000/_oauth/google';
-    const urlProd = 'http://meteor-react-template-app.madeinmoon.io/account/_oauth/google?close';
-     
+    const urlProd = 'http://meteor-react-template-app.madeinmoon.io/_oauth/google';
+
     const redirectUrl = isDev ? urlDev : urlProd;
     return redirectUrl;
  }
@@ -25,10 +25,11 @@ export const facebookAuth = {
     const isDev  = ( Meteor.absoluteUrl() === 'http://localhost:3000/' );
 
     const urlDev  = 'http://localhost:3000/_oauth/facebook';
-    const urlProd = 'http://meteor-react-template-app.madeinmoon.io/account/_oauth/facebook?close';
-     
+    const urlProd = 'http://meteor-react-template-app.madeinmoon.io/_oauth/facebook';
+
     const redirectUrl = isDev ? urlDev : urlProd;
     return redirectUrl;
  }
   
 }
+

@@ -1,15 +1,19 @@
-
-     
+/*  Consoles
+    google   : https://console.developers.google.com/apis/credentials/oauthclient/[....]
+    facebook : https://developers.facebook.com/sa/apps/[...id...]/settings/
+*/     
     
 
 
 export const googleAuth = {
   
  getRedirectUrl : () =>  {
-    const isLocalhost = ( Meteor.absoluteUrl() === 'http://localhost:3000/' );
+    const isDev  = ( Meteor.absoluteUrl() === 'http://localhost:3000/' );
 
-    const redirectUrl = isLocalhost ? 'http://localhost:3000/_oauth/google' : 'http://www.madeinmoon.io/_oauth/google';
+    const urlDev  = 'http://localhost:3000/_oauth/google';
+    const urlProd = 'http://meteor-react-template-app.madeinmoon.io/_oauth/google';
 
+    const redirectUrl = isDev ? urlDev : urlProd;
     return redirectUrl;
  }
   
@@ -18,11 +22,14 @@ export const googleAuth = {
 export const facebookAuth = {
   
  getRedirectUrl : () =>  {
-    const isLocalhost = ( Meteor.absoluteUrl() === 'http://localhost:3000/' );
+    const isDev  = ( Meteor.absoluteUrl() === 'http://localhost:3000/' );
 
-    const redirectUrl = isLocalhost ? 'http://localhost:3000/_oauth/facebook' : 'http://www.madeinmoon.io/_oauth/facebook';
+    const urlDev  = 'http://localhost:3000/_oauth/facebook';
+    const urlProd = 'http://meteor-react-template-app.madeinmoon.io/_oauth/facebook';
 
+    const redirectUrl = isDev ? urlDev : urlProd;
     return redirectUrl;
  }
   
 }
+

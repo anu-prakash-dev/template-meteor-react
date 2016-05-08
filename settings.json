@@ -1,7 +1,7 @@
 {
   "galaxy.meteor.com": {
     "env": {
-      "ROOT_URL": "http://www.madeinmoon.io",
+      "ROOT_URL": "http://meteor-react-template-app.madeinmoon.io",
       "MONGO_URL": "mongodb://user:useruseruser@ds025449.mlab.com:25449/template-meteor-react"
     }
   }

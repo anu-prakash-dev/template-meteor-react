@@ -1,3 +1,9 @@
+/*  Consoles
+    google   : https://console.developers.google.com/apis/credentials/oauthclient/[....]
+    facebook : https://developers.facebook.com/sa/apps/[...id...]/settings/
+*/     
+    
+
 
 export const setGoogleAuthConfig = () =>  {
 
@@ -5,8 +11,8 @@ export const setGoogleAuthConfig = () =>  {
     { service: "google" },
     {
       $set: {
-        clientId: "596443200401-gbfcu4m338a7jr9me3lp57tr4lra1dj6.apps.googleusercontent.com",
-        secret:   "k-sdC14cjRoH8aQhn3nVJrUO"
+        clientId: "your_key",
+        secret:   "your_secret"
       }
     }
   );
@@ -19,8 +25,8 @@ export const setFacebookAuthConfig = () =>  {
     { service: "facebook" },
     {
       $set: {
-        appId:  "527109410805279",
-        secret: "5edadf9f160338d928444a6b5cac0993",
+        appId:  "your_key",
+        secret: "your_secret",
       }
     }
   );

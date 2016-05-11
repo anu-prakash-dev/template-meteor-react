@@ -39,20 +39,10 @@ this repo: [AnnotatedJS/meteor-react-start-app](https://github.com/AnnotatedJS/m
 
 -------------------------
 
+### [Mini-Doc](https://github.com/MadeInMoon/template-meteor-react/wiki)
 
-### Usage
+- [Usage](https://github.com/MadeInMoon/template-meteor-react/wiki/Usage)
 
-Clone
-> $ git clone https://github.com/MadeInMoon/template-meteor-react
-
-Install node modules (just once)
-> $ npm install 
-
-Build & Run
-> $ meteor
-
-Play
-> http://localhost:3000/
 
 -------------------------
 

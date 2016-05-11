@@ -6,10 +6,15 @@
 Work In Progress!! (advices, questions or contributions are very welcome!)
 
 
-[Hosted Demo](http://meteor-react-template-app.madeinmoon.io/)
+### [Hosted Demo](http://meteor-react-template-app.madeinmoon.io/)
+
+![App screenshot](http://meteor-react-template-app.madeinmoon.io/medias/screenshots/screenshots.jpg)
 
 
-**Reason to be**
+--------
+
+
+#### **Reason to be**
 
 Provide a template app
 

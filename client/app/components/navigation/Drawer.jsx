@@ -17,7 +17,7 @@ import {Colors} from '/client/app/Theme';
 
 class Drawer extends React.Component {
   
-  constructor(props){
+  constructor(props){  
     super(props);
     this.onRequestChange=this.onRequestChange.bind(this);
     this.state={}
@@ -64,34 +64,24 @@ class Drawer extends React.Component {
           </MenuItem>
         </Link>
         
-        <Link to="/tasks">
+        <Link to="/formsalon">
           <MenuItem 
             onClick={this.props.closeDrawer}
             style={{color: Colors.textPrimary}}
             leftIcon={<IconTasks/>}>
-            Tasks
+            Nouveau salon
           </MenuItem>
         </Link>
         
-        <Link to="/showcase">
+        <Link to="/formemployee">
           <MenuItem 
             onClick={this.props.closeDrawer}
             style={{color: Colors.textPrimary}}
             leftIcon={<IconEye/>}>
-            Showcase
+            Nouvel employé
           </MenuItem>
         </Link>
         
-        <Divider/>
-        
-        <a href="https://github.com/MadeInMoon/template-meteor-react" target="_blank">
-          <MenuItem 
-            onClick={this.props.closeDrawer}
-            style={{color: Colors.textPrimary}}
-            leftIcon={<IconCode/>}>
-            Code
-          </MenuItem>
-        </a>
         
       </DrawerMui>
     

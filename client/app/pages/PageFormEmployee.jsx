@@ -22,7 +22,6 @@ class PageFormEmployee extends React.Component {
     super(props);
     this.handleSubmit         = this.handleSubmit.bind(this);
     this.handleChange         = this.handleChange.bind(this);
-    // this.handleChangeSelect   = this.handleChangeSelect.bind(this);
     this.handleCheck          = this.handleCheck.bind(this);
 
     this.state={

@@ -6,15 +6,15 @@ import RaisedButton                     from '/client/app/components/ui/buttons/
 import DialogSimple                     from '/client/app/components/ui/dialogs/DialogSimple.jsx';
 import TextField                        from '/client/app/components/ui/forms/TextField.jsx';
 
-class ListUi extends React.Component{
+class ListUiHours extends React.Component{
 
   constructor(props){
     super(props);
     this.renderList       = this.renderList.bind(this);
     this.deleteThisItem   = this.deleteThisItem.bind(this);
-    this.editThisItem     = this.editThisItem.bind(this);
+    // this.editThisItem     = this.editThisItem.bind(this);
     this.handleOpen       = this.handleOpen.bind(this);
-    this.handleClose      = this.handleClose.bind(this);
+    // this.handleClose      = this.handleClose.bind(this);
 
     this.state={
       open: false,
@@ -23,56 +23,34 @@ class ListUi extends React.Component{
   }
 
   renderList() {
-
-    console.log("ok galab");
-
     return this.props.items.map((item, i) => (
-        <ListItem key={i} primaryText={item.name}>
+        <ListItem key={i} primaryText={item.morningstart}>
           <RaisedButton
               label="Modifier"
               onClick={this.handleOpen}/>
           <RaisedButton
               label="Supprimer"
               onClick={this.deleteThisItem.bind(this, item._id)}/>
-
-          <DialogSimple
-              modal           = {false}
-              open            = {this.state.open}
-              title           = {"Modifier"}
-              onRequestClose  = {this.handleClose}>
-
-              <TextField
-                  name              = "nameEmployee"
-                  floatingLabelText = "Nom de l'employé"
-                  value             = {this.state.nameEmployee}
-                  onChange          = {this.handleChange}/>
-
-          </DialogSimple>
-
         </ListItem>
     ));
+  }
+
+
+  deleteThisItem(itemId, event) {
+    let callMeteor = "remove" + this.props.form;
+    Meteor.call(callMeteor, itemId);
+    console.log("supprimé !");
   }
 
   handleOpen() {
     this.setState({open: true});
   }
 
-    handleClose() {
-      this.setState({open: false});
-    }
-
-
-    deleteThisItem(itemId, event) {
-      let callMeteor = "remove" + this.props.form;
-      Meteor.call(callMeteor, itemId);
-      console.log("supprimé !");
-    }
-
-    editThisItem(itemId, event){
-      let callMeteor = "edit" + this.props.form;
-      Meteor.call(callMeteor, itemId, "hello");
-      console.log("modifié !");
-    }
+    // editThisItem(itemId, event){
+    //   let callMeteor = "edit" + this.props.form;
+    //   Meteor.call(callMeteor, itemId, "hello");
+    //   console.log("modifié !");
+    // }
 
   render() {
     return (
@@ -85,4 +63,4 @@ class ListUi extends React.Component{
 
 };
 
-export default ListUi;
+export default ListUiHours;

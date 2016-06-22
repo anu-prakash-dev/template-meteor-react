@@ -16,23 +16,23 @@ import {Colors} from '/client/app/Theme';
 
 
 class Drawer extends React.Component {
-
-  constructor(props){
+  
+  constructor(props){  
     super(props);
     this.onRequestChange=this.onRequestChange.bind(this);
     this.state={}
   }
-
+  
   onRequestChange(open){
     if(open)
       this.props.openDrawer();
     else
       this.props.closeDrawer();
   }
-
+  
   render() {
     return(
-
+      
       <DrawerMui
         docked = {false}
         width  = {220}
@@ -45,56 +45,47 @@ class Drawer extends React.Component {
         <div id="drawerTop">
           <p>Swipe me on mobile!</p>
         </div>
-
+        
         <Link to="/account">
-          <MenuItem
+          <MenuItem 
             onClick={this.props.closeDrawer}
             style={{color: Colors.textPrimary}}
             leftIcon={<IconAccount/>}>
             Account
           </MenuItem>
         </Link>
-
+        
         <Link to="/">
-          <MenuItem
+          <MenuItem 
             onClick={this.props.closeDrawer}
             style={{color: Colors.textPrimary}}
             leftIcon={<IconHome/>}>
             Home
           </MenuItem>
         </Link>
-
+        
         <Link to="/formsalon">
-          <MenuItem
+          <MenuItem 
             onClick={this.props.closeDrawer}
             style={{color: Colors.textPrimary}}
             leftIcon={<IconTasks/>}>
             Nouveau salon
           </MenuItem>
         </Link>
-
-        <Link to="/formhours">
-          <MenuItem
-            onClick={this.props.closeDrawer}
-            style={{color: Colors.textPrimary}}
-            leftIcon={<IconTasks/>}>
-            Horaires types
-          </MenuItem>
-        </Link>
-
+        
         <Link to="/formemployee">
-          <MenuItem
+          <MenuItem 
             onClick={this.props.closeDrawer}
             style={{color: Colors.textPrimary}}
             leftIcon={<IconEye/>}>
             Nouvel employé
           </MenuItem>
         </Link>
-
-
+        
+        
       </DrawerMui>
-
-
+    
+      
     );
   }
 }

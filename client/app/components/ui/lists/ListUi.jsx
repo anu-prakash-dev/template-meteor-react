@@ -24,8 +24,6 @@ class ListUi extends React.Component{
 
   renderList() {
 
-    console.log("ok galab");
-
     return this.props.items.map((item, i) => (
         <ListItem key={i} primaryText={item.name}>
           <RaisedButton

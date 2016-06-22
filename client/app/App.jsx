@@ -44,7 +44,7 @@ class App extends React.Component {
       onEmailVerificationLink: Session.get("onEmailVerificationLink"),
       isLogged: Meteor.userId() !== null,
     }  
-  }
+  } 
 
   
   // SnackBar methods

@@ -1,5 +1,4 @@
 import React from 'react'
-import DragAndDrop from '/client/app/components/draganddrop/DragAndDrop'
 import CardFull    from '/client/app/components/ui/cards/CardFull'
 
 import LinkButtonFlat from '/client/app/components/ui/buttons/LinkButtonFlat'
